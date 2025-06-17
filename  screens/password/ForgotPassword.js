@@ -55,7 +55,7 @@ export default function ForgotPassword() {
         <View style={styles.footer}>
           <Text style={styles.footerButtonText}>Retour à la</Text>
           <Pressable>
-            <Text style={[styles.footerButtonText, { color: "#469597" }]}>
+            <Text style={[styles.footerButtonText, { color: "#fff" }]}>
               connexion
             </Text>
           </Pressable>
