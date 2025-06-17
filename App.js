@@ -13,6 +13,7 @@ import ForgotPassword from "./ screens/password/ForgotPassword";
 import LinkSent from "./ screens/password/LinkSent";
 
 import Welcome from "./ screens/Welcome";
+import TabNav from "./TabNav";
 
 // const logoImg = require("./assets/Logo.png");
 
@@ -26,27 +27,39 @@ export default function App() {
           headerShadowVisible: false,
         }}
       >
-        <Stack.Screen name="Je suis" component={Je_suis} />
-        <Stack.Screen name="Je travaille" component={Je_travaille} />
+        <Stack.Screen
+          name="Je suis"
+          component={Je_suis}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Je travaille"
+          component={Je_travaille}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Créer mon compte"
           component={CreateAccount}
           options={{
-            headerTitle: "",
-            // headerTitle: () => (
-            //   <Image source={logoImg}  />
-            // )
+            headerShown: false,
           }}
         />
-        <Stack.Screen name="Créer moncompte" component={CreateAccount2} />
+        <Stack.Screen
+          name="Créer moncompte"
+          component={CreateAccount2}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="Mes coordonnées"
           component={ContactDetails}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
           }}
         />
         <Stack.Screen
@@ -54,9 +67,6 @@ export default function App() {
           component={Profile}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
           }}
         />
         <Stack.Screen
@@ -64,9 +74,6 @@ export default function App() {
           component={Connexion}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
           }}
         />
         <Stack.Screen
@@ -74,9 +81,6 @@ export default function App() {
           component={ForgotPassword}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
           }}
         />
         <Stack.Screen
@@ -84,9 +88,6 @@ export default function App() {
           component={LinkSent}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
           }}
         />
         <Stack.Screen
@@ -94,9 +95,13 @@ export default function App() {
           component={Welcome}
           options={{
             headerShown: false,
-            headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20" />
-            ),
+          }}
+        />
+        <Stack.Screen
+          name="TabNav"
+          component={TabNav}
+          options={{
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

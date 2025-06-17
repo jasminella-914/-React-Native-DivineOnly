@@ -1,26 +1,60 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Search from "./ screens/tabScreens/Search";
 import Shop from "./ screens/tabScreens/Shop";
 import IA from "./ screens/tabScreens/IA";
 import Profile from "./ screens/tabScreens/Profile";
-
+import { Image } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Services from "./ screens/tabScreens/Services";
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNav () {
-    return (
-       
-        <Tab.Navigator>
-            <Tab.Screen name="Search" component={Search} />
-            <Tab.Screen name="Shop" component={Shop} />
-            <Tab.Screen name="IA" component={IA} />
-            <Tab.Screen name="Profile" component={Profile} />
-        </Tab.Navigator>
-       
-    )   
+export default function TabNav() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Services"
+        component={Services}
+        options={{
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarIcon: () => <Ionicons name="search-outline" size={30} />,
+          tabBarActiveBackgroundColor: "#469597",
+        }}
+      />
+      <Tab.Screen
+        name="Shop"
+        component={Shop}
+        options={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarIcon: () => <Ionicons name="cart-outline" size={30} />,
+            tabBarActiveBackgroundColor: "#469597",
+        }}
+      />
+      <Tab.Screen
+        name="IA"
+        component={IA}
+        options={{
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarIcon: () => <Ionicons name="star-outline" size={30} />,
+          tabBarActiveBackgroundColor: "#469597",
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarIcon: () => <Ionicons name="person-outline" size={30} />,
+          tabBarActiveBackgroundColor: "#469597",
+        }}
+      />
+    </Tab.Navigator>
+  );
 }
-
 
 // export default function App() {
 //     return (

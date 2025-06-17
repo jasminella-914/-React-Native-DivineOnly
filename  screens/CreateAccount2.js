@@ -5,19 +5,23 @@ import {
   Pressable,
   TextInput,
   Image,
+  SafeAreaView
 } from "react-native";
 import { useState } from "react";
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const logoImg = require("../assets/Logo.png");
 export default function CreateAccount2() {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
+      <Ionicons name="arrow-back" size={24} />
+    </Pressable>
       <Image source={logoImg} style={{ alignSelf: "center" }} />
       <View style={styles.secondContainer}>
         <View>
@@ -66,7 +70,7 @@ export default function CreateAccount2() {
           </Text>
         </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

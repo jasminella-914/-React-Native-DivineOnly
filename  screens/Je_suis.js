@@ -1,14 +1,34 @@
-import { View, Text, Button, StyleSheet, Pressable, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native"; 
-
-
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Pressable,
+  Image,
+  SafeAreaView,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const logoImg = require("../assets/Bg.png");
-export default function Je_suis({ navigation }) {
-  
+export default function Je_suis() {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={logoImg} />
+      <Image
+        source={require("../assets/Logo.png")}
+        style={{ alignSelf: "center", position: "absolute",  top: 40 }}
+      />
+
+      <Image
+          source={require("././../assets/twoperson.png")}
+         style={{
+          position: "absolute",
+          alignSelf: "center",
+          top: 130
+         }}
+        />
+
       <View style={styles.secondContainer}>
         <View style={{ marginBottom: 20 }}>
           <Text style={styles.text}>Je suis</Text>
@@ -37,7 +57,7 @@ export default function Je_suis({ navigation }) {
           </Pressable>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -64,5 +84,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
+  },
+  Image: {
+    alignItems: "center",
+    justufyContent: "center",
+    position: "relative",
   },
 });

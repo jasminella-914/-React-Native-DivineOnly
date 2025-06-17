@@ -1,14 +1,32 @@
-import { View, Text, Button, StyleSheet, Pressable, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native"; 
-
-
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Pressable,
+  Image,
+  SafeAreaView,
+  ImageBackground,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const logoImg = require("../assets/Bg.png");
 export default function Je_travaille() {
   const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <Image source={logoImg} />
+    <SafeAreaView style={styles.container}>
+      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={24} />
+      </Pressable>
+
+      <ImageBackground source={logoImg} style={{ flex: 0.5}}>
+        <Image
+          source={require("../assets/Logo.png")}
+          style={{ alignSelf: "center" }}
+        />
+        <Image source={require("../assets/twoperson.png")} style={{ alignSelf: "center" }}/>
+      </ImageBackground>
       <View style={styles.secondContainer}>
         <View style={{ marginBottom: 20 }}>
           <Text style={styles.text}>Je travaille</Text>
@@ -37,7 +55,7 @@ export default function Je_travaille() {
           </Pressable>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -47,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   secondContainer: {
-    margin: 20,
+    marginHorizontal: 20,
   },
   text: {
     fontSize: 16,

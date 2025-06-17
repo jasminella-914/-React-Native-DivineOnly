@@ -3,41 +3,46 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
+  TextInput,
+  Pressable,
   Image,
   ScrollView,
   ImageBackground,
-  Pressable
 } from "react-native";
-import TabNav from "../TabNav";
-import { useNavigation } from "@react-navigation/native";
+// import { useNavigation } from "@react-navigation/native";
 
-const bgImg = require("../assets//Bg.png");
-const twoperson = require("../assets/twoperson.png");
-export default function Welcome() {
-  const navigation = useNavigation();
+
+export default function Services() {
   return (
     <SafeAreaView style={styles.container}>
-    <ImageBackground
-        source={require("../assets/TabBg.png")}
+      {/* <ImageBackground
+        source={require("../../assets/TabBg.png")}
         style={{ flex: 1 }}
       >
         <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Image source={require("../assets/Logo.png")} />
+          <Image source={require("../../assets/Logo.png")} />
         </View>
-        <Pressable style={styles.buttonContainer} 
-        onPress={(() => navigation.navigate("TabNav"))}>
+        <Pressable style={styles.buttonContainer}>
           <Text style={styles.buttonText}>Prendre rendez-vous</Text>
         </Pressable>
-      </ImageBackground>
-      {/* <TabNav   /> */}
+      </ImageBackground> */}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   backgroundColor: "#FFFFFF"
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+  },
+  headerText: {
+    color: "#0E1F20",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  text: {
+    color: "#0E1F20",
+    fontSize: 12,
   },
   buttonContainer: {
     backgroundColor: "#469597",
