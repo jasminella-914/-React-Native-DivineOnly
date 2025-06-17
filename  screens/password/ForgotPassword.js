@@ -8,19 +8,16 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const bgImg = require("../../assets/Bg.png");
 const twoperson = require("../../assets//twoperson.png");
-export default function ForgotPassword() {
+export default function ForgotPassword({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView>
-     
         <View>
-          <Image
-            source={bgImg}
-            style={{ position: "relative" }}
-          />
+          <Image source={bgImg} style={{ position: "relative" }} />
           <Image
             source={twoperson}
             style={{
@@ -37,7 +34,7 @@ export default function ForgotPassword() {
             <Text style={styles.headerText}>Mot de passe oublié</Text>
           </View>
           <View>
-            <Text>
+            <Text style={styles.text}>
               Renseignez votre adresse mail afin de recevoir un lien vous
               permettant de changer votre mot de passe.
             </Text>
@@ -48,17 +45,17 @@ export default function ForgotPassword() {
               style={styles.inputContainer}
             />
           </View>
-          <Pressable style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Se connecter</Text>
+          <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("Link Sent")}>
+            <Text style={styles.buttonText}>Réinitialiser mon mot de passe</Text>
           </Pressable>
-        </View>
-        <View style={styles.footer}>
-          <Text style={styles.footerButtonText}>Retour à la</Text>
-          <Pressable>
-            <Text style={[styles.footerButtonText, { color: "#fff" }]}>
-              connexion
-            </Text>
-          </Pressable>
+          <View style={styles.footer}>
+            <Text style={styles.footerButtonText}>Retour à la   </Text>
+            <Pressable onPress={() => navigation.navigate("Connexion")}>
+              <Text style={[styles.footerButtonText, { color: "#469597" }]}>
+                connexion
+              </Text>
+            </Pressable>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -82,9 +79,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   text: {
-    color: "#BBC6C8",
-    fontSize: 14,
-    textDecorationLine: "underline",
+    color: "#0E1F20",
+    fontSize: 12,
   },
   buttonContainer: {
     backgroundColor: "#469597",
@@ -115,5 +111,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     marginTop: "auto",
+    flexDirection: "row",
+    justifyContent: "center"
   },
 });

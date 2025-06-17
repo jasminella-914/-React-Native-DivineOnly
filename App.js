@@ -10,6 +10,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Profile from "./ screens/costumerFiles/Profile";
 import Connexion from "./ screens/Connexion";
 import ForgotPassword from "./ screens/password/ForgotPassword";
+import LinkSent from "./ screens/password/LinkSent";
 
 const logoImg = require("./assets/Logo.png");
 
@@ -69,6 +70,16 @@ export default function App() {
         <Stack.Screen
           name="Forgot Password"
           component={ForgotPassword}
+          options={{
+            headerShown: false,
+            headerRight: () => (
+              <Ionicons name="close" size={24} color="#0E1F20"   />
+            )
+           }}
+        />
+        <Stack.Screen
+          name="Link Sent"
+          component={LinkSent}
           options={{
             headerShown: false,
             headerRight: () => (
