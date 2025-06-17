@@ -4,8 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 
 
 const logoImg = require("../assets/Bg.png");
-export default function Je_suis() {
-  const navigation = useNavigation();
+export default function Je_suis({ navigation }) {
+  
   return (
     <View style={styles.container}>
       <Image source={logoImg} />

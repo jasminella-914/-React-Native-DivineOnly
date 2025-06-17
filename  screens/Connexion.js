@@ -13,7 +13,8 @@ import { useNavigation } from "@react-navigation/native";
 const logoImg = require("../assets/google.png");
 const atlogoImg = require("../assets//at.png");
 
-export default function Connexion({ navigation }) {
+export default function Connexion() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <ScrollView>
@@ -50,7 +51,7 @@ export default function Connexion({ navigation }) {
             <Pressable onPress={() => navigation.navigate("Forgot Password")}>
               <Text style={styles.text}>Mot de passe oublié ?</Text>
             </Pressable>
-            <Pressable style={styles.buttonContainer}>
+            <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("Welcome")}>
               <Text style={styles.buttonText}>Se connecter</Text>
             </Pressable>
           </View>

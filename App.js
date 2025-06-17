@@ -12,7 +12,9 @@ import Connexion from "./ screens/Connexion";
 import ForgotPassword from "./ screens/password/ForgotPassword";
 import LinkSent from "./ screens/password/LinkSent";
 
-const logoImg = require("./assets/Logo.png");
+import Welcome from "./ screens/Welcome";
+
+// const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
 
@@ -43,9 +45,9 @@ export default function App() {
           options={{
             headerShown: false,
             headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20"   />
-            )
-           }}
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
         />
         <Stack.Screen
           name="Profile"
@@ -53,9 +55,9 @@ export default function App() {
           options={{
             headerShown: false,
             headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20"   />
-            )
-           }}
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
         />
         <Stack.Screen
           name="Connexion"
@@ -63,9 +65,9 @@ export default function App() {
           options={{
             headerShown: false,
             headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20"   />
-            )
-           }}
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
         />
         <Stack.Screen
           name="Forgot Password"
@@ -73,9 +75,9 @@ export default function App() {
           options={{
             headerShown: false,
             headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20"   />
-            )
-           }}
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
         />
         <Stack.Screen
           name="Link Sent"
@@ -83,9 +85,19 @@ export default function App() {
           options={{
             headerShown: false,
             headerRight: () => (
-              <Ionicons name="close" size={24} color="#0E1F20"   />
-            )
-           }}
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{
+            headerShown: false,
+            headerRight: () => (
+              <Ionicons name="close" size={24} color="#0E1F20" />
+            ),
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
