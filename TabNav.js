@@ -9,6 +9,7 @@ import Services from "./ screens/tabScreens/Services";
 
 const Tab = createBottomTabNavigator();
 
+
 export default function TabNav() {
   return (
     <Tab.Navigator>
@@ -68,6 +69,7 @@ export default function TabNav() {
           tabBarInactiveTintColor: "#0E1F20",
         }}
       />
+      
     </Tab.Navigator>
   );
 }
