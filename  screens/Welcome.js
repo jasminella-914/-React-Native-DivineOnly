@@ -6,26 +6,56 @@ import {
   Image,
   ScrollView,
   ImageBackground,
-  Pressable
+  Pressable,
 } from "react-native";
 import TabNav from "../TabNav";
 import { useNavigation } from "@react-navigation/native";
 
-const bgImg = require("../assets//Bg.png");
-const twoperson = require("../assets/twoperson.png");
+
 export default function Welcome() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-    <ImageBackground
+      <ImageBackground
         source={require("../assets/TabBg.png")}
         style={{ flex: 1 }}
       >
-        <View style={{ justifyContent: "center", alignItems: "center" }}>
-          <Image source={require("../assets/Logo.png")} />
+        <Image
+          source={require("../assets/Logo.png")}
+          style={{ alignSelf: "center", position: "absolute" }}
+          width={80}
+          height={80}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: 25,
+            marginTop: 80,
+           
+          }}
+        >
+          <Pressable style={styles.buttons}>
+            <Image source={require("../assets/Coiffure.png")} />
+            <Text>Coiffure</Text>
+          </Pressable>
+          <Pressable style={styles.buttons}>
+            <Image source={require("../assets/Barbier.png")} />
+            <Text>Barbier</Text>
+          </Pressable>
+          <Pressable style={styles.buttons}>
+            <Image source={require("../assets//Onglerie.png")} />
+            <Text>Onglerie</Text>
+          </Pressable>
+          <Pressable style={styles.buttons}>
+            <Image source={require("../assets/istitik.png")} />
+            <Text>Esthétique</Text>
+          </Pressable>
         </View>
-        <Pressable style={styles.buttonContainer} 
-        onPress={(() => navigation.navigate("TabNav"))}>
+        <Pressable
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate("TabNav")}
+        >
           <Text style={styles.buttonText}>Prendre rendez-vous</Text>
         </Pressable>
       </ImageBackground>
@@ -36,8 +66,8 @@ export default function Welcome() {
 
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   backgroundColor: "#FFFFFF"
+    flex: 1,
+    backgroundColor: "#FFFFFF",
   },
   buttonContainer: {
     backgroundColor: "#469597",
@@ -45,7 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 20,
     marginTop: "auto",
-    bottom: 15
+    bottom: 15,
   },
   buttonText: {
     color: "#FFFFFF",
@@ -53,4 +83,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
   },
+  buttons: {
+    gap: 5,
+    alignItems: "center"
+  }
 });

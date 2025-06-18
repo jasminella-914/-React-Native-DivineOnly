@@ -11,53 +11,51 @@ import {
 import { useNavigation } from "@react-navigation/native";
 
 const bgImg = require("../../assets/Bg.png");
-const twoperson = require("../../assets//twoperson.png");
 export default function ForgotPassword({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
-      <ScrollView>
+      <Image source={bgImg} />
+      <Image
+        source={require("../../assets/Logo.png")}
+        style={{ alignSelf: "center", position: "absolute", top: 40 }}
+      />
+      <Image
+        source={require("../../assets/twoperson.png")}
+        style={{
+          position: "absolute",
+          alignSelf: "center",
+          top: 130,
+        }}
+      />
+
+      <View style={styles.container}>
         <View>
-          <Image source={bgImg} style={{ position: "relative" }} />
-          <Image
-            source={twoperson}
-            style={{
-              position: "absolute",
-              alignItems: "center",
-              justifyContent: "center",
-              left: 90,
-              top: 50,
-            }}
-          />
+          <Text style={styles.headerText}>Mot de passe oublié</Text>
         </View>
-        <View style={styles.container}>
-          <View>
-            <Text style={styles.headerText}>Mot de passe oublié</Text>
-          </View>
-          <View>
-            <Text style={styles.text}>
-              Renseignez votre adresse mail afin de recevoir un lien vous
-              permettant de changer votre mot de passe.
-            </Text>
-          </View>
-          <View style={{ gap: 10 }}>
-            <TextInput
-              placeholder="Adresse mail"
-              style={styles.inputContainer}
-            />
-          </View>
-          <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("Link Sent")}>
-            <Text style={styles.buttonText}>Réinitialiser mon mot de passe</Text>
-          </Pressable>
-          <View style={styles.footer}>
-            <Text style={styles.footerButtonText}>Retour à la   </Text>
-            <Pressable onPress={() => navigation.navigate("Connexion")}>
-              <Text style={[styles.footerButtonText, { color: "#469597" }]}>
-                connexion
-              </Text>
-            </Pressable>
-          </View>
+        <View>
+          <Text style={styles.text}>
+            Renseignez votre adresse mail afin de recevoir un lien vous
+            permettant de changer votre mot de passe.
+          </Text>
         </View>
-      </ScrollView>
+        <View style={{ gap: 10 }}>
+          <TextInput placeholder="Adresse mail" style={styles.inputContainer} />
+        </View>
+        <Pressable
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate("Link Sent")}
+        >
+          <Text style={styles.buttonText}>Réinitialiser mon mot de passe</Text>
+        </Pressable>
+      </View>
+      <View style={styles.footer}>
+        <Text style={styles.footerButtonText}>Retour à la </Text>
+        <Pressable onPress={() => navigation.navigate("Connexion")}>
+          <Text style={[styles.footerButtonText, { color: "#469597" }]}>
+            connexion
+          </Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#BBC6C8",
     padding: 20,
-    borderRadius: 10,
+    borderRadius: 15,
   },
   text: {
     color: "#0E1F20",
@@ -112,6 +110,6 @@ const styles = StyleSheet.create({
   footer: {
     marginTop: "auto",
     flexDirection: "row",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 });

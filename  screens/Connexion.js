@@ -17,7 +17,7 @@ export default function Connexion() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
-      <Image source={require("../assets/Bg.png")} />
+      <Image source={require("../assets/Bg.png")} width={100} height={200} />
       <Image
         source={require("../assets/Logo.png")}
         style={{ alignSelf: "center", position: "absolute", top: 40 }}
