@@ -18,8 +18,12 @@ export default function TabNav() {
         options={{
           tabBarShowLabel: false,
           headerShown: false,
-          tabBarIcon: () => <Ionicons name="search-outline" size={30} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="search-outline" size={25} color={color} />
+          ),
           tabBarActiveBackgroundColor: "#469597",
+          tabBarActiveTintColor: "#FFFFFF",
+          tabBarInactiveTintColor: "#0E1F20",
         }}
       />
       <Tab.Screen
@@ -28,8 +32,12 @@ export default function TabNav() {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: () => <Ionicons name="cart-outline" size={30} />,
-            tabBarActiveBackgroundColor: "#469597",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="cart-outline" size={25} color={color} />
+          ),
+          tabBarActiveBackgroundColor: "#469597",
+          tabBarActiveTintColor: "#FFFFFF",
+          tabBarInactiveTintColor: "#0E1F20",
         }}
       />
       <Tab.Screen
@@ -38,8 +46,12 @@ export default function TabNav() {
         options={{
           tabBarShowLabel: false,
           headerShown: false,
-          tabBarIcon: () => <Ionicons name="star-outline" size={30} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="star-outline" size={25} color={color} />
+          ),
           tabBarActiveBackgroundColor: "#469597",
+          tabBarActiveTintColor: "#FFFFFF",
+          tabBarInactiveTintColor: "#0E1F20",
         }}
       />
       <Tab.Screen
@@ -48,8 +60,12 @@ export default function TabNav() {
         options={{
           tabBarShowLabel: false,
           headerShown: false,
-          tabBarIcon: () => <Ionicons name="person-outline" size={30} />,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person-outline" size={25} color={color} />
+          ),
           tabBarActiveBackgroundColor: "#469597",
+          tabBarActiveTintColor: "#FFFFFF",
+          tabBarInactiveTintColor: "#0E1F20",
         }}
       />
     </Tab.Navigator>
