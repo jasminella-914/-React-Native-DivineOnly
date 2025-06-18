@@ -14,6 +14,7 @@ import LinkSent from "./ screens/password/LinkSent";
 
 import Welcome from "./ screens/Welcome";
 import TabNav from "./TabNav";
+import EditProfile from "./ screens/tabScreens/profile/EditProfile";
 
 // const logoImg = require("./assets/Logo.png");
 
@@ -100,6 +101,13 @@ export default function App() {
         <Stack.Screen
           name="TabNav"
           component={TabNav}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Edit Profile"
+          component={EditProfile}
           options={{
             headerShown: false,
           }}

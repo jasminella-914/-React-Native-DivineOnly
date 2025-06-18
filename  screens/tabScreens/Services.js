@@ -6,8 +6,19 @@ import {
   TextInput,
   Image,
   FlatList,
+  Pressable,
 } from "react-native";
-import React, { useState } from "react";
+import RadioButtonRN from "radio-buttons-react-native";
+
+
+const data = [
+  {
+    label: "Au Salon",
+  },
+  {
+    label: "A domicile",
+  },
+];
 
 export default function Services() {
   return (
@@ -19,8 +30,15 @@ export default function Services() {
 
       <View style={styles.secondContainer}>
         <View style={styles.thirdContainer}>
-          <Text>Réserve ta prestation</Text>
-
+          <Text style={styles.headerText}>Réserve ta prestation</Text>
+          <RadioButtonRN
+            data={data}
+            selectedBtn={(e) => console.log(e)}
+            activeColor="#469597"
+            boxStyle={{
+              borderColor: "#BBC6C8",
+            }}
+          />
           <TextInput
             placeholder="Nom du professionnel, prestations..."
             style={styles.inputContainer}
@@ -29,6 +47,9 @@ export default function Services() {
             placeholder="Adresse, ville..."
             style={styles.inputContainer}
           />
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Rechercher</Text>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
@@ -43,10 +64,18 @@ const styles = StyleSheet.create({
   logo: {
     alignSelf: "center",
   },
+  
   secondContainer: {
     backgroundColor: "#F5F5F5",
     marginHorizontal: 20,
     borderRadius: 20,
+    marginTop: 20,
+    
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#0E1F20"
   },
   inputContainer: {
     borderWidth: 1,
@@ -59,4 +88,15 @@ const styles = StyleSheet.create({
     margin: 20,
     gap: 20,
   },
+  button: {
+    backgroundColor: "#469597",
+    padding: 20,
+    borderRadius: 15,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: "center"
+  }
 });
