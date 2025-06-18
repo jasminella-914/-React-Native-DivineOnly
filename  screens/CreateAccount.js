@@ -5,23 +5,22 @@ import {
   Pressable,
   TextInput,
   Image,
-  SafeAreaView
+  SafeAreaView,
 } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-
 const logoImg = require("../assets/Logo.png");
-export default function CreateAccount({ navigation}) { 
-
+export default function CreateAccount() {
+  const navigation = useNavigation();
   const [isChecked, setIsChecked] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
-    <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
-      <Ionicons name="arrow-back" size={24} />
-    </Pressable>
+      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={24} />
+      </Pressable>
       <Image source={logoImg} style={{ alignSelf: "center" }} />
       <View style={styles.secondContainer}>
         <View>
@@ -41,6 +40,7 @@ export default function CreateAccount({ navigation}) {
             onClick={() => {
               setIsChecked(!isChecked);
             }}
+            checkBoxColor="#469597"
             isChecked={isChecked}
           />
           <View>
@@ -66,11 +66,11 @@ export default function CreateAccount({ navigation}) {
       </Pressable>
       <View style={{ gap: 10, margin: 20 }}>
         <Pressable style={styles.footerButton}>
-        <Ionicons name="logo-google" size={24} color={"#469597"}  />
+          <Ionicons name="logo-google" size={24} color={"#469597"} />
           <Text style={styles.footerButtonText}>votre adresse Google</Text>
         </Pressable>
         <Pressable style={styles.footerButton}>
-        <Ionicons name="logo-facebook"  size={24} color={"#469597"} />
+          <Ionicons name="logo-facebook" size={24} color={"#469597"} />
           <Text style={styles.footerButtonText}>une autre adresse mail </Text>
         </Pressable>
       </View>
@@ -78,7 +78,9 @@ export default function CreateAccount({ navigation}) {
       <View style={{ flexDirection: "row", justifyContent: "center" }}>
         <Text style={styles.footerButtonText}>Vous avez déjà un compte ? </Text>
         <Pressable onPress={() => navigation.navigate("Connexion")}>
-          <Text style={[styles.footerButtonText, { color: "#469597"}]}>Connexion</Text>
+          <Text style={[styles.footerButtonText, { color: "#469597" }]}>
+            Connexion
+          </Text>
         </Pressable>
       </View>
     </SafeAreaView>
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
   toggleContainer: {
     flexDirection: "row",
     gap: 30,
-    marginBottom: 10
+    marginBottom: 10,
   },
   toggleText: {
     fontSize: 12,
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   footerButtonText: {
     textAlign: "center",

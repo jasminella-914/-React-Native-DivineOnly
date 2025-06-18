@@ -5,7 +5,7 @@ import {
   Pressable,
   TextInput,
   Image,
-  SafeAreaView
+  SafeAreaView,
 } from "react-native";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -20,8 +20,8 @@ export default function CreateAccount2() {
   return (
     <SafeAreaView style={styles.container}>
       <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
-      <Ionicons name="arrow-back" size={24} />
-    </Pressable>
+        <Ionicons name="arrow-back" size={24} />
+      </Pressable>
       <Image source={logoImg} style={{ alignSelf: "center" }} />
       <View style={styles.secondContainer}>
         <View>
@@ -42,6 +42,7 @@ export default function CreateAccount2() {
               setIsChecked(!isChecked);
             }}
             isChecked={isChecked}
+            checkBoxColor="#469597" 
           />
           <View>
             <Text style={styles.toggleText}>
@@ -62,7 +63,7 @@ export default function CreateAccount2() {
         </Pressable>
       </View>
 
-      <View style={{ flexDirection: "row", justifyContent: "center" }}>
+      <View style={styles.footer}>
         <Text style={styles.footerButtonText}>Vous avez déjà un compte ? </Text>
         <Pressable>
           <Text style={[styles.footerButtonText, { color: "#469597" }]}>
@@ -114,6 +115,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
   },
+  footer: { flexDirection: "row", justifyContent: "center", marginTop: "auto" },
+
   footerButton: {
     borderWidth: 1,
     borderColor: "#BBC6C8",

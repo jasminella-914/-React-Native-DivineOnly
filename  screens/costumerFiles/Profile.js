@@ -6,6 +6,7 @@ import {
   Pressable,
   SafeAreaView,
   Image,
+  Button,
 } from "react-native";
 import * as Progress from "react-native-progress";
 import { NavigationContainer } from "@react-navigation/native";
@@ -63,20 +64,26 @@ export default function Profile({ navigation }) {
             </View>
           </Pressable>
           <View style={{ marginTop: 10 }}>
-            <Text style={styles.ajouterText}>Ajouter une photop</Text>
+            <Text style={styles.ajouterText}>Ajouter une photo</Text>
           </View>
         </View>
       </View>
       <View>
-        <Modal isVisible={isModalVisible}
-        // onBackdropPress={() => setModalVisible(false)}
-       
+        <Modal
+          isVisible={isModalVisible}
+          onBackdropPress={() => setModalVisible(false)}
+          style={styles.modal}
         >
-          <View style={{ backgroundColor: "#FFFFFF" }}>
-            <Text>I am the modal content!</Text>
-            <Pressable  onPress={() => setModalVisible(!isModalVisible)}>
-                <Text>Cancel</Text>
+          <View style={{ gap: 10 }}>
+            <Pressable style={styles.buttonContainer}>
+              <Text>Gallery</Text>
             </Pressable>
+            <Pressable style={styles.buttonContainer}>
+              <Text>Camera</Text>
+            </Pressable>
+            <Button title="Cancel" onPress={() => setModalVisible(!isModalVisible)}>
+              
+          </Button>
           </View>
         </Modal>
       </View>
@@ -145,5 +152,21 @@ const styles = StyleSheet.create({
     color: "#BBC6C8",
     fontSize: 14,
     fontWeight: "500",
+  },
+  modal: {
+    // backgroundColor: "#FFFFFF",
+    // flex: 0.3,
+    // borderRadius: 20,
+    // padding: 20,
+    justifyContent: "flex-start",
+    backgroundColor: "#FFFFFF",
+    flex: 0.25,
+    marginTop: "auto",
+    padding: 20,
+    borderRadius: 20,
+  },
+  buttonContainer: {
+    paddingVertical: 20,
+    borderColor: "#BBC6C8",
   },
 });

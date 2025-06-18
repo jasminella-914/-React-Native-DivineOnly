@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   Pressable,
   Image,
@@ -20,13 +19,20 @@ export default function Je_travaille() {
         <Ionicons name="arrow-back" size={24} />
       </Pressable>
 
-      <ImageBackground source={logoImg} style={{ flex: 0.5}}>
-        <Image
-          source={require("../assets/Logo.png")}
-          style={{ alignSelf: "center" }}
-        />
-        <Image source={require("../assets/twoperson.png")} style={{ alignSelf: "center" }}/>
-      </ImageBackground>
+      <Image source={logoImg} />
+
+      <Image
+        source={require("../assets/Logo.png")}
+        style={{ alignSelf: "center", position: "absolute", top: 40 }}
+      />
+      <Image
+        source={require("../assets/twoperson.png")}
+        style={{
+          position: "absolute",
+          alignSelf: "center",
+          top: 130,
+        }}
+      />
       <View style={styles.secondContainer}>
         <View style={{ marginBottom: 20 }}>
           <Text style={styles.text}>Je travaille</Text>
