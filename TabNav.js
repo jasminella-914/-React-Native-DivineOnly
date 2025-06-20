@@ -34,7 +34,7 @@ export default function TabNav() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
-            <Ionicons name="cart-outline" size={25} color={color} />
+            <Image source={require("../my-DivineOnly/assets/shop.png")} size={25} color={color} />
           ),
           tabBarActiveBackgroundColor: "#469597",
           tabBarActiveTintColor: "#FFFFFF",
