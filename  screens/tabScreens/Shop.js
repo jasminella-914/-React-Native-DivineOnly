@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SHOP_DATA } from "../../data/data";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { SheetManager } from "react-native-actions-sheet";
 // import { useNavigation } from "@react-navigation/native";
 
 const bgImg = require("../../assets/Bg.png");
@@ -26,7 +27,7 @@ export default function Shop() {
         }}
       >
         <View style={{ flexDirection: "row", gap: 20, alignItems: "center" }}>
-          <Pressable style={styles.button}>
+          <Pressable  onPress={() => SheetManager.show("Filter") } style={styles.button}>
             <Image source={require("../../assets/filter.png")} />
             <Text style={styles.text}>Filtrer</Text>
           </Pressable>
@@ -40,20 +41,58 @@ export default function Shop() {
         </Pressable>
       </View>
       <FlatList
+        ItemSeparatorComponent={() => {
+          return <View style={{ height: 20 }}></View>;
+        }}
         data={SHOP_DATA}
         renderItem={({ item }) => {
           return (
-            <View>
-              <Image
-                source={item.image}
-                style={{
-                  width: 50,
-                  height: 50
-                }}
-              />
-              <Text>{item.name}</Text>
-              <Text>{item.info}</Text>
-              <Text>{item.price}</Text>
+            <View style={styles.dataContainer}>
+              <View style={styles.productContainer}>
+                <Image
+                  source={item.image}
+                  style={{
+                    width: 172,
+                    height: 164,
+                  }}
+                />
+                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.info}>{item.info}</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={styles.info}>{item.price}</Text>
+                  <Image source={item.icon} />
+                </View>
+              </View>
+              <View style={styles.productContainer}>
+                <Image
+                  source={item.image}
+                  style={{
+                    width: 172,
+                    height: 164,
+                  }}
+                />
+                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.info}>{item.info}</Text>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Text style={styles.info}>{item.price}</Text>
+                  <Image source={item.icon}
+                 
+                   />
+                </View>
+              </View>
             </View>
           );
         }}
@@ -82,5 +121,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 10,
+  },
+  productContainer: {
+    gap: 10,
+  },
+  name: {
+    fontSize: 12,
+    fontWeight: "400",
+  },
+  info: {
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  dataContainer: {
+    flexDirection: "row",
+    paddingHorizontal: 10,
+    gap: 10,
+
+    marginTop: 20,
   },
 });

@@ -1,32 +1,33 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import ActionSheet from "react-native-actions-sheet";
+import ActionSheet, { SheetManager } from "react-native-actions-sheet";
+// import { useNavigation } from "@react-navigation/native";
 
-export default function SettingsModal() {
+export default function SettingsModal({ navigation }) {
   return (
-    <ActionSheet containerStyle={{ flex: 0.5 }} id="Settings">
+    <ActionSheet containerStyle={{ flex: 0.7 }} id="Settings">
       <View>
         <Text style={styles.headerText}>Paramètres</Text>
-        <ScrollView style={styles.buttons}>
+        <View style={styles.buttons}>
           <Pressable>
-            <Text>Mon compte</Text>
+            <Text style={styles.buttonsText}>Mon compte</Text>
           </Pressable>
           <Pressable>
-            <Text>Notifications</Text>
+            <Text style={styles.buttonsText}>Notifications</Text>
           </Pressable>
           <Pressable>
-            <Text>Aide</Text>
+            <Text style={styles.buttonsText}>Aide</Text>
           </Pressable>
           <Pressable>
-            <Text>À propos</Text>
+            <Text style={styles.buttonsText}>À propos</Text>
           </Pressable>
           <Pressable>
-            <Text>Confidentialité</Text>
+            <Text style={styles.buttonsText}>Confidentialité</Text>
           </Pressable>
           <Pressable>
-            <Text>Déconnexion</Text>
+            <Text style={styles.buttonsText}>Déconnexion</Text>
           </Pressable>
-        </ScrollView>
+        </View>
       </View>
     </ActionSheet>
   );
@@ -40,6 +41,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttons: {
-    alignItems: "center"
-  }
+    alignItems: "center",
+    gap: 50,
+    marginTop: 50,
+  },
+  buttonsText: {
+    fontSize: 14,
+    fontWeight: "500",
+  },
 });

@@ -17,6 +17,7 @@ import TabNav from "./TabNav";
 import EditProfile from "./ screens/tabScreens/profile/EditProfile";
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import "./utils/Sheet"
+import Notifications from "./ screens/tabScreens/profile/Notifications";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -111,6 +112,13 @@ export default function App() {
           <Stack.Screen
             name="Edit Profile"
             component={EditProfile}
+            options={{
+              headerShown: false,
+            }}
+          />
+           <Stack.Screen
+            name="Notifications"
+            component={Notifications}
             options={{
               headerShown: false,
             }}
