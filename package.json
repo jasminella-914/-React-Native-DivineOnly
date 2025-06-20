@@ -20,6 +20,7 @@
     "radio-buttons-react-native": "^1.0.4",
     "react": "19.0.0",
     "react-native": "0.79.3",
+    "react-native-actions-sheet": "^0.9.7",
     "react-native-check-box": "^2.1.7",
     "react-native-ionicons": "^4.6.5",
     "react-native-modal": "^14.0.0-rc.1",
