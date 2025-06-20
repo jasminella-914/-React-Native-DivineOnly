@@ -9,18 +9,17 @@ import {
   ScrollView,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-// import Modal from "react-native-modal";
-// import React, { useState,  useCallback, useMemo, useRef } from "react";
-// import TopNav from "../../TopNav";
-// import { useNavigation } from "@react-navigation/native";
-// import { GestureHandlerRootView } from 'react-native-gesture-handler';
-// import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+import Pager from "../Pager";
+import PagerView from "react-native-pager-view";
+import { SheetManager } from "react-native-actions-sheet";
+
 
 export default function Profile({ navigation }) {
-  // const [isModalVisible, setIsModalVisible] = useState(false);
-  // const toggleModal = () => {
-  //   setIsModalVisible(!isModalVisible);
-  // };
+  const appointmentList = {
+    image: require("../../assets/Photo.png"),
+    date: "Dimanche 17 Juin • 16h",
+    info: "Institut Pyrène • 4 prestations",
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -31,30 +30,13 @@ export default function Profile({ navigation }) {
           <Image source={require("../../assets/profile.png")} />
           <Text style={styles.headertext}>Manon</Text>
         </Pressable>
-        <Pressable>
+        <Pressable onPress={() => SheetManager.show("Settings") }>
           <Ionicons name="settings-outline" size={29} />
         </Pressable>
       </View>
-
-      {/* <View>
-        <Modal
-          isVisible={isModalVisible}
-          onBackdropPress={() => setIsModalVisible(false)}
-          style={styles.modal}
-        >
-          <View style={{ gap: 10 }}>
-            <Pressable style={styles.buttonContainer}>
-              <Text>Gallery</Text>
-            </Pressable>
-            <Pressable style={styles.buttonContainer}>
-              <Text>Camera</Text>
-            </Pressable>
-            <Button title="Cancel" onPress={() => setModalVisible(!isModalVisible)}>
-                    
-                </Button>
-          </View>
-        </Modal>
-      </View> */}
+      <PagerView style={styles.pagerView} initialPage={0}>
+        <Pager {...appointmentList} />
+      </PagerView>
     </SafeAreaView>
   );
 }
@@ -82,5 +64,18 @@ const styles = StyleSheet.create({
     marginTop: "auto",
     padding: 20,
     borderRadius: 20,
+  },
+  pagerView: {
+    flex: 1,
+  },
+  pageText: {
+    color: "#469597",
+    fontSize: 14,
+    lineHeight: 18,
+    fontWeight: "500",
+    textAlign: "center",
+    borderBottomWidth: 1,
+    borderColor: "#469597",
+    padding: 10,
   },
 });
