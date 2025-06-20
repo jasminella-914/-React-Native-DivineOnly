@@ -15,7 +15,7 @@ import { SheetManager } from "react-native-actions-sheet";
 
 const bgImg = require("../../assets/Bg.png");
 const twoperson = require("../../assets//twoperson.png");
-export default function Shop() {
+export default function Shop({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View
@@ -36,7 +36,7 @@ export default function Shop() {
             <Text style={styles.text}>Trier</Text>
           </Pressable>
         </View>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate("My Basket")}>
           <Image source={require("../../assets/shop.png")} />
         </Pressable>
       </View>

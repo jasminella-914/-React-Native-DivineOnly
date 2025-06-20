@@ -18,6 +18,7 @@ import EditProfile from "./ screens/tabScreens/profile/EditProfile";
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import "./utils/Sheet"
 import Notifications from "./ screens/tabScreens/profile/Notifications";
+import MyBasket from "./ screens/costumerFiles/MyBasket";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -119,6 +120,13 @@ export default function App() {
            <Stack.Screen
             name="Notifications"
             component={Notifications}
+            options={{
+              headerShown: false,
+            }}
+          />
+           <Stack.Screen
+            name="My Basket"
+            component={MyBasket}
             options={{
               headerShown: false,
             }}
