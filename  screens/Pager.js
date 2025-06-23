@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { FlatList } from "react-native-actions-sheet";
+import { SheetManager } from "react-native-actions-sheet";
 
 import PagerView from "react-native-pager-view";
-import { APPOINTMENT_LIST } from "../data/data";
+import { APPOINTMENT_LIST, SALONS_DATA } from "../data/data";
 
 export default function Pager() {
   return (
@@ -13,13 +14,13 @@ export default function Pager() {
           data={APPOINTMENT_LIST}
           renderItem={({ item }) => {
             return (
-              <View  style={styles.list}>
+              <Pressable onPress={() => SheetManager.show("Reschedule")} style={styles.list}>
                 <Image source={item.image} />
                 <View style={{ justifyContent: "center", gap: 10 }}>
                   <Text style={styles.date}>{item.date}</Text>
                   <Text style={styles.info}>{item.info}</Text>
                 </View>
-              </View>
+              </Pressable>
             );
           }}
         />
@@ -28,6 +29,42 @@ export default function Pager() {
         <Text style={styles.pageText}>Favoris</Text>
         <View>
           <Text style={styles.headertext}>Salons favoris</Text>
+          <FlatList
+            data={SALONS_DATA}
+            ItemSeparatorComponent={() => {
+              return(
+                <View style={{ height: 20,}}></View>
+              )
+            }}
+            renderItem={({ item }) => {
+              return (
+                <View style={{ marginTop: 20}}>
+                  <Image source={item.image} />
+                  <View
+                    style={{
+                      justifyContent: "center",
+                      gap: 10,
+                      backgroundColor: "#00000008",
+                      paddingHorizontal: 8,
+                      paddingVertical: 20,
+                      borderBottomLeftRadius: 20,
+                      borderBottomRightRadius: 20
+                    }}
+                  >
+                    <Text style={styles.date}>{item.title}</Text>
+                    <View style={{ flexDirection: "row", gap: 10 }}>
+                      <Image source={item.icon} width={15} height={18} />
+                      <Text style={styles.location}>{item.location}</Text>
+                    </View>
+                    <View style={{ flexDirection: "row", gap: 5 }}>
+                      <Image source={item.secondIcon} />
+                      <Text>{item.rate}</Text>
+                    </View>
+                  </View>
+                </View>
+              );
+            }}
+          />
         </View>
       </View>
     </PagerView>
@@ -73,5 +110,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
     color: "#000000",
+  },
+  location: {
+    textDecorationLine: "underline",
+    fontSize: 14,
+    fontWeight: "400",
   },
 });

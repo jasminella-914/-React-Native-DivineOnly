@@ -13,13 +13,7 @@ import Pager from "../Pager";
 import PagerView from "react-native-pager-view";
 import { SheetManager } from "react-native-actions-sheet";
 
-
 export default function Profile({ navigation }) {
-  // const appointmentList = {
-  //   image: require("../../assets/Photo.png"),
-  //   date: "Dimanche 17 Juin • 16h",
-  //   info: "Institut Pyrène • 4 prestations",
-  // };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -30,13 +24,12 @@ export default function Profile({ navigation }) {
           <Image source={require("../../assets/profile.png")} />
           <Text style={styles.headertext}>Manon</Text>
         </Pressable>
-        <Pressable onPress={() => SheetManager.show("Settings") }>
+        <Pressable onPress={() => SheetManager.show("Settings")}>
           <Ionicons name="settings-outline" size={29} />
         </Pressable>
       </View>
       <PagerView style={styles.pagerView} initialPage={0}>
-        <Pager/>
-        {/* <Pager {...appointmentList} /> */}
+        <Pager />
       </PagerView>
     </SafeAreaView>
   );

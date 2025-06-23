@@ -3,7 +3,9 @@ import Icon from "../assets/greenShop.png";
 import IAimage from "../assets//Braids.png";
 import IaImage from "../assets/Maquillage.png";
 import BlackImage from "../assets/Photo.png";
-
+import SalonImage from "../assets/greenstone.png";
+import LocationIcon from "../assets/location.png";
+import Star from "../assets/star.png";
 export const SHOP_DATA = [
   {
     name: "Camille rose",
@@ -148,5 +150,48 @@ export const APPOINTMENT_LIST = [
     image: BlackImage,
     date: "Dimanche 17 Juin • 16h",
     info: "Institut Pyrène • 4 prestations",
+  },
+];
+
+export const SALONS_DATA = [
+  {
+    image: SalonImage,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+  },
+  {
+    image: SalonImage,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+  },
+  {
+    image: SalonImage,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+  },
+  {
+    image: SalonImage,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+  },
+  {
+    image: SalonImage,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
   },
 ];
