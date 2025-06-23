@@ -19,6 +19,10 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import "./utils/Sheet"
 import Notifications from "./ screens/tabScreens/profile/Notifications";
 import MyBasket from "./ screens/costumerFiles/MyBasket";
+import Afro from "./ screens/costumerFiles/Afro";
+import Delivery from "./ screens/costumerFiles/Delivery";
+import Payment from "./ screens/costumerFiles/Payment";
+import Confirmation from "./ screens/costumerFiles/Confirmation";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -131,6 +135,35 @@ export default function App() {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="Afro"
+            component={Afro}
+            options={{
+              headerShown: false,
+            }}
+          />
+           <Stack.Screen
+            name="Delivery"
+            component={Delivery}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Payment"
+            component={Payment}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Confirmation"
+            component={Confirmation}
+            options={{
+              headerShown: false,
+            }}
+          />
+         
         </Stack.Navigator>
       </NavigationContainer>
     </SheetProvider>
