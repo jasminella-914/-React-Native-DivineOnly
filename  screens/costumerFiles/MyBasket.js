@@ -41,25 +41,36 @@ export default function MyBasket({ navigation }) {
                     borderRadius: 10,
                   }}
                 />
-                <View>
+                <View style={{ gap: 5 }}>
                   <Text style={styles.name}>{item.name}</Text>
                   <Text style={styles.info}>{item.info}</Text>
-                  <Text>{item.size}</Text>
-                  <View>
-                    <Text style={styles.info}>{item.price}</Text>
-                    <Image source={item.icon} />
-                  </View>
+                  <Text style={styles.info}>{item.size}</Text>
                 </View>
+
+                <Text style={styles.price}>{item.price}</Text>
               </View>
             </View>
           );
         }}
       />
+      <View style={{ gap: 20, paddingHorizontal: 20}}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.name}>Total</Text>
+          <Text style={styles.price}>75,00€</Text>
+        </View>
+        <Pressable style={styles.footerButton}>
+          <Text style={styles.footerButtonText}>Acheter pour 19,99€</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+  },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
@@ -69,12 +80,43 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     gap: 100,
+    paddingBottom: 30
   },
   dataContainer: {
     paddingHorizontal: 20,
-    marginTop: 30
+    // marginTop: 30,
   },
   productContainer: {
     flexDirection: "row",
+    gap: 10,
   },
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#000000",
+  },
+  info: {
+    fontSize: 12,
+    fontWeight: "400",
+    color: "#000000",
+  },
+  price: {
+    fontSize: 14,
+    fontWeight: "500",
+    position: "absolute",
+    right: 0,
+    bottom: 0,
+  },
+  footerButton: {
+    backgroundColor: "#469597",
+    paddingVertical: 15 ,
+    paddingHorizontal: 94,
+    borderRadius: 10
+  },
+  footerButtonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "600",
+    textAlign: "center" 
+  }
 });

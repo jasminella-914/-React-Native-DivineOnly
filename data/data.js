@@ -26,4 +26,20 @@ export const SHOP_DATA = [
     icon: Icon,
     size: "150 ml",
   },
+  {
+    name: "Camille rose",
+    info: "Sweet ginger cleansing rinse",
+    price: "25,00€",
+    image: Image,
+    icon: Icon,
+    size: "150 ml",
+  },
+  {
+    name: "Camille rose",
+    info: "Sweet ginger cleansing rinse",
+    price: "25,00€",
+    image: Image,
+    icon: Icon,
+    size: "150 ml",
+  },
 ];
