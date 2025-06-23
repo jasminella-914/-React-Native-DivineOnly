@@ -42,6 +42,8 @@ export default function Services() {
           <TextInput
             placeholder="Nom du professionnel, prestations..."
             style={styles.inputContainer}
+            
+
           />
           <TextInput
             placeholder="Adresse, ville..."

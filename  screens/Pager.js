@@ -1,42 +1,34 @@
 import { View, Text, StyleSheet, Image } from "react-native";
+import { FlatList } from "react-native-actions-sheet";
 
 import PagerView from "react-native-pager-view";
+import { APPOINTMENT_LIST } from "../data/data";
 
-export default function Pager({ image, date, info }) {
+export default function Pager() {
   return (
     <PagerView style={styles.pagerView} initialPage={0}>
       <View key="1">
         <Text style={styles.pageText}>Rendez-vous</Text>
-        <View>
-          <Text style={styles.headertext}>Rendez-vous à venir</Text>
-        </View>
-        <View style={styles.list}>
-          <Image source={image} />
-          <View style={{ justifyContent: "center", gap: 10 }}>
-            <Text style={styles.date}>{date}</Text>
-            <Text style={styles.info}>{info}</Text>
-          </View>
-          
-        </View>
-        <View style={styles.list}>
-          <Image source={image} />
-          <View style={{ justifyContent: "center", gap: 10 }}>
-            <Text style={styles.date}>{date}</Text>
-            <Text style={styles.info}>{info}</Text>
-          </View>
-          
-        </View>
-        <View style={styles.list}>
-          <Image source={image} />
-          <View style={{ justifyContent: "center", gap: 10 }}>
-            <Text style={styles.date}>{date}</Text>
-            <Text style={styles.info}>{info}</Text>
-          </View>
-          
-        </View>
+        <FlatList
+          data={APPOINTMENT_LIST}
+          renderItem={({ item }) => {
+            return (
+              <View  style={styles.list}>
+                <Image source={item.image} />
+                <View style={{ justifyContent: "center", gap: 10 }}>
+                  <Text style={styles.date}>{item.date}</Text>
+                  <Text style={styles.info}>{item.info}</Text>
+                </View>
+              </View>
+            );
+          }}
+        />
       </View>
       <View key="2">
-        <Text style={styles.pageText}>Second page</Text>
+        <Text style={styles.pageText}>Favoris</Text>
+        <View>
+          <Text style={styles.headertext}>Salons favoris</Text>
+        </View>
       </View>
     </PagerView>
   );

@@ -58,7 +58,7 @@ export default function MyBasket({ navigation }) {
           <Text style={styles.name}>Total</Text>
           <Text style={styles.price}>75,00€</Text>
         </View>
-        <Pressable style={styles.footerButton}>
+        <Pressable onPress={() => navigation.navigate("Delivery")} style={styles.footerButton}>
           <Text style={styles.footerButtonText}>Acheter pour 19,99€</Text>
         </Pressable>
       </View>

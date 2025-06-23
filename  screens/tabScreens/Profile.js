@@ -15,11 +15,11 @@ import { SheetManager } from "react-native-actions-sheet";
 
 
 export default function Profile({ navigation }) {
-  const appointmentList = {
-    image: require("../../assets/Photo.png"),
-    date: "Dimanche 17 Juin • 16h",
-    info: "Institut Pyrène • 4 prestations",
-  };
+  // const appointmentList = {
+  //   image: require("../../assets/Photo.png"),
+  //   date: "Dimanche 17 Juin • 16h",
+  //   info: "Institut Pyrène • 4 prestations",
+  // };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -35,7 +35,8 @@ export default function Profile({ navigation }) {
         </Pressable>
       </View>
       <PagerView style={styles.pagerView} initialPage={0}>
-        <Pager {...appointmentList} />
+        <Pager/>
+        {/* <Pager {...appointmentList} /> */}
       </PagerView>
     </SafeAreaView>
   );

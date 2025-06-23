@@ -7,68 +7,110 @@ import {
   Pressable,
   Image,
   ScrollView,
+  ImageBackground,
+  Modal,
+  FlatList,
 } from "react-native";
-// import { useNavigation } from "@react-navigation/native";
 
-const bgImg = require("../../assets/Bg.png");
-const twoperson = require("../../assets//twoperson.png");
-export default function IA() {
+import SegmentedControlTab from "react-native-segmented-control-tab";
+import { useState } from "react";
+import { IA_DATA, IA_DATA2 } from "../../data/data";
+export default function IA({ navigation }) {
+  const [selectedIndex, setIsSelectedIndex] = useState();
+const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
-      <ScrollView>
-        <View>
-          <Image source={bgImg} style={{ position: "relative" }} />
-          <Image
-            source={twoperson}
-            style={{
-              position: "absolute",
-              alignItems: "center",
-              justifyContent: "center",
-              left: 90,
-              top: 50,
-            }}
-          />
-        </View>
-        <View style={styles.container}>
-          <View>
-            <Text style={styles.headerText}>Lien envoyé</Text>
-          </View>
-          <View>
-            <Text style={styles.text}>Le lien vous a été envoyé par mail.</Text>
-          </View>
-        </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headertext}>ia</Text>
+      </View>
 
-      </ScrollView>
+      <ImageBackground
+        source={require("../../assets/IAbg.png")}
+        style={{ width: 393, flex: 1, marginTop: 30 }}
+      />
+      <View
+        style={{
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          overflow: "hidden",
+          backgroundColor: "#FFFFFF",
+          position: "absolute",
+          zIndex: 1,
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }}
+      >
+        {/* <SegmentedControlTab
+          values={["Coiffure", "Maquillage"]}
+          selectedIndex={selectedIndex}
+          onTabPress={setIsSelectedIndex}
+        /> */}
+        {/* {selectedIndex === 0 && (
+          <Text style={styles.content}>Content for First Tab</Text>
+        )} */}
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          {["Coiffure", "Maquillage"].map((item, index) => (
+            <Pressable
+              style={{
+                flex: 1,
+                alignItems: "center",
+                paddingVertical: 12,
+                borderBottomWidth: selectedIndex === index ? 2 : 1,
+
+                borderColor: selectedIndex === index ? "#469597" : "#BBC6C8",
+              }}
+              onPress={() => setIsSelectedIndex(index)}
+              key={index}
+            >
+              <Text
+                style={{
+                  color: selectedIndex === index ? "#469597" : "#BBC6C8",
+                  fontSize: 16,
+                  fontWeight: "500",
+                }}
+              >
+                {item}
+              </Text>
+            </Pressable>
+          ))}
+        </View>
+        <FlatList
+
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={data}
+          renderItem={({ item }) => {
+            return (
+              <View style={{ alignItems: "center", paddingVertical: 15}}>
+                <Image source={item.image}/>
+                <Text>{item.name}</Text>
+              </View>
+            );
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 20,
-    gap: 20,
-    alignItems: "center",
+    flex: 1,
+    backgroundColor: "#FFFFFF",
   },
-  headerText: {
+  headertext: {
+    textTransform: "uppercase",
+    fontSize: 18,
+    fontWeight: "700",
     color: "#0E1F20",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  text: {
-    color: "#0E1F20",
-    fontSize: 12,
-  },
-  buttonContainer: {
-    backgroundColor: "#469597",
-    padding: 18,
-    borderRadius: 10,
-   marginHorizontal: 20,
-   marginTop: 50
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
+    alignSelf: "center",
+    position: "absolute",
+    top: 0,
   },
 });

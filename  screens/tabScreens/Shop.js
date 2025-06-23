@@ -47,7 +47,7 @@ export default function Shop({ navigation }) {
         data={SHOP_DATA}
         renderItem={({ item }) => {
           return (
-            <View style={styles.dataContainer}>
+            <Pressable onPress={() => navigation.navigate("Afro")} style={styles.dataContainer}>
               <View style={styles.productContainer}>
                 <Image
                   source={item.image}
@@ -93,7 +93,7 @@ export default function Shop({ navigation }) {
                    />
                 </View>
               </View>
-            </View>
+            </Pressable>
           );
         }}
       />
