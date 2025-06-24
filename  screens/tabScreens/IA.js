@@ -12,12 +12,11 @@ import {
   FlatList,
 } from "react-native";
 
-import SegmentedControlTab from "react-native-segmented-control-tab";
 import { useState } from "react";
 import { IA_DATA, IA_DATA2 } from "../../data/data";
 export default function IA({ navigation }) {
   const [selectedIndex, setIsSelectedIndex] = useState();
-const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
+  const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -41,14 +40,6 @@ const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
           right: 0,
         }}
       >
-        {/* <SegmentedControlTab
-          values={["Coiffure", "Maquillage"]}
-          selectedIndex={selectedIndex}
-          onTabPress={setIsSelectedIndex}
-        /> */}
-        {/* {selectedIndex === 0 && (
-          <Text style={styles.content}>Content for First Tab</Text>
-        )} */}
         <View
           style={{
             flexDirection: "row",
@@ -81,14 +72,13 @@ const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
           ))}
         </View>
         <FlatList
-
           horizontal
           showsHorizontalScrollIndicator={false}
           data={data}
           renderItem={({ item }) => {
             return (
-              <View style={{ alignItems: "center", paddingVertical: 15}}>
-                <Image source={item.image}/>
+              <View style={styles.controltab}>
+                <Image source={item.image} />
                 <Text>{item.name}</Text>
               </View>
             );
@@ -112,5 +102,10 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     position: "absolute",
     top: 0,
+  },
+  controltab: {
+    alignItems: "center",
+    paddingVertical: 15,
+    backgroundColor: "#FFFFFF",
   },
 });

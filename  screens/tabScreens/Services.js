@@ -7,9 +7,11 @@ import {
   Image,
   FlatList,
   Pressable,
+  Modal,
 } from "react-native";
 import RadioButtonRN from "radio-buttons-react-native";
-
+import { useState } from "react";
+import Resercher from "../costumerFiles/Resercher";
 
 const data = [
   {
@@ -20,7 +22,7 @@ const data = [
   },
 ];
 
-export default function Services() {
+export default function Services({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Image
@@ -42,14 +44,12 @@ export default function Services() {
           <TextInput
             placeholder="Nom du professionnel, prestations..."
             style={styles.inputContainer}
-            
-
           />
           <TextInput
             placeholder="Adresse, ville..."
             style={styles.inputContainer}
           />
-          <Pressable style={styles.button}>
+          <Pressable onPress={() => navigation.navigate("Resercher")} style={styles.button}>
             <Text style={styles.buttonText}>Rechercher</Text>
           </Pressable>
         </View>
@@ -66,18 +66,17 @@ const styles = StyleSheet.create({
   logo: {
     alignSelf: "center",
   },
-  
+
   secondContainer: {
     backgroundColor: "#F5F5F5",
     marginHorizontal: 20,
     borderRadius: 20,
     marginTop: 20,
-    
   },
   headerText: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20"
+    color: "#0E1F20",
   },
   inputContainer: {
     borderWidth: 1,
@@ -99,6 +98,6 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 });

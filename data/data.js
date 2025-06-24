@@ -1,11 +1,12 @@
 import Image from "../assets/brush.png";
 import Icon from "../assets/greenShop.png";
 import IAimage from "../assets//Braids.png";
-import IaImage from "../assets/Maquillage.png";
+import IaImage from "../assets/maquillage.png";
 import BlackImage from "../assets/Photo.png";
 import SalonImage from "../assets/greenstone.png";
 import LocationIcon from "../assets/location.png";
 import Star from "../assets/star.png";
+import serviceImage from "../assets/service.png"
 export const SHOP_DATA = [
   {
     name: "Camille rose",
@@ -193,5 +194,56 @@ export const SALONS_DATA = [
     location: "500 Rte de Berre, 33300 Bordeaux",
     secondIcon: Star,
     rate: "4,9   17 avis",
+  },
+];
+
+export const SERVICE_DATA = [
+  {
+    image: serviceImage,
+    service: "Au salon",
+    title: "Institut Pyrène",
+    loc: "500 Rte de Berre, 33300 Bordeaux",
+    icon: LocationIcon,
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+    month: "Mar 10",
+    type: "Jeu 12",
+    day: "Ven 13"
+  },
+  {
+    image: serviceImage,
+    service: "Au salon",
+    title: "Institut Pyrène",
+    loc: "500 Rte de Berre, 33300 Bordeaux",
+    icon: LocationIcon,
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+    month: "Mar 10",
+    type: "Jeu 12",
+    day: "Ven 13"
+  },
+  {
+    image: serviceImage,
+    service: "Au salon",
+    title: "Institut Pyrène",
+    loc: "500 Rte de Berre, 33300 Bordeaux",
+    icon: LocationIcon,
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+    month: "Mar 10",
+    type: "Jeu 12",
+    day: "Ven 13"
+  },
+  {
+    image: serviceImage,
+    service: "Au salon",
+    title: "Institut Pyrène",
+    loc: "500 Rte de Berre, 33300 Bordeaux",
+    icon: LocationIcon,
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+    month: "Mar 10",
+    type: "Jeu 12",
+    day: "Ven 13"
   },
 ];
