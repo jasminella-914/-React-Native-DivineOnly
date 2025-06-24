@@ -10,6 +10,7 @@ import {
 import React from "react";
 import { FlatList } from "react-native-gesture-handler";
 import { SERVICE_DATA } from "../data/data";
+import { SheetManager } from "react-native-actions-sheet";
 
 export default function Booking() {
   return (
@@ -20,7 +21,10 @@ export default function Booking() {
         <TextInput placeholder="Où ? " style={styles.input} />
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={styles.headerText}>Réserve ta prestation</Text>
-          <Pressable style={styles.button}>
+          <Pressable
+            onPress={() => SheetManager.show("Sort")}
+            style={styles.button}
+          >
             <Image
               source={require("../assets/filter.png")}
               width={19}
