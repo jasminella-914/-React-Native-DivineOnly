@@ -1,10 +1,17 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View, Button } from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
+import Modal from "react-native-modal";
+import { useState } from "react";
+import { navigate } from "../../navigationService";
 
-export default function ReschedModal() {
+const ReschedModal = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
   return (
-    <ActionSheet containerStyle={{ flex: 0.55 }} id="Reschedule">
+    <ActionSheet containerStyle={{ flex: 0.6 }} id="Reschedule">
       <View>
         <Image source={require("../../assets/groupPhoto.png")} />
         <View style={{ alignItems: "center", gap: 20, marginTop: 20 }}>
@@ -21,7 +28,12 @@ export default function ReschedModal() {
             }}
           >
             <Image source={require("../../assets/location.png")} />
-            <Text style={[styles.bodyText, { fontSize: 13 }]}>
+            <Text
+              style={[
+                styles.bodyText,
+                { fontSize: 13, textDecorationLine: "underline" },
+              ]}
+            >
               500 Rte de Berre, 33300 Bordeaux
             </Text>
           </View>
@@ -40,12 +52,20 @@ export default function ReschedModal() {
           </View>
         </View>
       </View>
-      <Pressable style={styles.footerbutton}>
+      <Pressable
+        onPress={() => {
+          SheetManager.hide("Reschedule");
+          navigate("Reschedule");
+        }}
+        style={styles.footerbutton}
+      >
         <Text style={styles.footertext}>Replanifier</Text>
       </Pressable>
     </ActionSheet>
   );
-}
+};
+
+export default ReschedModal;
 
 const styles = StyleSheet.create({
   headerText: {
@@ -70,5 +90,9 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
+  },
+  modal: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
   },
 });

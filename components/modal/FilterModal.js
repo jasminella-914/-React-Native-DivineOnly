@@ -10,6 +10,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import React from "react";
 
 export default function FilterModal() {
+  
   return (
     <ActionSheet
       containerStyle={{ flex: 0.7, paddingHorizontal: 20 }}
@@ -102,5 +103,6 @@ const styles = StyleSheet.create({
     height: 5,
     marginTop: 20,
     alignSelf: "center",
+    borderRadius: 5,
   },
 });

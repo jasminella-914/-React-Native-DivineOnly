@@ -1,6 +1,8 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
+import { navigate } from "../../navigationService";
+
 // import { useNavigation } from "@react-navigation/native";
 
 export default function SettingsModal({ navigation }) {
@@ -12,7 +14,12 @@ export default function SettingsModal({ navigation }) {
           <Pressable>
             <Text style={styles.buttonsText}>Mon compte</Text>
           </Pressable>
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              SheetManager.hide("Settings");
+              navigate("Notification Setting");
+            }}
+          >
             <Text style={styles.buttonsText}>Notifications</Text>
           </Pressable>
           <Pressable>
