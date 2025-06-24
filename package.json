@@ -21,16 +21,19 @@
     "react": "19.0.0",
     "react-native": "0.79.3",
     "react-native-actions-sheet": "^0.9.7",
+    "react-native-calendars": "^1.1312.1",
     "react-native-check-box": "^2.1.7",
     "react-native-gesture-handler": "^2.26.0",
     "react-native-ionicons": "^4.6.5",
     "react-native-modal": "^14.0.0-rc.1",
     "react-native-pager-view": "^6.8.1",
     "react-native-progress": "^5.0.1",
+    "react-native-radio-buttons-group": "^3.1.0",
     "react-native-safe-area-context": "^5.4.1",
     "react-native-screens": "^4.11.1",
     "react-native-segmented-control-tab": "^4.0.0",
-    "react-native-svg": "^15.12.0"
+    "react-native-svg": "^15.12.0",
+    "toggle-switch-react-native": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
