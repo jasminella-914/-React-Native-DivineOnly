@@ -2,14 +2,64 @@ import {
   Image,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Calendar, LocaleConfig } from "react-native-calendars";
+
+// import { LocaleConfig } from "react-native-calendars";
+
+LocaleConfig.locales["fr"] = {
+  monthNames: [
+    "Janvier",
+    "Février",
+    "Mars",
+    "Avril",
+    "Mai",
+    "Juin",
+    "Juillet",
+    "Août",
+    "Septembre",
+    "Octobre",
+    "Novembre",
+    "Décembre",
+  ],
+  monthNamesShort: [
+    "Janv.",
+    "Févr.",
+    "Mars",
+    "Avril",
+    "Mai",
+    "Juin",
+    "Juil.",
+    "Août",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Déc.",
+  ],
+  dayNames: [
+    "Dimanche",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+  ],
+  dayNamesShort: ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."],
+  today: "Aujourd'hui",
+};
+
+LocaleConfig.defaultLocale = "fr";
 
 export default function Appointment({ navigation }) {
+  const [selected, setSelected] = useState("");
+
   return (
     <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
       <View style={styles.header}>
@@ -21,49 +71,90 @@ export default function Appointment({ navigation }) {
         </Pressable>
         <Text style={styles.headertext}>Prendre rendez-vous</Text>
       </View>
-      <Text style={styles.title}>Lola Brazilia</Text>
-      <View style={styles.container}>
-        <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
-        <Text style={styles.text}>Convient à tout type de peau</Text>
-        <View
-          style={{
-            // borderBottomWidth: 1,
-            borderColor: "#BBC6C873",
-            flexDirection: "row",
-            gap: 10,
-          }}
-        >
-          <Image source={require("../../assets//Clock.png")} />
-          <Text style={styles.time}>30 min</Text>
-          <Text style={[styles.time, { color: "#469597" }]}>45€</Text>
+      <ScrollView>
+        <Text style={styles.title}>Lola Brazilia</Text>
+        <View style={styles.container}>
+          <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
+          <Text style={styles.text}>Convient à tout type de peau</Text>
+          <View
+            style={{
+              // borderBottomWidth: 1,
+              borderColor: "#BBC6C873",
+              flexDirection: "row",
+              gap: 10,
+            }}
+          >
+            <Image source={require("../../assets//Clock.png")} />
+            <Text style={styles.time}>30 min</Text>
+            <Text style={[styles.time, { color: "#469597" }]}>45€</Text>
+          </View>
         </View>
-      </View>
-      <View>
-        <Pressable style={styles.button}>
-          <Image source={require("../../assets/add.png")} />
-          <Text style={styles.addText}> Ajouter une prestation à la suite</Text>
-        </Pressable>
-        <Text>Avec qui ? </Text>
         <View>
-          <Pressable style={styles.buttonPhoto}>
-            <Text
-              style={[
-                styles.text,
-                {
-                  fontSize: 14,
-                  fontWeight: "500",
-                  color: "#000000",
-                  textAlign: "center",
-                  backgroundColor: "#F5F5F5",
-                  paddingVertical: 46
-                },
-              ]}
-            >
-              Première disponibilité
+          <Pressable style={styles.button}>
+            <Image source={require("../../assets/add.png")} />
+            <Text style={styles.addText}>
+              {" "}
+              Ajouter une prestation à la suite
             </Text>
           </Pressable>
+          <View style={{ paddingHorizontal: 20, gap: 20 }}>
+            <Text style={styles.name}>Avec qui ? </Text>
+            <View style={{ flexDirection: "row", gap: 20 }}>
+              <Pressable onPress={() => navigation.navigate("Your Appointment")} style={styles.buttonPhoto}>
+                <Text
+                  style={[
+                    styles.text,
+                    {
+                      fontSize: 14,
+                      fontWeight: "500",
+                      color: "#000000",
+                      textAlign: "center",
+                      backgroundColor: "#F5F5F5",
+                      paddingVertical: 30,
+                    },
+                  ]}
+                >
+                  Première disponibilité
+                </Text>
+              </Pressable>
+            </View>
+            <View style={{ gap: 10}}>
+              <Text style={[styles.name, { paddingLeft: 20}]}>Date et heure de rendez-vous </Text>
+              <View>
+                <Calendar
+                style={{
+                    // height: 100,
+                    borderRadius: 20
+                }}
+                  theme={{
+                    backgroundColor: "#F5F5F5",
+                    calendarBackground: "#F5F5F5",
+                    selectedDayBackgroundColor: "#469597",
+                    todayTextColor: "#469597",
+                    arrowColor:  "#469597",
+                    textDayStyle: {
+                        fontSize: 14,
+                        fontWeight: "600"
+                    },
+                    
+                    
+                  }}
+                  onDayPress={(day) => {
+                    setSelected(day.dateString);
+                  }}
+                  markedDates={{
+                    [selected]: {
+                      selected: true,
+                      disableTouchEvent: true,
+                      selectedDotColor: "orange",
+                    },
+                  }}
+                />
+              </View>
+            </View>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -124,5 +215,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingVertical: 20,
   },
-  buttonPhoto: {},
+  buttonPhoto: {
+    backgroundColor: "#F5F5F5",
+    paddingVertical: 23,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+  },
 });

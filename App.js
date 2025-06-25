@@ -31,6 +31,7 @@ import Resercher from "./ screens/costumerFiles/Resercher";
 import Booking from "./ screens/Booking";
 import Pyrene from "./ screens/costumerFiles/Pyrene";
 import Appointment from "./ screens/costumerFiles/Appointment";
+import Votre from "./ screens/costumerFiles/Votre";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -209,6 +210,13 @@ export default function App() {
              <Stack.Screen
               name="Appointment"
               component={Appointment}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Your Appointment"
+              component={Votre}
               options={{
                 headerShown: false,
               }}
