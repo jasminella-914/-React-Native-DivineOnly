@@ -252,27 +252,3 @@ export const SERVICE_DATA = [
   },
 ];
 
-export const INFO_DATA = [
-  {
-    text: "Lorem ipsum dolor sit amet consectetur. In laoreet in sed vel nibh morbi massa nulla vel. Nisl convallis dignissim auctor neque et amet varius auctor tincidunt. Dui pellentesque sit donec suspendisse scelerisque lectus justo. Ut feugiat ut a neque interdum.",
-    textbutton: "Voir plus",
-    title: "Les prestations",
-    textButton: "Coupe + soin",
-    TextButton: "Soin nettoyant au charbon végétal",
-  },
-];
-
-export const AVIS_DATA = [
-  {
-    image: profile,
-    name: "Marie",
-    icon: star,
-    rate: "5,0",
-    caption:
-      "Je suis venue me faire les ongles chez Lola, je suis très contente du résultat !",
-    post: photo,
-  },
-  {
-    image: profile1
-  }
-];
