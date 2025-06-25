@@ -12,7 +12,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { SERVICE_DATA } from "../data/data";
 import { SheetManager } from "react-native-actions-sheet";
 
-export default function Booking() {
+export default function Booking({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.secondContainer}>
@@ -41,8 +41,9 @@ export default function Booking() {
           }}
           renderItem={({ item }) => {
             return (
-              <View style={{ marginTop: 20 }}>
+              <Pressable onPress={() => navigation.navigate("Pyrene")} style={{ marginTop: 20 }}>
                 <Image source={item.image} />
+                <Text style={styles.service}>{item.service}</Text>
                 <View
                   style={{
                     justifyContent: "center",
@@ -57,6 +58,7 @@ export default function Booking() {
                   <Text style={styles.date}>{item.title}</Text>
                   <View style={{ flexDirection: "row", gap: 10 }}>
                     <Image source={item.icon} width={15} height={18} />
+
                     <Text style={styles.location}>{item.loc}</Text>
                   </View>
                   <View style={{ flexDirection: "row", gap: 5 }}>
@@ -69,7 +71,7 @@ export default function Booking() {
                     <Text style={styles.Text}>{item.day}</Text>
                   </View>
                 </View>
-              </View>
+              </Pressable>
             );
           }}
         />
@@ -95,6 +97,7 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     fontSize: 14,
     fontWeight: "500",
+    padding: 10,
   },
   secondContainer: {
     paddingHorizontal: 20,
@@ -127,5 +130,15 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "500",
     color: "#449598",
+  },
+  service: {
+    backgroundColor: "#FFFFFF",
+    position: "absolute",
+    top: 10,
+    left: 10,
+    padding: 4,
+    borderRadius: 10,
+    fontSize: 12,
+    fontWeight: "500"
   },
 });

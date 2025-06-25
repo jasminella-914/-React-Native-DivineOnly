@@ -1,4 +1,11 @@
-import { Pressable, StyleSheet, Text, View, Image } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Switch } from "react-native-gesture-handler";
@@ -9,8 +16,11 @@ export default function SortModal() {
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <ActionSheet containerStyle={{ flex: 0.7 }} id="Sort">
-      <View style={{ paddingHorizontal: 20, marginTop: 20 }}>
-        <View></View>
+      <View style={styles.border}></View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingHorizontal: 20 }}
+      >
         <Text style={styles.headerText}>Trier et filtrer</Text>
         <View style={{ gap: 30, marginTop: 20 }}>
           <Pressable
@@ -20,19 +30,31 @@ export default function SortModal() {
             <Text>Lieu</Text>
             <Image source={require("../../assets/chevronRight.png")} />
           </Pressable>
-          <Pressable style={styles.filter}>
+          <Pressable
+            onPress={() => SheetManager.show("Filter")}
+            style={styles.filter}
+          >
             <Text>Prix</Text>
             <Image source={require("../../assets/chevronRight.png")} />
           </Pressable>
-          <Pressable style={styles.filter}>
+          <Pressable
+            onPress={() => SheetManager.show("Note")}
+            style={styles.filter}
+          >
             <Text>Note</Text>
             <Image source={require("../../assets/chevronRight.png")} />
           </Pressable>
-          <Pressable style={styles.filter}>
+          <Pressable
+            onPress={() => SheetManager.show("Distance")}
+            style={styles.filter}
+          >
             <Text>Distance</Text>
             <Image source={require("../../assets/chevronRight.png")} />
           </Pressable>
-          <Pressable style={styles.filter}>
+          <Pressable
+            onPress={() => SheetManager.show("Availability")}
+            style={styles.filter}
+          >
             <Text>Disponibilités</Text>
             <Image source={require("../../assets/chevronRight.png")} />
           </Pressable>
@@ -88,7 +110,7 @@ export default function SortModal() {
             </Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </ActionSheet>
   );
 }
@@ -98,6 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "700",
     textAlign: "center",
+    marginTop: 20,
   },
   button: {
     backgroundColor: "#469597",
@@ -116,5 +139,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  border: {
+    borderWidth: 3,
+    borderColor: "#E9E9E9",
+    width: 52,
+    height: 5,
+    marginTop: 20,
+    alignSelf: "center",
+    borderRadius: 5,
   },
 });
