@@ -9,7 +9,6 @@ import {
 import { useState } from "react";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import ToggleSwitch from "toggle-switch-react-native";
 
 export default function NotificationSettings({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);

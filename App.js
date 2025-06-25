@@ -29,6 +29,8 @@ import { navigationRef } from "./navigationService";
 import NotificationSetting from "./ screens/NotificationSetting";
 import Resercher from "./ screens/costumerFiles/Resercher";
 import Booking from "./ screens/Booking";
+import Pyrene from "./ screens/costumerFiles/Pyrene";
+import Appointment from "./ screens/costumerFiles/Appointment";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -193,6 +195,20 @@ export default function App() {
              <Stack.Screen
               name="Booking"
               component={Booking}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Pyrene"
+              component={Pyrene}
+              options={{
+                headerShown: false,
+              }}
+            />
+             <Stack.Screen
+              name="Appointment"
+              component={Appointment}
               options={{
                 headerShown: false,
               }}
