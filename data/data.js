@@ -7,10 +7,10 @@ import SalonImage from "../assets/greenstone.png";
 import LocationIcon from "../assets/location.png";
 import Star from "../assets/star.png";
 import serviceImage from "../assets/service.png";
-import profile from "../assets/profilePhoto.png";
-import star from "../assets/star.png";
-import photo from "../assets/avis.png";
-import profile1 from "../assets/Pic.png"
+import picture from "../assets/Photo.png";
+import photo from "../assets/Pic.png";
+import Avis from "../assets/avis.png"
+
 export const SHOP_DATA = [
   {
     name: "Camille rose",
@@ -252,3 +252,61 @@ export const SERVICE_DATA = [
   },
 ];
 
+export const SEARCH_DATA = [
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: picture,
+    name: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+];
+
+export const AVIS_DATA = [
+  {
+    image: photo,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Je suis venue me faire les ongles chez Lola, je suis très contente du résultat !",
+    post: Avis
+  }
+]

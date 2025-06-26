@@ -10,6 +10,7 @@ import DistanceModal from "../components/modal/DistanceModal";
 import AvailabilityModal from "../components/modal/AvailabilityModal";
 
 
+
 registerSheet("Settings", SettingsModal);
 registerSheet("Filter", FilterModal);
 registerSheet("Reschedule", ReschedModal);
@@ -19,6 +20,8 @@ registerSheet("Lieu", LieuModal);
 registerSheet("Note", NoteModal);
 registerSheet("Distance", DistanceModal);
 registerSheet("Availability", AvailabilityModal);
+
+
 
 
 
