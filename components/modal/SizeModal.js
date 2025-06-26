@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import RadioButtonRN from "radio-buttons-react-native";
+import { BorderlessButton } from "react-native-gesture-handler";
 
 const data = [
   {
@@ -18,7 +19,7 @@ const data = [
   },
 ];
 
-export default function SizeModal() {
+export default function SizeModal( ) {
   return (
     <ActionSheet containerStyle={{ flex: 0.4 }} id="Size">
       <View>
@@ -30,8 +31,7 @@ export default function SizeModal() {
           boxStyle={{
             borderColor: "#FFFFFF",
           }}
-          
-       />
+        />
       </View>
     </ActionSheet>
   );
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
-    marginTop: 20
+    marginTop: 20,
   },
 });

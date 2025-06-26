@@ -39,6 +39,8 @@ export default function Services({ navigation }) {
             activeColor="#469597"
             boxStyle={{
               borderColor: "#BBC6C8",
+              borderWidth: 0,
+              gap: 0
             }}
           />
           <TextInput
