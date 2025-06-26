@@ -1,5 +1,5 @@
 import {
-    FlatList,
+  FlatList,
   Image,
   ImageBackground,
   Pressable,
@@ -8,102 +8,45 @@ import {
   StyleSheet,
   Text,
   View,
+  useWindowDimensions,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import SegmentedControlTab from "react-native-segmented-control-tab";
-import { AVIS_DATA, INFO_DATA } from "../../data/data";
 
-// import MapView from "react-native-maps";
+import PagerView from "react-native-pager-view";
+import PyrenePager from "../PyrenePager";
 
 export default function Pyrene({ navigation }) {
-  const [selectedIndex, setIsSelectedIndex] = useState();
-  const data = selectedIndex === 0 ? INFO_DATA : AVIS_DATA;
-
   return (
-    <SafeAreaView style={ {backgroundColor: "#FFFFFF"}} >
-      <View>
-        <Image
-          source={require("../../assets/bgPhoto.png")}
-          style={styles.image}
-        ></Image>
-        <View style={styles.container}>
-          <Text style={styles.headerText}>Institut Pyrène</Text>
-          <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
-            <Image source={require("../../assets/location.png")} />
-            <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
-          </View>
-          <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
-            <Image source={require("../../assets/star.png")} />
-            <Text style={[styles.Text, { textDecorationLine: "none" }]}>
-              4,9 17 avis
-            </Text>
-          </View>
-        </View>
-      </View>
-      {/* <View>
-        <SegmentedControlTab
-          values={["Informations", "Avis", "Boutique", "Articles"]}
-          tabsContainerStyle={{
-            backgroundColor: "red"
-          }}
-        />
-      </View> */}
-      <View
-        style={{
-          borderTopRightRadius: 20,
-          borderTopLeftRadius: 20,
-          overflow: "hidden",
-          backgroundColor: "#FFFFFF",
-          position: "absolute",
-          zIndex: 1,
-          bottom: 0,
-          left: 0,
-          right: 0,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          {["Informations", "Avis", "Boutique", "Articles"].map(
-            (item, index) => (
-              <Pressable
-                style={{
-                  flex: 1,
-                  alignItems: "center",
-                  paddingVertical: 12,
-                  borderBottomWidth: selectedIndex === index ? 2 : 1,
-                  borderColor: selectedIndex === index ? "#469597" : "#BBC6C8",
-                }}
-                onPress={() => setIsSelectedIndex(index)}
-                key={index}
-              >
-                <Text
-                  style={{
-                    color: selectedIndex === index ? "#469597" : "#BBC6C8",
-                    fontSize: 16,
-                    fontWeight: "500",
-                  }}
-                >
-                  {item}
-                </Text>
-              </Pressable>
-            )
-          )}
-        </View>
-        <ScrollView>
-            <View>
-                <Text></Text>
-                <Pressable onPress={() => navigation.navigate("Appointment")} style={styles.button}>
-                    <Text style={styles.buttonText}>Prendre rendez-vous</Text>
-                </Pressable>
+    <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
+      <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
+        <View>
+          <ImageBackground
+            source={require("../../assets/bgPhoto.png")}
+            style={styles.image}
+          ></ImageBackground>
+          <View style={styles.container}>
+            <Text style={styles.headerText}>Institut Pyrène</Text>
+            <View
+              style={{ flexDirection: "row", gap: 5, alignItems: "center" }}
+            >
+              <Image source={require("../../assets/location.png")} />
+              <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
             </View>
-        </ScrollView>
-      
+            <View
+              style={{ flexDirection: "row", gap: 5, alignItems: "center" }}
+            >
+              <Image source={require("../../assets/star.png")} />
+              <Text style={[styles.Text, { textDecorationLine: "none" }]}>
+                4,9 17 avis
+              </Text>
+            </View>
+          </View>
+        </View>
       </View>
+      <PagerView style={styles.pagerView} initialPage={0}>
+        <PyrenePager />
+      </PagerView>
     </SafeAreaView>
   );
 }
@@ -140,12 +83,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#469597",
     paddingVertical: 15,
     paddingHorizontal: 91,
-    borderRadius: 10
+    borderRadius: 10,
   },
   buttonText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
+
+  pagerView: {
+    flex: 1
+  },
 });
