@@ -32,6 +32,8 @@ import Booking from "./ screens/Booking";
 import Pyrene from "./ screens/costumerFiles/Pyrene";
 import Appointment from "./ screens/costumerFiles/Appointment";
 import Votre from "./ screens/costumerFiles/Votre";
+import Payment2 from "./ screens/costumerFiles/Payment2";
+import AppointmentConfirm from "./ screens/costumerFiles/AppointmentConfirm";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -166,6 +168,13 @@ export default function App() {
               }}
             />
             <Stack.Screen
+              name="Payment2"
+              component={Payment2}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
               name="Confirmation"
               component={Confirmation}
               options={{
@@ -217,6 +226,13 @@ export default function App() {
             <Stack.Screen
               name="Your Appointment"
               component={Votre}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Appointment Confirmation"
+              component={AppointmentConfirm}
               options={{
                 headerShown: false,
               }}
