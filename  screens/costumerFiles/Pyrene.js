@@ -20,11 +20,8 @@ export default function Pyrene({ navigation }) {
   return (
     <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
       <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
-        <View>
-          <ImageBackground
-            source={require("../../assets/bgPhoto.png")}
-            style={styles.image}
-          ></ImageBackground>
+        <View style={{}}>
+          <Image source={require("../../assets/bgPhoto.png")} />
           <View style={styles.container}>
             <Text style={styles.headerText}>Institut Pyrène</Text>
             <View
@@ -63,8 +60,8 @@ const styles = StyleSheet.create({
     gap: 5,
     backgroundColor: "#FFFFFF",
     position: "absolute",
-    bottom: 50,
-    left: 45,
+    bottom: 100,
+    left: 48,
     paddingVertical: 8,
     paddingHorizontal: 40,
     borderRadius: 13,
@@ -93,6 +90,6 @@ const styles = StyleSheet.create({
   },
 
   pagerView: {
-    flex: 1
+    flex: 1,
   },
 });

@@ -11,8 +11,8 @@ import PagerView from "react-native-pager-view";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigationService";
 import { FlatList } from "react-native-gesture-handler";
-import { AVIS_DATA, SHOP_DATA } from "../data/data";
-import Icon from "react-native-ionicons";
+import { ARTICLE_DATA, AVIS_DATA, SHOP_DATA } from "../data/data";
+import MapView from "react-native-maps";
 
 export default function PyrenePager({ navigation }) {
   return (
@@ -38,6 +38,16 @@ export default function PyrenePager({ navigation }) {
           >
             Voir plus
           </Text>
+
+          {/* <MapView
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          /> */}
+          <View></View>
           <View>
             <Text style={styles.headertext}>Les prestations</Text>
             <View>
@@ -47,6 +57,7 @@ export default function PyrenePager({ navigation }) {
               </Pressable>
               <View>
                 <Pressable
+                onPress={() => navigate("Article")}
                   style={[
                     styles.button,
                     {
@@ -128,7 +139,7 @@ export default function PyrenePager({ navigation }) {
           }}
         />
         <Pressable
-          // onPress={() => navigate("Appointment")}
+          onPress={() => navigate("Appointment")}
           style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
         >
           <Text style={styles.footertext}>Prendre rendez-vous</Text>
@@ -192,10 +203,57 @@ export default function PyrenePager({ navigation }) {
             );
           }}
         />
+        <Pressable
+          onPress={() => navigate("Appointment")}
+          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
+        >
+          <Text style={styles.footertext}>Prendre rendez-vous</Text>
+        </Pressable>
       </View>
 
       <View key="4">
         <Text style={styles.pageText}>Articles</Text>
+        <FlatList
+          data={ARTICLE_DATA}
+          renderItem={({ item }) => {
+            return (
+              <View
+                style={{
+                  flexDirection: "row",
+                  paddingHorizontal: 20,
+                  gap: 12,
+
+                  marginTop: 20,
+                }}
+              >
+                <View style={{ alignItems: "center" }}>
+                  <View style={{ gap: 8 }}>
+                    <Image source={item.image} />
+                    <View>
+                      <Text>{item.caption}</Text>
+                      <Text>{item.caption1}</Text>
+                    </View>
+                  </View>
+                </View>
+                <View style={{ alignItems: "center" }}>
+                  <View style={{ gap: 8 }}>
+                    <Image source={item.image} />
+                    <View>
+                      <Text>{item.caption}</Text>
+                      <Text>{item.caption1}</Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            );
+          }}
+        />
+        <Pressable
+          onPress={() => navigate("Appointment")}
+          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
+        >
+          <Text style={styles.footertext}>Prendre rendez-vous</Text>
+        </Pressable>
       </View>
     </PagerView>
   );
@@ -204,7 +262,7 @@ export default function PyrenePager({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "#FFFFFF",
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
@@ -214,7 +272,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     fontWeight: "500",
     textAlign: "center",
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     borderColor: "#469597",
     padding: 10,
   },

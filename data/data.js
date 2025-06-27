@@ -8,7 +8,10 @@ import LocationIcon from "../assets/location.png";
 import Star from "../assets/star.png";
 import serviceImage from "../assets/service.png";
 import picture from "../assets/Photo.png";
-
+import article from "../assets/article3.png";
+import article1 from "../assets/article4.png";
+import article2 from "../assets/article5.png";
+import article3 from "../assets/article6.png";
 import Avis from "../assets/avis.png";
 import photo2 from "../assets/Pic.png";
 import photo1 from "../assets/Pic6.png";
@@ -407,5 +410,28 @@ export const AVIS_DATA = [
     rate: "5,0",
     caption: "Au top !",
     post: Avis,
+  },
+];
+
+export const ARTICLE_DATA = [
+  {
+    image: article,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article1,
+     caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article2,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article3,
+     caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
   },
 ];
