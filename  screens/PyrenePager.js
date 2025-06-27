@@ -11,10 +11,10 @@ import PagerView from "react-native-pager-view";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigationService";
 import { FlatList } from "react-native-gesture-handler";
-import { AVIS_DATA } from "../data/data";
+import { AVIS_DATA, SHOP_DATA } from "../data/data";
 import Icon from "react-native-ionicons";
 
-export default function PyrenePager() {
+export default function PyrenePager({ navigation }) {
   return (
     <PagerView style={styles.container} initialPage={0}>
       <View key="1">
@@ -83,7 +83,10 @@ export default function PyrenePager() {
                 <Ionicons name="chevron-down" size={24} />
               </Pressable>
             </View>
-            <Pressable onPress={() => navigate("Appointment")} style={styles.footer}>
+            <Pressable
+              onPress={() => navigate("Appointment")}
+              style={[styles.footer, { marginTop: 20 }]}
+            >
               <Text style={styles.footertext}>Prendre rendez-vous</Text>
             </Pressable>
           </View>
@@ -91,22 +94,106 @@ export default function PyrenePager() {
       </View>
       <View key="2">
         <Text style={styles.pageText}>Avis</Text>
-       <FlatList data={AVIS_DATA} renderItem={({ item }) => {
-        return (
-            <View>
-                <Image source={item.image} />
-                <Text>{item.name}</Text>
-                <Image source={item.icon} />
-                <Text>{item.rate}</Text>
-                <Text>{item.caption}</Text>
-                <Image source={item.post} />
-            </View>
-        )
-       }} />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={AVIS_DATA}
+          renderItem={({ item }) => {
+            return (
+              <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+                <View style={styles.listContainer}>
+                  <View style={{ flexDirection: "row", gap: 16 }}>
+                    <Image source={item.image} />
+                    <View style={{ gap: 3 }}>
+                      <View style={{ flexDirection: "row", gap: 10 }}>
+                        <Text style={styles.name}>{item.name}</Text>
+                        <Image source={item.icon} />
+                        <Text style={[styles.name, { fontSize: 12 }]}>
+                          {item.rate}
+                        </Text>
+                      </View>
+                      <Text style={styles.caption}>{item.caption}</Text>
+                      <Text style={styles.caption}>{item.caption1}</Text>
+                    </View>
+                  </View>
+
+                  <View>
+                    <Image source={item.post} />
+                  </View>
+                </View>
+              </View>
+            );
+          }}
+          ItemSeparatorComponent={() => {
+            return <View style={{ height: 30 }}></View>;
+          }}
+        />
+        <Pressable
+          // onPress={() => navigate("Appointment")}
+          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
+        >
+          <Text style={styles.footertext}>Prendre rendez-vous</Text>
+        </Pressable>
       </View>
       <View key="3">
         <Text style={styles.pageText}>Boutique</Text>
+        <Text style={[styles.caption, { marginLeft: 20 }]}>7 produits </Text>
+        <FlatList
+          data={SHOP_DATA}
+          renderItem={({ item }) => {
+            return (
+              <Pressable
+                onPress={() => navigation.navigate("Afro")}
+                style={styles.dataContainer}
+              >
+                <View style={styles.productContainer}>
+                  <Image
+                    source={item.image}
+                    style={{
+                      width: 172,
+                      height: 164,
+                    }}
+                  />
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.info}>{item.info}</Text>
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Text style={styles.info}>{item.price}</Text>
+                    <Image source={item.icon} />
+                  </View>
+                </View>
+                <View style={styles.productContainer}>
+                  <Image
+                    source={item.image}
+                    style={{
+                      width: 172,
+                      height: 164,
+                    }}
+                  />
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.info}>{item.info}</Text>
+
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Text style={styles.info}>{item.price}</Text>
+                    <Image source={item.icon} />
+                  </View>
+                </View>
+              </Pressable>
+            );
+          }}
+        />
       </View>
+
       <View key="4">
         <Text style={styles.pageText}>Articles</Text>
       </View>
@@ -117,11 +204,9 @@ export default function PyrenePager() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingHorizontal: 20,
     backgroundColor: "red",
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    // borderBottomWidth: 1,
   },
   pageText: {
     color: "#469597",
@@ -160,6 +245,31 @@ const styles = StyleSheet.create({
     backgroundColor: "#469597",
     paddingVertical: 15,
     borderRadius: 10,
-    marginTop: 20
+  },
+  name: {
+    fontSize: 14,
+    fontWeight: "600",
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: "400",
+  },
+  listContainer: {
+    flexDirection: "row",
+    gap: 10,
+    paddingVertical: 13,
+    borderBottomWidth: 1,
+    borderColor: "#E5E3E4",
+    justifyContent: "space-between",
+  },
+  dataContainer: {
+    flexDirection: "row",
+    paddingHorizontal: 13,
+    gap: 10,
+
+    marginTop: 20,
+  },
+  productContainer: {
+    gap: 5,
   },
 });

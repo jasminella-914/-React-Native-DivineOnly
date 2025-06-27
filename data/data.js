@@ -8,8 +8,11 @@ import LocationIcon from "../assets/location.png";
 import Star from "../assets/star.png";
 import serviceImage from "../assets/service.png";
 import picture from "../assets/Photo.png";
-import photo from "../assets/Pic.png";
-import Avis from "../assets/avis.png"
+
+import Avis from "../assets/avis.png";
+import photo2 from "../assets/Pic.png";
+import photo1 from "../assets/Pic6.png";
+import photo3 from "../assets/Pic3.png";
 
 export const SHOP_DATA = [
   {
@@ -302,11 +305,107 @@ export const SEARCH_DATA = [
 
 export const AVIS_DATA = [
   {
-    image: photo,
+    image: photo1,
     name: "Marie",
     icon: Star,
     rate: "5,0",
-    caption: "Je suis venue me faire les ongles chez Lola, je suis très contente du résultat !",
-    post: Avis
-  }
-]
+    caption: "Je suis venue me faire les ongles chez",
+    caption1: "Lola, je suis très contente du résultat!",
+    post: Avis,
+  },
+  {
+    image: photo2,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Institu bien placé à Marseille, bonne ",
+    caption1: "prestation. ",
+    post: Avis,
+  },
+  {
+    image: photo3,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Au top !",
+    post: Avis,
+  },
+  {
+    image: photo1,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Je suis venue me faire les ongles chez",
+    caption1: "Lola, je suis très contente du résultat!",
+    post: Avis,
+  },
+  {
+    image: photo2,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Institu bien placé à Marseille, bonne ",
+    caption1: "prestation. ",
+    post: Avis,
+  },
+  {
+    image: photo3,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Au top !",
+    post: Avis,
+  },
+  {
+    image: photo1,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Je suis venue me faire les ongles chez",
+    caption1: "Lola, je suis très contente du résultat!",
+    post: Avis,
+  },
+  {
+    image: photo2,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Institu bien placé à Marseille, bonne ",
+    caption1: "prestation. ",
+    post: Avis,
+  },
+  {
+    image: photo3,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Au top !",
+    post: Avis,
+  },
+  {
+    image: photo1,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Je suis venue me faire les ongles chez",
+    caption1: "Lola, je suis très contente du résultat!",
+    post: Avis,
+  },
+  {
+    image: photo2,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Institu bien placé à Marseille, bonne ",
+    caption1: "prestation. ",
+    post: Avis,
+  },
+  {
+    image: photo3,
+    name: "Marie",
+    icon: Star,
+    rate: "5,0",
+    caption: "Au top !",
+    post: Avis,
+  },
+];
