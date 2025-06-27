@@ -34,6 +34,7 @@ import Appointment from "./ screens/costumerFiles/Appointment";
 import Votre from "./ screens/costumerFiles/Votre";
 import Payment2 from "./ screens/costumerFiles/Payment2";
 import AppointmentConfirm from "./ screens/costumerFiles/AppointmentConfirm";
+import Article from "./ screens/Article";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -195,14 +196,14 @@ export default function App() {
                 headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Resercher"
               component={Resercher}
               options={{
                 headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Booking"
               component={Booking}
               options={{
@@ -216,7 +217,7 @@ export default function App() {
                 headerShown: false,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="Appointment"
               component={Appointment}
               options={{
@@ -233,6 +234,13 @@ export default function App() {
             <Stack.Screen
               name="Appointment Confirmation"
               component={AppointmentConfirm}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Article"
+              component={Article}
               options={{
                 headerShown: false,
               }}

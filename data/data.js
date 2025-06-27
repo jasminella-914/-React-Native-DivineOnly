@@ -16,6 +16,12 @@ import Avis from "../assets/avis.png";
 import photo2 from "../assets/Pic.png";
 import photo1 from "../assets/Pic6.png";
 import photo3 from "../assets/Pic3.png";
+import post1 from "../assets/Article11.png";
+import post2 from "../assets/Article22.png";
+import post3 from "../assets/lipFiller.png";
+import post4 from "../assets/nails.png";
+import post5 from "../assets/lashPhoto.png";
+import post6 from "../assets/oil.png";
 
 export const SHOP_DATA = [
   {
@@ -421,7 +427,7 @@ export const ARTICLE_DATA = [
   },
   {
     image: article1,
-     caption: "Tresses, tradition, Style",
+    caption: "Tresses, tradition, Style",
     caption1: " et Praticité",
   },
   {
@@ -431,7 +437,29 @@ export const ARTICLE_DATA = [
   },
   {
     image: article3,
-     caption: "Tresses, tradition, Style",
+    caption: "Tresses, tradition, Style",
     caption1: " et Praticité",
   },
+];
+
+export const ARTICLEPOST_DATA = [
+  {
+    image: post1,
+    image1: post2,
+    image2: post6,
+    image3: post3,
+    image4: post4,
+    image5: post5,
+    image6: post1,
+  },
+  // {
+
+  // },
+  // {
+  //
+  // },
+  // {
+  //
+  // },
+  // {  },
 ];
