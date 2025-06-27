@@ -452,14 +452,31 @@ export const ARTICLEPOST_DATA = [
     image5: post5,
     image6: post1,
   },
-  // {
+];
 
-  // },
-  // {
-  //
-  // },
-  // {
-  //
-  // },
-  // {  },
+export const TIME_DATA = [
+  {
+    time: "10:00",
+  },
+  {
+    time: "11:00",
+  },
+  {
+    time: "12:00",
+  },
+  {
+    time: "13:00",
+  },
+  {
+    time: "14:00",
+  },
+  {
+    time: "15:00",
+  },
+  {
+    time: "16:00",
+  },
+  {
+    time: "16:00",
+  },
 ];

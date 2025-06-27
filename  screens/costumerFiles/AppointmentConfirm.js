@@ -68,7 +68,7 @@ export default function AppointmentConfirm({ navigation }) {
           <Text style={styles.smallText}>0646384398</Text>
         </View>
       </View>
-      <Pressable onPress={() => navigate("Welcome")} style={styles.button}>
+      <Pressable onPress={() => SheetManager.show("Rate")} style={styles.button}>
         <Text style={styles.buttonText}>Fermer</Text>
       </Pressable>
      

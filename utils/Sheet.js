@@ -8,6 +8,7 @@ import LieuModal from "../components/modal/LieuModal";
 import NoteModal from "../components/modal/NoteModal";
 import DistanceModal from "../components/modal/DistanceModal";
 import AvailabilityModal from "../components/modal/AvailabilityModal";
+import RateModal from "../components/RateModal";
 
 
 
@@ -20,6 +21,7 @@ registerSheet("Lieu", LieuModal);
 registerSheet("Note", NoteModal);
 registerSheet("Distance", DistanceModal);
 registerSheet("Availability", AvailabilityModal);
+registerSheet("Rate", RateModal);
 
 
 

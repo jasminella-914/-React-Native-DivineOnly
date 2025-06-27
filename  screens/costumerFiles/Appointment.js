@@ -10,6 +10,8 @@ import {
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
+import { FlatList } from "react-native-actions-sheet";
+import { TIME_DATA } from "../../data/data";
 
 // import { LocaleConfig } from "react-native-calendars";
 
@@ -90,7 +92,17 @@ export default function Appointment({ navigation }) {
           </View>
         </View>
         <View>
-          <Pressable style={styles.button}>
+          <Pressable
+            style={[
+              styles.button,
+              {
+                backgroundColor: "#FFFFFF",
+                flexDirection: "row",
+                gap: 10,
+                alignItems: "center",
+              },
+            ]}
+          >
             <Image source={require("../../assets/add.png")} />
             <Text style={styles.addText}>
               {" "}
@@ -99,46 +111,61 @@ export default function Appointment({ navigation }) {
           </Pressable>
           <View style={{ paddingHorizontal: 20, gap: 20 }}>
             <Text style={styles.name}>Avec qui ? </Text>
-            <View style={{ flexDirection: "row", gap: 20 }}>
-              <Pressable onPress={() => navigation.navigate("Your Appointment")} style={styles.buttonPhoto}>
-                <Text
-                  style={[
-                    styles.text,
-                    {
-                      fontSize: 14,
-                      fontWeight: "500",
-                      color: "#000000",
-                      textAlign: "center",
-                      backgroundColor: "#F5F5F5",
-                      paddingVertical: 30,
-                    },
-                  ]}
+            <ScrollView horizontal ite>
+              <View
+                style={{
+                  gap: 20,
+                  flexDirection: "row",
+                  paddingVertical: 20,
+                }}
+              >
+                <Pressable
+                  onPress={() => navigation.navigate("Your Appointment")}
+                  style={styles.buttonPhoto}
                 >
-                  Première disponibilité
-                </Text>
-              </Pressable>
-            </View>
-            <View style={{ gap: 10}}>
-              <Text style={[styles.name, { paddingLeft: 20}]}>Date et heure de rendez-vous </Text>
+                  <Text
+                    style={[
+                      styles.text,
+                      {
+                        fontSize: 14,
+                        fontWeight: "500",
+                        color: "#000000",
+                        textAlign: "center",
+                        backgroundColor: "#F5F5F5",
+                      },
+                    ]}
+                  >
+                    Première
+                  </Text>
+                  <Text>disponibilité</Text>
+                </Pressable>
+                <Pressable
+                  onPress={() => navigation.navigate("Your Appointment")}
+                  style={styles.buttonPhoto}
+                >
+                  <Image source={require("../../assets/marine.png")} />
+                  <Text style={styles.personName}>Marine</Text>
+                </Pressable>
+                <Pressable
+                  onPress={() => navigation.navigate("Your Appointment")}
+                  style={styles.buttonPhoto}
+                >
+                  <Image source={require("../../assets/vector.png")} />
+                  <Text style={styles.personName}>Victor</Text>
+                </Pressable>
+              </View>
+            </ScrollView>
+            <View style={{ gap: 10 }}>
+              <Text style={[styles.name, { paddingLeft: 20 }]}>
+                Date et heure de rendez-vous{" "}
+              </Text>
               <View>
                 <Calendar
-                style={{
-                    // height: 100,
-                    borderRadius: 20
-                }}
-                  theme={{
-                    backgroundColor: "#F5F5F5",
-                    calendarBackground: "#F5F5F5",
-                    selectedDayBackgroundColor: "#469597",
-                    todayTextColor: "#469597",
-                    arrowColor:  "#469597",
-                    textDayStyle: {
-                        fontSize: 14,
-                        fontWeight: "600"
-                    },
-                    
-                    
+                  hideExtraDays
+                  style={{
+                    borderRadius: 20,
                   }}
+                  theme={styles.calendar}
                   onDayPress={(day) => {
                     setSelected(day.dateString);
                   }}
@@ -150,10 +177,100 @@ export default function Appointment({ navigation }) {
                     },
                   }}
                 />
+
+                {/* <ScrollView
+                  showsHorizontalScrollIndicator={false}
+                  horizontal
+                  style={{ marginTop: 20 }}
+                >
+                  <View style={{ gap: 10 }}>
+                    <View style={{ flexDirection: "row", gap: 10 }}>
+                      <Pressable style={[styles.button]}>
+                        <Text style={styles.buttonText}>10:00</Text>
+                      </Pressable>
+                      <Pressable style={[styles.button]}>
+                        <Text style={styles.buttonText}>11:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>12:00</Text>
+                      </Pressable>
+                      <Pressable style={[styles.button]}>
+                        <Text style={styles.buttonText}>10:00</Text>
+                      </Pressable>
+                      <Pressable style={[styles.button]}>
+                        <Text style={styles.buttonText}>11:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>12:00</Text>
+                      </Pressable>
+                    </View>
+                    <View style={{ flexDirection: "row", gap: 10 }}>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>13:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>14:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>15:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>13:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>14:00</Text>
+                      </Pressable>
+                      <Pressable style={styles.button}>
+                        <Text style={styles.buttonText}>15:00</Text>
+                      </Pressable>
+                    </View>
+                  </View>
+                </ScrollView> */}
               </View>
             </View>
           </View>
         </View>
+        <ScrollView 
+        showsHorizontalScrollIndicator={ false}
+        horizontal style={{ paddingHorizontal: 20, marginTop: 20 }}>
+          <FlatList
+            numColumns={Math.ceil(TIME_DATA.length / 2)}
+            contentContainerStyle={{ gap: 10 }}
+            columnWrapperStyle={{ gap: 10 }}
+            showsHorizontalScrollIndicator={false}
+            data={TIME_DATA}
+            renderItem={({ item, index }) => {
+              return (
+                <View style={{ gap: 10 }}>
+                  <Pressable
+                    onPress={() => setSelected(index)}
+                    style={[
+                      styles.button,
+                      {
+                        backgroundColor:
+                          selected === index ? "#469597" : "#F5F5F5",
+                      },
+                    ]}
+                  >
+                    <Text style={styles.buttonText}>{item.time}</Text>
+                  </Pressable>
+                  {/* <Pressable
+                  onPress={() => setSelected(index)}
+                  style={[
+                    styles.button,
+                    {
+                      backgroundColor:
+                        selected === index ? "#469597" : "#F5F5F5",
+                    },
+                  ]}
+                >
+                  <Text style={styles.buttonText}>{item.time}</Text>
+                </Pressable> */}
+                </View>
+              );
+            }}
+          />
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -217,9 +334,37 @@ const styles = StyleSheet.create({
   },
   buttonPhoto: {
     backgroundColor: "#F5F5F5",
-    paddingVertical: 23,
+    paddingVertical: 12,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 20,
+    paddingHorizontal: 16,
+  },
+  personName: {
+    paddingTop: 5,
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  calendar: {
+    backgroundColor: "#F5F5F5",
+    calendarBackground: "#F5F5F5",
+    selectedDayBackgroundColor: "#469597",
+    todayTextColor: "#469597",
+    arrowColor: "#469597",
+    textDayStyle: {
+      fontSize: 14,
+      fontWeight: "600",
+    },
+  },
+  button: {
+    backgroundColor: "#00000008",
+    paddingVertical: 14,
+    paddingHorizontal: 37,
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: "#000000",
+    fontSize: 14,
+    fontWeight: "600",
   },
 });
