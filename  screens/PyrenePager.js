@@ -217,7 +217,7 @@ export default function PyrenePager({ navigation }) {
           data={ARTICLE_DATA}
           renderItem={({ item }) => {
             return (
-              <View
+              <Pressable
                 style={{
                   flexDirection: "row",
                   paddingHorizontal: 20,
@@ -244,7 +244,7 @@ export default function PyrenePager({ navigation }) {
                     </View>
                   </View>
                 </View>
-              </View>
+              </Pressable>
             );
           }}
         />
