@@ -1,37 +1,53 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Modal,
-  SafeAreaView,
-  TextInput,
-  Pressable,
-} from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { navigate } from "../navigationService";
 
-export default function RateModal() {
+export default function RateModal({ navigation }) {
+  // const [selected, setSelected] = useState("");
+
   return (
-    <ActionSheet id="Rate">
-      <View style={{ paddingHorizontal: 20 }}>
-        <Text style={styles.header}>Institut Pyrène</Text>
-        <Text style={styles.text}>Rendez-vous passé • 17 juin 2022 à 16h</Text>
+    <ActionSheet id="Rate" containerStyle={styles.container}>
+      <View>
+        <Text style={[styles.header, { paddingBottom: 15 }]}>
+          Institut Pyrène
+        </Text>
+        <Text style={[styles.text, { paddingBottom: 50 }]}>
+          Rendez-vous passé • 17 juin 2022 à 16h
+        </Text>
         <View>
-          <Text style={[styles.header, { fontSize: 16, fontWeight: "600" }]}>
+          <Text
+            style={[
+              styles.header,
+              { fontSize: 16, fontWeight: "600", paddingBottom: 22 },
+            ]}
+          >
             Notez votre rendez-vous
           </Text>
         </View>
-        <Text>Ajoutez une photo ou une vidéo</Text>
+
         <TextInput
           multiline
           placeholder="Rajoutez votre commentaire ici...."
           style={styles.input}
         />
+        <Text style={[styles.buttonText, { color: "#000000", paddingTop: 20 }]}>
+          Ajoutez une photo ou une vidéo
+        </Text>
+        <View style={styles.buttonContainer}>
+          <Pressable style={styles.photoButton}>
+            <Ionicons name="camera-outline" color="#BBC6C8" size={31} />
+          </Pressable>
+          <Pressable style={styles.photoButton}>
+            <Ionicons name="image-outline" color="#BBC6C8" size={31} />
+          </Pressable>
+        </View>
         <Pressable
           style={styles.button}
           onPress={() => {
             SheetManager.hide("Rate");
-            navigation.navigate("Welcome");
+            navigate("Welcome");
           }}
         >
           <Text style={styles.buttonText}>Envoyer mon avis</Text>
@@ -59,6 +75,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#BBC6C8",
     textAlignVertical: "top",
+    marginTop: 20,
   },
   buttonText: {
     color: "#FFFFFF",
@@ -70,7 +87,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#469597",
     paddingVertical: 18,
     borderRadius: 10,
-    paddingHorizontal: 94,
     marginTop: "auto",
+  },
+  container: {
+    paddingTop: 30,
+    paddingHorizontal: 30,
+  },
+  photoButton: {
+    borderWidth: 1,
+    borderColor: "#BBC6C8",
+    borderStyle: "dashed",
+    paddingVertical: 33,
+    paddingHorizontal: 33,
+    borderRadius: 10,
+    marginTop: 33,
+    marginBottom: 40,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 38,
   },
 });

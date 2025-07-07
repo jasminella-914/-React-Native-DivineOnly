@@ -73,7 +73,7 @@ export default function Appointment({ navigation }) {
         </Pressable>
         <Text style={styles.headertext}>Prendre rendez-vous</Text>
       </View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>Lola Brazilia</Text>
         <View style={styles.container}>
           <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
@@ -111,7 +111,7 @@ export default function Appointment({ navigation }) {
           </Pressable>
           <View style={{ paddingHorizontal: 20, gap: 20 }}>
             <Text style={styles.name}>Avec qui ? </Text>
-            <ScrollView horizontal ite>
+            <ScrollView showsHorizontalScrollIndicator={false} horizontal ite>
               <View
                 style={{
                   gap: 20,
