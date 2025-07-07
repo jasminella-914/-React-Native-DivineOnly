@@ -22,11 +22,16 @@ import post3 from "../assets/lipFiller.png";
 import post4 from "../assets/nails.png";
 import post5 from "../assets/lashPhoto.png";
 import post6 from "../assets/oil.png";
+import Coiffure from "../assets/Coiffure.png";
+import Barbier from "../assets/Barbier.png";
+import Onglerie from "../assets/Onglerie.png";
+import Esthétique from "../assets/istitik.png";
 
 export const SHOP_DATA = [
   {
     name: "Camille rose",
-    info: "Sweet ginger cleansing rinse",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
     price: "25,00€",
     image: Image,
     icon: Icon,
@@ -34,7 +39,8 @@ export const SHOP_DATA = [
   },
   {
     name: "Camille rose",
-    info: "Sweet ginger cleansing rinse",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
     price: "25,00€",
     image: Image,
     icon: Icon,
@@ -42,7 +48,8 @@ export const SHOP_DATA = [
   },
   {
     name: "Camille rose",
-    info: "Sweet ginger cleansing rinse",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
     price: "25,00€",
     image: Image,
     icon: Icon,
@@ -50,7 +57,8 @@ export const SHOP_DATA = [
   },
   {
     name: "Camille rose",
-    info: "Sweet ginger cleansing rinse",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
     price: "25,00€",
     image: Image,
     icon: Icon,
@@ -58,7 +66,17 @@ export const SHOP_DATA = [
   },
   {
     name: "Camille rose",
-    info: "Sweet ginger cleansing rinse",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
+    price: "25,00€",
+    image: Image,
+    icon: Icon,
+    size: "150 ml",
+  },
+  {
+    name: "Camille rose",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
     price: "25,00€",
     image: Image,
     icon: Icon,
@@ -440,6 +458,26 @@ export const ARTICLE_DATA = [
     caption: "Tresses, tradition, Style",
     caption1: " et Praticité",
   },
+  {
+    image: article,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article1,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article2,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
+  {
+    image: article3,
+    caption: "Tresses, tradition, Style",
+    caption1: " et Praticité",
+  },
 ];
 
 export const ARTICLEPOST_DATA = [
@@ -480,3 +518,39 @@ export const TIME_DATA = [
     time: "16:00",
   },
 ];
+
+
+export const SERVICES_DATA = [
+  {
+    image: Coiffure,
+    text: "Coiffure"
+  },
+   {
+    image: Barbier,
+    text: "Barbier"
+  },
+   {
+    image: Onglerie,
+    text: "Onglerie"
+  },
+   {
+    image: Esthétique,
+    text: "Esthétique"
+  },
+  {
+    image: Coiffure,
+    text: "Coiffure"
+  },
+   {
+    image: Barbier,
+    text: "Barbier"
+  },
+   {
+    image: Onglerie,
+    text: "Onglerie"
+  },
+   {
+    image: Esthétique,
+    text: "Esthétique"
+  },
+]

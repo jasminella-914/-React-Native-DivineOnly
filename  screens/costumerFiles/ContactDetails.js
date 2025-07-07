@@ -20,7 +20,7 @@ export default function ContactDetails({ navigation }) {
           onPress={() => navigation.goBack()}
         />
         <Progress.Bar
-          progress={0.3}
+          progress={0.2}
           width={250}
           color="#469597"
           borderWidth={0}
@@ -28,12 +28,11 @@ export default function ContactDetails({ navigation }) {
           height={7}
           style={styles.Bar}
         />
-        <Ionicons name="close" size={24} />
+        <Ionicons name="close" size={24} onPress={() => navigation.goBack()}  />
       </View>
       <View style={[styles.secondContainer, { gap: 30 }]}>
         <Text style={styles.text}>Mes coordonnées</Text>
         <View style={{ gap: 10 }}>
-          <TextInput placeholder="Prénom" style={styles.inputContainer} />
           <TextInput placeholder="Prénom" style={styles.inputContainer} />
           <TextInput placeholder="Nom" style={styles.inputContainer} />
           <TextInput placeholder="Rue" style={styles.inputContainer} />

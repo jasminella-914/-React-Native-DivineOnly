@@ -35,6 +35,7 @@ import Votre from "./ screens/costumerFiles/Votre";
 import Payment2 from "./ screens/costumerFiles/Payment2";
 import AppointmentConfirm from "./ screens/costumerFiles/AppointmentConfirm";
 import Article from "./ screens/Article";
+import ArticleContent from "./ screens/ArticleContent";
 // const logoImg = require("./assets/Logo.png");
 
 const Stack = createNativeStackNavigator();
@@ -241,6 +242,13 @@ export default function App() {
             <Stack.Screen
               name="Article"
               component={Article}
+              options={{
+                headerShown: false,
+              }}
+            />
+             <Stack.Screen
+              name="Article Content"
+              component={ArticleContent}
               options={{
                 headerShown: false,
               }}

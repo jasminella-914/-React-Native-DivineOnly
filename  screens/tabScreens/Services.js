@@ -10,14 +10,14 @@ import {
   Modal,
 } from "react-native";
 import RadioButtonRN from "radio-buttons-react-native";
-import { useState } from "react";
-import Resercher from "../costumerFiles/Resercher";
-
+import ICON from "../../assets/salon.png";
 const data = [
   {
     label: "Au Salon",
+  
   },
   {
+
     label: "A domicile",
   },
 ];
@@ -33,14 +33,14 @@ export default function Services({ navigation }) {
       <View style={styles.secondContainer}>
         <View style={styles.thirdContainer}>
           <Text style={styles.headerText}>Réserve ta prestation</Text>
+
           <RadioButtonRN
             data={data}
             selectedBtn={(e) => console.log(e)}
             activeColor="#469597"
             boxStyle={{
               borderColor: "#BBC6C8",
-              borderWidth: 0,
-              gap: 0
+              borderWidth: 1,
             }}
           />
           <TextInput
@@ -51,7 +51,10 @@ export default function Services({ navigation }) {
             placeholder="Adresse, ville..."
             style={styles.inputContainer}
           />
-          <Pressable onPress={() => navigation.navigate("Resercher")} style={styles.button}>
+          <Pressable
+            onPress={() => navigation.navigate("Resercher")}
+            style={styles.button}
+          >
             <Text style={styles.buttonText}>Rechercher</Text>
           </Pressable>
         </View>

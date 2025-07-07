@@ -36,7 +36,7 @@ export default function Profile({ navigation }) {
           height={7}
           style={styles.Bar}
         />
-        <Ionicons name="close" size={24} />
+        <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
       <View style={[styles.secondContainer, { gap: 30, marginTop: 20 }]}>
         <View>
@@ -66,6 +66,23 @@ export default function Profile({ navigation }) {
           <View style={{ marginTop: 10 }}>
             <Text style={styles.ajouterText}>Ajouter une photo</Text>
           </View>
+          {/* <Pressable onPress={toggleModal}>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 10,
+              }}
+            >
+              <Image
+                source={require("../../assets/profile.png")}
+                style={{ width: 117, height: 117 }}
+              />
+            </View>
+            <View style={{ marginTop: 10 }}>
+              <Text style={styles.ajouterText}>Modifier la photo</Text>
+            </View>
+          </Pressable> */}
         </View>
       </View>
       <View>
@@ -81,9 +98,10 @@ export default function Profile({ navigation }) {
             <Pressable style={styles.buttonContainer}>
               <Text>Camera</Text>
             </Pressable>
-            <Button title="Cancel" onPress={() => setModalVisible(!isModalVisible)}>
-              
-          </Button>
+            <Button
+              title="Cancel"
+              onPress={() => setModalVisible(!isModalVisible)}
+            ></Button>
           </View>
         </Modal>
       </View>

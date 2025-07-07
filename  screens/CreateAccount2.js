@@ -92,8 +92,9 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: "#BBC6C8",
-    padding: 20,
+    padding: 10,
     borderRadius: 10,
+    paddingVertical: 20
   },
   toggleContainer: {
     flexDirection: "row",

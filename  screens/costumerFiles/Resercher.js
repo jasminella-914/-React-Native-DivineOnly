@@ -30,11 +30,7 @@ export default function Resercher({ navigation }) {
   }, []);
 
   const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
         const itemData = item.title
           ? item.title.toUpperCase()
@@ -45,8 +41,6 @@ export default function Resercher({ navigation }) {
       setFilteredDataSource(newData);
       setSearch(text);
     } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
       setFilteredDataSource(masterDataSource);
       setSearch(text);
     }
@@ -54,7 +48,6 @@ export default function Resercher({ navigation }) {
 
   const ItemView = ({ item }) => {
     return (
-      // Flat List Item
       <Text style={styles.itemStyle} onPress={() => getItem(item)}>
         {item.id}
         {"."}
@@ -65,7 +58,6 @@ export default function Resercher({ navigation }) {
 
   const ItemSeparatorView = () => {
     return (
-      // Flat List Item Separator
       <View
         style={{
           height: 0.5,
@@ -77,16 +69,12 @@ export default function Resercher({ navigation }) {
   };
 
   const getItem = (item) => {
-    // Function for click on an item
     alert("Id : " + item.id + " Title : " + item.title);
   };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Pressable
-          //   style={{ marginLeft: 20 }}
-          onPress={() => navigation.goBack()}
-        >
+        <Pressable onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} />
         </Pressable>
         <Text style={styles.headertext}>Resercher</Text>

@@ -8,13 +8,11 @@ import {
   SafeAreaView,
 } from "react-native";
 import { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const logoImg = require("../assets/Logo.png");
-export default function CreateAccount() {
-  const navigation = useNavigation();
+export default function CreateAccount({ navigation }) {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
@@ -55,10 +53,11 @@ export default function CreateAccount() {
             </Pressable>
           </View>
         </View>
-        <Pressable onPress={() => navigation.navigate("Mes coordonnées")}>
-          <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Créer mon compte</Text>
-          </View>
+        <Pressable
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate("Mes coordonnées")}
+        >
+          <Text style={styles.buttonText}>Créer mon compte</Text>
         </Pressable>
       </View>
       <Pressable>
@@ -70,7 +69,7 @@ export default function CreateAccount() {
           <Text style={styles.footerButtonText}>votre adresse Google</Text>
         </Pressable>
         <Pressable style={styles.footerButton}>
-          <Ionicons name="logo-facebook" size={24} color={"#469597"} />
+          <Image source={require("../assets/at.png")} />
           <Text style={styles.footerButtonText}>une autre adresse mail </Text>
         </Pressable>
       </View>
@@ -104,8 +103,9 @@ const styles = StyleSheet.create({
   textInput: {
     borderWidth: 1,
     borderColor: "#BBC6C8",
-    padding: 20,
+    padding: 10,
     borderRadius: 10,
+    paddingVertical: 20,
   },
   toggleContainer: {
     flexDirection: "row",
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#469597",
     padding: 15,
     borderRadius: 10,
+    marginBottom: 20,
   },
   buttonText: {
     color: "#FFFFFF",

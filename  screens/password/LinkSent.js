@@ -8,24 +8,16 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 const bgImg = require("../../assets/Bg.png");
 export default function LinkSent({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <Image source={bgImg} />
-      <Image
-        source={require("../../assets/Logo.png")}
-        style={{ alignSelf: "center", position: "absolute", top: 40 }}
-      />
+      <Image source={require("../../assets/Logo.png")} style={styles.logo} />
       <Image
         source={require("../../assets/twoperson.png")}
-        style={{
-          position: "absolute",
-          alignSelf: "center",
-          top: 130,
-        }}
+        style={styles.twoperson}
       />
 
       <View style={styles.container}>
@@ -74,5 +66,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
+  },
+  twoperson: {
+    position: "absolute",
+    alignSelf: "center",
+    top: 130,
+  },
+  logo: {
+    alignSelf: "center",
+    position: "absolute",
+    top: 40,
   },
 });

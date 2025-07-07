@@ -8,7 +8,6 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 const bgImg = require("../../assets/Bg.png");
 export default function ForgotPassword({ navigation }) {
@@ -73,8 +72,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     borderWidth: 1,
     borderColor: "#BBC6C8",
-    padding: 20,
+    padding: 10,
     borderRadius: 15,
+    paddingVertical: 20
   },
   text: {
     color: "#0E1F20",

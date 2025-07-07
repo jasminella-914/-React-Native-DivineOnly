@@ -7,10 +7,11 @@ import {
   ScrollView,
   ImageBackground,
   Pressable,
+  FlatList,
 } from "react-native";
 import TabNav from "../TabNav";
 import { useNavigation } from "@react-navigation/native";
-
+import { SERVICES_DATA } from "../data/data";
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -26,32 +27,23 @@ export default function Welcome() {
           width={80}
           height={80}
         />
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            marginHorizontal: 25,
-            marginTop: 80,
-           
-          }}
-        >
-          <Pressable style={styles.buttons}>
-            <Image source={require("../assets/Coiffure.png")} />
-            <Text>Coiffure</Text>
-          </Pressable>
-          <Pressable style={styles.buttons}>
-            <Image source={require("../assets/Barbier.png")} />
-            <Text>Barbier</Text>
-          </Pressable>
-          <Pressable style={styles.buttons}>
-            <Image source={require("../assets//Onglerie.png")} />
-            <Text>Onglerie</Text>
-          </Pressable>
-          <Pressable style={styles.buttons}>
-            <Image source={require("../assets/istitik.png")} />
-            <Text>Esthétique</Text>
-          </Pressable>
-        </View>
+        <ScrollView horizontal contentContainerStyle={styles.scrollView}>
+          <FlatList
+            horizontal
+            data={SERVICES_DATA}
+            renderItem={({ item }) => {
+              return (
+                <Pressable onPress={() => navigation.navigate("Booking")} style={styles.buttons}>
+                  <Image source={item.image} />
+                  <Text>{item.text}</Text>
+                </Pressable>
+              );
+            }}
+            ItemSeparatorComponent={() => {
+              return <View style={{ width: 21 }}></View>;
+            }}
+          />
+        </ScrollView>
         <Pressable
           style={styles.buttonContainer}
           onPress={() => navigation.navigate("TabNav")}
@@ -59,7 +51,6 @@ export default function Welcome() {
           <Text style={styles.buttonText}>Prendre rendez-vous</Text>
         </Pressable>
       </ImageBackground>
-      {/* <TabNav   /> */}
     </SafeAreaView>
   );
 }
@@ -85,6 +76,11 @@ const styles = StyleSheet.create({
   },
   buttons: {
     gap: 5,
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
+  scrollView: {
+    marginTop: 80,
+    marginHorizontal: 20,
+    padding: 12,
+  },
 });

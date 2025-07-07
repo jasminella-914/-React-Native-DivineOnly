@@ -18,9 +18,9 @@ import PyrenePager from "../PyrenePager";
 
 export default function Pyrene({ navigation }) {
   return (
-    <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
+    <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
       <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
-        <View style={{}}>
+        <View>
           <Image source={require("../../assets/bgPhoto.png")} />
           <View style={styles.container}>
             <Text style={styles.headerText}>Institut Pyrène</Text>
@@ -44,7 +44,7 @@ export default function Pyrene({ navigation }) {
       <PagerView style={styles.pagerView} initialPage={0}>
         <PyrenePager />
       </PagerView>
-    </SafeAreaView>
+    </View>
   );
 }
 

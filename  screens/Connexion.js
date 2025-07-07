@@ -18,17 +18,10 @@ export default function Connexion() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <Image source={require("../assets/Bg.png")} width={100} height={200} />
-      <Image
-        source={require("../assets/Logo.png")}
-        style={{ alignSelf: "center", position: "absolute", top: 40 }}
-      />
+      <Image source={require("../assets/Logo.png")} style={styles.image} />
       <Image
         source={require("../assets//twoperson.png")}
-        style={{
-          position: "absolute",
-          alignSelf: "center",
-          top: 130,
-        }}
+        style={styles.twoperson}
       />
 
       <View style={styles.container}>
@@ -74,7 +67,7 @@ export default function Connexion() {
         <Text style={styles.footerButtonText}>
           Vous n’avez pas encore de compte?
         </Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate("Créer mon compte")}>
           <Text style={[styles.footerButtonText, { color: "#469597" }]}>
             Inscription
           </Text>
@@ -134,5 +127,15 @@ const styles = StyleSheet.create({
   },
   footer: {
     marginTop: "auto",
+  },
+  image: {
+    alignSelf: "center",
+    position: "absolute",
+    top: 40,
+  },
+  twoperson: {
+    position: "absolute",
+    alignSelf: "center",
+    top: 130,
   },
 });
