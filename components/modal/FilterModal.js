@@ -6,11 +6,15 @@ import {
   TextInput,
   View,
 } from "react-native";
-import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import React from "react";
+import ActionSheet, {
+  FlatList,
+  SheetManager,
+} from "react-native-actions-sheet";
+import React, { useState } from "react";
+import { PRIX_DATA } from "../../data/data";
 
 export default function FilterModal() {
-  
+  const [selected, setSelected] = useState("");
   return (
     <ActionSheet
       containerStyle={{ flex: 0.7, paddingHorizontal: 20 }}
@@ -21,25 +25,28 @@ export default function FilterModal() {
           <View style={styles.border}></View>
           <Text style={styles.headerText}>Prix</Text>
         </View>
-        <View
-          style={{ flexDirection: "row", gap: 10, justifyContent: "center" }}
-        >
-          <View style={{ gap: 10 }}>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttontext}>moins de 50€</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttontext}>moins de 150€</Text>
-            </Pressable>
-          </View>
-          <View style={{ gap: 10 }}>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttontext}>moins de 100€</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttontext}>moins de 200€</Text>
-            </Pressable>
-          </View>
+        <View style={styles.buttonContainer}>
+          {[
+            "moins de 50€",
+            "moins de 100€",
+            "moins de 150€",
+            "moins de 200€",
+          ].map((item, index) => (
+            
+              <Pressable
+                onPress={() => setSelected(index)}
+                style={[
+                  styles.button,
+                  {
+                    backgroundColor: selected === index ? "#469597" : "#FFFFFF",
+                    borderColor: selected === index ? "#469597" : "#BBC6C8",
+                  },
+                ]}
+              >
+                <Text style={[styles.buttontext, { color: selected === index ? "#FFFFFF" : "#000000"} ]}>{item}</Text>
+              </Pressable>
+           
+          ))}
         </View>
         <View style={{ gap: 10, marginTop: 20 }}>
           <TextInput style={styles.input} placeholder="Prix minimum" />
@@ -104,5 +111,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignSelf: "center",
     borderRadius: 5,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 10,
   },
 });

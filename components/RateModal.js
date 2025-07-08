@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigationService";
+import StarRating from "react-native-star-rating-widget";
 
 export default function RateModal({ navigation }) {
-  // const [selected, setSelected] = useState("");
+  const [rating, setRating] = useState(0);
 
   return (
     <ActionSheet id="Rate" containerStyle={styles.container}>
@@ -25,6 +26,14 @@ export default function RateModal({ navigation }) {
           >
             Notez votre rendez-vous
           </Text>
+          <StarRating
+            starSize={44}
+            color="#469597"
+            emptyColor="#BBC6C8"
+            rating={rating}
+            onChange={setRating}
+            style={{ paddingLeft: 33 }}
+          />
         </View>
 
         <TextInput

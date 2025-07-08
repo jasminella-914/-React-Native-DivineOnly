@@ -25,7 +25,12 @@ export default function Pyrene({ navigation }) {
           <View style={styles.container}>
             <Text style={styles.headerText}>Institut Pyrène</Text>
             <View
-              style={{ flexDirection: "row", gap: 5, alignItems: "center" }}
+              style={{
+                flexDirection: "row",
+                gap: 5,
+                alignItems: "center",
+                paddingRight: 100,
+              }}
             >
               <Image source={require("../../assets/location.png")} />
               <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
@@ -57,15 +62,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   container: {
-    gap: 5,
+    gap: 10,
     backgroundColor: "#FFFFFF",
     position: "absolute",
-    bottom: 100,
-    left: 48,
+    bottom: 70,
+    left: 23,
     paddingVertical: 8,
-    paddingHorizontal: 40,
+    paddingHorizontal: 15,
     borderRadius: 13,
-    justifyContent: "center",
+    // justifyContent: "center",
   },
   headerText: {
     fontSize: 16,

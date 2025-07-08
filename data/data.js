@@ -27,7 +27,7 @@ import Barbier from "../assets/Barbier.png";
 import Onglerie from "../assets/Onglerie.png";
 import Esthétique from "../assets/istitik.png";
 import Marine from "../assets/marine.png";
-import Victor from "../assets/vector.png"
+import Victor from "../assets/vector.png";
 
 export const SHOP_DATA = [
   {
@@ -592,3 +592,5 @@ export const AVAILABILTY_DATA = [
     name: "Victor",
   },
 ];
+
+

@@ -194,7 +194,7 @@ export default function PyrenePager({ navigation }) {
       <View key="3">
         <Text style={styles.pageText}>Boutique</Text>
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={[styles.caption, { padding: 20 }]}>7 produits </Text>
           <FlatList
             numColumns={Math.ceil(SHOP_DATA.length / 4)}

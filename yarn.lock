@@ -4490,6 +4490,11 @@ react-native-segmented-control-tab@^4.0.0:
   resolved "https://registry.yarnpkg.com/react-native-segmented-control-tab/-/react-native-segmented-control-tab-4.0.0.tgz#e52a5638dda1a217e1f2308dcb8a935a7812edc2"
   integrity sha512-Iyxabn5T7HGFGjLAvOWUL6K/o0r+UglAUDDQzMgqlHcz3tCnK9C6QUgZaAkzMTSgB/2JO9yLgk3XROPmb8064A==
 
+react-native-star-rating-widget@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/react-native-star-rating-widget/-/react-native-star-rating-widget-1.9.2.tgz#f0c7de8acd1262a15b7f9e1a526607980b099d3b"
+  integrity sha512-yTAajy7ow6M5+ICkCN24XhsW+jQYTDYEB9QP2KXbE1333ilQDWQupsmHVH9+Ob53Qy7TTAYqIJeNyAm5bKWbYA==
+
 react-native-star-rating@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-native-star-rating/-/react-native-star-rating-1.1.0.tgz#57fcd023c63e947427c4dbbd1c8f4cc49e5c48ce"
