@@ -13,6 +13,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import { IA_DATA, IA_DATA2 } from "../../data/data";
 import { SheetManager } from "react-native-actions-sheet";
+import AfroPager from "../AfroPager";
 
 export default function Afro({ navigation }) {
   const [size, setSize] = useState("");
@@ -31,13 +32,16 @@ export default function Afro({ navigation }) {
         source={require("../../assets/bgPhoto.png")}
         style={styles.image}
       />
-      <View style={styles.tabContainer}>
+      <View style={styles.pager}>
+        <AfroPager />
+      </View>
+      {/* <View style={styles.tabContainer}>
         <View style={{ paddingVertical: 10 }}>
           {["Shampooing BIO solide nourissant et réparateur"].map(
             (item, index) => (
               <ScrollView
                 style={{
-                  // flex: 1,
+                 
 
                   paddingVertical: 12,
                   paddingHorizontal: 20,
@@ -108,7 +112,7 @@ export default function Afro({ navigation }) {
                           paddingHorizontal: 175,
                         }}
                       >
-                        {/* <TextInput value={size} onChangeText={setSize} /> */}
+                        <TextInput value={size} onChangeText={setSize} />
                         <Ionicons
                           name="chevron-down"
                           size={20}
@@ -133,7 +137,7 @@ export default function Afro({ navigation }) {
             )
           )}
         </View>
-      </View>
+      </View> */}
     </SafeAreaView>
   );
 }
@@ -158,42 +162,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     marginTop: 20,
   },
-  buttonText: {
-    backgroundColor: "#4695971A",
-    color: "#000000",
-    fontSize: 12,
-    fontWeight: "400",
-    textAlign: "center",
-    paddingHorizontal: 8,
-    paddingVertical: 5,
-    borderRadius: 14,
-  },
-  button: {
-    backgroundColor: "#469597",
-    paddingVertical: 15,
-    borderRadius: 10,
-    paddingHorizontal: 97,
-    marginTop: "auto",
-  },
-  tabContainer: {
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-    overflow: "hidden",
-    backgroundColor: "#FFFFFF",
+ 
+  pager: {
     position: "absolute",
-    zIndex: 1,
     bottom: 0,
-    left: 0,
-    right: 0,
-    // backgroundColor: "red",
-  },
-  icon: {
-    position: "absolute",
-    alignSelf: "flex-end",
-    alignItems: "center",
-    justifyContent: "center",
-    bottom: 15,
-    right: 10,
-    color: "#469597",
+    top: 400,
   },
 });
