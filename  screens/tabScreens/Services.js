@@ -40,8 +40,10 @@ export default function Services({ navigation }) {
             activeColor="#469597"
             boxStyle={{
               borderColor: "#BBC6C8",
-              borderWidth: 1,
+              
+              
             }}
+            
           />
           <TextInput
             placeholder="Nom du professionnel, prestations..."

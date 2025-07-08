@@ -18,16 +18,12 @@ const twoperson = require("../../assets//twoperson.png");
 export default function Shop({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          paddingHorizontal: 20,
-        }}
-      >
-        <View style={{ flexDirection: "row", gap: 20, alignItems: "center" }}>
-          <Pressable  onPress={() => SheetManager.show("Filter") } style={styles.button}>
+      <View style={styles.secondContainer}>
+        <View style={styles.header}>
+          <Pressable
+            onPress={() => SheetManager.show("Filter")}
+            style={styles.button}
+          >
             <Image source={require("../../assets/filter.png")} />
             <Text style={styles.text}>Filtrer</Text>
           </Pressable>
@@ -41,56 +37,26 @@ export default function Shop({ navigation }) {
         </Pressable>
       </View>
       <FlatList
-        ItemSeparatorComponent={() => {
-          return <View style={{ height: 20 }}></View>;
-        }}
+        showsVerticalScrollIndicator={false}
+        numColumns={Math.ceil(SHOP_DATA.length / 4)}
+        contentContainerStyle={{ alignItems: "center", marginTop: 20, gap: 10 }}
+        columnWrapperStyle={{ gap: 10 }}
         data={SHOP_DATA}
         renderItem={({ item }) => {
           return (
-            <Pressable onPress={() => navigation.navigate("Afro")} style={styles.dataContainer}>
+            <Pressable
+              onPress={() => navigation.navigate("Afro")}
+              style={styles.dataContainer}
+            >
               <View style={styles.productContainer}>
-                <Image
-                  source={item.image}
-                  style={{
-                    width: 172,
-                    height: 164,
-                  }}
-                />
-                <Text style={styles.name}>{item.name}</Text>
-                <Text style={styles.info}>{item.info}</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                >
+                <Image source={item.image} style={styles.image} />
+                <View>
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.info}>{item.info}</Text>
+                </View>
+                <View style={styles.priceContainer}>
                   <Text style={styles.info}>{item.price}</Text>
                   <Image source={item.icon} />
-                </View>
-              </View>
-              <View style={styles.productContainer}>
-                <Image
-                  source={item.image}
-                  style={{
-                    width: 172,
-                    height: 164,
-                  }}
-                />
-                <Text style={styles.name}>{item.name}</Text>
-                <Text style={styles.info}>{item.info}</Text>
-
-                <View
-                  style={{
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Text style={styles.info}>{item.price}</Text>
-                  <Image source={item.icon}
-                 
-                   />
                 </View>
               </View>
             </Pressable>
@@ -135,9 +101,22 @@ const styles = StyleSheet.create({
   },
   dataContainer: {
     flexDirection: "row",
-    paddingHorizontal: 10,
-    gap: 10,
-
-    marginTop: 20,
   },
+  secondContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingVertical: 11,
+  },
+  image: {
+    width: 172,
+    height: 164,
+  },
+  priceContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  header: { flexDirection: "row", gap: 20, alignItems: "center" },
 });

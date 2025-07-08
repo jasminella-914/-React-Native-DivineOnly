@@ -71,27 +71,6 @@ export default function AppointmentConfirm({ navigation }) {
       <Pressable onPress={() => SheetManager.show("Rate")} style={styles.button}>
         <Text style={styles.buttonText}>Fermer</Text>
       </Pressable>
-     
-      {/* <View style={{backgroundColor: "red"}}>
-        <Modal
-          isVisible={isModalVisible}
-          onBackdropPress={() => setModalVisible(false)}
-          style={styles.modal}
-        >
-          <View style={{ gap: 10 }}>
-            <Pressable >
-              <Text>Gallery</Text>
-            </Pressable>
-            <Pressable>
-              <Text>Camera</Text>
-            </Pressable>
-            <Button
-              title="Cancel"
-              onPress={() => setModalVisible(!isModalVisible)}
-            ></Button>
-          </View>
-        </Modal>
-      </View> */}
     </SafeAreaView>
   );
 }

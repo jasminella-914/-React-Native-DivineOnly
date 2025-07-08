@@ -20,7 +20,10 @@ export default function PyrenePager({ navigation }) {
     <PagerView style={styles.container} initialPage={0}>
       <View key="1">
         <Text style={styles.pageText}>Informations</Text>
-        <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: 20, paddingTop: 30 }}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ paddingHorizontal: 20, paddingTop: 30 }}
+        >
           <Text style={styles.lorem}>
             Lorem ipsum dolor sit amet consectetur. In laoreet in sed vel nibh
             morbi massa nulla vel. Nisl convallis dignissim auctor neque et amet
@@ -40,14 +43,7 @@ export default function PyrenePager({ navigation }) {
             Voir plus
           </Text>
 
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              marginVertical: 20,
-              paddingHorizontal: 20,
-            }}
-          >
+          <View style={styles.map}>
             <MapView
               style={{
                 width: 340,
@@ -71,7 +67,7 @@ export default function PyrenePager({ navigation }) {
             </MapView>
           </View>
 
-          <View>
+          <View style={{ marginTop: 20 }}>
             <Text style={styles.headertext}>Les prestations</Text>
             <View>
               <Pressable style={styles.button}>
@@ -93,12 +89,14 @@ export default function PyrenePager({ navigation }) {
                   ]}
                 >
                   <View style={{ gap: 10 }}>
-                    <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                      Soin nettoyant au charbon végétal
-                    </Text>
-                    <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                      Convient à tout type de peau
-                    </Text>
+                    <View>
+                      <Text style={[styles.lorem, { fontWeight: "600" }]}>
+                        Soin nettoyant au charbon végétal
+                      </Text>
+                      <Text style={styles.caption}>
+                        Convient à tout type de peau
+                      </Text>
+                    </View>
                     <View style={{ flexDirection: "row", gap: 15 }}>
                       <Image source={require("../assets/Clock.png")} />
                       <Text style={[styles.lorem, { fontWeight: "600" }]}>
@@ -115,19 +113,6 @@ export default function PyrenePager({ navigation }) {
                     </View>
                   </View>
                   <View>
-                    {/* <CardStack
-                      style={styles.content}
-                      // ref={(swiper) => {
-                      //   this.swiper = swiper;
-                      // }}
-                    >
-                      <Card style={[styles.card, styles.card1]}>
-                        <Text style={styles.label}>A</Text>
-                      </Card>
-                      <Card style={[styles.card, styles.card2]}>
-                        <Text style={styles.label}>B</Text>
-                      </Card>
-                    </CardStack> */}
                     <Image source={require("../assets/article.png")} />
                   </View>
                 </Pressable>
@@ -208,46 +193,48 @@ export default function PyrenePager({ navigation }) {
       </View>
       <View key="3">
         <Text style={styles.pageText}>Boutique</Text>
-        <Text style={[styles.caption, { marginLeft: 20 }]}>7 produits </Text>
-        <FlatList
-          numColumns={Math.ceil(SHOP_DATA.length / 3)}
-          contentContainerStyle={{
-            alignItems: "center",
-            gap: 10,
-            paddingTop: 20,
-            paddingHorizontal: 20,
-          }}
-          columnWrapperStyle={{ gap: 10 }}
-          showsVerticalScrollIndicator={false}
-          data={SHOP_DATA}
-          renderItem={({ item }) => {
-            return (
-              <Pressable onPress={() => navigate("Afro")}>
-                <View style={styles.productContainer}>
-                  <Image source={item.image} />
-                  <Text style={[styles.caption, { color: "#00000099" }]}>
-                    {item.name}
-                  </Text>
-                  <View>
-                    <Text style={styles.info}>{item.info}</Text>
-                    <Text style={styles.info}>{item.info1}</Text>
-                  </View>
 
-                  <View
-                    style={{
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <Text style={styles.info}>{item.price}</Text>
-                    <Image source={item.icon} />
+        <ScrollView>
+          <Text style={[styles.caption, { padding: 20 }]}>7 produits </Text>
+          <FlatList
+            numColumns={Math.ceil(SHOP_DATA.length / 4)}
+            contentContainerStyle={{
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 10
+            }}
+            columnWrapperStyle={{ gap: 10 }}
+            showsVerticalScrollIndicator={false}
+            data={SHOP_DATA}
+            renderItem={({ item }) => {
+              return (
+                <Pressable onPress={() => navigate("Afro")}>
+                  <View style={styles.productContainer}>
+                    <Image source={item.image} />
+                    <Text style={[styles.caption, { color: "#00000099" }]}>
+                      {item.name}
+                    </Text>
+                    <View>
+                      <Text style={styles.info}>{item.info}</Text>
+                      <Text style={styles.info}>{item.info1}</Text>
+                    </View>
+
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Text style={styles.info}>{item.price}</Text>
+                      <Image source={item.icon} />
+                    </View>
                   </View>
-                </View>
-              </Pressable>
-            );
-          }}
-        />
+                </Pressable>
+              );
+            }}
+          />
+        </ScrollView>
         <Pressable
           onPress={() => navigate("Appointment")}
           style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
@@ -310,12 +297,12 @@ const styles = StyleSheet.create({
   pageText: {
     color: "#469597",
     fontSize: 14,
-    lineHeight: 18,
     fontWeight: "500",
     textAlign: "center",
     borderBottomWidth: 2,
     borderColor: "#469597",
-    padding: 15,
+    paddingVertical: 15,
+    marginHorizontal: 20,
   },
   lorem: {
     fontSize: 14,
@@ -369,5 +356,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
+  },
+  map: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: 20,
+    paddingHorizontal: 20,
   },
 });

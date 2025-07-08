@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { FlatList } from "react-native-actions-sheet";
-import { TIME_DATA } from "../../data/data";
+import { AVAILABILTY_DATA, TIME_DATA } from "../../data/data";
 
 // import { LocaleConfig } from "react-native-calendars";
 
@@ -61,6 +61,7 @@ LocaleConfig.defaultLocale = "fr";
 
 export default function Appointment({ navigation }) {
   const [selected, setSelected] = useState("");
+   const [selectedIndex, setSelectedIndex] = useState("");
 
   return (
     <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
@@ -80,7 +81,6 @@ export default function Appointment({ navigation }) {
           <Text style={styles.text}>Convient à tout type de peau</Text>
           <View
             style={{
-              // borderBottomWidth: 1,
               borderColor: "#BBC6C873",
               flexDirection: "row",
               gap: 10,
@@ -111,49 +111,62 @@ export default function Appointment({ navigation }) {
           </Pressable>
           <View style={{ paddingHorizontal: 20, gap: 20 }}>
             <Text style={styles.name}>Avec qui ? </Text>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal ite>
-              <View
-                style={{
-                  gap: 20,
-                  flexDirection: "row",
-                  paddingVertical: 20,
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              style={{ flexDirection: "row" }}
+            >
+              <Pressable style={[styles.buttonPhoto, { marginRight: 10 }]}>
+                <Text
+                  style={[
+                    styles.text,
+                    {
+                      fontSize: 14,
+                      fontWeight: "500",
+                      color: "#000000",
+                      textAlign: "center",
+                      backgroundColor: "#F5F5F5",
+                    },
+                  ]}
+                >
+                  Première
+                </Text>
+                <Text>disponibilité</Text>
+              </Pressable>
+              <FlatList
+                horizontal
+                contentContainerStyle={{ gap: 10 }}
+                showsHorizontalScrollIndicator={false}
+                data={AVAILABILTY_DATA}
+                renderItem={({ item, index }) => {
+                  return (
+                    <View style={{ gap: 10 }}>
+                      <Pressable
+                        onPress={() => setSelectedIndex(index)}
+                        style={[
+                          styles.buttonPhoto,
+                          {
+                            backgroundColor:
+                              selectedIndex === index ? "#469597" : "#F5F5F5",
+                          },
+                        ]}
+                      >
+                        <Image source={item.image} />
+                        <Text
+                          style={[
+                            styles.name,
+                            {
+                              color: selectedIndex === index ? "#FFFFFF" : "#000000",
+                            },
+                          ]}
+                        >
+                          {item.name}
+                        </Text>
+                      </Pressable>
+                    </View>
+                  );
                 }}
-              >
-                <Pressable
-                  onPress={() => navigation.navigate("Your Appointment")}
-                  style={styles.buttonPhoto}
-                >
-                  <Text
-                    style={[
-                      styles.text,
-                      {
-                        fontSize: 14,
-                        fontWeight: "500",
-                        color: "#000000",
-                        textAlign: "center",
-                        backgroundColor: "#F5F5F5",
-                      },
-                    ]}
-                  >
-                    Première
-                  </Text>
-                  <Text>disponibilité</Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => navigation.navigate("Your Appointment")}
-                  style={styles.buttonPhoto}
-                >
-                  <Image source={require("../../assets/marine.png")} />
-                  <Text style={styles.personName}>Marine</Text>
-                </Pressable>
-                <Pressable
-                  onPress={() => navigation.navigate("Your Appointment")}
-                  style={styles.buttonPhoto}
-                >
-                  <Image source={require("../../assets/vector.png")} />
-                  <Text style={styles.personName}>Victor</Text>
-                </Pressable>
-              </View>
+              />
             </ScrollView>
             <View style={{ gap: 10 }}>
               <Text style={[styles.name, { paddingLeft: 20 }]}>
@@ -177,62 +190,15 @@ export default function Appointment({ navigation }) {
                     },
                   }}
                 />
-
-                {/* <ScrollView
-                  showsHorizontalScrollIndicator={false}
-                  horizontal
-                  style={{ marginTop: 20 }}
-                >
-                  <View style={{ gap: 10 }}>
-                    <View style={{ flexDirection: "row", gap: 10 }}>
-                      <Pressable style={[styles.button]}>
-                        <Text style={styles.buttonText}>10:00</Text>
-                      </Pressable>
-                      <Pressable style={[styles.button]}>
-                        <Text style={styles.buttonText}>11:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>12:00</Text>
-                      </Pressable>
-                      <Pressable style={[styles.button]}>
-                        <Text style={styles.buttonText}>10:00</Text>
-                      </Pressable>
-                      <Pressable style={[styles.button]}>
-                        <Text style={styles.buttonText}>11:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>12:00</Text>
-                      </Pressable>
-                    </View>
-                    <View style={{ flexDirection: "row", gap: 10 }}>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>13:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>14:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>15:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>13:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>14:00</Text>
-                      </Pressable>
-                      <Pressable style={styles.button}>
-                        <Text style={styles.buttonText}>15:00</Text>
-                      </Pressable>
-                    </View>
-                  </View>
-                </ScrollView> */}
               </View>
             </View>
           </View>
         </View>
-        <ScrollView 
-        showsHorizontalScrollIndicator={ false}
-        horizontal style={{ paddingHorizontal: 20, marginTop: 20 }}>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          style={{ paddingHorizontal: 20, marginTop: 20 }}
+        >
           <FlatList
             numColumns={Math.ceil(TIME_DATA.length / 2)}
             contentContainerStyle={{ gap: 10 }}
@@ -243,7 +209,10 @@ export default function Appointment({ navigation }) {
               return (
                 <View style={{ gap: 10 }}>
                   <Pressable
-                    onPress={() => setSelected(index)}
+                    onPress={() => {
+                      navigation.navigate("Your Appointment");
+                      setSelected(index);
+                    }}
                     style={[
                       styles.button,
                       {
@@ -252,20 +221,15 @@ export default function Appointment({ navigation }) {
                       },
                     ]}
                   >
-                    <Text style={styles.buttonText}>{item.time}</Text>
+                    <Text
+                      style={[
+                        styles.buttonText,
+                        { color: selected === index ? "#FFFFFF" : "#000000" },
+                      ]}
+                    >
+                      {item.time}
+                    </Text>
                   </Pressable>
-                  {/* <Pressable
-                  onPress={() => setSelected(index)}
-                  style={[
-                    styles.button,
-                    {
-                      backgroundColor:
-                        selected === index ? "#469597" : "#F5F5F5",
-                    },
-                  ]}
-                >
-                  <Text style={styles.buttonText}>{item.time}</Text>
-                </Pressable> */}
                 </View>
               );
             }}
@@ -339,6 +303,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 20,
     paddingHorizontal: 16,
+    gap: 5,
   },
   personName: {
     paddingTop: 5,

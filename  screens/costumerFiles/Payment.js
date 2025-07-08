@@ -1,13 +1,13 @@
-import { StyleSheet, Text, SafeAreaView, Pressable } from "react-native";
+import { StyleSheet, Text, SafeAreaView, Pressable, View } from "react-native";
 import React from "react";
 
 export default function Payment({ navigation }) {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Pressable onPress={() => navigation.navigate("Confirmation")}>
         <Text style={styles.text}>Mobile Money</Text>
       </Pressable>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
+    justifyContent: "center"
   },
   text: {
     color: "#000000",

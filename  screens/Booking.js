@@ -11,14 +11,26 @@ import React from "react";
 import { FlatList } from "react-native-gesture-handler";
 import { SERVICE_DATA } from "../data/data";
 import { SheetManager } from "react-native-actions-sheet";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Booking({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.secondContainer}>
         <Image source={require("../assets/logoName.png")} style={styles.logo} />
-
-        <TextInput placeholder="Où ? " style={styles.input} />
+        <View style={styles.input}>
+          <View style={{ flexDirection: "row", gap: 9, alignItems: "center" }}>
+            <Ionicons name="search-outline" size={22} />
+            <View>
+              <Text>Coloration</Text>
+              <Text>Autour de moi</Text>
+            </View>
+            <Pressable style={styles.pencil}>
+              <Image source={require("../assets/pencil.png")} />
+            </Pressable>
+          </View>
+        </View>
+        {/* <TextInput placeholder="Où ? " style={styles.input} /> */}
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={styles.headerText}>Réserve ta prestation</Text>
           <Pressable
@@ -27,8 +39,8 @@ export default function Booking({ navigation }) {
           >
             <Image
               source={require("../assets/filter.png")}
-              width={19}
-              height={19}
+              width={17}
+              height={17}
             />
             <Text style={styles.filter}>Filtrer</Text>
           </Pressable>
@@ -41,21 +53,11 @@ export default function Booking({ navigation }) {
           }}
           renderItem={({ item }) => {
             return (
-              <Pressable onPress={() => navigation.navigate("Pyrene")} style={{ marginTop: 20 }}>
+              <Pressable onPress={() => navigation.navigate("Pyrene")}>
                 <Image source={item.image} />
                 <Text style={styles.service}>{item.service}</Text>
-                <View
-                  style={{
-                    justifyContent: "center",
-                    gap: 10,
-                    backgroundColor: "#00000008",
-                    paddingHorizontal: 8,
-                    paddingVertical: 20,
-                    borderBottomLeftRadius: 20,
-                    borderBottomRightRadius: 20,
-                  }}
-                >
-                  <Text style={styles.date}>{item.title}</Text>
+                <View style={styles.info}>
+                  <Text style={styles.title}>{item.title}</Text>
                   <View style={{ flexDirection: "row", gap: 10 }}>
                     <Image source={item.icon} width={15} height={18} />
 
@@ -63,7 +65,11 @@ export default function Booking({ navigation }) {
                   </View>
                   <View style={{ flexDirection: "row", gap: 5 }}>
                     <Image source={item.secondIcon} />
-                    <Text>{item.rate}</Text>
+                    <Text
+                      style={[styles.location, { textDecorationLine: "none" }]}
+                    >
+                      {item.rate}
+                    </Text>
                   </View>
                   <View style={{ flexDirection: "row", gap: 10 }}>
                     <Text style={styles.Text}>{item.month}</Text>
@@ -92,11 +98,7 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: "#BBC6C8",
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 21,
     borderRadius: 14,
-    fontSize: 14,
-    fontWeight: "500",
     padding: 10,
   },
   secondContainer: {
@@ -109,17 +111,17 @@ const styles = StyleSheet.create({
   },
   filter: {
     color: "#469597",
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: "400",
   },
   button: {
     flexDirection: "row",
-    gap: 5,
+    gap: 8,
     borderWidth: 1,
     borderColor: "#469597",
     alignItems: "center",
     borderRadius: 14,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     paddingVertical: 4,
   },
   Text: {
@@ -137,8 +139,32 @@ const styles = StyleSheet.create({
     top: 10,
     left: 10,
     padding: 4,
-    borderRadius: 10,
+    borderRadius: 7,
     fontSize: 12,
-    fontWeight: "500"
+    fontWeight: "500",
+  },
+  pencil: {
+    position: "absolute",
+    right: 10,
+  },
+  location: {
+    textDecorationLine: "underline",
+    fontSize: 12,
+    fontWeight: "400",
+  },
+  info: {
+    justifyContent: "center",
+    gap: 10,
+    backgroundColor: "#FFFFFF",
+    paddingHorizontal: 8,
+    paddingVertical: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    borderWidth: 1,
+    borderColor: "#00000021",
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: "600",
   },
 });

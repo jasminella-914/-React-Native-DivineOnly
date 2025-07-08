@@ -7,50 +7,42 @@ import {
   Image,
 } from "react-native";
 import React from "react";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Confirmation({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{  justifyContent: "center"}}>
-        <View
-          style={{ gap: 20, alignItems: "center", justifyContent: "center" }}
-        >
+      <View style={styles.secondContainer}>
+        <View style={styles.header}>
           <Text style={styles.headerText}>Merci pour ta commande Manon</Text>
           <Text style={styles.bodyText}>#569843</Text>
-          <Text style={styles.text}>
+          <Text style={[styles.text, { paddingBottom: 20 }]}>
             Un récapitulatif de ta commande à été envoyé par mail
           </Text>
         </View>
-        <View style={{ gap: 10, marginTop: 20, marginHorizontal: 20 }}>
+        <Pressable style={styles.pressable}>
+          <Text style={styles.text}>Détails de ma commande (3)</Text>
+          <View style={styles.details}>
+            <Text style={[styles.bodyText, { fontSize: 14 }]}>25,49€</Text>
+            <Ionicons name="chevron-down" size={15} color={"#469597"} />
+          </View>
+        </Pressable>
+        <View style={{ gap: 10, marginTop: 20 }}>
           <View style={{ gap: 5 }}>
             <Text style={styles.text}>Livraison à domicile</Text>
             <Text style={styles.text}>
               8 rue de la chapelle, 33000 Bordeaux, France
             </Text>
-            <View
-              style={{
-                borderBottomWidth: 1,
-                borderColor: "#BDBBB078",
-                marginTop: 5,
-              }}
-            ></View>
+            <View style={styles.border}></View>
           </View>
           <View style={{ gap: 5 }}>
             <Text style={styles.text}>Mode de paiement</Text>
-            <View
-              style={{ flexDirection: "row", justifyContent: "space-between" }}
-            >
+            <View style={styles.modePayment}>
               <Image source={require("../../assets/stripe.png")} />
               <Text>25,49€</Text>
             </View>
 
-            <View
-              style={{
-                borderBottomWidth: 1,
-                borderColor: "#BDBBB078",
-                marginTop: 5,
-              }}
-            ></View>
+            <View style={styles.border}></View>
           </View>
           <View style={{ gap: 5 }}>
             <Text style={styles.text}>Contact</Text>
@@ -59,7 +51,10 @@ export default function Confirmation({ navigation }) {
           </View>
         </View>
       </View>
-      <Pressable onPress={() => navigation.navigate("Welcome")} style={styles.button}>
+      <Pressable
+        onPress={() => navigation.navigate("Welcome")}
+        style={styles.button}
+      >
         <Text style={styles.buttonText}>Fermer</Text>
       </Pressable>
     </SafeAreaView>
@@ -96,4 +91,23 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
   },
+  pressable: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#F7F7F7",
+    padding: 20,
+  },
+  secondContainer: {
+    justifyContent: "center",
+    paddingHorizontal: 20,
+    flex: 1,
+  },
+  border: {
+    borderBottomWidth: 1,
+    borderColor: "#BDBBB078",
+    marginTop: 5,
+  },
+  modePayment: { flexDirection: "row", justifyContent: "space-between" },
+  details: { flexDirection: "row", gap: 12, alignItems: "center" },
+  header: { gap: 20, alignItems: "center", justifyContent: "center" },
 });
