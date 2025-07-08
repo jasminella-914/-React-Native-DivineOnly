@@ -26,8 +26,28 @@ import Coiffure from "../assets/Coiffure.png";
 import Barbier from "../assets/Barbier.png";
 import Onglerie from "../assets/Onglerie.png";
 import Esthétique from "../assets/istitik.png";
+import Marine from "../assets/marine.png";
+import Victor from "../assets/vector.png"
 
 export const SHOP_DATA = [
+  {
+    name: "Camille rose",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
+    price: "25,00€",
+    image: Image,
+    icon: Icon,
+    size: "150 ml",
+  },
+  {
+    name: "Camille rose",
+    info: "Sweet ginger cleansing",
+    info1: "rinse",
+    price: "25,00€",
+    image: Image,
+    icon: Icon,
+    size: "150 ml",
+  },
   {
     name: "Camille rose",
     info: "Sweet ginger cleansing",
@@ -519,38 +539,56 @@ export const TIME_DATA = [
   },
 ];
 
-
 export const SERVICES_DATA = [
   {
     image: Coiffure,
-    text: "Coiffure"
+    text: "Coiffure",
   },
-   {
+  {
     image: Barbier,
-    text: "Barbier"
+    text: "Barbier",
   },
-   {
+  {
     image: Onglerie,
-    text: "Onglerie"
+    text: "Onglerie",
   },
-   {
+  {
     image: Esthétique,
-    text: "Esthétique"
+    text: "Esthétique",
   },
   {
     image: Coiffure,
-    text: "Coiffure"
+    text: "Coiffure",
   },
-   {
+  {
     image: Barbier,
-    text: "Barbier"
+    text: "Barbier",
   },
-   {
+  {
     image: Onglerie,
-    text: "Onglerie"
+    text: "Onglerie",
   },
-   {
+  {
     image: Esthétique,
-    text: "Esthétique"
+    text: "Esthétique",
   },
-]
+];
+
+export const AVAILABILTY_DATA = [
+  {
+    image: Marine,
+    name: "Marine",
+  },
+  {
+    image: Victor,
+    name: "Victor",
+  },
+  {
+    image: Marine,
+    name: "Marine",
+  },
+  {
+    image: Victor,
+    name: "Victor",
+  },
+];
