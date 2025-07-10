@@ -1,72 +1,63 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  ScrollView,
+} from "react-native";
+import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import { Rating, AirbnbRating } from "react-native-ratings";
-import { navigate } from "../../navigationService";
-// import STAR_IMAGE from "../../assets/rating.png"
+import StarRating from "react-native-star-rating-widget";
+import { RATING_DATA } from "../../data/data";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Rating from "../../ screens/Rating";
 
-const STAR_IMAGE = require("../../assets/rating.png");
+export default function NoteModal({ index }) {
+  const [rating, setRating] = useState(0);
+  const [selected, setSelected] = useState(null);
 
-// ratingCompleted(Rating);
-export default function NoteModal() {
   return (
     <ActionSheet containerStyle={styles.container} id="Note">
+      <View style={styles.border}></View>
       <View>
         <Text style={styles.headerText}>Note</Text>
       </View>
-      <View style={{ gap: 10 }}>
-        <Text>À partir de </Text>
-        <Pressable style={styles.button}></Pressable>
-        <Pressable style={styles.button}></Pressable>
-        <Pressable style={styles.button}></Pressable>
-        <Pressable style={styles.button}></Pressable>
-        <Pressable style={styles.button}></Pressable>
-      </View>
-      <View style={{ marginTop: 100, gap: 20 }}>
-        <Pressable
-          onPress={() => {
-            SheetManager.hide("Note");
-          }}
-          style={styles.footerButton}
-        >
-          <Text style={styles.buttonText}>Appliquer</Text>
-        </Pressable>
-        <Pressable>
-          <Text style={[styles.buttonText, { color: "#469597" }]}>
-            Réinitialiser
-          </Text>
-        </Pressable>
-      </View>
-      {/* <View style={{ borderWidth: 1, borderColor: "#BBC6C8" }}>
-          <AirbnbRating />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ gap: 10 }}>
+          <Text style={styles.partirText}>À partir de </Text>
 
-          <AirbnbRating
-        count={11}
-        defaultRating={11}
-        size={20}
-      />
-
-          <Rating
-            showRating
-            onFinishRating={this.ratingCompleted}
-            style={{ paddingVertical: 10 }}
+          <FlatList
+            data={RATING_DATA}
+            contentContainerStyle={{ gap: 10 }}
+            renderItem={({ item, index }) => {
+              return (
+                <Rating
+                  selected={selected === index}
+                  onPress={() => setSelected(index)}
+                  filled={item}
+                />
+              );
+            }}
           />
         </View>
-        <View style={{ borderWidth: 1, borderColor: "#BBC6C8" }}>
-          <AirbnbRating />
-
-          <AirbnbRating
-        count={11}
-        defaultRating={11}
-        size={20}
-      />
-
-          <Rating
-            showRating
-            onFinishRating={this.ratingCompleted}
-            style={{ paddingVertical: 10 }}
-          />
-        </View> */}
+        <View style={{ marginTop: 30, gap: 20 }}>
+          <Pressable
+            onPress={() => {
+              SheetManager.hide("Note");
+            }}
+            style={styles.footerButton}
+          >
+            <Text style={styles.buttonText}>Appliquer</Text>
+          </Pressable>
+          <Pressable>
+            <Text style={[styles.buttonText, { color: "#469597" }]}>
+              Réinitialiser
+            </Text>
+          </Pressable>
+        </View>
+      </ScrollView>
     </ActionSheet>
   );
 }
@@ -76,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "700",
     textAlign: "center",
-    marginVertical: 20,
+    marginVertical: 10,
   },
   container: {
     paddingHorizontal: 23,
@@ -84,10 +75,10 @@ const styles = StyleSheet.create({
   },
   button: {
     borderWidth: 1,
-    paddingVertical: 15,
-    paddingHorizontal: 88,
+    paddingVertical: 8,
     borderRadius: 10,
     borderColor: "#BBC6C8",
+    paddingHorizontal: 50,
   },
   footerButton: {
     backgroundColor: "#469597",
@@ -101,5 +92,27 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
+  },
+  border: {
+    borderWidth: 3,
+    borderColor: "#E9E9E9",
+    width: 52,
+    height: 5,
+    marginTop: 20,
+    alignSelf: "center",
+    borderRadius: 5,
+  },
+  starContainer: {
+    flexDirection: "row",
+    borderWidth: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 75,
+    gap: 10,
+    borderRadius: 14,
+    borderColor: "#BBC6C8",
+  },
+  partirText: {
+    fontSize: 14,
+    fontWeight: "500",
   },
 });
