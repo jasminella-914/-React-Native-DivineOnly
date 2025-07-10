@@ -28,6 +28,10 @@ import Onglerie from "../assets/Onglerie.png";
 import Esthétique from "../assets/istitik.png";
 import Marine from "../assets/marine.png";
 import Victor from "../assets/vector.png";
+import SalonImage2 from "../assets/SalonImage2.png";
+import SalonImage3 from "../assets/SalonImage3.png";
+import filledStar from "../assets/rating.png";
+import emptyStar from "../assets/emptyStar.png";
 
 export const SHOP_DATA = [
   {
@@ -180,6 +184,7 @@ export const APPOINTMENT_LIST = [
     image: BlackImage,
     date: "Dimanche 17 Juin • 16h",
     info: "Institut Pyrène • 4 prestations",
+    info1: "Annulé par le salon",
   },
   {
     image: BlackImage,
@@ -218,7 +223,15 @@ export const SALONS_DATA = [
     rate: "4,9   17 avis",
   },
   {
-    image: SalonImage,
+    image: SalonImage2,
+    title: "Institut Turquoise",
+    icon: LocationIcon,
+    location: "500 Rte de Berre, 33300 Bordeaux",
+    secondIcon: Star,
+    rate: "4,9   17 avis",
+  },
+  {
+    image: SalonImage3,
     title: "Institut Turquoise",
     icon: LocationIcon,
     location: "500 Rte de Berre, 33300 Bordeaux",
@@ -234,15 +247,7 @@ export const SALONS_DATA = [
     rate: "4,9   17 avis",
   },
   {
-    image: SalonImage,
-    title: "Institut Turquoise",
-    icon: LocationIcon,
-    location: "500 Rte de Berre, 33300 Bordeaux",
-    secondIcon: Star,
-    rate: "4,9   17 avis",
-  },
-  {
-    image: SalonImage,
+    image: SalonImage2,
     title: "Institut Turquoise",
     icon: LocationIcon,
     location: "500 Rte de Berre, 33300 Bordeaux",
@@ -593,4 +598,42 @@ export const AVAILABILTY_DATA = [
   },
 ];
 
+export const SEARCHLIST_DATA = [
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+  {
+    image: BlackImage,
+    title: "The beauty",
+    info: "5 Rue Bel air, Marseille",
+  },
+];
 
+export const RATING_DATA = [5, 4, 3, 2, 1];
