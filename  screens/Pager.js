@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import { FlatList } from "react-native-actions-sheet";
 import { SheetManager } from "react-native-actions-sheet";
 
@@ -10,47 +17,42 @@ export default function Pager() {
     <PagerView style={styles.pagerView} initialPage={0}>
       <View key="1">
         <Text style={styles.pageText}>Rendez-vous</Text>
-        <FlatList
-          data={APPOINTMENT_LIST}
-          renderItem={({ item }) => {
-            return (
-              <Pressable onPress={() => SheetManager.show("Reschedule")} style={styles.list}>
-                <Image source={item.image} />
-                <View style={{ justifyContent: "center", gap: 10 }}>
-                  <Text style={styles.date}>{item.date}</Text>
-                  <Text style={styles.info}>{item.info}</Text>
-                </View>
-              </Pressable>
-            );
-          }}
-        />
-      </View>
-      <View key="2">
-        <Text style={styles.pageText}>Favoris</Text>
-        <View>
-          <Text style={styles.headertext}>Salons favoris</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.headertext}>Rendez-vous à venir</Text>
           <FlatList
-            data={SALONS_DATA}
-            ItemSeparatorComponent={() => {
-              return(
-                <View style={{ height: 20,}}></View>
-              )
-            }}
+            showsVerticalScrollIndicator={false}
+            data={APPOINTMENT_LIST}
             renderItem={({ item }) => {
               return (
-                <View style={{ marginTop: 20}}>
+                <Pressable
+                  onPress={() => SheetManager.show("Reschedule")}
+                  style={styles.list}
+                >
                   <Image source={item.image} />
-                  <View
-                    style={{
-                      justifyContent: "center",
-                      gap: 10,
-                      backgroundColor: "#00000008",
-                      paddingHorizontal: 8,
-                      paddingVertical: 20,
-                      borderBottomLeftRadius: 20,
-                      borderBottomRightRadius: 20
-                    }}
-                  >
+                  <View style={{ justifyContent: "center", gap: 10 }}>
+                    <Text style={styles.date}>{item.date}</Text>
+                    <Text style={styles.info}>{item.info}</Text>
+                    <Text style={[styles.info, { color: "#CE2A2A"}]}>{item.info1}</Text>
+                  </View>
+                </Pressable>
+              );
+            }}
+          />
+        </ScrollView>
+      </View>
+
+      <View key="2">
+        <Text style={styles.pageText}>Favoris</Text>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text style={styles.headertext}>Salons favoris</Text>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={SALONS_DATA}
+            renderItem={({ item }) => {
+              return (
+                <View style={{ marginTop: 20 }}>
+                  <Image source={item.image} />
+                  <View style={styles.flatlist}>
                     <Text style={styles.date}>{item.title}</Text>
                     <View style={{ flexDirection: "row", gap: 10 }}>
                       <Image source={item.icon} width={15} height={18} />
@@ -65,7 +67,7 @@ export default function Pager() {
               );
             }}
           />
-        </View>
+        </ScrollView>
       </View>
     </PagerView>
   );
@@ -115,5 +117,14 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     fontSize: 14,
     fontWeight: "400",
+  },
+  flatlist: {
+    justifyContent: "center",
+    gap: 10,
+    backgroundColor: "#00000008",
+    paddingHorizontal: 8,
+    paddingVertical: 20,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
 });
