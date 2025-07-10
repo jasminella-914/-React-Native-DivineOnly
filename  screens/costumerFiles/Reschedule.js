@@ -8,20 +8,16 @@ import {
   requireNativeComponent,
   Image,
   ScrollView,
+  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar } from "react-native-calendars";
+import { TIME_DATA } from "../../data/data";
 
 export default function Reschedule({ navigation, index }) {
   const [selected, setSelected] = useState("");
-  const [selectedIndex, setIsSelectedIndex] = useState();
 
-  //   const ConcertData = {
-  //     image: require("../../assets/Photo.png"),
-  //     date: "Dimanche 17 Juin • 16h",
-  //     info: "Institut Pyrène • 4 prestations",
-  //   };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -51,17 +47,7 @@ export default function Reschedule({ navigation, index }) {
             style={{
               borderRadius: 20,
             }}
-            theme={{
-              backgroundColor: "#F5F5F5",
-              calendarBackground: "#F5F5F5",
-              selectedDayBackgroundColor: "#469597",
-              todayTextColor: "#469597",
-              arrowColor: "#469597",
-              textDayStyle: {
-                fontSize: 14,
-                fontWeight: "600",
-              },
-            }}
+            theme={styles.calendarTheme}
             onDayPress={(day) => {
               setSelected(day.dateString);
             }}
@@ -69,39 +55,55 @@ export default function Reschedule({ navigation, index }) {
               [selected]: {
                 selected: true,
                 disableTouchEvent: true,
-                // selectedDotColor: "orange",
               },
             }}
           />
-          <View style={{ flexDirection: "row", gap: 10 }}>
-            <Pressable style={[styles.button]}>
-              <Text style={styles.buttonText}>10:00</Text>
-            </Pressable>
-            <Pressable style={[styles.button]}>
-              <Text style={styles.buttonText}>11:00</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>12:00</Text>
-            </Pressable>
-          </View>
-          <View style={{ flexDirection: "row", gap: 10 }}>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>13:00</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>14:00</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>15:00</Text>
-            </Pressable>
-          </View>
-          <View style={{marginTop: 20, gap: 5}}>
-            <Pressable  onPress={() => navigation.goBack()} style={styles.footer}>
+          <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+            <FlatList
+              numColumns={Math.ceil(TIME_DATA.length / 2)}
+              contentContainerStyle={{ gap: 10 }}
+              columnWrapperStyle={{ gap: 10 }}
+              showsHorizontalScrollIndicator={false}
+              data={TIME_DATA}
+              renderItem={({ item, index }) => {
+                return (
+                  <View style={{ gap: 10 }}>
+                    <Pressable
+                      onPress={() => {
+                        setSelected(index);
+                      }}
+                      style={[
+                        styles.button,
+                        {
+                          backgroundColor:
+                            selected === index ? "#469597" : "#F5F5F5",
+                        },
+                      ]}
+                    >
+                      <Text
+                        style={[
+                          styles.buttonText,
+                          { color: selected === index ? "#FFFFFF" : "#000000" },
+                        ]}
+                      >
+                        {item.time}
+                      </Text>
+                    </Pressable>
+                  </View>
+                );
+              }}
+            />
+          </ScrollView>
+          <View style={{ marginTop: 20, gap: 5 }}>
+            <Pressable
+              onPress={() => navigation.goBack()}
+              style={styles.footer}
+            >
               <Text style={[styles.footerTexT, { color: "#FFFFFF" }]}>
                 Confirmer
               </Text>
             </Pressable>
-            <Pressable style={[styles.footer, { backgroundColor: "#FFFFFF"}]}>
+            <Pressable style={[styles.footer, { backgroundColor: "#FFFFFF" }]}>
               <Text style={[styles.footerTexT]}>Annuler</Text>
             </Pressable>
           </View>
@@ -112,6 +114,9 @@ export default function Reschedule({ navigation, index }) {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    paddingBottom: 10,
+  },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
@@ -170,5 +175,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     color: "#469597",
+  },
+  calendarTheme: {
+    backgroundColor: "#F5F5F5",
+    calendarBackground: "#F5F5F5",
+    selectedDayBackgroundColor: "#469597",
+    todayTextColor: "#469597",
+    arrowColor: "#0E1F20",
+    textDayStyle: {
+      fontSize: 14,
+      fontWeight: "600",
+    },
   },
 });
