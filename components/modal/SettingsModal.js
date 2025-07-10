@@ -9,9 +9,16 @@ export default function SettingsModal({ navigation }) {
   return (
     <ActionSheet containerStyle={{ flex: 0.7 }} id="Settings">
       <View>
+        <View style={styles.border}></View>
+
         <Text style={styles.headerText}>Paramètres</Text>
         <View style={styles.buttons}>
-          <Pressable>
+          <Pressable
+            onPress={() => {
+              SheetManager.hide("Settings");
+              navigate("Edit Profile");
+            }}
+          >
             <Text style={styles.buttonsText}>Mon compte</Text>
           </Pressable>
           <Pressable
@@ -55,5 +62,14 @@ const styles = StyleSheet.create({
   buttonsText: {
     fontSize: 14,
     fontWeight: "500",
+  },
+  border: {
+    borderWidth: 3,
+    borderColor: "#E9E9E9",
+    width: 52,
+    height: 5,
+    marginTop: 10,
+    alignSelf: "center",
+    borderRadius: 5,
   },
 });

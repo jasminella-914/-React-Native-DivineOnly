@@ -1,4 +1,12 @@
-import { Image, Pressable, StyleSheet, Text, View, Button } from "react-native";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Modal from "react-native-modal";
@@ -11,22 +19,25 @@ const ReschedModal = () => {
     setModalVisible(!isModalVisible);
   };
   return (
-    <ActionSheet containerStyle={{ flex: 0.6 }} id="Reschedule">
+    <ActionSheet containerStyle={{ flex: 0.75 }} id="Reschedule">
+      <Image
+        source={require("../../assets/groupPhoto.png")}
+        style={{
+          height: 110,
+          width: 414,
+          alignSelf: "center",
+          borderTopLeftRadius: 25,
+          borderTopRightRadius: 25,
+        }}
+      />
+
       <View>
-        <Image source={require("../../assets/groupPhoto.png")} />
-        <View style={{ alignItems: "center", gap: 20, marginTop: 20 }}>
+        <View style={styles.header}>
           <Text style={styles.headerText}>Institut Pyrène</Text>
           <Text style={styles.bodyText}>
             Rendez-vous prévu le 17 juin 2022 à 16h
           </Text>
-          <View
-            style={{
-              flexDirection: "row",
-              gap: 10,
-
-              alignItems: "center",
-            }}
-          >
+          <View style={styles.location}>
             <Image source={require("../../assets/location.png")} />
             <Text
               style={[
@@ -38,29 +49,39 @@ const ReschedModal = () => {
             </Text>
           </View>
         </View>
-        <View>
-          <Text
-            style={[styles.headerText, { textAlign: "center", marginTop: 20 }]}
-          >
-            Votre rendez-vous
-          </Text>
-          <View style={{ gap: 10, marginTop: 20, marginHorizontal: 20 }}>
+        <Text
+          style={[styles.headerText, { textAlign: "center", marginTop: 20 }]}
+        >
+          Votre rendez-vous
+        </Text>
+        <View style={styles.votre}>
+          <View style={styles.votreContainer}>
+            <Text style={styles.oneText}>1</Text>
             <Text style={styles.bodyText}>Épilation par haute fréquence</Text>
+          </View>
+          <View style={styles.votreContainer}>
+            <Text style={styles.oneText}>1</Text>
             <Text style={styles.bodyText}>French Manucure</Text>
+          </View>
+          <View style={styles.votreContainer}>
+            <Text style={styles.oneText}>1</Text>
             <Text style={styles.bodyText}>Soin des pieds brésiliens</Text>
+          </View>
+          <View style={styles.votreContainer}>
+            <Text style={styles.oneText}>1</Text>
             <Text style={styles.bodyText}>Massage à l’huile chaude</Text>
           </View>
         </View>
+        <Pressable
+          onPress={() => {
+            SheetManager.hide("Reschedule");
+            navigate("Reschedule");
+          }}
+          style={styles.footerbutton}
+        >
+          <Text style={styles.footertext}>Replanifier</Text>
+        </Pressable>
       </View>
-      <Pressable
-        onPress={() => {
-          SheetManager.hide("Reschedule");
-          navigate("Reschedule");
-        }}
-        style={styles.footerbutton}
-      >
-        <Text style={styles.footertext}>Replanifier</Text>
-      </Pressable>
     </ActionSheet>
   );
 };
@@ -84,7 +105,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 132,
     marginHorizontal: 20,
     borderRadius: 15,
-    marginTop: 20,
+    marginTop: 30,
   },
   footertext: {
     color: "#FFFFFF",
@@ -95,4 +116,21 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
   },
+  oneText: {
+    backgroundColor: "#4695971A",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  location: {
+    flexDirection: "row",
+    gap: 10,
+
+    alignItems: "center",
+  },
+  header: { alignItems: "center", gap: 20, marginTop: 20 },
+  votreContainer: { flexDirection: "row", gap: 10, alignItems: "center" },
+  votre: { gap: 30, marginTop: 20, marginHorizontal: 20 },
 });

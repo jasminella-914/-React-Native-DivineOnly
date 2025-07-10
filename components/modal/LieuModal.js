@@ -16,37 +16,10 @@ export default function LieuModal({ navigation }) {
       label: "Au salon",
     },
   ];
-  // const radioButtons = useMemo(
-  //   () => [
-  //     {
-  //       id: "1",
-  //       label: "Pas de préférence",
-  //       value: "option1",
-  //     },
-  //     {
-  //       id: "2",
-  //       label: "A domicile",
-  //       value: "option2",
-  //     },
-  //     {
-  //       id: "3",
-  //       label: "Au salon",
-  //       value: "option3",
-  //     },
-  //   ],
-  //   []
-  // );
 
   const [selectedId, setSelectedId] = useState();
   return (
-    <ActionSheet
-      containerStyle={{
-        paddingHorizontal: 25,
-        backgroundColor: "#fFFFFF",
-        flex: 0.7,
-      }}
-      id="Lieu"
-    >
+    <ActionSheet containerStyle={styles.container} id="Lieu">
       <View style={styles.secondContainer}>
         <View style={styles.border}></View>
         <View>
@@ -56,20 +29,14 @@ export default function LieuModal({ navigation }) {
           <RadioButtonRN
             data={data}
             selectedBtn={(e) => console.log(e)}
-            activeColor="#469597"
+            activeColor="#000000"
             boxStyle={{
               borderColor: "#BBC6C8",
             }}
           />
-          {/* <RadioGroup
-            containerStyle={styles.radiobutton}
-            radioButtons={radioButtons}
-            onPress={setSelectedId}
-            selectedId={selectedId}
-          /> */}
         </View>
       </View>
-      <View style={{ marginTop: 100, gap: 20 }}>
+      <View style={{ marginTop: "100", gap: 20 }}>
         <Pressable
           onPress={() => SheetManager.hide("Lieu")}
           style={styles.button}
@@ -91,7 +58,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "700",
     textAlign: "center",
-    
   },
   radiobutton: {
     alignItems: "center",
@@ -100,12 +66,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  // radioContainer: {
-  //   borderWidth: 1,
-
-  //   borderColor: "#BBC6C8",
-  //   borderRadius: 10,
-  // },
   button: {
     backgroundColor: "#469597",
     paddingVertical: 15,
@@ -118,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
-  },
+  }, 
   secondContainer: {
     gap: 20,
   },
@@ -130,5 +90,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     alignSelf: "center",
     borderRadius: 5,
+  },
+  container: {
+    paddingHorizontal: 25,
+    backgroundColor: "#fFFFFF",
+    flex: 0.7,
   },
 });

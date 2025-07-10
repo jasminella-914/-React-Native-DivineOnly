@@ -32,6 +32,7 @@ export default function RateModal({ navigation }) {
             emptyColor="#BBC6C8"
             rating={rating}
             onChange={setRating}
+            enableHalfStar={false}
             style={{ paddingLeft: 33 }}
           />
         </View>

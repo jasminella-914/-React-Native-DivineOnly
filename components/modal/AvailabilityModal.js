@@ -49,57 +49,52 @@ export default function Availability() {
   const [selectedId, setSelectedId] = useState();
   return (
     <ActionSheet containerStyle={styles.container} id="Availability">
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ gap: 20 }}>
-          <View style={styles.border}></View>
-          <Text style={styles.headerText}>Disponibilités</Text>
-        </View>
-        <View style={styles.radioContainer}>
-          <RadioButtonRN
-            data={data}
-            selectedBtn={(e) => console.log(e)}
-            activeColor="#469597"
-            boxStyle={{
-              borderColor: "#BBC6C8",
-            }}
+      <View style={{ gap: 10 }}>
+        <View style={styles.border}></View>
+        <Text style={styles.headerText}>Disponibilités</Text>
+      </View>
+      <View style={styles.radioContainer}>
+        <RadioButtonRN
+          data={data}
+          selectedBtn={(e) => console.log(e)}
+          activeColor="#469597"
+          boxStyle={{
+            borderColor: "#BBC6C8",
+          }}
+        />
+      </View>
+      <View style={{ gap: 10, marginTop: 20 }}>
+        <Text style={[styles.text, { color: "#000000" }]}>Horaires</Text>
+        <Pressable style={styles.button}>
+          <Text style={styles.text}>Jour</Text>
+          <Ionicons
+            name="chevron-down"
+            size={24}
+            style={{ color: "#469597" }}
           />
-          {/* <RadioGroup
-          containerStyle={styles.radiobutton}
-          radioButtons={radioButtons}
-          onPress={setSelectedId}
-          selectedId={selectedId}
-        /> */}
-        </View>
-        <View style={{ gap: 10, marginTop: 20 }}>
-          <Text style={[styles.text, { color: "#000000" }]}>Horaires</Text>
-          <Pressable style={styles.button}>
-            <Text style={styles.text}>Jour</Text>
-            <Ionicons
-              name="chevron-down"
-              size={24}
-              style={{ color: "#469597" }}
-            />
-          </Pressable>
-          <Pressable style={styles.button}>
-            <Text style={styles.text}>Heure</Text>
-            <Ionicons
-              name="chevron-down"
-              size={24}
-              style={{ color: "#469597" }}
-            />
-          </Pressable>
-        </View>
-        <View style={{ marginTop: 50, gap: 20 }}>
-          <Pressable onPress={() => SheetManager.hide("Availability")} style={styles.footerbutton}>
-            <Text style={styles.buttonText}>Appliquer</Text>
-          </Pressable>
-          <Pressable>
-            <Text style={[styles.buttonText, { color: "#469597" }]}>
-              Réinitialiser
-            </Text>
-          </Pressable>
-        </View>
-      </ScrollView>
+        </Pressable>
+        <Pressable style={styles.button}>
+          <Text style={styles.text}>Heure</Text>
+          <Ionicons
+            name="chevron-down"
+            size={24}
+            style={{ color: "#469597" }}
+          />
+        </Pressable>
+      </View>
+      <View style={{ marginTop: 15, gap: 20 }}>
+        <Pressable
+          onPress={() => SheetManager.hide("Availability")}
+          style={styles.footerbutton}
+        >
+          <Text style={styles.buttonText}>Appliquer</Text>
+        </Pressable>
+        <Pressable>
+          <Text style={[styles.buttonText, { color: "#469597" }]}>
+            Réinitialiser
+          </Text>
+        </Pressable>
+      </View>
     </ActionSheet>
   );
 }
@@ -129,7 +124,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#BBC6C8",
-    padding: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 15,
     borderRadius: 15,
   },
   text: {
