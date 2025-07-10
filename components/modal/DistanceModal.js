@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { TextInput } from "react-native-gesture-handler";
 import * as Progress from "react-native-progress";
+import Slider from "@react-native-community/slider";
 
 export default function DistanceModal() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <ActionSheet containerStyle={styles.container} id="Distance">
-      <View style={{ gap: 20 }}>
+      <View style={{ gap: 10 }}>
         <View style={styles.border}></View>
         <Text style={styles.headerText}>Distance</Text>
         <View>
@@ -18,28 +19,20 @@ export default function DistanceModal() {
         <Pressable>
           <Text style={styles.text}>Marseille (130008) - 30km</Text>
         </Pressable>
-        <View style={{ gap: 20}}>
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+        <View style={{ gap: 20, marginTop: 20 }}>
+          <View style={styles.distance}>
             <Text>Dans un rayon autour de </Text>
             <Text style={[styles.Text, { color: "#469597" }]}>30km</Text>
           </View>
-          <Progress.Bar
-            progress={0.5}
-            width={367}
-            color="#469597"
-            borderWidth={0}
-            unfilledColor="#E5E3E4"
-            height={8}
+          <Slider
+            inverted={true}
             style={styles.Bar}
+            minimumValue={0}
+            maximumValue={1}
+            minimumTrackTintColor="#E5E3E4"
+            maximumTrackTintColor="#469597"
           />
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: 30
-            }}
-          >
+          <View style={styles.toggle}>
             <Text>Autour de moi</Text>
             <Switch
               trackColor={{ false: "#D4D4D4", true: "#469597" }}
@@ -52,7 +45,10 @@ export default function DistanceModal() {
         </View>
       </View>
       <View style={{ marginTop: 100, gap: 20 }}>
-        <Pressable onPress={() => SheetManager.hide("Distance")} style={styles.button}>
+        <Pressable
+          onPress={() => SheetManager.hide("Distance")}
+          style={styles.button}
+        >
           <Text style={styles.buttonText}>Appliquer</Text>
         </Pressable>
         <Pressable>
@@ -117,5 +113,20 @@ const styles = StyleSheet.create({
   Text: {
     fontSize: 14,
     fontWeight: "500",
+  },
+  Bar: {
+    alignSelf: "center",
+    height: 32,
+    width: 350,
+  },
+  toggle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  distance: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 });
