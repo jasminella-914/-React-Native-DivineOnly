@@ -9,20 +9,20 @@ import {
   ScrollView,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useNavigation } from "@react-navigation/native";
 
 export default function EditProfile({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <Pressable
-          style={{ marginLeft: 20 }}
-          onPress={() => navigation.goBack()}
-        >
-          <Ionicons name="arrow-back" size={24} />
-        </Pressable>
+      <Pressable style={styles.headerBack} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={24} />
+      </Pressable>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ marginHorizontal: 20, gap: 20 }}>
-          <Pressable>
+          <Pressable style={{ gap: 7}}>
+            <Image
+              source={require("../../../assets/profile.png")}
+              style={{ width: 72, height: 72, alignSelf: "center" }}
+            />
             <Text style={styles.editText}>Modifier la photo de profil</Text>
           </Pressable>
 
@@ -32,7 +32,13 @@ export default function EditProfile({ navigation }) {
             <TextInput placeholder="Prénom" style={styles.input} />
             <TextInput placeholder="Nom" style={styles.input} />
             <TextInput placeholder="Email" style={styles.input} />
-            <TextInput placeholder="Adresse" style={styles.input} />
+            <View style={[styles.input, { gap: 30, paddingVertical: 10 }]}>
+              <Text style={styles.inputText}>Adresse</Text>
+              <TextInput placeholder="Rue" />
+              <TextInput placeholder="Numero" keyboardType="numeric" />
+              <TextInput placeholder="Code postal" keyboardType="numeric" />
+              <TextInput placeholder="Ville" />
+            </View>
             <TextInput
               placeholder="Numéro de téléphone"
               style={styles.input}
@@ -42,9 +48,9 @@ export default function EditProfile({ navigation }) {
           <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Modifier</Text>
           </Pressable>
-          {/* <Pressable>
+          <Pressable>
             <Text style={[styles.buttonText, { color: "#469597"}]}>Annuler</Text>
-          </Pressable> */}
+          </Pressable>
           <View style={{ gap: 20 }}>
             <Text style={styles.headerText}>Mot de passe</Text>
             <Text
@@ -58,7 +64,7 @@ export default function EditProfile({ navigation }) {
               style={styles.input}
               secureTextEntry
             />
-            {/* <TextInput
+            <TextInput
               placeholder="Nouveau mot de passe"
               style={styles.input}
               secureTextEntry
@@ -67,15 +73,15 @@ export default function EditProfile({ navigation }) {
               placeholder="Confirmer le nouveau mot de passe"
               style={styles.input}
               secureTextEntry
-            /> */}
+            />
             <Pressable style={styles.button}>
               <Text style={styles.buttonText}>Modifier</Text>
             </Pressable>
-            {/* <Pressable>
+            <Pressable>
               <Text style={[styles.buttonText, { color: "#469597" }]}>
                 Annuler
               </Text>
-            </Pressable> */}
+            </Pressable>
           </View>
           <View style={{ gap: 10 }}>
             <Pressable>
@@ -127,7 +133,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   input: {
-    padding: 20,
+    padding: 10,
+    paddingVertical: 20,
     borderWidth: 1,
     borderRadius: 15,
     borderColor: "#BBC6C8",
@@ -142,5 +149,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
+  },
+  inputText: {
+    color: "#BBC6C8",
+    fontSize: 13,
+    fontWeight: "500",
+  },
+  headerBack: {
+    marginLeft: 20,
+    paddingBottom: 10,
   },
 });

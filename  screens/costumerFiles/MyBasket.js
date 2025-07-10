@@ -65,7 +65,7 @@ export default function MyBasket({ navigation }) {
           );
         }}
       />
-      <View style={{ gap: 20, paddingHorizontal: 20 }}>
+      <View style={{ gap: 20, paddingHorizontal: 20, paddingTop: 10 }}>
         <View style={styles.footer}>
           <Text style={styles.name}>Total</Text>
           <Text style={styles.price}>75,00€</Text>

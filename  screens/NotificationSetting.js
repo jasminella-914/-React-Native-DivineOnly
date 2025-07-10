@@ -60,8 +60,8 @@ export default function NotificationSettings({ navigation }) {
             trackColor={{ false: "#D4D4D4", true: "#469597" }}
             thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
             ios_backgroundColor="#D4D4D4"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            // onValueChange={toggleSwitch}
+            // value={isEnabled}
           />
         </View>
       </View>
@@ -89,8 +89,8 @@ export default function NotificationSettings({ navigation }) {
             trackColor={{ false: "#D4D4D4", true: "#469597" }}
             thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
             ios_backgroundColor="#D4D4D4"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            // onValueChange={toggleSwitch}
+            // value={isEnabled}
           />
         </View>
         <View style={styles.thirdContainer}>
@@ -101,8 +101,8 @@ export default function NotificationSettings({ navigation }) {
             trackColor={{ false: "#D4D4D4", true: "#469597" }}
             thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
             ios_backgroundColor="#D4D4D4"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            // onValueChange={toggleSwitch}
+            // value={isEnabled}
           />
         </View>
       </View>

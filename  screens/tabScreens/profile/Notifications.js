@@ -9,18 +9,14 @@ import {
   ScrollView,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useNavigation } from "@react-navigation/native";
 
 export default function Notifications({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
+      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={24} />
+      </Pressable>
       <ScrollView>
-        <Pressable
-          style={{ marginLeft: 20 }}
-          onPress={() => navigation.goBack()}
-        >
-          <Ionicons name="arrow-back" size={24} />
-        </Pressable>
         <View style={{ marginHorizontal: 20, gap: 20 }}>
           <Pressable>
             <Text style={styles.editText}>Modifier la photo de profil</Text>

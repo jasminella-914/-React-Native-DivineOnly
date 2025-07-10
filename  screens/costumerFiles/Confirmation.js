@@ -108,6 +108,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   modePayment: { flexDirection: "row", justifyContent: "space-between" },
-  details: { flexDirection: "row", gap: 12, alignItems: "center" },
+  details: { flexDirection: "row", gap: 5, alignItems: "center" },
   header: { gap: 20, alignItems: "center", justifyContent: "center" },
 });

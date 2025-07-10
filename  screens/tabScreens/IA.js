@@ -3,12 +3,9 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
-  TextInput,
   Pressable,
   Image,
-  ScrollView,
   ImageBackground,
-  Modal,
   FlatList,
 } from "react-native";
 
@@ -27,25 +24,8 @@ export default function IA({ navigation }) {
         source={require("../../assets/IAbg.png")}
         style={{ width: 393, flex: 1, marginTop: 30 }}
       />
-      <View
-        style={{
-          borderTopRightRadius: 20,
-          borderTopLeftRadius: 20,
-          overflow: "hidden",
-          backgroundColor: "#FFFFFF",
-          position: "absolute",
-          zIndex: 1,
-          bottom: 0,
-          left: 0,
-          right: 0,
-        }}
-      >
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
+      <View style={styles.tab}>
+        <View style={styles.tabHeader}>
           {["Coiffure", "Maquillage"].map((item, index) => (
             <Pressable
               style={{
@@ -107,5 +87,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 15,
     backgroundColor: "#FFFFFF",
+  },
+  tab: {
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    overflow: "hidden",
+    backgroundColor: "#FFFFFF",
+    position: "absolute",
+    zIndex: 1,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  tabHeader: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });

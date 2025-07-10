@@ -3,10 +3,9 @@ import {
   Text,
   StyleSheet,
   SafeAreaView,
-  TextInput,
   Pressable,
   Image,
-  ScrollView,
+  PanResponder,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Pager from "../Pager";
@@ -19,9 +18,12 @@ export default function Profile({ navigation }) {
       <View style={styles.header}>
         <Pressable
           onPress={() => navigation.navigate("Edit Profile")}
-          style={{ flexDirection: "row", alignItems: "center", gap: 20 }}
+          style={styles.profile}
         >
-          <Image source={require("../../assets/profile.png")} />
+          <Image
+            source={require("../../assets/profile.png")}
+            style={styles.image}
+          />
           <Text style={styles.headertext}>Manon</Text>
         </Pressable>
         <Pressable onPress={() => SheetManager.show("Settings")}>
@@ -72,4 +74,6 @@ const styles = StyleSheet.create({
     borderColor: "#469597",
     padding: 10,
   },
+  profile: { flexDirection: "row", alignItems: "center", gap: 20 },
+  image: { height: 58, width: 58 },
 });

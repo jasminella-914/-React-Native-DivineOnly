@@ -27,33 +27,13 @@ export default function Votre({ navigation }) {
       </View>
       <Image
         source={require("../../assets/lashPhoto.png")}
-        style={{
-          width: 393,
-          height: 360,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          marginTop: 20,
-        }}
+        style={styles.image}
       />
       <View style={styles.tabContainer}>
         <View>
           {["Lola Brazilia"].map((item, index) => (
-            <ScrollView
-              style={{
-                paddingVertical: 25,
-                paddingHorizontal: 20,
-                gap: 20,
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: "700",
-                  paddingBottom: 8,
-                }}
-              >
-                {item}
-              </Text>
+            <ScrollView style={styles.scrollView}>
+              <Text style={styles.item}>{item}</Text>
 
               <View style={{ gap: 20 }}>
                 <View>
@@ -178,5 +158,22 @@ const styles = StyleSheet.create({
   bodyText: {
     fontSize: 16,
     fontWeight: "600",
+  },
+  image: {
+    width: 393,
+    height: 360,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    marginTop: 20,
+  },
+  scrollView: {
+    paddingVertical: 25,
+    paddingHorizontal: 20,
+    gap: 20,
+  },
+  item: {
+    fontSize: 18,
+    fontWeight: "700",
+    paddingBottom: 8,
   },
 });

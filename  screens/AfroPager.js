@@ -13,10 +13,7 @@ import { SheetManager } from "react-native-actions-sheet";
 const AfroPager = () => {
   return (
     <View style={styles.container}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.SVContainer}
-      >
+      <View style={styles.SVContainer}>
         <View style={{ gap: 11 }}>
           <View style={styles.header}>
             <Image
@@ -59,27 +56,16 @@ const AfroPager = () => {
               name="chevron-down"
               size={24}
               color={"#469597"}
-              style={{
-                position: "absolute",
-                right: 10,
-                top: 18,
-              }}
+              style={styles.icon}
             />
           </Pressable>
-          <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+          <View style={styles.numButton}>
             <Pressable style={styles.add}>
               <Ionicons name="add" size={15} />
             </Pressable>
             <Text style={[styles.headertext, { textAlign: "center" }]}>1</Text>
             <Pressable style={styles.add}>
-              <View
-                style={{
-                  borderWidth: 0.5,
-                  width: 14,
-                  backgroundColor: "red",
-                  marginVertical: 6,
-                }}
-              ></View>
+              <View style={styles.border}></View>
             </Pressable>
             <Text style={{ position: "absolute", right: 5 }}>5,99 €</Text>
           </View>
@@ -87,7 +73,7 @@ const AfroPager = () => {
             <Text style={styles.footerText}>Ajouter au panier</Text>
           </Pressable>
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 };
@@ -168,10 +154,24 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     paddingHorizontal: 97,
+    marginTop: 20
   },
   footerText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "600",
+    textAlign: "center",
   },
+  icon: {
+    position: "absolute",
+    right: 10,
+    top: 18,
+  },
+  border: {
+    borderWidth: 0.5,
+    width: 14,
+    backgroundColor: "red",
+    marginVertical: 6,
+  },
+  numButton: { flexDirection: "row", gap: 10, alignItems: "center" },
 });

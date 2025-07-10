@@ -27,7 +27,7 @@ export default function Welcome() {
           width={80}
           height={80}
         />
-        <ScrollView horizontal contentContainerStyle={styles.scrollView}>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.scrollView}>
           <FlatList
             horizontal
             data={SERVICES_DATA}

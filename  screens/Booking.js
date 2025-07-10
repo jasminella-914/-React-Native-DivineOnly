@@ -30,7 +30,6 @@ export default function Booking({ navigation }) {
             </Pressable>
           </View>
         </View>
-        {/* <TextInput placeholder="Où ? " style={styles.input} /> */}
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={styles.headerText}>Réserve ta prestation</Text>
           <Pressable

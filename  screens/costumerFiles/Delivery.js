@@ -55,11 +55,14 @@ export default function Delivery({ navigation }) {
             Mode de livraison
           </Text>
 
-          <View style={{ paddingBottom: 15}}>
+          <View style={{ paddingBottom: 15 }}>
             <RadioButtonRN
               selectedBtn={(e) => console.log(e)}
               data={data}
-              activeColor="#469597"
+              activeColor="#000000"
+              borderColor="#469597"
+              boxActiveBgColor={"#4695971A"}
+              // icon={<Ionicons name="chevron-down-circle" size={20} />}
             />
           </View>
 
