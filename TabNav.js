@@ -34,7 +34,7 @@ export default function TabNav() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
-            <Image source={require("../my-DivineOnly/assets/shop.png")} size={25} color={color} />
+            <Image source={require("./assets/shop.png")} size={25} color={color} />
           ),
           tabBarActiveBackgroundColor: "#469597",
           tabBarActiveTintColor: "#FFFFFF",
@@ -74,11 +74,3 @@ export default function TabNav() {
   );
 }
 
-// export default function App() {
-//     return (
-//         <NavigationContainer>
-//             <TabNav />
-//             {/* Add other navigators or screens here if needed */}
-//         </NavigationContainer>
-//     )
-// }
