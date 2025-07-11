@@ -14,7 +14,6 @@ import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../../navigationService";
 import { SEARCHLIST_DATA } from "../../data/data";
-import filter from "lodash.filter";
 
 export default function Resercher({ navigation }) {
   const [searchQuery, setSearchQuery] = useState("");

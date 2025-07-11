@@ -13,8 +13,6 @@ import { Calendar, LocaleConfig } from "react-native-calendars";
 import { FlatList } from "react-native-actions-sheet";
 import { AVAILABILTY_DATA, TIME_DATA } from "../../data/data";
 
-// import { LocaleConfig } from "react-native-calendars";
-
 LocaleConfig.locales["fr"] = {
   monthNames: [
     "Janvier",
@@ -61,7 +59,7 @@ LocaleConfig.defaultLocale = "fr";
 
 export default function Appointment({ navigation }) {
   const [selected, setSelected] = useState("");
-   const [selectedIndex, setSelectedIndex] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState("");
 
   return (
     <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
@@ -112,11 +110,11 @@ export default function Appointment({ navigation }) {
           <View style={{ paddingHorizontal: 20, gap: 20 }}>
             <Text style={styles.name}>Avec qui ? </Text>
             <ScrollView
-              showsHorizontalScrollIndicator={false}
               horizontal
-              style={{ flexDirection: "row" }}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ gap: 10 }}
             >
-              <Pressable style={[styles.buttonPhoto, { marginRight: 10 }]}>
+              <Pressable style={styles.buttonPhoto}>
                 <Text
                   style={[
                     styles.text,
@@ -133,41 +131,38 @@ export default function Appointment({ navigation }) {
                 </Text>
                 <Text>disponibilité</Text>
               </Pressable>
-              <FlatList
-                horizontal
-                contentContainerStyle={{ gap: 10 }}
-                showsHorizontalScrollIndicator={false}
-                data={AVAILABILTY_DATA}
-                renderItem={({ item, index }) => {
-                  return (
-                    <View style={{ gap: 10 }}>
-                      <Pressable
-                        onPress={() => setSelectedIndex(index)}
+
+              {AVAILABILTY_DATA.map((item, index) => {
+                return (
+                  <View key={item.id} style={{ gap: 10 }}>
+                    <Pressable
+                      onPress={() => setSelectedIndex(index)}
+                      style={[
+                        styles.buttonPhoto,
+                        {
+                          backgroundColor:
+                            selectedIndex === index ? "#469597" : "#F5F5F5",
+                        },
+                      ]}
+                    >
+                      <Image source={item.image} />
+                      <Text
                         style={[
-                          styles.buttonPhoto,
+                          styles.name,
                           {
-                            backgroundColor:
-                              selectedIndex === index ? "#469597" : "#F5F5F5",
+                            color:
+                              selectedIndex === index ? "#FFFFFF" : "#000000",
                           },
                         ]}
                       >
-                        <Image source={item.image} />
-                        <Text
-                          style={[
-                            styles.name,
-                            {
-                              color: selectedIndex === index ? "#FFFFFF" : "#000000",
-                            },
-                          ]}
-                        >
-                          {item.name}
-                        </Text>
-                      </Pressable>
-                    </View>
-                  );
-                }}
-              />
+                        {item.name}
+                      </Text>
+                    </Pressable>
+                  </View>
+                );
+              })}
             </ScrollView>
+
             <View style={{ gap: 10 }}>
               <Text style={[styles.name, { paddingLeft: 20 }]}>
                 Date et heure de rendez-vous{" "}
@@ -194,6 +189,7 @@ export default function Appointment({ navigation }) {
             </View>
           </View>
         </View>
+
         <ScrollView
           showsHorizontalScrollIndicator={false}
           horizontal
@@ -207,7 +203,7 @@ export default function Appointment({ navigation }) {
             data={TIME_DATA}
             renderItem={({ item, index }) => {
               return (
-                <View style={{ gap: 10 }}>
+                <View key={item.id} style={{ gap: 10 }}>
                   <Pressable
                     onPress={() => {
                       navigation.navigate("Your Appointment");
@@ -258,7 +254,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "700",
     textAlign: "center",
-    // borderTopWidth: 1,
     borderBottomWidth: 1,
     borderColor: "#BBC6C873",
     paddingVertical: 30,
