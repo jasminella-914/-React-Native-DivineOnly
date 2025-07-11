@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
     color: "#000000",
+    
   },
   location: {
     textDecorationLine: "underline",

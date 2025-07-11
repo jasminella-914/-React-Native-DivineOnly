@@ -58,7 +58,7 @@ export default function IA({ navigation }) {
           renderItem={({ item }) => {
             return (
               <View style={styles.controltab}>
-                <Image source={item.image} />
+                <Image source={item.image} style={{ width: 61, height: 65 }} />
                 <Text>{item.name}</Text>
               </View>
             );
@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 15,
     backgroundColor: "#FFFFFF",
+    padding: 10,
+    gap: 10,
   },
   tab: {
     borderTopRightRadius: 20,
