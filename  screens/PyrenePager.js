@@ -13,7 +13,6 @@ import { navigate } from "../navigationService";
 import { FlatList } from "react-native-gesture-handler";
 import { ARTICLE_DATA, AVIS_DATA, SHOP_DATA } from "../data/data";
 import MapView, { Marker } from "react-native-maps";
-import CardStack, { Card } from "react-native-card-stack-swiper";
 
 export default function PyrenePager({ navigation }) {
   return (
@@ -45,12 +44,7 @@ export default function PyrenePager({ navigation }) {
 
           <View style={styles.map}>
             <MapView
-              style={{
-                width: 340,
-                height: 300,
-                borderWidth: 1,
-                borderColor: "#C9C9C9",
-              }}
+              style={styles.mapContainer}
               initialRegion={{
                 latitude: 37.78825,
                 longitude: -122.4324,
@@ -201,7 +195,7 @@ export default function PyrenePager({ navigation }) {
             contentContainerStyle={{
               justifyContent: "center",
               alignItems: "center",
-              gap: 10
+              gap: 10,
             }}
             columnWrapperStyle={{ gap: 10 }}
             showsVerticalScrollIndicator={false}
@@ -362,5 +356,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginVertical: 20,
     paddingHorizontal: 20,
+  },
+  mapContainer: {
+    width: 340,
+    height: 300,
+    borderWidth: 1,
+    borderColor: "#C9C9C9",
   },
 });

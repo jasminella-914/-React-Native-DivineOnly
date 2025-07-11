@@ -65,7 +65,7 @@ export default function CreateAccount2() {
 
       <View style={styles.footer}>
         <Text style={styles.footerButtonText}>Vous avez déjà un compte ? </Text>
-        <Pressable>
+        <Pressable onPress={() => navigation.navigate("Connexion")}>
           <Text style={[styles.footerButtonText, { color: "#469597" }]}>
             Connexion
           </Text>

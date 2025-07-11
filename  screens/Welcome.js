@@ -27,23 +27,26 @@ export default function Welcome() {
           width={80}
           height={80}
         />
-        <ScrollView showsHorizontalScrollIndicator={false} horizontal contentContainerStyle={styles.scrollView}>
-          <FlatList
-            horizontal
-            data={SERVICES_DATA}
-            renderItem={({ item }) => {
-              return (
-                <Pressable onPress={() => navigation.navigate("Booking")} style={styles.buttons}>
-                  <Image source={item.image} />
-                  <Text>{item.text}</Text>
-                </Pressable>
-              );
-            }}
-            ItemSeparatorComponent={() => {
-              return <View style={{ width: 21 }}></View>;
-            }}
-          />
-        </ScrollView>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.list}
+          data={SERVICES_DATA}
+          renderItem={({ item }) => {
+            return (
+              <Pressable
+                onPress={() => navigation.navigate("Booking")}
+                style={styles.buttons}
+              >
+                <Image source={item.image} />
+                <Text>{item.text}</Text>
+              </Pressable>
+            );
+          }}
+          ItemSeparatorComponent={() => {
+            return <View style={{ width: 21 }}></View>;
+          }}
+        />
         <Pressable
           style={styles.buttonContainer}
           onPress={() => navigation.navigate("TabNav")}
@@ -83,4 +86,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     padding: 12,
   },
+  list: { paddingHorizontal: 20, position: "absolute", top: 80 },
 });

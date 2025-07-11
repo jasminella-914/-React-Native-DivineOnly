@@ -45,12 +45,11 @@ export default function CreateAccount({ navigation }) {
             <Text style={styles.toggleText}>
               En vous inscrivant, vous acceptez nos
             </Text>{" "}
-            <Pressable>
-              <Text style={[styles.toggleText, { color: "#469597" }]}>
-                Conditions Générales d’Utilisation et nos Conditions Générales
-                de Vente
-              </Text>
-            </Pressable>
+            <Text style={[styles.toggleText, { color: "#469597" }]}>
+              Conditions Générales d’Utilisation{" "}
+              <Text style={[styles.toggleText, { color: "#000000" }]}>et</Text>{" "}
+              nos Conditions Générales de Vente
+            </Text>
           </View>
         </View>
         <Pressable
