@@ -355,6 +355,7 @@ export const SEARCH_DATA = [
 
 export const AVIS_DATA = [
   {
+    id: 0,
     image: photo1,
     name: "Marie",
     icon: Star,
@@ -364,6 +365,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 1,
     image: photo2,
     name: "Marie",
     icon: Star,
@@ -373,6 +375,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 2,
     image: photo3,
     name: "Marie",
     icon: Star,
@@ -381,6 +384,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 3,
     image: photo1,
     name: "Marie",
     icon: Star,
@@ -390,6 +394,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 4,
     image: photo2,
     name: "Marie",
     icon: Star,
@@ -399,6 +404,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 5,
     image: photo3,
     name: "Marie",
     icon: Star,
@@ -407,6 +413,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 6,
     image: photo1,
     name: "Marie",
     icon: Star,
@@ -416,6 +423,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 7,
     image: photo2,
     name: "Marie",
     icon: Star,
@@ -425,6 +433,7 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 8,
     image: photo3,
     name: "Marie",
     icon: Star,
@@ -433,29 +442,13 @@ export const AVIS_DATA = [
     post: Avis,
   },
   {
+    id: 9,
     image: photo1,
     name: "Marie",
     icon: Star,
     rate: "5,0",
     caption: "Je suis venue me faire les ongles chez",
     caption1: "Lola, je suis très contente du résultat!",
-    post: Avis,
-  },
-  {
-    image: photo2,
-    name: "Marie",
-    icon: Star,
-    rate: "5,0",
-    caption: "Institu bien placé à Marseille, bonne ",
-    caption1: "prestation. ",
-    post: Avis,
-  },
-  {
-    image: photo3,
-    name: "Marie",
-    icon: Star,
-    rate: "5,0",
-    caption: "Au top !",
     post: Avis,
   },
 ];
@@ -517,27 +510,35 @@ export const ARTICLEPOST_DATA = [
 
 export const TIME_DATA = [
   {
+    id: 0,
     time: "10:00",
   },
   {
+    id: 1,
     time: "11:00",
   },
   {
+    id: 2,
     time: "12:00",
   },
   {
+    id: 3,
     time: "13:00",
   },
   {
+    id: 4,
     time: "14:00",
   },
   {
+    id: 5,
     time: "15:00",
   },
   {
+    id: 6,
     time: "16:00",
   },
   {
+    id: 7,
     time: "16:00",
   },
 ];
@@ -579,18 +580,22 @@ export const SERVICES_DATA = [
 
 export const AVAILABILTY_DATA = [
   {
+    id: 0,
     image: Marine,
     name: "Marine",
   },
   {
+    id: 1,
     image: Victor,
     name: "Victor",
   },
   {
+    id: 2,
     image: Marine,
     name: "Marine",
   },
   {
+    id: 3,
     image: Victor,
     name: "Victor",
   },

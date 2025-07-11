@@ -10,9 +10,26 @@ import ActionSheet, {
   FlatList,
   SheetManager,
 } from "react-native-actions-sheet";
-import React, { useState } from "react";
-import { PRIX_DATA } from "../../data/data";
+import React, { lazy, useState } from "react";
 
+const data = [
+  {
+    id: 0,
+    label: "moins de 50€",
+  },
+  {
+    id: 1,
+    label: "moins de 50€",
+  },
+  {
+    id: 2,
+    label: "moins de 50€",
+  },
+  {
+    id: 3,
+    label: "moins de 50€",
+  },
+];
 export default function FilterModal() {
   const [selected, setSelected] = useState("");
   return (
@@ -26,13 +43,8 @@ export default function FilterModal() {
           <Text style={styles.headerText}>Prix</Text>
         </View>
         <View style={styles.buttonContainer}>
-          {[
-            "moins de 50€",
-            "moins de 100€",
-            "moins de 150€",
-            "moins de 200€",
-          ].map((item, index) => (
-            
+          {data.map((list, index) => {
+            return (
               <Pressable
                 onPress={() => setSelected(index)}
                 style={[
@@ -42,11 +54,19 @@ export default function FilterModal() {
                     borderColor: selected === index ? "#469597" : "#BBC6C8",
                   },
                 ]}
+                key={list.id}
               >
-                <Text style={[styles.buttontext, { color: selected === index ? "#FFFFFF" : "#000000"} ]}>{item}</Text>
+                <Text
+                  style={[
+                    styles.buttontext,
+                    { color: selected === index ? "#FFFFFF" : "#000000" },
+                  ]}
+                >
+                  {list.label}
+                </Text>
               </Pressable>
-           
-          ))}
+            );
+          })}
         </View>
         <View style={{ gap: 10, marginTop: 20 }}>
           <TextInput style={styles.input} placeholder="Prix minimum" />
