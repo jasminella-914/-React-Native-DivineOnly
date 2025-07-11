@@ -9,7 +9,6 @@ import {
   Pressable,
   FlatList,
 } from "react-native";
-import TabNav from "../TabNav";
 import { useNavigation } from "@react-navigation/native";
 import { SERVICES_DATA } from "../data/data";
 

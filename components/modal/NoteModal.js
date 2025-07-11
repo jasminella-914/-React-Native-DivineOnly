@@ -9,9 +9,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import StarRating from "react-native-star-rating-widget";
 import { RATING_DATA } from "../../data/data";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import Rating from "../../ screens/Rating";
 
 export default function NoteModal({ index }) {
@@ -29,6 +27,7 @@ export default function NoteModal({ index }) {
           <Text style={styles.partirText}>À partir de </Text>
 
           <FlatList
+            scrollEnabled={false}
             data={RATING_DATA}
             contentContainerStyle={{ gap: 10 }}
             renderItem={({ item, index }) => {

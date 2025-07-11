@@ -20,6 +20,7 @@ export default function Pager() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.headertext}>Rendez-vous à venir</Text>
           <FlatList
+            scrollEnabled={false}
             showsVerticalScrollIndicator={false}
             data={APPOINTMENT_LIST}
             renderItem={({ item }) => {
@@ -32,7 +33,9 @@ export default function Pager() {
                   <View style={{ justifyContent: "center", gap: 10 }}>
                     <Text style={styles.date}>{item.date}</Text>
                     <Text style={styles.info}>{item.info}</Text>
-                    <Text style={[styles.info, { color: "#CE2A2A"}]}>{item.info1}</Text>
+                    <Text style={[styles.info, { color: "#CE2A2A" }]}>
+                      {item.info1}
+                    </Text>
                   </View>
                 </Pressable>
               );
@@ -46,6 +49,7 @@ export default function Pager() {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={styles.headertext}>Salons favoris</Text>
           <FlatList
+            scrollEnabled={false}
             showsVerticalScrollIndicator={false}
             data={SALONS_DATA}
             renderItem={({ item }) => {
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
   headertext: {
     color: "#469597",
     textAlign: "center",
-    marginTop: 20,
+    marginVertical: 10,
     fontSize: 16,
     fontWeight: "600",
   },
@@ -112,7 +116,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
     color: "#000000",
-    
   },
   location: {
     textDecorationLine: "underline",

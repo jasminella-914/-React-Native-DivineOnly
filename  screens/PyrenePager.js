@@ -10,127 +10,30 @@ import React from "react";
 import PagerView from "react-native-pager-view";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigationService";
-import { FlatList } from "react-native-gesture-handler";
-import { ARTICLE_DATA, AVIS_DATA, SHOP_DATA } from "../data/data";
-import MapView, { Marker } from "react-native-maps";
+import Information from "./Information";
+import Avis from "./Avis";
+import Boutique from "./Boutique";
+import Articles from "./Articles";
 
-export default function PyrenePager({ navigation }) {
+export default function PyrenePager() {
   return (
     <PagerView style={styles.container} initialPage={0}>
       <View key="1">
         <Text style={styles.pageText}>Informations</Text>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={{ paddingHorizontal: 20, paddingTop: 30 }}
+        <Information />
+        <Pressable
+          onPress={() => navigate("Appointment")}
+          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
         >
-          <Text style={styles.lorem}>
-            Lorem ipsum dolor sit amet consectetur. In laoreet in sed vel nibh
-            morbi massa nulla vel. Nisl convallis dignissim auctor neque et amet
-            varius auctor tincidunt. Dui pellentesque sit donec suspendisse
-            scelerisque lectus justo. Ut feugiat ut a neque interdum.
-          </Text>
-          <Text
-            style={[
-              styles.lorem,
-              {
-                color: "#469597",
-                textDecorationLine: "underline",
-                marginTop: 10,
-              },
-            ]}
-          >
-            Voir plus
-          </Text>
+          <Text style={styles.footertext}>Prendre rendez-vous</Text>
+        </Pressable>
+      </View>
 
-          <View style={styles.map}>
-            <MapView
-              style={styles.mapContainer}
-              initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-              }}
-            >
-              <Marker
-                coordinate={{
-                  latitude: 37.78825,
-                  longitude: -122.4324,
-                }}
-              />
-            </MapView>
-          </View>
+      <View key="2">
+        <Text style={styles.pageText}>Avis</Text>
 
-          <View style={{ marginTop: 20 }}>
-            <Text style={styles.headertext}>Les prestations</Text>
-            <View>
-              <Pressable style={styles.button}>
-                <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                  Coupe + soin
-                </Text>
-                <Ionicons name="chevron-down" size={24} />
-              </Pressable>
-              <View>
-                <Pressable
-                  onPress={() => navigate("Article")}
-                  style={[
-                    styles.button,
-                    {
-                      flexDirection: "row",
-                      alignItems: "center",
-                      gap: 35,
-                    },
-                  ]}
-                >
-                  <View style={{ gap: 10 }}>
-                    <View>
-                      <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                        Soin nettoyant au charbon végétal
-                      </Text>
-                      <Text style={styles.caption}>
-                        Convient à tout type de peau
-                      </Text>
-                    </View>
-                    <View style={{ flexDirection: "row", gap: 15 }}>
-                      <Image source={require("../assets/Clock.png")} />
-                      <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                        30 min
-                      </Text>
-                      <Text
-                        style={[
-                          styles.lorem,
-                          { fontWeight: "600", color: "#469597" },
-                        ]}
-                      >
-                        45€
-                      </Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Image source={require("../assets/article.png")} />
-                  </View>
-                </Pressable>
-              </View>
-              <Pressable style={styles.button}>
-                <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                  Coupe + soin
-                </Text>
-                <Ionicons name="chevron-down" size={24} />
-              </Pressable>
-              <Pressable style={styles.button}>
-                <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                  Coupe + soin
-                </Text>
-                <Ionicons name="chevron-down" size={24} />
-              </Pressable>
-              <Pressable style={styles.button}>
-                <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                  Coupe + soin
-                </Text>
-                <Ionicons name="chevron-down" size={24} />
-              </Pressable>
-            </View>
-          </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Avis />
         </ScrollView>
         <Pressable
           onPress={() => navigate("Appointment")}
@@ -139,95 +42,12 @@ export default function PyrenePager({ navigation }) {
           <Text style={styles.footertext}>Prendre rendez-vous</Text>
         </Pressable>
       </View>
-      <View key="2">
-        <Text style={styles.pageText}>Avis</Text>
-        <FlatList
-          contentContainerStyle={{
-            paddingTop: 20,
-            paddingHorizontal: 20,
-          }}
-          showsVerticalScrollIndicator={false}
-          data={AVIS_DATA}
-          renderItem={({ item }) => {
-            return (
-              <View>
-                <View style={styles.listContainer}>
-                  <View style={{ flexDirection: "row", gap: 16 }}>
-                    <Image source={item.image} />
-                    <View style={{ gap: 3 }}>
-                      <View style={styles.info}>
-                        <Text style={styles.name}>{item.name}</Text>
-                        <Image source={item.icon} />
-                        <Text style={[styles.name, { fontSize: 12 }]}>
-                          {item.rate}
-                        </Text>
-                      </View>
-                      <Text style={styles.caption}>{item.caption}</Text>
-                      <Text style={styles.caption}>{item.caption1}</Text>
-                    </View>
-                  </View>
 
-                  <View>
-                    <Image source={item.post} />
-                  </View>
-                </View>
-              </View>
-            );
-          }}
-          ItemSeparatorComponent={() => {
-            return <View style={{ height: 30 }}></View>;
-          }}
-        />
-        <Pressable
-          onPress={() => navigate("Appointment")}
-          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
-        >
-          <Text style={styles.footertext}>Prendre rendez-vous</Text>
-        </Pressable>
-      </View>
       <View key="3">
         <Text style={styles.pageText}>Boutique</Text>
 
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text style={[styles.caption, { padding: 20 }]}>7 produits </Text>
-          <FlatList
-            numColumns={Math.ceil(SHOP_DATA.length / 4)}
-            contentContainerStyle={{
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 10,
-            }}
-            columnWrapperStyle={{ gap: 10 }}
-            showsVerticalScrollIndicator={false}
-            data={SHOP_DATA}
-            renderItem={({ item }) => {
-              return (
-                <Pressable onPress={() => navigate("Afro")}>
-                  <View style={styles.productContainer}>
-                    <Image source={item.image} />
-                    <Text style={[styles.caption, { color: "#00000099" }]}>
-                      {item.name}
-                    </Text>
-                    <View>
-                      <Text style={styles.info}>{item.info}</Text>
-                      <Text style={styles.info}>{item.info1}</Text>
-                    </View>
-
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <Text style={styles.info}>{item.price}</Text>
-                      <Image source={item.icon} />
-                    </View>
-                  </View>
-                </Pressable>
-              );
-            }}
-          />
+          <Boutique />
         </ScrollView>
         <Pressable
           onPress={() => navigate("Appointment")}
@@ -239,37 +59,8 @@ export default function PyrenePager({ navigation }) {
 
       <View key="4">
         <Text style={styles.pageText}>Articles</Text>
+        <Articles />
 
-        <FlatList
-          numColumns={Math.ceil(ARTICLE_DATA.length / 4)}
-          contentContainerStyle={{
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          columnWrapperStyle={{ gap: 10 }}
-          showsVerticalScrollIndicator={false}
-          data={ARTICLE_DATA}
-          renderItem={({ item }) => {
-            return (
-              <Pressable
-                onPress={() => navigate("Article Content")}
-                style={{
-                  marginTop: 20,
-                }}
-              >
-                <View style={{ alignItems: "center" }}>
-                  <View style={{ gap: 8 }}>
-                    <Image source={item.image} />
-                    <View>
-                      <Text>{item.caption}</Text>
-                      <Text>{item.caption1}</Text>
-                    </View>
-                  </View>
-                </View>
-              </Pressable>
-            );
-          }}
-        />
         <Pressable
           onPress={() => navigate("Appointment")}
           style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}

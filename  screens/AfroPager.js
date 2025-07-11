@@ -1,10 +1,4 @@
-import {
-  Image,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SheetManager } from "react-native-actions-sheet";
@@ -153,7 +147,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     paddingHorizontal: 97,
-    marginTop: 20
+    marginTop: 20,
   },
   footerText: {
     color: "#FFFFFF",

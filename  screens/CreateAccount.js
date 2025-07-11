@@ -41,14 +41,20 @@ export default function CreateAccount({ navigation }) {
             checkBoxColor="#469597"
             isChecked={isChecked}
           />
-          <View>
+          <View style={{ paddingRight: 20 }}>
             <Text style={styles.toggleText}>
-              En vous inscrivant, vous acceptez nos
-            </Text>{" "}
-            <Text style={[styles.toggleText, { color: "#469597" }]}>
-              Conditions Générales d’Utilisation{" "}
-              <Text style={[styles.toggleText, { color: "#000000" }]}>et</Text>{" "}
-              nos Conditions Générales de Vente
+              <Text
+                style={[
+                  styles.toggleText,
+                  {
+                    color: "#000000",
+                  },
+                ]}
+              >
+                En vous inscrivant, vous acceptez nos
+              </Text>{" "}
+              Conditions Générales d’Utilisation et nos Conditions Générales de
+              Vente
             </Text>
           </View>
         </View>
@@ -114,6 +120,7 @@ const styles = StyleSheet.create({
   toggleText: {
     fontSize: 12,
     fontWeight: "400",
+    color: "#469597",
   },
   buttonContainer: {
     backgroundColor: "#469597",

@@ -60,10 +60,12 @@ export default function Reschedule({ navigation, index }) {
           />
           <ScrollView showsHorizontalScrollIndicator={false} horizontal>
             <FlatList
+
               numColumns={Math.ceil(TIME_DATA.length / 2)}
               contentContainerStyle={{ gap: 10 }}
               columnWrapperStyle={{ gap: 10 }}
               showsHorizontalScrollIndicator={false}
+              scrollEnabled={false}
               data={TIME_DATA}
               renderItem={({ item, index }) => {
                 return (
