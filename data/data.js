@@ -1,7 +1,7 @@
 import Image from "../assets/brush.png";
 import Icon from "../assets/greenShop.png";
-import IAimage from "../assets//Braids.png";
-import IaImage from "../assets/maquillage.png";
+import IAimage from "../assets/WomansBraid.png";
+import IaImage from "../assets/WomansHair.png";
 import BlackImage from "../assets/Photo.png";
 import SalonImage from "../assets/greenstone.png";
 import LocationIcon from "../assets/location.png";
@@ -30,8 +30,6 @@ import Marine from "../assets/marine.png";
 import Victor from "../assets/vector.png";
 import SalonImage2 from "../assets/SalonImage2.png";
 import SalonImage3 from "../assets/SalonImage3.png";
-import filledStar from "../assets/rating.png";
-import emptyStar from "../assets/emptyStar.png";
 
 export const SHOP_DATA = [
   {
