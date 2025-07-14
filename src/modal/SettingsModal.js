@@ -1,11 +1,10 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import { navigate } from "../../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 
-// import { useNavigation } from "@react-navigation/native";
 
-export default function SettingsModal({ navigation }) {
+export default function SettingsModal() {
   return (
     <ActionSheet containerStyle={{ flex: 0.7 }} id="Settings">
       <View>

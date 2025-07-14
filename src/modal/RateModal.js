@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 import StarRating from "react-native-star-rating-widget";
 
 export default function RateModal({ navigation }) {

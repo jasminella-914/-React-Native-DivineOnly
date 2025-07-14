@@ -11,7 +11,7 @@ import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Modal from "react-native-modal";
 import { useState } from "react";
-import { navigate } from "../../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 
 const ReschedModal = () => {
   const [isModalVisible, setModalVisible] = useState(false);

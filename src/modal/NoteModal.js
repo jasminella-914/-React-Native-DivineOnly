@@ -10,7 +10,7 @@ import {
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { RATING_DATA } from "../data/data";
-import Rating from "../../src/screens/Rating";
+import Rating from "../screens/Rating";
 
 export default function NoteModal() {
   const [selected, setSelected] = useState(null);
