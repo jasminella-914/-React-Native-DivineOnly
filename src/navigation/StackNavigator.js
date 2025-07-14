@@ -30,6 +30,8 @@ import Article from "../screens/Article";
 import ArticleContent from "../screens/ArticleContent";
 const Stack = createNativeStackNavigator();
 
+const StackOptions = { headerShown: false };
+
 export default function StackNavigator() {
   return (
     <Stack.Navigator
@@ -37,208 +39,110 @@ export default function StackNavigator() {
         headerShadowVisible: false,
       }}
     >
-      <Stack.Screen
-        name="Je suis"
-        component={Je_suis}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Je travaille"
-        component={Je_travaille}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Je suis" component={Je_suis} options={StackOptions} />
+      <Stack.Screen name="Je travaille" component={Je_travaille} options={{}} />
       <Stack.Screen
         name="Créer mon compte"
         component={CreateAccount}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Créer moncompte"
         component={CreateAccount2}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Mes coordonnées"
         component={ContactDetails}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Profile" component={Profile} options={StackOptions} />
       <Stack.Screen
         name="Connexion"
         component={Connexion}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Forgot Password"
         component={ForgotPassword}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Link Sent"
         component={LinkSent}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Welcome"
-        component={Welcome}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="TabNav"
-        component={TabNav}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Welcome" component={Welcome} options={StackOptions} />
+      <Stack.Screen name="TabNav" component={TabNav} options={StackOptions} />
       <Stack.Screen
         name="Edit Profile"
         component={EditProfile}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Notifications"
         component={Notifications}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="My Basket"
         component={MyBasket}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Afro"
-        component={Afro}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Afro" component={Afro} options={StackOptions} />
       <Stack.Screen
         name="Delivery"
         component={Delivery}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Payment"
-        component={Payment}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Payment" component={Payment} options={StackOptions} />
       <Stack.Screen
         name="Payment2"
         component={Payment2}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Confirmation"
         component={Confirmation}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Reschedule"
         component={Reschedule}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Notification Setting"
         component={NotificationSetting}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Resercher"
         component={Resercher}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Booking"
-        component={Booking}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Pyrene"
-        component={Pyrene}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Booking" component={Booking} options={StackOptions} />
+      <Stack.Screen name="Pyrene" component={Pyrene} options={StackOptions} />
       <Stack.Screen
         name="Appointment"
         component={Appointment}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Your Appointment"
         component={Votre}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
       <Stack.Screen
         name="Appointment Confirmation"
         component={AppointmentConfirm}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
-      <Stack.Screen
-        name="Article"
-        component={Article}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Stack.Screen name="Article" component={Article} options={StackOptions} />
       <Stack.Screen
         name="Article Content"
         component={ArticleContent}
-        options={{
-          headerShown: false,
-        }}
+        options={StackOptions}
       />
     </Stack.Navigator>
   );
