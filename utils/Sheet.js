@@ -1,14 +1,14 @@
 import { registerSheet } from "react-native-actions-sheet";
-import SettingsModal from "../components/modal/SettingsModal";
-import FilterModal from "../components/modal/FilterModal";
-import ReschedModal from "../components/modal/ReschedModal";
-import SizeModal from "../components/modal/SizeModal";
-import SortModal from "../components/modal/SortModal";
-import LieuModal from "../components/modal/LieuModal";
-import NoteModal from "../components/modal/NoteModal";
-import DistanceModal from "../components/modal/DistanceModal";
-import AvailabilityModal from "../components/modal/AvailabilityModal";
-import RateModal from "../components/modal/RateModal";
+import SettingsModal from "../src/modal/SettingsModal";
+import FilterModal from "../src/modal/FilterModal";
+import ReschedModal from "../src/modal/ReschedModal";
+import SizeModal from "../src/modal/SizeModal";
+import SortModal from "../src/modal/SortModal";
+import LieuModal from "../src/modal/LieuModal";
+import NoteModal from "../src/modal/NoteModal";
+import DistanceModal from "../src/modal/DistanceModal";
+import AvailabilityModal from "../src/modal/AvailabilityModal";
+import RateModal from "../src/modal/RateModal";
 
 
 

@@ -9,11 +9,10 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
-import { RATING_DATA } from "../../data/data";
-import Rating from "../../ screens/Rating";
+import { RATING_DATA } from "../data/data";
+import Rating from "../../src/screens/Rating";
 
-export default function NoteModal({ index }) {
-  const [rating, setRating] = useState(0);
+export default function NoteModal() {
   const [selected, setSelected] = useState(null);
 
   return (

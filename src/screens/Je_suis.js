@@ -14,20 +14,20 @@ export default function Je_suis() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={logoImg} />
+      <Image source={require("../assets/img/Bg.png")} />
       <Image
         source={require("../assets/icon/Logo.png")}
-        style={{ alignSelf: "center", position: "absolute",  top: 40 }}
+        style={{ alignSelf: "center", position: "absolute", top: 40 }}
       />
 
       <Image
-          source={require("../assets/img/twoperson.png")}
-         style={{
+        source={require("../assets/img/twoperson.png")}
+        style={{
           position: "absolute",
           alignSelf: "center",
-          top: 130
-         }}
-        />
+          top: 130,
+        }}
+      />
 
       <View style={styles.secondContainer}>
         <View style={{ marginBottom: 20 }}>

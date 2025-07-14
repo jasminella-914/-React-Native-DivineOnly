@@ -10,16 +10,13 @@ import {
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../../src/navigation/navigationService";
+import { navigate } from "../../navigation/navigationService";
 import { SheetManager } from "react-native-actions-sheet";
 import { useState } from "react";
-import RateModal from "../../components/modal/RateModal";
 
 export default function AppointmentConfirm({ navigation }) {
   const [isModalVisible, setModalVisible] = useState(false);
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
+ 
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ paddingHorizontal: 20, gap: 28 }}>

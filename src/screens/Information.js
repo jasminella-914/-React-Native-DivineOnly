@@ -9,7 +9,7 @@ import {
 import React from "react";
 import MapView, { Marker } from "react-native-maps";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 
 const Information = () => {
   return (

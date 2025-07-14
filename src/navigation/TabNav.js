@@ -1,11 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Shop from "../../ screens/tabScreens/Shop";
-import IA from "../../ screens/tabScreens/IA";
-import Profile from "../../ screens/tabScreens/Profile";
+import Profile from "../screens/tabScreens/Profile";
 import { Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Services from "../../ screens/tabScreens/Services";
+import Services from "../screens/tabScreens/Services";
+import Shop from "../screens/tabScreens/Shop";
+import IA from "../screens/tabScreens/IA";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +34,7 @@ export default function TabNav() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color }) => (
-            <Image source={require("../../assets/icon/shop.png")} size={25} color={color} />
+            <Image source={require("../assets/icon/shop.png")} size={25} color={color} />
           ),
           tabBarActiveBackgroundColor: "#469597",
           tabBarActiveTintColor: "#FFFFFF",

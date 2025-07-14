@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 import { ARTICLEPOST_DATA } from "../data/data";
 
 export default function Article({ navigation }) {
@@ -92,13 +92,10 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginBottom: 30
   },
   image: {
     height: 137,
     width: 137,
-    // backgroundColor: "red",
-    // padding: 20,
     gap: 20,
   },
 });

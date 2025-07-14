@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../../src/navigation/navigationService";
+import { navigate } from "../../navigation/navigationService";
 import { SEARCHLIST_DATA } from "../../data/data";
 
 export default function Resercher({ navigation }) {

@@ -3,7 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { SheetProvider } from "react-native-actions-sheet";
 
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+// import "./src/utils/Sheet";
 import "./utils/Sheet";
+
 
 import { navigationRef } from "./src/navigation/navigationService";
 

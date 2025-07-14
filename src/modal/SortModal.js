@@ -27,35 +27,35 @@ export default function SortModal() {
             style={styles.filter}
           >
             <Text>Lieu</Text>
-            <Image source={require("../../assets/icon/chevronRight.png")} />
+            <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Filter")}
             style={styles.filter}
           >
             <Text>Prix</Text>
-            <Image source={require("../../assets/icon/chevronRight.png")} />
+            <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Note")}
             style={styles.filter}
           >
             <Text>Note</Text>
-            <Image source={require("../../assets/icon/chevronRight.png")} />
+            <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Distance")}
             style={styles.filter}
           >
             <Text>Distance</Text>
-            <Image source={require("../../assets/icon/chevronRight.png")} />
+            <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Availability")}
             style={styles.filter}
           >
             <Text>Disponibilités</Text>
-            <Image source={require("../../assets/icon/chevronRight.png")} />
+            <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
         </View>
         <View style={styles.secondBorder}></View>

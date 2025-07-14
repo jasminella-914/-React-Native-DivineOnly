@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { SHOP_DATA } from "../data/data";
-import { navigate } from "../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 
 const Boutique = () => {
   return (

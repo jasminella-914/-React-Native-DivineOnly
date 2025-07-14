@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { AVIS_DATA } from "../data/data";
-import { navigate } from "../src/navigation/navigationService";
+
 
 const Avis = () => {
   return (

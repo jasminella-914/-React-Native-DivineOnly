@@ -21,14 +21,8 @@ const ReschedModal = () => {
   return (
     <ActionSheet containerStyle={{ flex: 0.75 }} id="Reschedule">
       <Image
-        source={require("../../assets/img/groupPhoto.png")}
-        style={{
-          height: 110,
-          width: 414,
-          alignSelf: "center",
-          borderTopLeftRadius: 25,
-          borderTopRightRadius: 25,
-        }}
+        source={require("../assets/img/groupPhoto.png")}
+        style={styles.groupPhoto}
       />
 
       <View>
@@ -38,7 +32,7 @@ const ReschedModal = () => {
             Rendez-vous prévu le 17 juin 2022 à 16h
           </Text>
           <View style={styles.location}>
-            <Image source={require("../../assets/icon/location.png")} />
+            <Image source={require("../assets/icon/location.png")} />
             <Text
               style={[
                 styles.bodyText,
@@ -133,4 +127,11 @@ const styles = StyleSheet.create({
   header: { alignItems: "center", gap: 20, marginTop: 20 },
   votreContainer: { flexDirection: "row", gap: 10, alignItems: "center" },
   votre: { gap: 30, marginTop: 20, marginHorizontal: 20 },
+  groupPhoto: {
+    height: 110,
+    width: 414,
+    alignSelf: "center",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+  },
 });

@@ -8,8 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import PagerView from "react-native-pager-view";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../src/navigation/navigationService";
+import { navigate } from "../navigation/navigationService";
 import Information from "./Information";
 import Avis from "./Avis";
 import Boutique from "./Boutique";
