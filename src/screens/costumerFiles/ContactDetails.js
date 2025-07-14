@@ -9,6 +9,7 @@ import {
 import * as Progress from "react-native-progress";
 import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../../styles/Colors";
 
 export default function ContactDetails({ navigation }) {
   return (
@@ -22,7 +23,7 @@ export default function ContactDetails({ navigation }) {
         <Progress.Bar
           progress={0.2}
           width={250}
-          color="#469597"
+          color={Colors.primary}
           borderWidth={0}
           unfilledColor="#E5E3E4"
           height={7}
@@ -60,7 +61,7 @@ export default function ContactDetails({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   secondContainer: {
     marginHorizontal: 20,
@@ -71,24 +72,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 16,
     fontWeight: "600",
     marginTop: 20
   },
   inputContainer: {
     padding: 15,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     borderWidth: 1,
     borderRadius: 15,
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor:Colors.primary,
     padding: 18,
     borderRadius: 10,
   },
   footerButtonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     textAlign: "center",
     fontWeight: "600",

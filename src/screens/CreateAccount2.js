@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../styles/Colors";
 
 const logoImg = require("../assets/icon/Logo.png");
 export default function CreateAccount2() {
@@ -42,7 +43,7 @@ export default function CreateAccount2() {
               setIsChecked(!isChecked);
             }}
             isChecked={isChecked}
-            checkBoxColor="#469597"
+            checkBoxColor={Colors.primary}
           />
           <View style={{ paddingRight: 20 }}>
             <Text style={styles.toggleText}>
@@ -50,7 +51,7 @@ export default function CreateAccount2() {
                 style={[
                   styles.toggleText,
                   {
-                    color: "#000000",
+                    color: Colors.black,
                   },
                 ]}
               >
@@ -71,7 +72,7 @@ export default function CreateAccount2() {
       <View style={styles.footer}>
         <Text style={styles.footerButtonText}>Vous avez déjà un compte ? </Text>
         <Pressable onPress={() => navigation.navigate("Connexion")}>
-          <Text style={[styles.footerButtonText, { color: "#469597" }]}>
+          <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
             Connexion
           </Text>
         </Pressable>
@@ -83,7 +84,7 @@ export default function CreateAccount2() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   secondContainer: {
     gap: 20,
@@ -92,11 +93,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#0E1F20",
+    color: Colors.default,
   },
   textInput: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 10,
     borderRadius: 10,
     paddingVertical: 20,
@@ -109,15 +110,15 @@ const styles = StyleSheet.create({
   toggleText: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#469597",
+    color: Colors.primary,
   },
   buttonContainer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
 
   footerButton: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 15,
     borderRadius: 10,
     flexDirection: "row",
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
   },
   footerButtonText: {
     textAlign: "center",
-    color: "#000000",
+    color: Colors.black,
     fontSize: 12,
     fontWeight: "400",
   },

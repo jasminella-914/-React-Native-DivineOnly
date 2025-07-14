@@ -8,11 +8,12 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import { Colors } from "../../styles/Colors";
 
 const bgImg = require("../../assets/img/Bg.png");
 export default function LinkSent({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white}}>
       <Image source={bgImg} />
       <Image source={require("../../assets/icon/Logo.png")} style={styles.logo} />
       <Image
@@ -46,23 +47,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerText: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 16,
     fontWeight: "600",
   },
   text: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 12,
   },
   buttonContainer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 15,
     marginHorizontal: 20,
     marginTop: 50,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",

@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SERVICES_DATA } from "../data/data";
+import { Colors } from "../styles/Colors";
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -60,10 +61,10 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white ,
   },
   buttonContainer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
     marginHorizontal: 20,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     bottom: 15,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",

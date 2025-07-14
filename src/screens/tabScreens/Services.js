@@ -11,13 +11,12 @@ import {
 } from "react-native";
 import RadioButtonRN from "radio-buttons-react-native";
 import ICON from "../../assets/icon/salon.png";
+import { Colors } from "../../styles/Colors";
 const data = [
   {
     label: "Au Salon",
-  
   },
   {
-
     label: "A domicile",
   },
 ];
@@ -37,13 +36,10 @@ export default function Services({ navigation }) {
           <RadioButtonRN
             data={data}
             selectedBtn={(e) => console.log(e)}
-            activeColor="#469597"
+            activeColor={Colors.primary}
             boxStyle={{
-              borderColor: "#BBC6C8",
-              
-              
+              borderColor: Colors.border,
             }}
-            
           />
           <TextInput
             placeholder="Nom du professionnel, prestations..."
@@ -68,14 +64,14 @@ export default function Services({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   logo: {
     alignSelf: "center",
   },
 
   secondContainer: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: Colors.white,
     marginHorizontal: 20,
     borderRadius: 20,
     marginTop: 20,
@@ -83,26 +79,26 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
   },
   inputContainer: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 20,
     borderRadius: 15,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   thirdContainer: {
     margin: 20,
     gap: 20,
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 20,
     borderRadius: 15,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",

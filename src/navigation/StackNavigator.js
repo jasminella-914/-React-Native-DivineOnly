@@ -34,22 +34,22 @@ const StackOptions = { headerShown: false };
 const screens = [
   { name: "Je suis", component: Je_suis, id: 0 },
   {
-    name: "Je travaille",
+    name: "JeTravaille",
     component: Je_travaille,
     id: 1,
   },
   {
-    name: "Créer mon compte",
+    name: "CréerMonCompte",
     component: CreateAccount,
     id: 2,
   },
   {
-    name: "Créer moncompte",
+    name: "CreateAccount",
     component: CreateAccount2,
     id: 3,
   },
   {
-    name: "Mes coordonnées",
+    name: "MesCoordonnées",
     component: ContactDetails,
     id: 4,
   },
@@ -64,12 +64,12 @@ const screens = [
     id: 6,
   },
   {
-    name: "Forgot Password",
+    name: "ForgotPassword",
     component: ForgotPassword,
     id: 7,
   },
   {
-    name: "Link Sent",
+    name: "LinkSent",
     component: LinkSent,
     id: 8,
   },

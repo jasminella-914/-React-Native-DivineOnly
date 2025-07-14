@@ -13,6 +13,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Modal from "react-native-modal";
 import { useState } from "react";
+import { Colors } from "../../styles/Colors";
 
 export default function Profile({ navigation }) {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -30,9 +31,9 @@ export default function Profile({ navigation }) {
         <Progress.Bar
           progress={0.3}
           width={250}
-          color="#469597"
+          color={Colors.primary}
           borderWidth={0}
-          unfilledColor="#E5E3E4"
+          unfilledColor={Colors.grey}
           height={7}
           style={styles.Bar}
         />
@@ -49,15 +50,8 @@ export default function Profile({ navigation }) {
         </View>
         <View style={styles.thirdContainer}>
           <Pressable onPress={toggleModal} style={styles.pressContainer}>
-            <View
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                padding: 20,
-                gap: 10,
-              }}
-            >
-              <Ionicons name="image-outline" size={40} color="#BBC6C8" />
+            <View style={styles.editPhoto}>
+              <Ionicons name="image-outline" size={40} color={Colors.border} />
               <Text style={[styles.ajouterText, { fontSize: 12 }]}>
                 ajouter une photop
               </Text>
@@ -115,7 +109,7 @@ export default function Profile({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   secondContainer: {
     marginHorizontal: 20,
@@ -127,7 +121,7 @@ const styles = StyleSheet.create({
   },
   pressContainer: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     borderRadius: 20,
     width: 120,
     height: 120,
@@ -137,47 +131,44 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   headertext: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 16,
     fontWeight: "600",
     marginBottom: 10,
   },
   text: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 12,
     fontWeight: "400",
   },
   inputContainer: {
     padding: 15,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     borderWidth: 1,
     borderRadius: 15,
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
     marginTop: "auto",
     marginHorizontal: 20,
   },
   footerButtonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     textAlign: "center",
     fontWeight: "600",
   },
   ajouterText: {
-    color: "#BBC6C8",
+    color: Colors.border,
     fontSize: 14,
     fontWeight: "500",
   },
   modal: {
-    // backgroundColor: "#FFFFFF",
-    // flex: 0.3,
-    // borderRadius: 20,
-    // padding: 20,
+    
     justifyContent: "flex-start",
-    backgroundColor: "#FFFFFF",
+    backgroundColor:Colors.white,
     flex: 0.25,
     marginTop: "auto",
     padding: 20,
@@ -185,6 +176,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     paddingVertical: 20,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
+  },
+  editPhoto: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    gap: 10,
   },
 });

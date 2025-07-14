@@ -6,15 +6,16 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Services from "../screens/tabScreens/Services";
 import Shop from "../screens/tabScreens/Shop";
 import IA from "../screens/tabScreens/IA";
+import { Colors } from "../styles/Colors";
 
 const Tab = createBottomTabNavigator();
 
 const TabOptions = {
   tabBarShowLabel: false,
   headerShown: false,
-  tabBarActiveBackgroundColor: "#469597",
-  tabBarActiveTintColor: "#FFFFFF",
-  tabBarInactiveTintColor: "#0E1F20",
+  tabBarActiveBackgroundColor: Colors.primary ,
+  tabBarActiveTintColor: Colors.white,
+  tabBarInactiveTintColor: Colors.default,
 };
 
 
