@@ -9,6 +9,13 @@ import IA from "../screens/tabScreens/IA";
 
 const Tab = createBottomTabNavigator();
 
+const TabOptions = {
+  tabBarShowLabel: false,
+  headerShown: false,
+  tabBarActiveBackgroundColor: "#469597",
+  tabBarActiveTintColor: "#FFFFFF",
+  tabBarInactiveTintColor: "#0E1F20",
+};
 
 export default function TabNav() {
   return (
@@ -17,60 +24,49 @@ export default function TabNav() {
         name="Services"
         component={Services}
         options={{
-          tabBarShowLabel: false,
-          headerShown: false,
+          ...TabOptions,
           tabBarIcon: ({ color }) => (
             <Ionicons name="search-outline" size={25} color={color} />
           ),
-          tabBarActiveBackgroundColor: "#469597",
-          tabBarActiveTintColor: "#FFFFFF",
-          tabBarInactiveTintColor: "#0E1F20",
         }}
       />
       <Tab.Screen
         name="Shop"
         component={Shop}
         options={{
-          headerShown: false,
-          tabBarShowLabel: false,
+          ...TabOptions,
           tabBarIcon: ({ color }) => (
-            <Image source={require("../assets/icon/shop.png")} size={25} color={color} />
+            <Image
+              source={require("../assets/icon/shop.png")}
+              size={25}
+              color={color}
+            />
           ),
-          tabBarActiveBackgroundColor: "#469597",
-          tabBarActiveTintColor: "#FFFFFF",
-          tabBarInactiveTintColor: "#0E1F20",
+         
         }}
       />
       <Tab.Screen
         name="IA"
         component={IA}
         options={{
-          tabBarShowLabel: false,
-          headerShown: false,
+          ...TabOptions,
           tabBarIcon: ({ color }) => (
             <Ionicons name="star-outline" size={25} color={color} />
           ),
-          tabBarActiveBackgroundColor: "#469597",
-          tabBarActiveTintColor: "#FFFFFF",
-          tabBarInactiveTintColor: "#0E1F20",
+         
         }}
       />
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarShowLabel: false,
-          headerShown: false,
+          ...TabOptions,
           tabBarIcon: ({ color }) => (
             <Ionicons name="person-outline" size={25} color={color} />
           ),
-          tabBarActiveBackgroundColor: "#469597",
-          tabBarActiveTintColor: "#FFFFFF",
-          tabBarInactiveTintColor: "#0E1F20",
+     
         }}
       />
-      
     </Tab.Navigator>
   );
 }
-
