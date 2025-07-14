@@ -8,7 +8,7 @@ import LieuModal from "../components/modal/LieuModal";
 import NoteModal from "../components/modal/NoteModal";
 import DistanceModal from "../components/modal/DistanceModal";
 import AvailabilityModal from "../components/modal/AvailabilityModal";
-import RateModal from "../components/RateModal";
+import RateModal from "../components/modal/RateModal";
 
 
 
