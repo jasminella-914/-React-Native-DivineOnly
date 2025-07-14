@@ -31,7 +31,149 @@ import ArticleContent from "../screens/ArticleContent";
 const Stack = createNativeStackNavigator();
 
 const StackOptions = { headerShown: false };
-
+const screens = [
+  { name: "Je suis", component: Je_suis, id: 0 },
+  {
+    name: "Je travaille",
+    component: Je_travaille,
+    id: 1,
+  },
+  {
+    name: "Créer mon compte",
+    component: CreateAccount,
+    id: 2,
+  },
+  {
+    name: "Créer moncompte",
+    component: CreateAccount2,
+    id: 3,
+  },
+  {
+    name: "Mes coordonnées",
+    component: ContactDetails,
+    id: 4,
+  },
+  {
+    name: "Profile",
+    component: Profile,
+    id: 5,
+  },
+  {
+    name: "Connexion",
+    component: Connexion,
+    id: 6,
+  },
+  {
+    name: "Forgot Password",
+    component: ForgotPassword,
+    id: 7,
+  },
+  {
+    name: "Link Sent",
+    component: LinkSent,
+    id: 8,
+  },
+  {
+    name: "Welcome",
+    component: Welcome,
+    id: 9,
+  },
+  {
+    name: "Edit Profile",
+    component: EditProfile,
+    id: 10,
+  },
+  {
+    name: "TabNav",
+    component: TabNav,
+    id: 11,
+  },
+  {
+    name: "Notifications",
+    component: Notifications,
+    id: 12,
+  },
+  {
+    name: "My Basket",
+    component: MyBasket,
+    id: 13,
+  },
+  {
+    name: "Afro",
+    component: Afro,
+    id: 14,
+  },
+  {
+    name: "Delivery",
+    component: Delivery,
+    id: 15,
+  },
+  {
+    name: "Payment2",
+    component: Payment2,
+    id: 16,
+  },
+  {
+    name: "Payment",
+    component: Payment,
+    id: 17,
+  },
+  {
+    name: "Confirmation",
+    component: Confirmation,
+    id: 18,
+  },
+  {
+    name: "Reschedule",
+    component: Reschedule,
+    id: 19,
+  },
+  {
+    name: "Notification Setting",
+    component: NotificationSetting,
+    id: 20,
+  },
+  {
+    name: "Resercher",
+    component: Resercher,
+    id: 21,
+  },
+  {
+    name: "Booking",
+    component: Booking,
+    id: 22,
+  },
+  {
+    name: "Pyrene",
+    component: Pyrene,
+    id: 23,
+  },
+  {
+    name: "Appointment",
+    component: Appointment,
+    id: 24,
+  },
+  {
+    name: "Your Appointment",
+    component: Votre,
+    id: 25,
+  },
+  {
+    name: "Appointment Confirmation",
+    component: AppointmentConfirm,
+    id: 26,
+  },
+  {
+    name: "Article",
+    component: Article,
+    id: 27,
+  },
+  {
+    name: "Article Content",
+    component: ArticleContent,
+    id: 28,
+  },
+];
 export default function StackNavigator() {
   return (
     <Stack.Navigator
@@ -39,111 +181,16 @@ export default function StackNavigator() {
         headerShadowVisible: false,
       }}
     >
-      <Stack.Screen name="Je suis" component={Je_suis} options={StackOptions} />
-      <Stack.Screen name="Je travaille" component={Je_travaille} options={{}} />
-      <Stack.Screen
-        name="Créer mon compte"
-        component={CreateAccount}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Créer moncompte"
-        component={CreateAccount2}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Mes coordonnées"
-        component={ContactDetails}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Profile" component={Profile} options={StackOptions} />
-      <Stack.Screen
-        name="Connexion"
-        component={Connexion}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Forgot Password"
-        component={ForgotPassword}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Link Sent"
-        component={LinkSent}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Welcome" component={Welcome} options={StackOptions} />
-      <Stack.Screen name="TabNav" component={TabNav} options={StackOptions} />
-      <Stack.Screen
-        name="Edit Profile"
-        component={EditProfile}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Notifications"
-        component={Notifications}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="My Basket"
-        component={MyBasket}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Afro" component={Afro} options={StackOptions} />
-      <Stack.Screen
-        name="Delivery"
-        component={Delivery}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Payment" component={Payment} options={StackOptions} />
-      <Stack.Screen
-        name="Payment2"
-        component={Payment2}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Confirmation"
-        component={Confirmation}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Reschedule"
-        component={Reschedule}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Notification Setting"
-        component={NotificationSetting}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Resercher"
-        component={Resercher}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Booking" component={Booking} options={StackOptions} />
-      <Stack.Screen name="Pyrene" component={Pyrene} options={StackOptions} />
-      <Stack.Screen
-        name="Appointment"
-        component={Appointment}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Your Appointment"
-        component={Votre}
-        options={StackOptions}
-      />
-      <Stack.Screen
-        name="Appointment Confirmation"
-        component={AppointmentConfirm}
-        options={StackOptions}
-      />
-      <Stack.Screen name="Article" component={Article} options={StackOptions} />
-      <Stack.Screen
-        name="Article Content"
-        component={ArticleContent}
-        options={StackOptions}
-      />
+      {screens.map((screen, id) => {
+        return (
+          <Stack.Screen
+            name={screen.name}
+            component={screen.component}
+            options={StackOptions}
+            key={screen.id}
+          />
+        );
+      })}
     </Stack.Navigator>
   );
 }

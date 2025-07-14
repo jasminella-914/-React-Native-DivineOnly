@@ -17,6 +17,8 @@ const TabOptions = {
   tabBarInactiveTintColor: "#0E1F20",
 };
 
+
+
 export default function TabNav() {
   return (
     <Tab.Navigator>
