@@ -14,6 +14,7 @@ import Avis from "./Avis";
 import Boutique from "./Boutique";
 import Articles from "./Articles";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function PyrenePager() {
   return (
@@ -81,8 +82,7 @@ const styles = StyleSheet.create({
   },
   pageText: {
     color: Colors.primary,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
     textAlign: "center",
     borderBottomWidth: 2,
     borderColor: Colors.primary,
@@ -90,8 +90,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   footertext: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.white,
     textAlign: "center",
   },

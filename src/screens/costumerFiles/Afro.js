@@ -13,6 +13,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import AfroPager from "../AfroPager";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Afro({ navigation }) {
   return (
@@ -43,8 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",

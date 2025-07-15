@@ -3,6 +3,7 @@ import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const AfroPager = () => {
   return (
@@ -22,9 +23,8 @@ const AfroPager = () => {
           </View>
           <View>
             <Text style={styles.headertext}>
-              Shampooing BIO solide nourissant et{" "}
+              Shampooing BIO solide nourissant et réparateur
             </Text>
-            <Text style={styles.headertext}>réparateur</Text>
           </View>
           <View style={styles.buttonContainer}>
             <Pressable>
@@ -76,8 +76,8 @@ export default AfroPager;
 
 const styles = StyleSheet.create({
   headertext: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    color: Colors.default,
   },
 
   container: {
@@ -114,8 +114,7 @@ const styles = StyleSheet.create({
   buttonText: {
     backgroundColor: Colors.blueGreen,
     color: Colors.black,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
     paddingHorizontal: 8,
     paddingVertical: 5,
@@ -127,8 +126,8 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingTop: 8,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.default,
   },
   sizeContainer: {
     borderWidth: 1,
@@ -152,8 +151,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   icon: {

@@ -13,6 +13,7 @@ import { SERVICE_DATA } from "../data/data";
 import { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function Booking({ navigation }) {
   return (
@@ -26,8 +27,8 @@ export default function Booking({ navigation }) {
           <View style={styles.header}>
             <Ionicons name="search-outline" size={22} />
             <View>
-              <Text>Coloration</Text>
-              <Text>Autour de moi</Text>
+              <Text style={styles.text}>Coloration</Text>
+              <Text style={styles.text}>Autour de moi</Text>
             </View>
             <Pressable style={styles.pencil}>
               <Image source={require("../assets/icon/pencil.png")} />
@@ -109,31 +110,28 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
   },
   filter: {
     color: Colors.primary,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   button: {
     flexDirection: "row",
     gap: 8,
     borderWidth: 1,
-    borderColor:  Colors.primary,
+    borderColor: Colors.primary,
     alignItems: "center",
     borderRadius: 14,
     paddingHorizontal: 15,
-    paddingVertical: 4,
+    paddingVertical: 3,
   },
   Text: {
     backgroundColor: Colors.blueGreen,
-    paddingVertical: 9,
+    paddingVertical: 4,
     paddingHorizontal: 8,
-    borderRadius: 18,
-    fontSize: 12,
-    fontWeight: "500",
+    borderRadius: 10,
+    ...FONTS.textRegular,
     color: Colors.primary,
   },
   service: {
@@ -143,8 +141,7 @@ const styles = StyleSheet.create({
     left: 10,
     padding: 4,
     borderRadius: 7,
-    fontSize: 12,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   pencil: {
     position: "absolute",
@@ -152,8 +149,8 @@ const styles = StyleSheet.create({
   },
   location: {
     textDecorationLine: "underline",
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.default,
   },
   info: {
     justifyContent: "center",
@@ -167,8 +164,12 @@ const styles = StyleSheet.create({
     borderColor: Colors.black21,
   },
   title: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    color: Colors.default,
   },
   header: { flexDirection: "row", gap: 9, alignItems: "center" },
+  text: {
+    ...FONTS.textRegular,
+    color: Colors.default,
+  },
 });

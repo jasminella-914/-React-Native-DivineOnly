@@ -5,6 +5,7 @@ import RadioButtonRN from "radio-buttons-react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { RadioGroup } from "react-native-radio-buttons-group";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const radioButtons = [
   {
@@ -70,8 +71,7 @@ export default function SizeModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
     marginTop: 20,
   },
@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
     paddingVertical: 1,
   },
   size: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.default,
   },
   price: {
-    fontWeight: "500",
-    fontSize: "14",
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
 });

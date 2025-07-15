@@ -14,6 +14,7 @@ import { navigate } from "../../navigation/navigationService";
 import { SheetManager } from "react-native-actions-sheet";
 import { useState } from "react";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function AppointmentConfirm() {
   return (
@@ -22,7 +23,12 @@ export default function AppointmentConfirm() {
         <View style={{ alignItems: "center", gap: 20 }}>
           <Text style={styles.header}>Réservation validée</Text>
           <Text style={styles.bodytext}>#569843</Text>
-          <Text style={[styles.smallText]}>
+          <Text
+            style={[
+              styles.smallText,
+              { textAlign: "center", paddingHorizontal: 50 },
+            ]}
+          >
             Votre paiement a été validé et votre rendez-vous confirmé.
           </Text>
         </View>
@@ -31,19 +37,15 @@ export default function AppointmentConfirm() {
           <Text style={styles.LB}>lb</Text>
 
           <View>
-            <Text style={[styles.bodytext, { fontWeight: "700" }]}>
-              Mercredi 22 Juin • 16h
-            </Text>
-            <Text style={[styles.bodytext, { fontSize: 14 }]}>
-              Lola Brazilia • 1 prestation
-            </Text>
+            <Text style={styles.info}>Mercredi 22 Juin • 16h</Text>
+            <Text style={styles.text}>Lola Brazilia • 1 prestation</Text>
           </View>
         </Pressable>
 
         <Pressable style={styles.button2}>
           <Text style={styles.smallText}>Détails de mes prestations (3)</Text>
-          <View style={{ flexDirection: "row", gap: 5 }}>
-            <Text style={styles.bodytext}>90€</Text>
+          <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
+            <Text style={styles.price}>90€</Text>
             <Ionicons name="chevron-down" size={15} color={Colors.primary} />
           </View>
         </Pressable>
@@ -93,12 +95,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   header: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
+    color: Colors.default,
   },
   bodytext: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    color: Colors.default,
   },
   buttonContainer: {
     backgroundColor: Colors.whiteSmoke,
@@ -112,8 +114,7 @@ const styles = StyleSheet.create({
   },
   LB: {
     color: Colors.white,
-    fontSize: 30,
-    fontWeight: "700",
+    ...FONTS.urbanistLarge,
     textTransform: "uppercase",
     textAlign: "center",
     backgroundColor: Colors.lightSilver,
@@ -133,5 +134,20 @@ const styles = StyleSheet.create({
     borderColor: Colors.dirtyYellow,
     marginTop: 5,
   },
-  smallText: { fontWeight: "400", fontSize: 12 },
+  smallText: {
+    ...FONTS.textSmallLight,
+    color: Colors.default,
+  },
+  info: {
+    ...FONTS.urbanistBold,
+    color: Colors.black,
+  },
+  text: {
+    ...FONTS.urbanistReg,
+    color: Colors.default,
+  },
+  price: {
+    ...FONTS.textRegBold,
+    color: Colors.default,
+  },
 });

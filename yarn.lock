@@ -776,6 +776,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/montserrat/-/montserrat-0.4.1.tgz#2fc09674023112435c7daf1d7d8e757a0789564c"
   integrity sha512-jc1d17tadLK3Nc/qIKYyOM2pnxmdZrlPFOJtmNT0qzFdUe4Pzq1Y1eQwvCMSProRbQqsosASRZ/N3mzl6pmC+g==
 
+"@expo-google-fonts/urbanist@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/urbanist/-/urbanist-0.4.1.tgz#dbdc48560e397b45cdb2852701c0a5a206194dc1"
+  integrity sha512-8RQQlveM9q0kBfDdAZxgakV93ncPlCn+gfRQpU3p7haYNo7J1fdHsoFsVpV1B2NUSFUNHBGRKjbglHqvPaRKiA==
+
 "@expo/cli@0.24.20":
   version "0.24.20"
   resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.24.20.tgz#c9a3ad7eb93b0d6a39da20ef8804976b65838790"

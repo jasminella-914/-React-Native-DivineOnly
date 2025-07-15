@@ -11,6 +11,7 @@ import MapView, { Marker } from "react-native-maps";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const Information = () => {
   return (
@@ -57,9 +58,7 @@ const Information = () => {
         <Text style={styles.headertext}>Les prestations</Text>
         <View>
           <Pressable style={styles.button}>
-            <Text style={[styles.lorem, { fontWeight: "600" }]}>
-              Coupe + soin
-            </Text>
+            <Text style={styles.lorem}>Coupe + soin</Text>
             <Ionicons name="chevron-down" size={24} />
           </Pressable>
           <View>
@@ -70,13 +69,13 @@ const Information = () => {
                 {
                   flexDirection: "row",
                   alignItems: "center",
-                  gap: 35,
+                  gap: 15,
                 },
               ]}
             >
               <View style={{ gap: 10 }}>
                 <View>
-                  <Text style={[styles.lorem, { fontWeight: "600" }]}>
+                  <Text style={styles.info}>
                     Soin nettoyant au charbon végétal
                   </Text>
                   <Text style={styles.caption}>
@@ -85,15 +84,8 @@ const Information = () => {
                 </View>
                 <View style={styles.time}>
                   <Image source={require("../assets/icon/Clock.png")} />
-                  <Text style={[styles.lorem, { fontWeight: "600" }]}>
-                    30 min
-                  </Text>
-                  <Text
-                    style={[
-                      styles.lorem,
-                      { fontWeight: "600", color: Colors.primary },
-                    ]}
-                  >
+                  <Text style={styles.info}>30 min</Text>
+                  <Text style={[styles.info, { color: Colors.primary }]}>
                     45€
                   </Text>
                 </View>
@@ -104,21 +96,15 @@ const Information = () => {
             </Pressable>
           </View>
           <Pressable style={styles.button}>
-            <Text style={[styles.lorem, { fontWeight: "600" }]}>
-              Coupe + soin
-            </Text>
+            <Text style={styles.coupeText}>Coupe + soin</Text>
             <Ionicons name="chevron-down" size={24} />
           </Pressable>
           <Pressable style={styles.button}>
-            <Text style={[styles.lorem, { fontWeight: "600" }]}>
-              Coupe + soin
-            </Text>
+            <Text style={styles.coupeText}>Coupe + soin</Text>
             <Ionicons name="chevron-down" size={24} />
           </Pressable>
           <Pressable style={styles.button}>
-            <Text style={[styles.lorem, { fontWeight: "600" }]}>
-              Coupe + soin
-            </Text>
+            <Text style={styles.coupeText}>Coupe + soin</Text>
             <Ionicons name="chevron-down" size={24} />
           </Pressable>
         </View>
@@ -131,8 +117,8 @@ export default Information;
 
 const styles = StyleSheet.create({
   lorem: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
   map: {
     alignItems: "center",
@@ -156,9 +142,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headertext: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   scrollView: { paddingHorizontal: 20, paddingTop: 30 },
   time: { flexDirection: "row", gap: 15 },
+  info: {
+    ...FONTS.textRegBold,
+    color: Colors.default,
+  },
+  caption: {
+    ...FONTS.textSmallLight,
+    color: Colors.lightBlack,
+  },
+  coupeText: {
+    ...FONTS.urbanistSemiBold,
+    color: Colors.default,
+  },
 });

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const logoImg = require("../assets/icon/google.png");
 const atlogoImg = require("../assets/icon/at.png");
@@ -89,18 +90,19 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: Colors.default,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   inputContainer: {
     borderWidth: 1,
     borderColor: Colors.border,
-    padding: 18,
+    paddingVertical: 18,
     borderRadius: 10,
+    ...FONTS.textRegular,
+    padding: 10,
   },
   text: {
     color: Colors.border,
-    fontSize: 14,
+    ...FONTS.textRegular,
     textDecorationLine: "underline",
   },
   buttonContainer: {
@@ -110,8 +112,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+
     textAlign: "center",
   },
   footerButton: {
@@ -126,8 +128,7 @@ const styles = StyleSheet.create({
   },
   footerButtonText: {
     color: Colors.black,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
   },
   footer: {

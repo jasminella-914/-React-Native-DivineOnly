@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Switch } from "react-native-gesture-handler";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function SortModal() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -27,42 +28,42 @@ export default function SortModal() {
             onPress={() => SheetManager.show("Lieu")}
             style={styles.filter}
           >
-            <Text>Lieu</Text>
+            <Text style={styles.label}>Lieu</Text>
             <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Filter")}
             style={styles.filter}
           >
-            <Text>Prix</Text>
+            <Text style={styles.label}>Prix</Text>
             <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Note")}
             style={styles.filter}
           >
-            <Text>Note</Text>
+            <Text style={styles.label}>Note</Text>
             <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Distance")}
             style={styles.filter}
           >
-            <Text>Distance</Text>
+            <Text style={styles.label}>Distance</Text>
             <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
           <Pressable
             onPress={() => SheetManager.show("Availability")}
             style={styles.filter}
           >
-            <Text>Disponibilités</Text>
+            <Text style={styles.label}>Disponibilités</Text>
             <Image source={require("../assets/icon/chevronRight.png")} />
           </Pressable>
         </View>
         <View style={styles.secondBorder}></View>
         <View style={{ gap: 20, marginBottom: 20 }}>
           <View style={styles.switch}>
-            <Text>Choisis pour vous</Text>
+            <Text style={styles.label}>Choisis pour vous</Text>
             <Switch
               trackColor={{ false: Colors.darkGray, true: Colors.primary }}
               thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -72,7 +73,7 @@ export default function SortModal() {
             />
           </View>
           <View style={styles.switch}>
-            <Text>Disponible aujourd’hui</Text>
+            <Text style={styles.label}>Disponible aujourd’hui</Text>
             <Switch
               trackColor={{ false: Colors.darkGray, true: Colors.primary }}
               thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -87,7 +88,7 @@ export default function SortModal() {
             <Text style={styles.buttonText}>Appliquer</Text>
           </Pressable>
           <Pressable>
-            <Text style={[styles.buttonText, { color: Colors.primary}]}>
+            <Text style={[styles.buttonText, { color: Colors.primary }]}>
               Réinitialiser
             </Text>
           </Pressable>
@@ -99,10 +100,9 @@ export default function SortModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     textAlign: "center",
-    marginTop: 20,
+    marginTop: 10,
   },
   button: {
     backgroundColor: Colors.primary,
@@ -113,8 +113,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   filter: {
@@ -140,5 +139,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+  },
+  label: {
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
 });

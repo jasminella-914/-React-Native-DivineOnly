@@ -13,6 +13,7 @@ import { Calendar, LocaleConfig } from "react-native-calendars";
 import { FlatList } from "react-native-actions-sheet";
 import { AVAILABILTY_DATA, TIME_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 LocaleConfig.locales["fr"] = {
   monthNames: [
@@ -76,8 +77,10 @@ export default function Appointment({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>Lola Brazilia</Text>
         <View style={styles.container}>
-          <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
-          <Text style={styles.text}>Convient à tout type de peau</Text>
+          <View>
+            <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
+            <Text style={styles.text}>Convient à tout type de peau</Text>
+          </View>
           <View
             style={{
               borderColor: Colors.lightBorder,
@@ -90,15 +93,16 @@ export default function Appointment({ navigation }) {
             <Text style={[styles.time, { color: Colors.primary }]}>45€</Text>
           </View>
         </View>
-        <View>
+        <View style={{ marginTop: 15 }}>
           <Pressable
             style={[
               styles.button,
               {
                 backgroundColor: Colors.white,
                 flexDirection: "row",
-                gap: 10,
+                gap: 5,
                 alignItems: "center",
+                paddingVertical: 15,
               },
             ]}
           >
@@ -108,29 +112,16 @@ export default function Appointment({ navigation }) {
               Ajouter une prestation à la suite
             </Text>
           </Pressable>
-          <View style={{ paddingHorizontal: 20, gap: 20 }}>
-            <Text style={styles.name}>Avec qui ? </Text>
+          <View style={{ paddingHorizontal: 20, gap: 10, marginTop: 15 }}>
+            <Text style={styles.time}>Avec qui ? </Text>
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{ gap: 10 }}
             >
               <Pressable style={styles.buttonPhoto}>
-                <Text
-                  style={[
-                    styles.text,
-                    {
-                      fontSize: 14,
-                      fontWeight: "500",
-                      color: Colors.black,
-                      textAlign: "center",
-                      backgroundColor: Colors.whiteSmoke,
-                    },
-                  ]}
-                >
-                  Première
-                </Text>
-                <Text>disponibilité</Text>
+                <Text style={styles.textBox}>Première</Text>
+                <Text style={styles.textBox}>disponibilité</Text>
               </Pressable>
 
               {AVAILABILTY_DATA.map((item, index) => {
@@ -168,7 +159,7 @@ export default function Appointment({ navigation }) {
               })}
             </ScrollView>
 
-            <View style={{ gap: 10 }}>
+            <View style={{ gap: 10, marginTop: 10 }}>
               <Text style={[styles.name, { paddingLeft: 20 }]}>
                 Date et heure de rendez-vous{" "}
               </Text>
@@ -248,8 +239,7 @@ export default function Appointment({ navigation }) {
 const styles = StyleSheet.create({
   viewContainer: { backgroundColor: Colors.white, flex: 1 },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
@@ -261,29 +251,26 @@ const styles = StyleSheet.create({
     borderColor: Colors.lightBorder,
   },
   title: {
-    fontSize: 22,
-    fontWeight: "700",
+    ...FONTS.h0,
     textAlign: "center",
     borderBottomWidth: 1,
     borderColor: Colors.lightBorder,
     paddingVertical: 30,
   },
   name: {
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
+    color: Colors.default,
   },
   text: {
     color: Colors.lightBlack,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   time: {
     color: Colors.default,
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
   },
   container: {
-    gap: 10,
+    gap: 12,
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderColor: Colors.lightBorder,
@@ -291,8 +278,7 @@ const styles = StyleSheet.create({
   },
   addText: {
     color: Colors.primary,
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
   },
   button: {
     flexDirection: "row",
@@ -334,7 +320,16 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.black,
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
+  },
+  text: {
+    ...FONTS.textSmallLight,
+    color: Colors.lightBlack,
+  },
+  textBox: {
+    ...FONTS.textRegular,
+    color: Colors.black,
+    textAlign: "center",
+    backgroundColor: Colors.whiteSmoke,
   },
 });

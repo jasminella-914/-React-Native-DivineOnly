@@ -12,6 +12,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { SERVICES_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -39,7 +40,7 @@ export default function Welcome() {
                 style={styles.buttons}
               >
                 <Image source={item.image} />
-                <Text>{item.text}</Text>
+                <Text style={styles.title}>{item.text}</Text>
               </Pressable>
             );
           }}
@@ -61,7 +62,7 @@ export default function Welcome() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white ,
+    backgroundColor: Colors.white,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
@@ -73,8 +74,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   buttons: {
@@ -87,4 +87,8 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   list: { paddingHorizontal: 20, position: "absolute", top: 80 },
+  title: {
+    ...FONTS.textRegular,
+    color: Colors.default,
+  },
 });

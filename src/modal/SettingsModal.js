@@ -3,6 +3,7 @@ import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 
 export default function SettingsModal() {
@@ -49,8 +50,7 @@ export default function SettingsModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     textAlign: "center",
     marginTop: 10,
   },
@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttonsText: {
-    fontSize: 14,
-    fontWeight: "500",
+   ...FONTS.textRegular,
   },
   border: {
     borderWidth: 3,

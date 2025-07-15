@@ -5,6 +5,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import StarRating from "react-native-star-rating-widget";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function RateModal({ navigation }) {
   const [rating, setRating] = useState(0);
@@ -19,14 +20,7 @@ export default function RateModal({ navigation }) {
           Rendez-vous passé • 17 juin 2022 à 16h
         </Text>
         <View>
-          <Text
-            style={[
-              styles.header,
-              { fontSize: 16, fontWeight: "600", paddingBottom: 22 },
-            ]}
-          >
-            Notez votre rendez-vous
-          </Text>
+          <Text style={styles.rateHeader}>Notez votre rendez-vous</Text>
           <StarRating
             starSize={44}
             color={Colors.primary}
@@ -43,7 +37,9 @@ export default function RateModal({ navigation }) {
           placeholder="Rajoutez votre commentaire ici...."
           style={styles.input}
         />
-        <Text style={[styles.buttonText, { color: Colors.black, paddingTop: 20 }]}>
+        <Text
+          style={[styles.buttonText, { color: Colors.black, paddingTop: 20 }]}
+        >
           Ajoutez une photo ou une vidéo
         </Text>
         <View style={styles.buttonContainer}>
@@ -70,14 +66,12 @@ export default function RateModal({ navigation }) {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 22,
-    fontWeight: "700",
+    ...FONTS.h0,
     textAlign: "center",
   },
   text: {
     textAlign: "center",
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   input: {
     padding: 10,
@@ -87,11 +81,11 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
     textAlignVertical: "top",
     marginTop: 20,
+    ...FONTS.textRegular
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+   ...FONTS.h2,
     textAlign: "center",
   },
   button: {
@@ -101,7 +95,7 @@ const styles = StyleSheet.create({
     marginTop: "auto",
   },
   container: {
-    paddingTop: 30,
+    paddingTop: 20,
     paddingHorizontal: 30,
   },
   photoButton: {
@@ -118,5 +112,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     gap: 38,
+  },
+  rateHeader: {
+    ...FONTS.h2,
+    paddingBottom: 22,
+    textAlign: "center",
+    color: Colors.default,
   },
 });

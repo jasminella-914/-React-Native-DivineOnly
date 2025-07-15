@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const VotrePager = ({ navigation }) => {
   return (
@@ -24,27 +25,23 @@ const VotrePager = ({ navigation }) => {
         </View>
         <View style={{ gap: 8, marginTop: 24 }}>
           <Text style={styles.bodyText}>Services</Text>
-          <View
-            style={styles.info}
-          >
+          <View style={styles.info}>
             <Text style={styles.text}>Soin nettoyant au charbon végétal</Text>
             <View style={{ flexDirection: "row", gap: 8 }}>
-              <Text style={[styles.text, { fontSize: 12 }]}>30 min</Text>
-              <Text style={[styles.text, { fontSize: 12 }]}>45€</Text>
+              <Text style={styles.time}>30 min</Text>
+              <Text style={styles.time}>45€</Text>
             </View>
           </View>
           <View style={styles.info}>
             <Text style={styles.text}>Extension des cils</Text>
             <View style={{ flexDirection: "row", gap: 8 }}>
-              <Text style={[styles.text, { fontSize: 12 }]}>30 min</Text>
-              <Text style={[styles.text, { fontSize: 12 }]}>45€</Text>
+              <Text style={styles.time}>30 min</Text>
+              <Text style={styles.time}>45€</Text>
             </View>
           </View>
         </View>
         <View style={{ gap: 10, marginTop: 24 }}>
-          <Text style={[{ fontSize: 16, fontWeight: "600" }]}>
-            Informations complémentaires
-          </Text>
+          <Text style={styles.bodyText}>Informations complémentaires</Text>
           <TextInput
             multiline
             placeholder="Besoins précis,..."
@@ -73,22 +70,19 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     paddingBottom: 8,
   },
   text: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   bodyText: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    color: Colors.default,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   button: {
@@ -105,9 +99,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: Colors.border,
     textAlignVertical: "top",
+    ...FONTS.textRegular,
   },
   info: {
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  time: {
+    ...FONTS.textSmallMed,
+    color: Colors.default,
   },
 });

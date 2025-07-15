@@ -12,6 +12,7 @@ import { SheetManager } from "react-native-actions-sheet";
 import PagerView from "react-native-pager-view";
 import { APPOINTMENT_LIST, SALONS_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function Pager() {
   return (
@@ -34,7 +35,7 @@ export default function Pager() {
                   <View style={{ justifyContent: "center", gap: 10 }}>
                     <Text style={styles.date}>{item.date}</Text>
                     <Text style={styles.info}>{item.info}</Text>
-                    <Text style={[styles.info, { color: Colors.red}]}>
+                    <Text style={[styles.info, { color: Colors.red }]}>
                       {item.info1}
                     </Text>
                   </View>
@@ -65,7 +66,14 @@ export default function Pager() {
                     </View>
                     <View style={{ flexDirection: "row", gap: 5 }}>
                       <Image source={item.secondIcon} />
-                      <Text>{item.rate}</Text>
+                      <Text
+                        style={[
+                          styles.location,
+                          { textDecorationLine: "none" },
+                        ]}
+                      >
+                        {item.rate}
+                      </Text>
                     </View>
                   </View>
                 </View>
@@ -85,9 +93,8 @@ const styles = StyleSheet.create({
   },
   pageText: {
     color: Colors.primary,
-    fontSize: 14,
     lineHeight: 18,
-    fontWeight: "500",
+    ...FONTS.textRegular,
     textAlign: "center",
     borderBottomWidth: 1,
     borderColor: Colors.primary,
@@ -97,8 +104,7 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     textAlign: "center",
     marginVertical: 10,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   list: {
     flexDirection: "row",
@@ -109,24 +115,21 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   date: {
-    fontSize: 14,
     color: Colors.black,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
   },
   info: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     color: Colors.black,
   },
   location: {
     textDecorationLine: "underline",
-    fontSize: 14,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   flatlist: {
     justifyContent: "center",
     gap: 10,
-    backgroundColor: Colors.lightBlack,
+    backgroundColor: Colors.softWhite,
     paddingHorizontal: 8,
     paddingVertical: 20,
     borderBottomLeftRadius: 20,

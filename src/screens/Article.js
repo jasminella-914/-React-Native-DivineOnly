@@ -12,6 +12,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import { ARTICLEPOST_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function Article({ navigation }) {
   return (
@@ -67,18 +68,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   headerText: {
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
   },
   text: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
     textTransform: "uppercase",
   },
   footertext: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.white,
     textAlign: "center",
   },

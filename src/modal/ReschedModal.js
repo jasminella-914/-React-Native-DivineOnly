@@ -13,6 +13,7 @@ import Modal from "react-native-modal";
 import { useState } from "react";
 import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const ReschedModal = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -34,21 +35,10 @@ const ReschedModal = () => {
           </Text>
           <View style={styles.location}>
             <Image source={require("../assets/icon/location.png")} />
-            <Text
-              style={[
-                styles.bodyText,
-                { fontSize: 13, textDecorationLine: "underline" },
-              ]}
-            >
-              500 Rte de Berre, 33300 Bordeaux
-            </Text>
+            <Text style={styles.locInfo}>500 Rte de Berre, 33300 Bordeaux</Text>
           </View>
         </View>
-        <Text
-          style={[styles.headerText, { textAlign: "center", marginTop: 20 }]}
-        >
-          Votre rendez-vous
-        </Text>
+        <Text style={styles.headerText}>Votre rendez-vous</Text>
         <View style={styles.votre}>
           <View style={styles.votreContainer}>
             <Text style={styles.oneText}>1</Text>
@@ -86,26 +76,24 @@ export default ReschedModal;
 const styles = StyleSheet.create({
   headerText: {
     color: Colors.black,
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
+    textAlign: "center",
   },
   bodyText: {
     color: Colors.black,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   footerbutton: {
     backgroundColor: Colors.primary,
     paddingVertical: 15,
-    paddingHorizontal: 132,
     marginHorizontal: 20,
     borderRadius: 15,
     marginTop: 30,
   },
   footertext: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    textAlign: "center",
   },
   modal: {
     flex: 1,
@@ -116,8 +104,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderRadius: 5,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   location: {
     flexDirection: "row",
@@ -128,7 +115,8 @@ const styles = StyleSheet.create({
   header: {
     alignItems: "center",
     gap: 20,
-    marginTop: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   votreContainer: {
     flexDirection: "row",
@@ -146,5 +134,9 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+  },
+  locInfo: {
+    ...FONTS.textSmallLight,
+    textDecorationLine: "underline",
   },
 });

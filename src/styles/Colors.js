@@ -7,7 +7,7 @@ export const Colors = {
   whiteSmoke: "#F5F5F5",
 
   black: "#000000",
-  lightBlack: "#00000008",
+  lightBlack: "#00000080",
   grayBlack: "#00000099",
   black21: "#00000021",
   raisinBlack: "#2E2A2B",

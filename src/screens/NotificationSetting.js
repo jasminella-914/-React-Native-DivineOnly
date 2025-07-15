@@ -10,6 +10,7 @@ import { useState } from "react";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function NotificationSettings({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -30,9 +31,7 @@ export default function NotificationSettings({ navigation }) {
           Notifications push
         </Text>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Rappel de rendez-vous
-          </Text>
+          <Text style={styles.text}>Rappel de rendez-vous</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -42,9 +41,7 @@ export default function NotificationSettings({ navigation }) {
           />
         </View>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Nouvelles publications de vos salons
-          </Text>
+          <Text style={styles.text}>Nouvelles publications de vos salons</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -54,9 +51,7 @@ export default function NotificationSettings({ navigation }) {
           />
         </View>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Nouvelles prestations de vos salons
-          </Text>
+          <Text style={styles.text}>Nouvelles prestations de vos salons</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -71,9 +66,7 @@ export default function NotificationSettings({ navigation }) {
           Notifications SMS
         </Text>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Rappel de rendez-vous
-          </Text>
+          <Text style={styles.text}>Rappel de rendez-vous</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -83,9 +76,7 @@ export default function NotificationSettings({ navigation }) {
           />
         </View>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Nouvelles publications de vos salons
-          </Text>
+          <Text style={styles.text}>Nouvelles publications de vos salons</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -95,9 +86,7 @@ export default function NotificationSettings({ navigation }) {
           />
         </View>
         <View style={styles.thirdContainer}>
-          <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
-            Nouvelles prestations de vos salons
-          </Text>
+          <Text style={styles.text}>Nouvelles prestations de vos salons</Text>
           <Switch
             trackColor={{ false: Colors.darkGray, true: Colors.primary }}
             thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -118,17 +107,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
-    alignSelf: "center",
-    position: "absolute",
-    top: 0,
+    textAlign: "center",
   },
   header: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.black,
+    flexDirection: "row",
+    gap: 100,
   },
   secondContainer: {
     paddingHorizontal: 20,
@@ -142,5 +129,9 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     alignItems: "center",
     borderColor: Colors.snowFlake,
+  },
+  text: {
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
 });

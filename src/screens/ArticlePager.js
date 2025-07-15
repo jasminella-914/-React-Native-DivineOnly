@@ -1,5 +1,6 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const ArticlePager = () => {
   return (
@@ -58,17 +59,15 @@ export default ArticlePager;
 
 const styles = StyleSheet.create({
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     paddingBottom: 8,
   },
   name: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
   date: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     color: Colors.border,
   },
   container: {
