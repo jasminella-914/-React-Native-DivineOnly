@@ -2,6 +2,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { navigate } from "../navigation/navigationService";
+import { Colors } from "../styles/Colors";
 
 
 export default function SettingsModal() {
@@ -15,7 +16,7 @@ export default function SettingsModal() {
           <Pressable
             onPress={() => {
               SheetManager.hide("Settings");
-              navigate("Edit Profile");
+              navigate("EditProfile");
             }}
           >
             <Text style={styles.buttonsText}>Mon compte</Text>
@@ -23,7 +24,7 @@ export default function SettingsModal() {
           <Pressable
             onPress={() => {
               SheetManager.hide("Settings");
-              navigate("Notification Setting");
+              navigate("NotificationSetting");
             }}
           >
             <Text style={styles.buttonsText}>Notifications</Text>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 10,

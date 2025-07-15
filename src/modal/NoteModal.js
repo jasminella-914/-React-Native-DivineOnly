@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { RATING_DATA } from "../data/data";
 import Rating from "../screens/Rating";
+import { Colors } from "../styles/Colors";
 
 export default function NoteModal() {
   const [selected, setSelected] = useState(null);
@@ -50,7 +51,7 @@ export default function NoteModal() {
             <Text style={styles.buttonText}>Appliquer</Text>
           </Pressable>
           <Pressable>
-            <Text style={[styles.buttonText, { color: "#469597" }]}>
+            <Text style={[styles.buttonText, { color: Colors.primary }]}>
               Réinitialiser
             </Text>
           </Pressable>
@@ -75,25 +76,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingVertical: 8,
     borderRadius: 10,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     paddingHorizontal: 50,
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 114,
     borderRadius: 10,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 75,
     gap: 10,
     borderRadius: 14,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
   },
   partirText: {
     fontSize: 14,

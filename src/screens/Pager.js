@@ -11,6 +11,7 @@ import { SheetManager } from "react-native-actions-sheet";
 
 import PagerView from "react-native-pager-view";
 import { APPOINTMENT_LIST, SALONS_DATA } from "../data/data";
+import { Colors } from "../styles/Colors";
 
 export default function Pager() {
   return (
@@ -33,7 +34,7 @@ export default function Pager() {
                   <View style={{ justifyContent: "center", gap: 10 }}>
                     <Text style={styles.date}>{item.date}</Text>
                     <Text style={styles.info}>{item.info}</Text>
-                    <Text style={[styles.info, { color: "#CE2A2A" }]}>
+                    <Text style={[styles.info, { color: Colors.red}]}>
                       {item.info1}
                     </Text>
                   </View>
@@ -83,17 +84,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   pageText: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 14,
     lineHeight: 18,
     fontWeight: "500",
     textAlign: "center",
     borderBottomWidth: 1,
-    borderColor: "#469597",
+    borderColor: Colors.primary,
     padding: 10,
   },
   headertext: {
-    color: "#469597",
+    color: Colors.primary,
     textAlign: "center",
     marginVertical: 10,
     fontSize: 16,
@@ -109,13 +110,13 @@ const styles = StyleSheet.create({
   },
   date: {
     fontSize: 14,
-    color: "#000000",
+    color: Colors.black,
     fontWeight: "600",
   },
   info: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#000000",
+    color: Colors.black,
   },
   location: {
     textDecorationLine: "underline",
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
   flatlist: {
     justifyContent: "center",
     gap: 10,
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     paddingHorizontal: 8,
     paddingVertical: 20,
     borderBottomLeftRadius: 20,

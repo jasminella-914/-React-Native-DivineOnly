@@ -12,9 +12,9 @@ import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useState } from "react";
 import AfroPager from "../AfroPager";
+import { Colors } from "../../styles/Colors";
 
 export default function Afro({ navigation }) {
-  const [size, setSize] = useState("");
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -40,12 +40,12 @@ export default function Afro({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
     position: "absolute",
     top: 0,

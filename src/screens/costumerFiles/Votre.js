@@ -12,10 +12,11 @@ import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ScrollState } from "react-native-actions-sheet/dist/src/hooks/use-scroll-handlers";
 import VotrePager from "../VotrePager";
+import { Colors } from "../../styles/Colors";
 
 export default function Votre({ navigation }) {
   return (
-    <View style={{ backgroundColor: "#FFFFFF", flex: 1, paddingTop: 60 }}>
+    <View style={styles.viewContainer}>
       <View>
         <Pressable onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} style={{ marginLeft: 20 }} />
@@ -34,10 +35,11 @@ export default function Votre({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  viewContainer: { backgroundColor: Colors.white, flex: 1, paddingTop: 60 },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     position: "absolute",
     top: 0,
     left: 120,
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     paddingTop: 63,
   },
   image: {
@@ -56,10 +58,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
   },
   tabContainer: {
-   position: "absolute",
+    position: "absolute",
     bottom: 0,
     top: 400,
     right: 0,
-    left: 0
+    left: 0,
   },
 });

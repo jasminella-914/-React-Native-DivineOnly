@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { SHOP_DATA } from "../data/data";
 import { navigate } from "../navigation/navigationService";
+import { Colors } from "../styles/Colors";
 
 const Boutique = () => {
   return (
@@ -26,7 +27,7 @@ const Boutique = () => {
             <Pressable onPress={() => navigate("Afro")}>
               <View style={styles.productContainer}>
                 <Image source={item.image} />
-                <Text style={[styles.caption, { color: "#00000099" }]}>
+                <Text style={[styles.caption, { color: Colors.grayBlack }]}>
                   {item.name}
                 </Text>
                 <View>

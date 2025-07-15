@@ -25,7 +25,7 @@ export default function ContactDetails({ navigation }) {
           width={250}
           color={Colors.primary}
           borderWidth={0}
-          unfilledColor="#E5E3E4"
+          unfilledColor={Colors.grey}
           height={7}
           style={styles.Bar}
         />

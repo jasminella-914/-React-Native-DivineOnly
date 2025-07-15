@@ -24,7 +24,7 @@ const Articles = () => {
       renderItem={({ item }) => {
         return (
           <Pressable
-            onPress={() => navigate("Article Content")}
+            onPress={() => navigate("ArticleContent")}
             style={{
               marginTop: 20,
             }}

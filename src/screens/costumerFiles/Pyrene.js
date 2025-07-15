@@ -15,29 +15,21 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import PagerView from "react-native-pager-view";
 import PyrenePager from "../PyrenePager";
+import { Colors } from "../../styles/Colors";
 
 export default function Pyrene({ navigation }) {
   return (
-    <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
-      <View style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
+    <View style={styles.container}>
+      <View style={styles.container}>
         <View>
           <Image source={require("../../assets/img/bgPhoto.png")} />
-          <View style={styles.container}>
+          <View style={styles.secondContainer}>
             <Text style={styles.headerText}>Institut Pyrène</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                gap: 5,
-                alignItems: "center",
-                paddingRight: 100,
-              }}
-            >
+            <View style={styles.info}>
               <Image source={require("../../assets/icon//location.png")} />
               <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
             </View>
-            <View
-              style={{ flexDirection: "row", gap: 5, alignItems: "center" }}
-            >
+            <View style={styles.rate}>
               <Image source={require("../../assets/icon/star.png")} />
               <Text style={[styles.Text, { textDecorationLine: "none" }]}>
                 4,9 17 avis
@@ -54,6 +46,7 @@ export default function Pyrene({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  container: { backgroundColor: Colors.white, flex: 1 },
   image: {
     width: 393,
     height: 360,
@@ -61,16 +54,15 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     marginTop: 20,
   },
-  container: {
+  secondContainer: {
     gap: 10,
-    backgroundColor: "#FFFFFF",
+    backgroundColor:Colors.white,
     position: "absolute",
     bottom: 70,
     left: 23,
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderRadius: 13,
-    // justifyContent: "center",
   },
   headerText: {
     fontSize: 16,
@@ -82,13 +74,13 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 91,
     borderRadius: 10,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -97,4 +89,11 @@ const styles = StyleSheet.create({
   pagerView: {
     flex: 1,
   },
+  info: {
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
+    paddingRight: 100,
+  },
+  rate: { flexDirection: "row", gap: 5, alignItems: "center" },
 });

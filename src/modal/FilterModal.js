@@ -11,6 +11,7 @@ import ActionSheet, {
   SheetManager,
 } from "react-native-actions-sheet";
 import React, { lazy, useState } from "react";
+import { Colors } from "../styles/Colors";
 
 const data = [
   {
@@ -33,10 +34,7 @@ const data = [
 export default function FilterModal() {
   const [selected, setSelected] = useState("");
   return (
-    <ActionSheet
-      containerStyle={{ flex: 0.7, paddingHorizontal: 20 }}
-      id="Filter"
-    >
+    <ActionSheet containerStyle={styles.container} id="Filter">
       <View>
         <View style={{ marginBottom: 20 }}>
           <View style={styles.border}></View>
@@ -50,8 +48,10 @@ export default function FilterModal() {
                 style={[
                   styles.button,
                   {
-                    backgroundColor: selected === index ? "#469597" : "#FFFFFF",
-                    borderColor: selected === index ? "#469597" : "#BBC6C8",
+                    backgroundColor:
+                      selected === index ? Colors.primary : Colors.white,
+                    borderColor:
+                      selected === index ? Colors.primary : Colors.border,
                   },
                 ]}
                 key={list.id}
@@ -59,7 +59,7 @@ export default function FilterModal() {
                 <Text
                   style={[
                     styles.buttontext,
-                    { color: selected === index ? "#FFFFFF" : "#000000" },
+                    { color: selected === index ? Colors.white : Colors.black },
                   ]}
                 >
                   {list.label}
@@ -77,7 +77,7 @@ export default function FilterModal() {
             <Text style={styles.footerText}>Appliquer</Text>
           </Pressable>
           <Pressable>
-            <Text style={[styles.footerText, { color: "#469597" }]}>
+            <Text style={[styles.footerText, { color: Colors.primary }]}>
               Réinitialiser
             </Text>
           </Pressable>
@@ -99,33 +99,33 @@ const styles = StyleSheet.create({
     paddingVertical: 17,
     borderWidth: 1,
     borderRadius: 17,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
   },
   buttontext: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 14,
     fontWeight: "500",
   },
   input: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 20,
     borderRadius: 15,
   },
   footerbutton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     padding: 20,
     borderRadius: 15,
   },
   footerText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     textAlign: "center",
     fontSize: 16,
     fontWeight: "600",
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -138,4 +138,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
   },
+  container: { flex: 0.7, paddingHorizontal: 20 },
 });

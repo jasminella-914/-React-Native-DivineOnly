@@ -11,13 +11,14 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Pager from "../Pager";
 import PagerView from "react-native-pager-view";
 import { SheetManager } from "react-native-actions-sheet";
+import { Colors } from "../../styles/Colors";
 
 export default function Profile({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Pressable
-          onPress={() => navigation.navigate("Edit Profile")}
+          onPress={() => navigation.navigate("EditProfile")}
           style={styles.profile}
         >
           <Image
@@ -40,7 +41,7 @@ export default function Profile({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   header: {
     flexDirection: "row",
@@ -50,12 +51,12 @@ const styles = StyleSheet.create({
   },
   headertext: {
     fontSize: 16,
-    color: "#2E2A2B",
+    color: Colors.raisinBlack,
     fontWeight: "600",
   },
   modal: {
     justifyContent: "flex-start",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     flex: 0.5,
     marginTop: "auto",
     padding: 20,
@@ -65,13 +66,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   pageText: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 14,
     lineHeight: 18,
     fontWeight: "500",
     textAlign: "center",
     borderBottomWidth: 1,
-    borderColor: "#469597",
+    borderColor: Colors.primary,
     padding: 10,
   },
   profile: { flexDirection: "row", alignItems: "center", gap: 20 },

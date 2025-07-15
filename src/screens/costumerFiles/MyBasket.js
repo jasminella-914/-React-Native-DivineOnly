@@ -10,6 +10,7 @@ import {
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SHOP_DATA } from "../../data/data";
+import { Colors } from "../../styles/Colors";
 
 export default function MyBasket({ navigation }) {
   return (
@@ -55,7 +56,7 @@ export default function MyBasket({ navigation }) {
                   </View>
                 </View>
                 <Pressable style={styles.close}>
-                  <Ionicons name="close-outline" size={15} color={"#BBC6C8"} />
+                  <Ionicons name="close-outline" size={15} color={Colors.border} />
                 </Pressable>
                 <View style={styles.price}>
                   <Text style={styles.price}>{item.price}</Text>
@@ -65,7 +66,7 @@ export default function MyBasket({ navigation }) {
           );
         }}
       />
-      <View style={{ gap: 20, paddingHorizontal: 20, paddingTop: 10 }}>
+      <View style={styles.footerContainer}>
         <View style={styles.footer}>
           <Text style={styles.name}>Total</Text>
           <Text style={styles.price}>75,00€</Text>
@@ -84,12 +85,12 @@ export default function MyBasket({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
   },
   header: {
@@ -107,12 +108,12 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#000000",
+    color: Colors.black,
   },
   info: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#000000",
+    color: Colors.black,
   },
   price: {
     fontSize: 14,
@@ -123,20 +124,20 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 94,
     borderRadius: 10,
   },
   footerButtonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
   add: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 5,
     borderRadius: 6,
   },
@@ -162,4 +163,5 @@ const styles = StyleSheet.create({
     height: 103,
     borderRadius: 10,
   },
+  footerContainer: { gap: 20, paddingHorizontal: 20, paddingTop: 10 },
 });

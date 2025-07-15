@@ -12,14 +12,18 @@ import { FlatList } from "react-native-gesture-handler";
 import { SERVICE_DATA } from "../data/data";
 import { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../styles/Colors";
 
 export default function Booking({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.secondContainer}>
-        <Image source={require("../assets/img/logoName.png")} style={styles.logo} />
+        <Image
+          source={require("../assets/img/logoName.png")}
+          style={styles.logo}
+        />
         <View style={styles.input}>
-          <View style={{ flexDirection: "row", gap: 9, alignItems: "center" }}>
+          <View style={styles.header}>
             <Ionicons name="search-outline" size={22} />
             <View>
               <Text>Coloration</Text>
@@ -30,7 +34,7 @@ export default function Booking({ navigation }) {
             </Pressable>
           </View>
         </View>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <View style={[styles.header, { justifyContent: "space-between" }]}>
           <Text style={styles.headerText}>Réserve ta prestation</Text>
           <Pressable
             onPress={() => SheetManager.show("Sort")}
@@ -88,7 +92,7 @@ export default function Booking({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   logo: {
     alignSelf: "center",
@@ -96,7 +100,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     borderRadius: 14,
     padding: 10,
   },
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   filter: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 12,
     fontWeight: "400",
   },
@@ -117,23 +121,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 8,
     borderWidth: 1,
-    borderColor: "#469597",
+    borderColor:  Colors.primary,
     alignItems: "center",
     borderRadius: 14,
     paddingHorizontal: 15,
     paddingVertical: 4,
   },
   Text: {
-    backgroundColor: "#4695971A",
+    backgroundColor: Colors.blueGreen,
     paddingVertical: 9,
     paddingHorizontal: 8,
     borderRadius: 18,
     fontSize: 12,
     fontWeight: "500",
-    color: "#449598",
+    color: Colors.primary,
   },
   service: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     position: "absolute",
     top: 10,
     left: 10,
@@ -154,16 +158,17 @@ const styles = StyleSheet.create({
   info: {
     justifyContent: "center",
     gap: 10,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     paddingHorizontal: 8,
     paddingVertical: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     borderWidth: 1,
-    borderColor: "#00000021",
+    borderColor: Colors.black21,
   },
   title: {
     fontSize: 16,
     fontWeight: "600",
   },
+  header: { flexDirection: "row", gap: 9, alignItems: "center" },
 });

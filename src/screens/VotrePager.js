@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { Colors } from "../styles/Colors";
 
 const VotrePager = ({ navigation }) => {
   return (
@@ -24,10 +25,7 @@ const VotrePager = ({ navigation }) => {
         <View style={{ gap: 8, marginTop: 24 }}>
           <Text style={styles.bodyText}>Services</Text>
           <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
+            style={styles.info}
           >
             <Text style={styles.text}>Soin nettoyant au charbon végétal</Text>
             <View style={{ flexDirection: "row", gap: 8 }}>
@@ -35,12 +33,7 @@ const VotrePager = ({ navigation }) => {
               <Text style={[styles.text, { fontSize: 12 }]}>45€</Text>
             </View>
           </View>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
+          <View style={styles.info}>
             <Text style={styles.text}>Extension des cils</Text>
             <View style={{ flexDirection: "row", gap: 8 }}>
               <Text style={[styles.text, { fontSize: 12 }]}>30 min</Text>
@@ -73,7 +66,7 @@ export default VotrePager;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     paddingHorizontal: 20,
@@ -93,13 +86,13 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 18,
     borderRadius: 10,
     paddingHorizontal: 94,
@@ -110,7 +103,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     minHeight: 100,
     borderRadius: 10,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     textAlignVertical: "top",
+  },
+  info: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

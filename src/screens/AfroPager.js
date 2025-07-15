@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SheetManager } from "react-native-actions-sheet";
+import { Colors } from "../styles/Colors";
 
 const AfroPager = () => {
   return (
@@ -48,7 +49,7 @@ const AfroPager = () => {
             <Ionicons
               name="chevron-down"
               size={24}
-              color={"#469597"}
+              color={Colors.primary}
               style={styles.icon}
             />
           </Pressable>
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
@@ -111,8 +112,8 @@ const styles = StyleSheet.create({
     borderRadius: 34,
   },
   buttonText: {
-    backgroundColor: "#4695971A",
-    color: "#000000",
+    backgroundColor: Colors.blueGreen,
+    color: Colors.black,
     fontSize: 12,
     fontWeight: "400",
     textAlign: "center",
@@ -131,26 +132,26 @@ const styles = StyleSheet.create({
   },
   sizeContainer: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 20,
     flexDirection: "row",
     borderRadius: 14,
   },
   add: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 5,
     borderRadius: 6,
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
     paddingHorizontal: 97,
     marginTop: 20,
   },
   footerText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",

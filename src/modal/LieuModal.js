@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import RadioGroup from "react-native-radio-buttons-group";
 import RadioButtonRN from "radio-buttons-react-native";
+import { Colors } from "../styles/Colors";
 
 export default function LieuModal({ navigation }) {
   const data = [
@@ -29,9 +30,9 @@ export default function LieuModal({ navigation }) {
           <RadioButtonRN
             data={data}
             selectedBtn={(e) => console.log(e)}
-            activeColor="#000000"
+            activeColor={Colors.black}
             boxStyle={{
-              borderColor: "#BBC6C8",
+              borderColor: Colors.border,
             }}
           />
         </View>
@@ -44,7 +45,7 @@ export default function LieuModal({ navigation }) {
           <Text style={styles.buttonText}>Appliquer</Text>
         </Pressable>
         <Pressable>
-          <Text style={[styles.buttonText, { color: "#469597" }]}>
+          <Text style={[styles.buttonText, { color: Colors.primary }]}>
             Réinitialiser
           </Text>
         </Pressable>
@@ -67,14 +68,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 114,
     borderRadius: 10,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingHorizontal: 25,
-    backgroundColor: "#fFFFFF",
+    backgroundColor: Colors.white,
     flex: 0.7,
   },
 });

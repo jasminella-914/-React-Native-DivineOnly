@@ -10,13 +10,11 @@ import React from "react";
 import MapView, { Marker } from "react-native-maps";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
+import { Colors } from "../styles/Colors";
 
 const Information = () => {
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      style={{ paddingHorizontal: 20, paddingTop: 30 }}
-    >
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
       <Text style={styles.lorem}>
         Lorem ipsum dolor sit amet consectetur. In laoreet in sed vel nibh morbi
         massa nulla vel. Nisl convallis dignissim auctor neque et amet varius
@@ -27,7 +25,7 @@ const Information = () => {
         style={[
           styles.lorem,
           {
-            color: "#469597",
+            color: Colors.primary,
             textDecorationLine: "underline",
             marginTop: 10,
           },
@@ -85,7 +83,7 @@ const Information = () => {
                     Convient à tout type de peau
                   </Text>
                 </View>
-                <View style={{ flexDirection: "row", gap: 15 }}>
+                <View style={styles.time}>
                   <Image source={require("../assets/icon/Clock.png")} />
                   <Text style={[styles.lorem, { fontWeight: "600" }]}>
                     30 min
@@ -93,7 +91,7 @@ const Information = () => {
                   <Text
                     style={[
                       styles.lorem,
-                      { fontWeight: "600", color: "#469597" },
+                      { fontWeight: "600", color: Colors.primary },
                     ]}
                   >
                     45€
@@ -146,13 +144,13 @@ const styles = StyleSheet.create({
     width: 340,
     height: 300,
     borderWidth: 1,
-    borderColor: "#C9C9C9",
+    borderColor: Colors.border,
   },
   button: {
     borderBottomWidth: 1,
     paddingVertical: 20,
     paddingHorizontal: 10,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -161,4 +159,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
   },
+  scrollView: { paddingHorizontal: 20, paddingTop: 30 },
+  time: { flexDirection: "row", gap: 15 },
 });

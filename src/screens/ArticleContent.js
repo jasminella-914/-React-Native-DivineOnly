@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ArticlePager from "./ArticlePager";
+import { Colors } from "../styles/Colors";
 
 const ArticleContent = ({ navigation }) => {
   return (
@@ -34,7 +35,7 @@ export default ArticleContent;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     paddingTop: 63,
   },
   image: {

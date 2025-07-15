@@ -11,6 +11,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import RadioButtonRN from "radio-buttons-react-native";
 import CheckBox from "react-native-check-box";
 import { useState } from "react";
+import { Colors } from "../../styles/Colors";
 
 const data = [
   {
@@ -42,14 +43,14 @@ export default function Delivery({ navigation }) {
           <Text style={styles.monText}>Mon panier (3)</Text>
           <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
             <Text style={styles.price}>19,99€</Text>
-            <Ionicons name="chevron-down" size={18} color={"#469597"} />
+            <Ionicons name="chevron-down" size={18} color={Colors.primary} />
           </View>
         </Pressable>
         <View style={{ paddingHorizontal: 20, paddingTop: 10 }}>
           <Text
             style={[
               styles.footerButtonText,
-              { textAlign: "center", color: "#000000" },
+              { textAlign: "center", color: Colors.black},
             ]}
           >
             Mode de livraison
@@ -59,9 +60,9 @@ export default function Delivery({ navigation }) {
             <RadioButtonRN
               selectedBtn={(e) => console.log(e)}
               data={data}
-              activeColor="#000000"
-              borderColor="#469597"
-              boxActiveBgColor={"#4695971A"}
+              activeColor={Colors.black}
+              borderColor={Colors.primary}
+              boxActiveBgColor={Colors.blueGreen}
               // icon={<Ionicons name="chevron-down-circle" size={20} />}
             />
           </View>
@@ -92,7 +93,7 @@ export default function Delivery({ navigation }) {
             onClick={() => {
               setIsChecked(!isChecked);
             }}
-            checkBoxColor="#000000"
+            checkBoxColor={Colors.black}
             isChecked={isChecked}
           />
           <Text style={styles.monText}>Adresse de facturation similaire</Text>
@@ -126,7 +127,7 @@ export default function Delivery({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   secondContainer: {
     marginHorizontal: 20,
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   footerButton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 72,
     borderRadius: 10,
@@ -147,13 +148,13 @@ const styles = StyleSheet.create({
     marginTop: "auto",
   },
   footerButtonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
   header: {
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({
   },
   info: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     padding: 10,
     borderRadius: 10,
   },
@@ -179,7 +180,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   modifier: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 14,
     fontWeight: "500",
     textDecorationLine: "underline",
@@ -188,13 +189,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     paddingVertical: 14,
     paddingLeft: 15,
     marginTop: 28,
   },
   total: {
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     marginTop: 28,
     paddingHorizontal: 28,
     marginBottom: 20,
@@ -207,7 +208,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderTopWidth: 1,
-    borderColor: "#4695971A",
+    borderColor: Colors.blueGreen,
     marginVertical: 11,
   },
   infoContainer: {

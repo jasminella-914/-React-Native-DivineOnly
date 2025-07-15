@@ -12,6 +12,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Modal from "react-native-modal";
 import { useState } from "react";
 import { navigate } from "../navigation/navigationService";
+import { Colors } from "../styles/Colors";
 
 const ReschedModal = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -84,17 +85,17 @@ export default ReschedModal;
 
 const styles = StyleSheet.create({
   headerText: {
-    color: "#000000",
+    color: Colors.black,
     fontSize: 18,
     fontWeight: "700",
   },
   bodyText: {
-    color: "#000000",
+    color: Colors.black,
     fontSize: 14,
     fontWeight: "500",
   },
   footerbutton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 132,
     marginHorizontal: 20,
@@ -102,16 +103,16 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   footertext: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
   },
   modal: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   oneText: {
-    backgroundColor: "#4695971A",
+    backgroundColor: Colors.blueGreen,
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderRadius: 5,
@@ -124,9 +125,21 @@ const styles = StyleSheet.create({
 
     alignItems: "center",
   },
-  header: { alignItems: "center", gap: 20, marginTop: 20 },
-  votreContainer: { flexDirection: "row", gap: 10, alignItems: "center" },
-  votre: { gap: 30, marginTop: 20, marginHorizontal: 20 },
+  header: {
+    alignItems: "center",
+    gap: 20,
+    marginTop: 20,
+  },
+  votreContainer: {
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "center",
+  },
+  votre: {
+    gap: 30,
+    marginTop: 20,
+    marginHorizontal: 20,
+  },
   groupPhoto: {
     height: 110,
     width: 414,

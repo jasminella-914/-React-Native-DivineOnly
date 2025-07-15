@@ -11,6 +11,7 @@ import React, { useState, useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import { ARTICLEPOST_DATA } from "../data/data";
+import { Colors } from "../styles/Colors";
 
 export default function Article({ navigation }) {
   return (
@@ -34,13 +35,7 @@ export default function Article({ navigation }) {
         data={ARTICLEPOST_DATA}
         renderItem={({ item }) => {
           return (
-            <View
-              style={{
-                flexWrap: "wrap",
-                flexDirection: "row",
-                gap: 2,
-              }}
-            >
+            <View style={styles.flatList}>
               <Image source={item.image} style={styles.image} />
               <Image source={item.image1} style={styles.image} />
               <Image
@@ -66,7 +61,7 @@ export default function Article({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   header: {
     flexDirection: "row",
@@ -84,11 +79,11 @@ const styles = StyleSheet.create({
   footertext: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#FFFFFF",
+    color: Colors.white,
     textAlign: "center",
   },
   footer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
     marginHorizontal: 20,
@@ -97,5 +92,10 @@ const styles = StyleSheet.create({
     height: 137,
     width: 137,
     gap: 20,
+  },
+  flatList: {
+    flexWrap: "wrap",
+    flexDirection: "row",
+    gap: 2,
   },
 });

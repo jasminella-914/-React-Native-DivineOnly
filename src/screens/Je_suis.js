@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#0E1F20",
+    color: Colors.default,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,

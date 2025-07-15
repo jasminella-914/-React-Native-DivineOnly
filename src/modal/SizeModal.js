@@ -4,6 +4,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import RadioButtonRN from "radio-buttons-react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { RadioGroup } from "react-native-radio-buttons-group";
+import { Colors } from "../styles/Colors";
 
 const radioButtons = [
   {
@@ -42,8 +43,8 @@ export default function SizeModal() {
             <Text style={styles.price}>19,99 €</Text>
           </Pressable>
           <Pressable style={styles.buttons}>
-            <Text style={[styles.size, { color: "#BBC6C8" }]}>100ml</Text>
-            <Text style={[styles.price, { color: "#BBC6C8" }]}>Épuise</Text>
+            <Text style={[styles.size, { color: Colors.border }]}>100ml</Text>
+            <Text style={[styles.price, { color: Colors.border }]}>Épuise</Text>
           </Pressable>
           <Pressable style={styles.buttons}>
             <Text style={styles.size}>250ml</Text>

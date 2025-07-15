@@ -11,6 +11,7 @@ import {
 
 import { useState } from "react";
 import { IA_DATA, IA_DATA2 } from "../../data/data";
+import { Colors } from "../../styles/Colors";
 export default function IA({ navigation }) {
   const [selectedIndex, setIsSelectedIndex] = useState();
   const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
@@ -34,14 +35,16 @@ export default function IA({ navigation }) {
                 paddingVertical: 12,
                 borderBottomWidth: selectedIndex === index ? 2 : 1,
 
-                borderColor: selectedIndex === index ? "#469597" : "#BBC6C8",
+                borderColor:
+                  selectedIndex === index ? Colors.primary : Colors.border,
               }}
               onPress={() => setIsSelectedIndex(index)}
               key={index}
             >
               <Text
                 style={{
-                  color: selectedIndex === index ? "#469597" : "#BBC6C8",
+                  color:
+                    selectedIndex === index ? Colors.primary : Colors.border,
                   fontSize: 16,
                   fontWeight: "500",
                 }}
@@ -72,13 +75,13 @@ export default function IA({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   headertext: {
     textTransform: "uppercase",
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
     position: "absolute",
     top: 0,
@@ -86,7 +89,7 @@ const styles = StyleSheet.create({
   controltab: {
     alignItems: "center",
     paddingVertical: 15,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     padding: 10,
     gap: 10,
   },
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     overflow: "hidden",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     position: "absolute",
     zIndex: 1,
     bottom: 0,

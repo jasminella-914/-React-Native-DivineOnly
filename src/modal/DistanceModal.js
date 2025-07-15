@@ -4,6 +4,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { TextInput } from "react-native-gesture-handler";
 import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
+import { Colors } from "../styles/Colors";
 
 export default function DistanceModal() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -22,22 +23,22 @@ export default function DistanceModal() {
         <View style={{ gap: 20, marginTop: 20 }}>
           <View style={styles.distance}>
             <Text>Dans un rayon autour de </Text>
-            <Text style={[styles.Text, { color: "#469597" }]}>30km</Text>
+            <Text style={[styles.Text, { color: Colors.primary }]}>30km</Text>
           </View>
           <Slider
             inverted={true}
             style={styles.Bar}
             minimumValue={0}
             maximumValue={1}
-            minimumTrackTintColor="#E5E3E4"
-            maximumTrackTintColor="#469597"
+            minimumTrackTintColor={Colors.grey}
+            maximumTrackTintColor={Colors.primary}
           />
-          <View style={styles.toggle}>
+          <View style={styles.distance}>
             <Text>Autour de moi</Text>
             <Switch
-              trackColor={{ false: "#D4D4D4", true: "#469597" }}
-              thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-              ios_backgroundColor="#D4D4D4"
+              trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+              thumbColor={isEnabled ? Colors.white : Colors.white}
+              ios_backgroundColor={Colors.darkGray}
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
@@ -52,7 +53,7 @@ export default function DistanceModal() {
           <Text style={styles.buttonText}>Appliquer</Text>
         </Pressable>
         <Pressable>
-          <Text style={[styles.buttonText, { color: "#469597" }]}>
+          <Text style={[styles.buttonText, { color: Colors.primary }]}>
             Réinitialiser
           </Text>
         </Pressable>
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor:Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -82,30 +83,30 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     paddingVertical: 21,
     borderRadius: 14,
     padding: 10,
   },
   text: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 12,
     fontWeight: "400",
-    backgroundColor: "#4695971A",
+    backgroundColor: Colors.blueGreen,
     borderRadius: 10,
     marginRight: "auto",
     paddingVertical: 4,
     paddingHorizontal: 8,
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 114,
     borderRadius: 10,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -118,11 +119,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     height: 32,
     width: 350,
-  },
-  toggle: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
   distance: {
     flexDirection: "row",

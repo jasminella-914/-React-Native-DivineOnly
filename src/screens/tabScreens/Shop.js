@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { SHOP_DATA } from "../../data/data";
 import { SheetManager } from "react-native-actions-sheet";
+import { Colors } from "../../styles/Colors";
 
 const bgImg = require("../../assets/img/Bg.png");
 const twoperson = require("../../assets/img/twoperson.png");
@@ -30,7 +31,7 @@ export default function Shop({ navigation }) {
             <Text style={styles.text}>Trier</Text>
           </Pressable>
         </View>
-        <Pressable onPress={() => navigation.navigate("My Basket")}>
+        <Pressable onPress={() => navigation.navigate("MyBasket")}>
           <Image source={require("../../assets/icon/shop.png")} />
         </Pressable>
       </View>
@@ -68,16 +69,16 @@ export default function Shop({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   text: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 12,
     fontWeight: "400",
   },
   button: {
     borderWidth: 1,
-    borderColor: "#469597",
+    borderColor: Colors.primary,
     paddingHorizontal: 15,
     borderRadius: 15,
     height: 26,

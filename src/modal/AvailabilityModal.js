@@ -11,6 +11,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import RadioGroup from "react-native-radio-buttons-group";
 import RadioButtonRN from "radio-buttons-react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../styles/Colors";
 
 const data = [
   {
@@ -25,27 +26,6 @@ const data = [
 ];
 
 export default function Availability() {
-  // const radioButtons = useMemo(
-  //   () => [
-  //     {
-  //       id: "1",
-  //       label: "Pas de préférence",
-  //       value: "option1",
-  //     },
-  //     {
-  //       id: "2",
-  //       label: "Ouvert actuellement",
-  //       value: "option2",
-  //     },
-  //     {
-  //       id: "3",
-  //       label: "Dans les trois prochains jours",
-  //       value: "option3",
-  //     },
-  //   ],
-  //   []
-  // );
-
   const [selectedId, setSelectedId] = useState();
   return (
     <ActionSheet containerStyle={styles.container} id="Availability">
@@ -57,20 +37,20 @@ export default function Availability() {
         <RadioButtonRN
           data={data}
           selectedBtn={(e) => console.log(e)}
-          activeColor="#469597"
+          activeColor={Colors.primary}
           boxStyle={{
-            borderColor: "#BBC6C8",
+            borderColor: Colors.border,
           }}
         />
       </View>
       <View style={{ gap: 10, marginTop: 20 }}>
-        <Text style={[styles.text, { color: "#000000" }]}>Horaires</Text>
+        <Text style={[styles.text, { color: Colors.black }]}>Horaires</Text>
         <Pressable style={styles.button}>
           <Text style={styles.text}>Jour</Text>
           <Ionicons
             name="chevron-down"
             size={24}
-            style={{ color: "#469597" }}
+            style={{ color: Colors.primary }}
           />
         </Pressable>
         <Pressable style={styles.button}>
@@ -78,7 +58,7 @@ export default function Availability() {
           <Ionicons
             name="chevron-down"
             size={24}
-            style={{ color: "#469597" }}
+            style={{ color: Colors.primary }}
           />
         </Pressable>
       </View>
@@ -90,7 +70,7 @@ export default function Availability() {
           <Text style={styles.buttonText}>Appliquer</Text>
         </Pressable>
         <Pressable>
-          <Text style={[styles.buttonText, { color: "#469597" }]}>
+          <Text style={[styles.buttonText, { color: Colors.primary }]}>
             Réinitialiser
           </Text>
         </Pressable>
@@ -111,7 +91,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -123,32 +103,25 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     paddingVertical: 15,
     paddingHorizontal: 15,
     borderRadius: 15,
   },
   text: {
-    color: "#BBC6C8",
+    color: Colors.border,
   },
   footerbutton: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 114,
     borderRadius: 10,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
-  // radioContainer: {
-  //   borderWidth: 1,
-
-  //   borderColor: "#BBC6C8",
-  //   borderRadius: 10,
-
-  // },
 });

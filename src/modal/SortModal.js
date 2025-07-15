@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { Switch } from "react-native-gesture-handler";
+import { Colors } from "../styles/Colors";
 
 export default function SortModal() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -63,9 +64,9 @@ export default function SortModal() {
           <View style={styles.switch}>
             <Text>Choisis pour vous</Text>
             <Switch
-              trackColor={{ false: "#D4D4D4", true: "#469597" }}
-              thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-              ios_backgroundColor="#D4D4D4"
+              trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+              thumbColor={isEnabled ? Colors.white : Colors.white}
+              ios_backgroundColor={Colors.darkGray}
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
@@ -73,9 +74,9 @@ export default function SortModal() {
           <View style={styles.switch}>
             <Text>Disponible aujourd’hui</Text>
             <Switch
-              trackColor={{ false: "#D4D4D4", true: "#469597" }}
-              thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-              ios_backgroundColor="#D4D4D4"
+              trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+              thumbColor={isEnabled ? Colors.white : Colors.white}
+              ios_backgroundColor={Colors.darkGray}
               onValueChange={toggleSwitch}
               value={isEnabled}
             />
@@ -86,7 +87,7 @@ export default function SortModal() {
             <Text style={styles.buttonText}>Appliquer</Text>
           </Pressable>
           <Pressable>
-            <Text style={[styles.buttonText, { color: "#469597" }]}>
+            <Text style={[styles.buttonText, { color: Colors.primary}]}>
               Réinitialiser
             </Text>
           </Pressable>
@@ -104,14 +105,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     paddingHorizontal: 114,
     borderRadius: 10,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderWidth: 3,
-    borderColor: "#E9E9E9",
+    borderColor: Colors.gray,
     width: 52,
     height: 5,
     marginTop: 20,
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
   secondBorder: {
     borderBottomWidth: 1,
     marginVertical: 30,
-    borderColor: "#F0F0F0",
+    borderColor: Colors.snowFlake,
   },
   switch: {
     flexDirection: "row",

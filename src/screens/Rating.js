@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import filledStar from "../assets/icon/rating.png";
 import emptyStar from "../assets/icon/emptyStar.png";
+import { Colors } from "../styles/Colors";
 
 const Rating = ({ selected, onPress, filled = 5 }) => {
   return (
@@ -10,7 +11,7 @@ const Rating = ({ selected, onPress, filled = 5 }) => {
       style={[
         styles.starContainer,
         {
-          backgroundColor: selected ? "#469597" : "#FFFFFF",
+          backgroundColor: selected ? Colors.primary : Colors.white,
         },
       ]}
     >
@@ -19,7 +20,7 @@ const Rating = ({ selected, onPress, filled = 5 }) => {
           <Image
             key={index}
             source={index < filled ? filledStar : emptyStar}
-            tintColor={selected ? "#FFFFFF" : "#469597"}
+            tintColor={selected ? Colors.white : Colors.primary}
           />
         );
       })}
@@ -37,6 +38,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 75,
     gap: 10,
     borderRadius: 14,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
   },
 });

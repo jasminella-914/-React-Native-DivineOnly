@@ -32,7 +32,7 @@ const Stack = createNativeStackNavigator();
 
 const StackOptions = { headerShown: false };
 const screens = [
-  { name: "Je suis", component: Je_suis, id: 0 },
+  { name: "JeSuis", component: Je_suis, id: 0 },
   {
     name: "JeTravaille",
     component: Je_travaille,
@@ -79,7 +79,7 @@ const screens = [
     id: 9,
   },
   {
-    name: "Edit Profile",
+    name: "EditProfile",
     component: EditProfile,
     id: 10,
   },
@@ -94,7 +94,7 @@ const screens = [
     id: 12,
   },
   {
-    name: "My Basket",
+    name: "MyBasket",
     component: MyBasket,
     id: 13,
   },
@@ -129,7 +129,7 @@ const screens = [
     id: 19,
   },
   {
-    name: "Notification Setting",
+    name: "NotificationSetting",
     component: NotificationSetting,
     id: 20,
   },
@@ -154,12 +154,12 @@ const screens = [
     id: 24,
   },
   {
-    name: "Your Appointment",
+    name: "YourAppointment",
     component: Votre,
     id: 25,
   },
   {
-    name: "Appointment Confirmation",
+    name: "AppointmentConfirmation",
     component: AppointmentConfirm,
     id: 26,
   },
@@ -169,7 +169,7 @@ const screens = [
     id: 27,
   },
   {
-    name: "Article Content",
+    name: "ArticleContent",
     component: ArticleContent,
     id: 28,
   },

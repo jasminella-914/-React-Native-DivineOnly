@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar } from "react-native-calendars";
 import { TIME_DATA } from "../../data/data";
+import { Colors } from "../../styles/Colors";
 
 export default function Reschedule({ navigation, index }) {
   const [selected, setSelected] = useState("");
@@ -60,7 +61,6 @@ export default function Reschedule({ navigation, index }) {
           />
           <ScrollView showsHorizontalScrollIndicator={false} horizontal>
             <FlatList
-
               numColumns={Math.ceil(TIME_DATA.length / 2)}
               contentContainerStyle={{ gap: 10 }}
               columnWrapperStyle={{ gap: 10 }}
@@ -78,14 +78,19 @@ export default function Reschedule({ navigation, index }) {
                         styles.button,
                         {
                           backgroundColor:
-                            selected === index ? "#469597" : "#F5F5F5",
+                            selected === index
+                              ? Colors.primary
+                              : Colors.whiteSmoke,
                         },
                       ]}
                     >
                       <Text
                         style={[
                           styles.buttonText,
-                          { color: selected === index ? "#FFFFFF" : "#000000" },
+                          {
+                            color:
+                              selected === index ? Colors.white : Colors.black,
+                          },
                         ]}
                       >
                         {item.time}
@@ -101,11 +106,13 @@ export default function Reschedule({ navigation, index }) {
               onPress={() => navigation.goBack()}
               style={styles.footer}
             >
-              <Text style={[styles.footerTexT, { color: "#FFFFFF" }]}>
+              <Text style={[styles.footerTexT, { color: Colors.white }]}>
                 Confirmer
               </Text>
             </Pressable>
-            <Pressable style={[styles.footer, { backgroundColor: "#FFFFFF" }]}>
+            <Pressable
+              style={[styles.footer, { backgroundColor: Colors.white }]}
+            >
               <Text style={[styles.footerTexT]}>Annuler</Text>
             </Pressable>
           </View>
@@ -122,17 +129,17 @@ const styles = StyleSheet.create({
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
     position: "absolute",
     top: 0,
   },
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   secContainer: {
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     paddingVertical: 23,
     marginHorizontal: 20,
     borderRadius: 15,
@@ -152,23 +159,23 @@ const styles = StyleSheet.create({
   },
   border: {
     borderBottomWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     marginTop: 20,
     marginBottom: 37,
   },
   button: {
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     paddingVertical: 14,
     paddingHorizontal: 37,
     borderRadius: 10,
   },
   buttonText: {
-    color: "#000000",
+    color: Colors.black,
     fontSize: 14,
     fontWeight: "600",
   },
   footer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
   },
@@ -176,14 +183,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     fontWeight: "600",
-    color: "#469597",
+    color: Colors.primary,
   },
   calendarTheme: {
-    backgroundColor: "#F5F5F5",
-    calendarBackground: "#F5F5F5",
-    selectedDayBackgroundColor: "#469597",
-    todayTextColor: "#469597",
-    arrowColor: "#0E1F20",
+    backgroundColor: Colors.whiteSmoke,
+    calendarBackground: Colors.whiteSmoke,
+    selectedDayBackgroundColor: Colors.primary,
+    todayTextColor: Colors.primary,
+    arrowColor: Colors.default,
     textDayStyle: {
       fontSize: 14,
       fontWeight: "600",

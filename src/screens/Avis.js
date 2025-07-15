@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { AVIS_DATA } from "../data/data";
+import { Colors } from "../styles/Colors";
 
 
 const Avis = () => {
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingVertical: 13,
     borderBottomWidth: 1,
-    borderColor: "#E5E3E4",
+    borderColor: Colors.grey,
     justifyContent: "space-between",
   },
   info: {

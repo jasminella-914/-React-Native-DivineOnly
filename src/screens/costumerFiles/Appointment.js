@@ -12,6 +12,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar, LocaleConfig } from "react-native-calendars";
 import { FlatList } from "react-native-actions-sheet";
 import { AVAILABILTY_DATA, TIME_DATA } from "../../data/data";
+import { Colors } from "../../styles/Colors";
 
 LocaleConfig.locales["fr"] = {
   monthNames: [
@@ -62,7 +63,7 @@ export default function Appointment({ navigation }) {
   const [selectedIndex, setSelectedIndex] = useState("");
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#FFFFFF", flex: 1 }}>
+    <SafeAreaView style={styles.viewContainer}>
       <View style={styles.header}>
         <Pressable
           style={{ marginLeft: 20 }}
@@ -79,14 +80,14 @@ export default function Appointment({ navigation }) {
           <Text style={styles.text}>Convient à tout type de peau</Text>
           <View
             style={{
-              borderColor: "#BBC6C873",
+              borderColor: Colors.lightBorder,
               flexDirection: "row",
               gap: 10,
             }}
           >
             <Image source={require("../../assets/icon/Clock.png")} />
             <Text style={styles.time}>30 min</Text>
-            <Text style={[styles.time, { color: "#469597" }]}>45€</Text>
+            <Text style={[styles.time, { color: Colors.primary }]}>45€</Text>
           </View>
         </View>
         <View>
@@ -94,7 +95,7 @@ export default function Appointment({ navigation }) {
             style={[
               styles.button,
               {
-                backgroundColor: "#FFFFFF",
+                backgroundColor: Colors.white,
                 flexDirection: "row",
                 gap: 10,
                 alignItems: "center",
@@ -121,9 +122,9 @@ export default function Appointment({ navigation }) {
                     {
                       fontSize: 14,
                       fontWeight: "500",
-                      color: "#000000",
+                      color: Colors.black,
                       textAlign: "center",
-                      backgroundColor: "#F5F5F5",
+                      backgroundColor: Colors.whiteSmoke,
                     },
                   ]}
                 >
@@ -141,7 +142,9 @@ export default function Appointment({ navigation }) {
                         styles.buttonPhoto,
                         {
                           backgroundColor:
-                            selectedIndex === index ? "#469597" : "#F5F5F5",
+                            selectedIndex === index
+                              ? Colors.primary
+                              : Colors.whiteSmoke,
                         },
                       ]}
                     >
@@ -151,7 +154,9 @@ export default function Appointment({ navigation }) {
                           styles.name,
                           {
                             color:
-                              selectedIndex === index ? "#FFFFFF" : "#000000",
+                              selectedIndex === index
+                                ? Colors.white
+                                : Colors.black,
                           },
                         ]}
                       >
@@ -181,7 +186,6 @@ export default function Appointment({ navigation }) {
                     [selected]: {
                       selected: true,
                       disableTouchEvent: true,
-                      selectedDotColor: "orange",
                     },
                   }}
                 />
@@ -206,21 +210,26 @@ export default function Appointment({ navigation }) {
                 <View key={item.id} style={{ gap: 10 }}>
                   <Pressable
                     onPress={() => {
-                      navigation.navigate("Your Appointment");
+                      navigation.navigate("YourAppointment");
                       setSelected(index);
                     }}
                     style={[
                       styles.button,
                       {
                         backgroundColor:
-                          selected === index ? "#469597" : "#F5F5F5",
+                          selected === index
+                            ? Colors.primary
+                            : Colors.whiteSmoke,
                       },
                     ]}
                   >
                     <Text
                       style={[
                         styles.buttonText,
-                        { color: selected === index ? "#FFFFFF" : "#000000" },
+                        {
+                          color:
+                            selected === index ? Colors.white : Colors.black,
+                        },
                       ]}
                     >
                       {item.time}
@@ -237,10 +246,11 @@ export default function Appointment({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  viewContainer: { backgroundColor: Colors.white, flex: 1 },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
     position: "absolute",
     top: 0,
@@ -248,14 +258,14 @@ const styles = StyleSheet.create({
   header: {
     borderBottomWidth: 1,
     paddingBottom: 10,
-    borderColor: "#BBC6C873",
+    borderColor: Colors.lightBorder,
   },
   title: {
     fontSize: 22,
     fontWeight: "700",
     textAlign: "center",
     borderBottomWidth: 1,
-    borderColor: "#BBC6C873",
+    borderColor: Colors.lightBorder,
     paddingVertical: 30,
   },
   name: {
@@ -263,12 +273,12 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   text: {
-    color: "#00000080",
+    color: Colors.lightBlack,
     fontSize: 12,
     fontWeight: "400",
   },
   time: {
-    color: "#0E1F20",
+    color: Colors.default,
     fontSize: 14,
     fontWeight: "600",
   },
@@ -276,11 +286,11 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingVertical: 10,
     borderBottomWidth: 1,
-    borderColor: "#BBC6C873",
+    borderColor: Colors.lightBorder,
     paddingHorizontal: 14,
   },
   addText: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 18,
     fontWeight: "700",
   },
@@ -292,7 +302,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   buttonPhoto: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: Colors.whiteSmoke,
     paddingVertical: 12,
     alignItems: "center",
     justifyContent: "center",
@@ -306,24 +316,24 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   calendar: {
-    backgroundColor: "#F5F5F5",
-    calendarBackground: "#F5F5F5",
-    selectedDayBackgroundColor: "#469597",
-    todayTextColor: "#469597",
-    arrowColor: "#469597",
+    backgroundColor: Colors.whiteSmoke,
+    calendarBackground: Colors.whiteSmoke,
+    selectedDayBackgroundColor: Colors.primary,
+    todayTextColor: Colors.primary,
+    arrowColor: Colors.primary,
     textDayStyle: {
       fontSize: 14,
       fontWeight: "600",
     },
   },
   button: {
-    backgroundColor: "#00000008",
+    backgroundColor: Colors.lightBlack,
     paddingVertical: 14,
     paddingHorizontal: 37,
     borderRadius: 10,
   },
   buttonText: {
-    color: "#000000",
+    color: Colors.black,
     fontSize: 14,
     fontWeight: "600",
   },

@@ -4,6 +4,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import StarRating from "react-native-star-rating-widget";
+import { Colors } from "../styles/Colors";
 
 export default function RateModal({ navigation }) {
   const [rating, setRating] = useState(0);
@@ -28,8 +29,8 @@ export default function RateModal({ navigation }) {
           </Text>
           <StarRating
             starSize={44}
-            color="#469597"
-            emptyColor="#BBC6C8"
+            color={Colors.primary}
+            emptyColor={Colors.border}
             rating={rating}
             onChange={setRating}
             enableHalfStar={false}
@@ -42,15 +43,15 @@ export default function RateModal({ navigation }) {
           placeholder="Rajoutez votre commentaire ici...."
           style={styles.input}
         />
-        <Text style={[styles.buttonText, { color: "#000000", paddingTop: 20 }]}>
+        <Text style={[styles.buttonText, { color: Colors.black, paddingTop: 20 }]}>
           Ajoutez une photo ou une vidéo
         </Text>
         <View style={styles.buttonContainer}>
           <Pressable style={styles.photoButton}>
-            <Ionicons name="camera-outline" color="#BBC6C8" size={31} />
+            <Ionicons name="camera-outline" color={Colors.border} size={31} />
           </Pressable>
           <Pressable style={styles.photoButton}>
-            <Ionicons name="image-outline" color="#BBC6C8" size={31} />
+            <Ionicons name="image-outline" color={Colors.border} size={31} />
           </Pressable>
         </View>
         <Pressable
@@ -83,18 +84,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     minHeight: 100,
     borderRadius: 10,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     textAlignVertical: "top",
     marginTop: 20,
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 18,
     borderRadius: 10,
     marginTop: "auto",
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
   },
   photoButton: {
     borderWidth: 1,
-    borderColor: "#BBC6C8",
+    borderColor: Colors.border,
     borderStyle: "dashed",
     paddingVertical: 33,
     paddingHorizontal: 33,

@@ -13,6 +13,7 @@ import Information from "./Information";
 import Avis from "./Avis";
 import Boutique from "./Boutique";
 import Articles from "./Articles";
+import { Colors } from "../styles/Colors";
 
 export default function PyrenePager() {
   return (
@@ -74,83 +75,29 @@ export default function PyrenePager() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
   pageText: {
-    color: "#469597",
+    color: Colors.primary,
     fontSize: 14,
     fontWeight: "500",
     textAlign: "center",
     borderBottomWidth: 2,
-    borderColor: "#469597",
+    borderColor: Colors.primary,
     paddingVertical: 15,
     marginHorizontal: 20,
-  },
-  lorem: {
-    fontSize: 14,
-    fontWeight: "500",
-  },
-  headertext: {
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  button: {
-    borderBottomWidth: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    borderColor: "#BBC6C8",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
   },
   footertext: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#FFFFFF",
+    color: Colors.white,
     textAlign: "center",
   },
   footer: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
-  },
-  name: {
-    fontSize: 14,
-    fontWeight: "600",
-  },
-  caption: {
-    fontSize: 12,
-    fontWeight: "400",
-  },
-  listContainer: {
-    flexDirection: "row",
-    gap: 10,
-    paddingVertical: 13,
-    borderBottomWidth: 1,
-    borderColor: "#E5E3E4",
-    justifyContent: "space-between",
-  },
-
-  productContainer: {
-    gap: 5,
-  },
-  info: {
-    flexDirection: "row",
-    gap: 10,
-    alignItems: "center",
-  },
-  map: {
-    alignItems: "center",
-    justifyContent: "center",
-    marginVertical: 20,
-    paddingHorizontal: 20,
-  },
-  mapContainer: {
-    width: 340,
-    height: 300,
-    borderWidth: 1,
-    borderColor: "#C9C9C9",
   },
 });

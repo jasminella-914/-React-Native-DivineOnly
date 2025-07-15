@@ -1,4 +1,5 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Colors } from "../styles/Colors";
 
 const ArticlePager = () => {
   return (
@@ -68,11 +69,11 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 12,
     fontWeight: "400",
-    color: "#BBC6C8",
+    color: Colors.border,
   },
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },

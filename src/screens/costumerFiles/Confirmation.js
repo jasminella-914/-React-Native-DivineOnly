@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../../styles/Colors";
 
 export default function Confirmation({ navigation }) {
   return (
@@ -24,7 +25,7 @@ export default function Confirmation({ navigation }) {
           <Text style={styles.text}>Détails de ma commande (3)</Text>
           <View style={styles.details}>
             <Text style={[styles.bodyText, { fontSize: 14 }]}>25,49€</Text>
-            <Ionicons name="chevron-down" size={15} color={"#469597"} />
+            <Ionicons name="chevron-down" size={15} color={Colors.primary} />
           </View>
         </Pressable>
         <View style={{ gap: 10, marginTop: 20 }}>
@@ -64,17 +65,17 @@ export default function Confirmation({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     borderRadius: 15,
     paddingVertical: 15,
     marginHorizontal: 20,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
   pressable: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#F7F7F7",
+    backgroundColor: Colors.softWhite,
     padding: 20,
   },
   secondContainer: {
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
   },
   border: {
     borderBottomWidth: 1,
-    borderColor: "#BDBBB078",
+    borderColor: Colors.dirtyYellow,
     marginTop: 5,
   },
   modePayment: { flexDirection: "row", justifyContent: "space-between" },

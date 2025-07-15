@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { Colors } from "../styles/Colors";
 
 export default function NotificationSettings({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -33,9 +34,9 @@ export default function NotificationSettings({ navigation }) {
             Rappel de rendez-vous
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
@@ -45,9 +46,9 @@ export default function NotificationSettings({ navigation }) {
             Nouvelles publications de vos salons
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
@@ -57,9 +58,9 @@ export default function NotificationSettings({ navigation }) {
             Nouvelles prestations de vos salons
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             // onValueChange={toggleSwitch}
             // value={isEnabled}
           />
@@ -67,16 +68,16 @@ export default function NotificationSettings({ navigation }) {
       </View>
       <View style={styles.secondContainer}>
         <Text style={[styles.header, { marginBottom: 20 }]}>
-         Notifications SMS
+          Notifications SMS
         </Text>
         <View style={styles.thirdContainer}>
           <Text style={[styles.header, { fontSize: 14, fontWeight: "500" }]}>
             Rappel de rendez-vous
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             onValueChange={toggleSwitch}
             value={isEnabled}
           />
@@ -86,9 +87,9 @@ export default function NotificationSettings({ navigation }) {
             Nouvelles publications de vos salons
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             // onValueChange={toggleSwitch}
             // value={isEnabled}
           />
@@ -98,9 +99,9 @@ export default function NotificationSettings({ navigation }) {
             Nouvelles prestations de vos salons
           </Text>
           <Switch
-            trackColor={{ false: "#D4D4D4", true: "#469597" }}
-            thumbColor={isEnabled ? "#FFFFFF" : "#FFFFFF"}
-            ios_backgroundColor="#D4D4D4"
+            trackColor={{ false: Colors.darkGray, true: Colors.primary }}
+            thumbColor={isEnabled ? Colors.white : Colors.white}
+            ios_backgroundColor={Colors.darkGray}
             // onValueChange={toggleSwitch}
             // value={isEnabled}
           />
@@ -113,13 +114,13 @@ export default function NotificationSettings({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     paddingHorizontal: 20,
   },
   headertext: {
     fontSize: 18,
     fontWeight: "700",
-    color: "#0E1F20",
+    color: Colors.default,
     alignSelf: "center",
     position: "absolute",
     top: 0,
@@ -127,23 +128,19 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#000000",
+    color: Colors.black,
   },
   secondContainer: {
     paddingHorizontal: 20,
     marginTop: 70,
-    // gap: 20,
-    // borderBottomWidth: 1,
-    // borderColor: "#F0F0F0",
   },
   thirdContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 20,
-    // backgroundColor: "pink",
     borderBottomWidth: 1,
     borderTopWidth: 1,
     alignItems: "center",
-    borderColor: "#F0F0F0",
+    borderColor: Colors.snowFlake,
   },
 });

@@ -13,10 +13,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../../navigation/navigationService";
 import { SheetManager } from "react-native-actions-sheet";
 import { useState } from "react";
+import { Colors } from "../../styles/Colors";
 
-export default function AppointmentConfirm({ navigation }) {
-  const [isModalVisible, setModalVisible] = useState(false);
- 
+export default function AppointmentConfirm() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ paddingHorizontal: 20, gap: 28 }}>
@@ -45,7 +44,7 @@ export default function AppointmentConfirm({ navigation }) {
           <Text style={styles.smallText}>Détails de mes prestations (3)</Text>
           <View style={{ flexDirection: "row", gap: 5 }}>
             <Text style={styles.bodytext}>90€</Text>
-            <Ionicons name="chevron-down" size={15} color="#469597" />
+            <Ionicons name="chevron-down" size={15} color={Colors.primary} />
           </View>
         </Pressable>
         <View style={{ gap: 5 }}>
@@ -65,7 +64,10 @@ export default function AppointmentConfirm({ navigation }) {
           <Text style={styles.smallText}>0646384398</Text>
         </View>
       </View>
-      <Pressable onPress={() => SheetManager.show("Rate")} style={styles.button}>
+      <Pressable
+        onPress={() => SheetManager.show("Rate")}
+        style={styles.button}
+      >
         <Text style={styles.buttonText}>Fermer</Text>
       </Pressable>
     </SafeAreaView>
@@ -74,18 +76,18 @@ export default function AppointmentConfirm({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.white,
     flex: 1,
   },
   button: {
-    backgroundColor: "#469597",
+    backgroundColor: Colors.primary,
     borderRadius: 15,
     paddingVertical: 15,
     marginHorizontal: 20,
     marginTop: "auto",
   },
   buttonText: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 16,
     fontWeight: "600",
     textAlign: "center",
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   buttonContainer: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: Colors.whiteSmoke,
     paddingVertical: 29,
     flexDirection: "row",
     alignItems: "center",
@@ -109,17 +111,17 @@ const styles = StyleSheet.create({
     marginTop: "auto",
   },
   LB: {
-    color: "#FFFFFF",
+    color: Colors.white,
     fontSize: 30,
     fontWeight: "700",
     textTransform: "uppercase",
     textAlign: "center",
-    backgroundColor: "#D7D7D7",
+    backgroundColor: Colors.lightSilver,
     padding: 18,
     borderRadius: 10,
   },
   button2: {
-    backgroundColor: "#F7F7F7",
+    backgroundColor: Colors.softWhite,
     paddingVertical: 20,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -128,20 +130,8 @@ const styles = StyleSheet.create({
   },
   line: {
     borderBottomWidth: 1,
-    borderColor: "#BDBBB078",
+    borderColor: Colors.dirtyYellow,
     marginTop: 5,
   },
   smallText: { fontWeight: "400", fontSize: 12 },
-  modal: {
-    // backgroundColor: "#FFFFFF",
-    // flex: 0.3,
-    // borderRadius: 20,
-    // padding: 20,
-    justifyContent: "flex-start",
-    backgroundColor: "red",
-    flex: 0.25,
-    marginTop: "auto",
-    padding: 20,
-    borderRadius: 20,
-  },
 });
