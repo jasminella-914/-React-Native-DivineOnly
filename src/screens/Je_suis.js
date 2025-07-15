@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const logoImg = require("../assets/img/Bg.png");
 export default function Je_suis() {
@@ -64,9 +65,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   text: {
-    fontSize: 16,
-    fontWeight: "600",
     color: Colors.default,
+    ...FONTS.h2,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
@@ -75,8 +75,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   Image: {
@@ -84,7 +83,11 @@ const styles = StyleSheet.create({
     justufyContent: "center",
     position: "relative",
   },
-  logo: { alignSelf: "center", position: "absolute", top: 40 },
+  logo: {
+    alignSelf: "center",
+    position: "absolute",
+    top: 40,
+  },
   twoPerson: {
     position: "absolute",
     alignSelf: "center",

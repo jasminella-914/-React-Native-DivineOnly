@@ -10,6 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const logoImg = require("../assets/img/Bg.png");
 export default function Je_travaille() {
@@ -68,8 +69,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   text: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.default,
   },
   buttonContainer: {
@@ -79,11 +79,14 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
-  Logo: { alignSelf: "center", position: "absolute", top: 40 },
+  Logo: {
+    alignSelf: "center",
+    position: "absolute",
+    top: 40,
+  },
   twoPerson: {
     position: "absolute",
     alignSelf: "center",

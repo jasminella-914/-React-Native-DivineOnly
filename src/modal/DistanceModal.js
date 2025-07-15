@@ -5,6 +5,7 @@ import { TextInput } from "react-native-gesture-handler";
 import * as Progress from "react-native-progress";
 import Slider from "@react-native-community/slider";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function DistanceModal() {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -22,7 +23,7 @@ export default function DistanceModal() {
         </Pressable>
         <View style={{ gap: 20, marginTop: 20 }}>
           <View style={styles.distance}>
-            <Text>Dans un rayon autour de </Text>
+            <Text style={styles.Text}>Dans un rayon autour de </Text>
             <Text style={[styles.Text, { color: Colors.primary }]}>30km</Text>
           </View>
           <Slider
@@ -34,7 +35,7 @@ export default function DistanceModal() {
             maximumTrackTintColor={Colors.primary}
           />
           <View style={styles.distance}>
-            <Text>Autour de moi</Text>
+            <Text style={styles.Text}>Autour de moi</Text>
             <Switch
               trackColor={{ false: Colors.darkGray, true: Colors.primary }}
               thumbColor={isEnabled ? Colors.white : Colors.white}
@@ -64,8 +65,7 @@ export default function DistanceModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     textAlign: "center",
   },
   container: {
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
     paddingVertical: 21,
     borderRadius: 14,
     padding: 10,
+    ...FONTS.textRegular
   },
   text: {
     color: Colors.default,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     backgroundColor: Colors.blueGreen,
     borderRadius: 10,
     marginRight: "auto",
@@ -107,13 +107,11 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   Text: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   Bar: {
     alignSelf: "center",

@@ -12,6 +12,7 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import { RATING_DATA } from "../data/data";
 import Rating from "../screens/Rating";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 export default function NoteModal() {
   const [selected, setSelected] = useState(null);
@@ -63,8 +64,7 @@ export default function NoteModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+   ...FONTS.h1,
     textAlign: "center",
     marginVertical: 10,
   },
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
   },
   partirText: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
 });

@@ -12,6 +12,7 @@ import ActionSheet, {
 } from "react-native-actions-sheet";
 import React, { lazy, useState } from "react";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const data = [
   {
@@ -89,8 +90,7 @@ export default function FilterModal() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+   ...FONTS.h1,
     textAlign: "center",
     marginTop: 10,
   },
@@ -103,14 +103,14 @@ const styles = StyleSheet.create({
   },
   buttontext: {
     color: Colors.default,
-    fontSize: 14,
-    fontWeight: "500",
+   ...FONTS.textRegular,
   },
   input: {
     borderWidth: 1,
     borderColor: Colors.border,
     padding: 20,
     borderRadius: 15,
+    ...FONTS.textRegular
   },
   footerbutton: {
     backgroundColor: Colors.primary,
@@ -120,8 +120,7 @@ const styles = StyleSheet.create({
   footerText: {
     color: Colors.white,
     textAlign: "center",
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   border: {
     borderWidth: 3,

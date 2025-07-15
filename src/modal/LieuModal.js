@@ -4,8 +4,9 @@ import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import RadioGroup from "react-native-radio-buttons-group";
 import RadioButtonRN from "radio-buttons-react-native";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
-export default function LieuModal({ navigation }) {
+export default function LieuModal() {
   const data = [
     {
       label: "Pas de préférence",
@@ -56,8 +57,7 @@ export default function LieuModal({ navigation }) {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     textAlign: "center",
   },
   radiobutton: {
@@ -76,19 +76,18 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
-  }, 
+  },
   secondContainer: {
-    gap: 20,
+    gap: 10,
   },
   border: {
     borderWidth: 3,
     borderColor: Colors.gray,
     width: 52,
     height: 5,
-    marginTop: 20,
+    marginTop: 10,
     alignSelf: "center",
     borderRadius: 5,
   },

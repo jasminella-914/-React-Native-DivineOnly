@@ -12,6 +12,7 @@ import RadioGroup from "react-native-radio-buttons-group";
 import RadioButtonRN from "radio-buttons-react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const data = [
   {
@@ -26,7 +27,6 @@ const data = [
 ];
 
 export default function Availability() {
-  const [selectedId, setSelectedId] = useState();
   return (
     <ActionSheet containerStyle={styles.container} id="Availability">
       <View style={{ gap: 10 }}>
@@ -81,8 +81,7 @@ export default function Availability() {
 
 const styles = StyleSheet.create({
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     textAlign: "center",
   },
   container: {
@@ -109,6 +108,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   text: {
+    ...FONTS.textRegular,
     color: Colors.border,
   },
   footerbutton: {
@@ -120,8 +120,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
 });

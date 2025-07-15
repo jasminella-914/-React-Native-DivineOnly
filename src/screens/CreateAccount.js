@@ -11,6 +11,7 @@ import { useState } from "react";
 import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const logoImg = require("../assets/icon/Logo.png");
 export default function CreateAccount({ navigation }) {
@@ -102,8 +103,7 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   text: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.default,
   },
   textInput: {
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     paddingVertical: 20,
+    ...FONTS.textRegular,
   },
   toggleContainer: {
     flexDirection: "row",
@@ -119,8 +120,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   toggleText: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     color: Colors.primary,
   },
   buttonContainer: {
@@ -131,8 +131,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   footerButton: {
@@ -148,7 +147,6 @@ const styles = StyleSheet.create({
   footerButtonText: {
     textAlign: "center",
     color: Colors.black,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
 });
