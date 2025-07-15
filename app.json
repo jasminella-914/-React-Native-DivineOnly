@@ -27,8 +27,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "react-native-maps"
-    ]
+    "plugins": ["react-native-maps"]
   }
 }
