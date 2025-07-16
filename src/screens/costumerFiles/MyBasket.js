@@ -11,6 +11,7 @@ import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SHOP_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function MyBasket({ navigation }) {
   return (
@@ -48,7 +49,7 @@ export default function MyBasket({ navigation }) {
                         <View style={styles.minus}></View>
                       </Pressable>
 
-                      <Text>1</Text>
+                      <Text style={styles.info}>1</Text>
                       <Pressable style={styles.add}>
                         <Ionicons name="add" size={15} />
                       </Pressable>
@@ -56,7 +57,11 @@ export default function MyBasket({ navigation }) {
                   </View>
                 </View>
                 <Pressable style={styles.close}>
-                  <Ionicons name="close-outline" size={15} color={Colors.border} />
+                  <Ionicons
+                    name="close-outline"
+                    size={15}
+                    color={Colors.border}
+                  />
                 </Pressable>
                 <View style={styles.price}>
                   <Text style={styles.price}>{item.price}</Text>
@@ -88,8 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
   },
@@ -106,19 +110,15 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   name: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.black,
   },
   info: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     color: Colors.black,
   },
   price: {
-    fontSize: 14,
-    fontWeight: "500",
-
+    ...FONTS.textRegular,
     position: "absolute",
     right: 0,
     bottom: 0,
@@ -126,13 +126,11 @@ const styles = StyleSheet.create({
   footerButton: {
     backgroundColor: Colors.primary,
     paddingVertical: 15,
-    paddingHorizontal: 94,
     borderRadius: 10,
   },
   footerButtonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   add: {
@@ -146,7 +144,10 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
   },
-  footer: { flexDirection: "row", justifyContent: "space-between" },
+  footer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   minus: {
     borderWidth: 0.5,
     width: 14,
@@ -163,5 +164,9 @@ const styles = StyleSheet.create({
     height: 103,
     borderRadius: 10,
   },
-  footerContainer: { gap: 20, paddingHorizontal: 20, paddingTop: 10 },
+  footerContainer: {
+    gap: 20,
+    paddingHorizontal: 20,
+    paddingTop: 10,
+  },
 });

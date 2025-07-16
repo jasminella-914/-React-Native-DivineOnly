@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { AVIS_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
-
+import { FONTS } from "../styles/Fonts";
 
 const Avis = () => {
   return (
@@ -24,9 +24,7 @@ const Avis = () => {
                   <View style={styles.info}>
                     <Text style={styles.name}>{item.name}</Text>
                     <Image source={item.icon} />
-                    <Text style={[styles.name, { fontSize: 12 }]}>
-                      {item.rate}
-                    </Text>
+                    <Text style={styles.rate}>{item.rate}</Text>
                   </View>
                   <Text style={styles.caption}>{item.caption}</Text>
                   <Text style={styles.caption}>{item.caption1}</Text>
@@ -48,12 +46,12 @@ export default Avis;
 
 const styles = StyleSheet.create({
   name: {
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
+    color: Colors.black,
   },
   caption: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.black,
   },
   listContainer: {
     flexDirection: "row",
@@ -67,5 +65,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
+  },
+  rate: {
+    ...FONTS.urbanistMed,
+    color: Colors.black,
   },
 });

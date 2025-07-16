@@ -19,6 +19,10 @@ export const FONTS = {
     fontSize: 12,
     fontFamily: "Montserrat_400Regular",
   },
+  textRegMed: {
+    fontSize: 13,
+    fontFamily: "Montserrat_500Medium",
+  },
   textRegBold: {
     fontSize: 14,
     fontFamily: "Montserrat_600SemiBold",
@@ -26,6 +30,10 @@ export const FONTS = {
   textSmallMed: {
     fontSize: 12,
     fontFamily: "Montserrat_500Medium",
+  },
+  urbanistMed: {
+    fontSize: 12,
+    fontFamily: "Urbanist_600SemiBold",
   },
   urbanistReg: {
     fontSize: 14,

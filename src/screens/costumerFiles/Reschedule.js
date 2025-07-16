@@ -15,6 +15,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Calendar } from "react-native-calendars";
 import { TIME_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Reschedule({ navigation, index }) {
   const [selected, setSelected] = useState("");
@@ -127,8 +128,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
@@ -150,12 +150,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   date: {
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
+    color: Colors.black,
   },
   text: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.black,
   },
   border: {
     borderBottomWidth: 1,
@@ -171,8 +171,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.black,
-    fontSize: 14,
-    fontWeight: "600",
+    ...FONTS.textRegBold,
   },
   footer: {
     backgroundColor: Colors.primary,
@@ -181,8 +180,7 @@ const styles = StyleSheet.create({
   },
   footerTexT: {
     textAlign: "center",
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     color: Colors.primary,
   },
   calendarTheme: {
@@ -192,8 +190,7 @@ const styles = StyleSheet.create({
     todayTextColor: Colors.primary,
     arrowColor: Colors.default,
     textDayStyle: {
-      fontSize: 14,
-      fontWeight: "600",
+      ...FONTS.textRegBold,
     },
   },
 });

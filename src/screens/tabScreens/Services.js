@@ -12,6 +12,7 @@ import {
 import RadioButtonRN from "radio-buttons-react-native";
 import ICON from "../../assets/icon/salon.png";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 const data = [
   {
     label: "Au Salon",
@@ -77,8 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
   },
   inputContainer: {
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 15,
     backgroundColor: Colors.white,
+    ...FONTS.textRegular,
   },
   thirdContainer: {
     margin: 20,
@@ -99,8 +100,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
 });

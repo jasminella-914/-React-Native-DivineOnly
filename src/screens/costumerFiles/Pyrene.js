@@ -16,6 +16,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import PagerView from "react-native-pager-view";
 import PyrenePager from "../PyrenePager";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Pyrene({ navigation }) {
   return (
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   },
   secondContainer: {
     gap: 10,
-    backgroundColor:Colors.white,
+    backgroundColor: Colors.white,
     position: "absolute",
     bottom: 70,
     left: 23,
@@ -65,27 +66,14 @@ const styles = StyleSheet.create({
     borderRadius: 13,
   },
   headerText: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
+    color: Colors.default,
   },
   Text: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textDecorationLine: "underline",
+    color: Colors.default,
   },
-  button: {
-    backgroundColor: Colors.primary,
-    paddingVertical: 15,
-    paddingHorizontal: 91,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
-    textAlign: "center",
-  },
-
   pagerView: {
     flex: 1,
   },

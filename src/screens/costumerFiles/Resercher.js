@@ -15,6 +15,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../../navigation/navigationService";
 import { SEARCHLIST_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Resercher({ navigation }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -88,8 +89,7 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
@@ -112,14 +112,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     paddingVertical: 21,
     borderRadius: 14,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
     padding: 10,
   },
   locText: {
     color: Colors.primary,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
     textDecorationLine: "underline",
   },
   itemStyle: {
@@ -148,12 +146,12 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   title: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
+    color: Colors.default,
   },
   info: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.default,
   },
   locContainer: { flexDirection: "row", gap: 5, alignItems: "center" },
 });

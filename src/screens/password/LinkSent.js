@@ -9,13 +9,17 @@ import {
   ScrollView,
 } from "react-native";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 const bgImg = require("../../assets/img/Bg.png");
 export default function LinkSent({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
       <Image source={bgImg} />
-      <Image source={require("../../assets/icon/Logo.png")} style={styles.logo} />
+      <Image
+        source={require("../../assets/icon/Logo.png")}
+        style={styles.logo}
+      />
       <Image
         source={require("../../assets/img/twoperson.png")}
         style={styles.twoperson}
@@ -48,24 +52,22 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: Colors.default,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   text: {
     color: Colors.default,
-    fontSize: 12,
+    ...FONTS.textSmallLight,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
-    padding: 18,
+    paddingVertical: 18,
     borderRadius: 15,
     marginHorizontal: 20,
     marginTop: 50,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   twoperson: {

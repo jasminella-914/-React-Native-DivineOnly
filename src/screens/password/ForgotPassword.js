@@ -9,6 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 const bgImg = require("../../assets/img/Bg.png");
 export default function ForgotPassword({ navigation }) {
@@ -63,8 +64,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: Colors.default,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   inputContainer: {
     borderWidth: 1,
@@ -72,20 +72,20 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 15,
     paddingVertical: 20,
+    ...FONTS.textRegular,
   },
   text: {
     color: Colors.default,
-    fontSize: 12,
+    ...FONTS.textSmallLight,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
-    padding: 18,
+    paddingVertical: 18,
     borderRadius: 10,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   footerButton: {
@@ -100,8 +100,7 @@ const styles = StyleSheet.create({
   },
   footerButtonText: {
     color: Colors.black,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
   },
   footer: {

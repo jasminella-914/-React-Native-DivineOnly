@@ -10,6 +10,7 @@ import React from "react";
 import { SHOP_DATA } from "../data/data";
 import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
+import { FONTS } from "../styles/Fonts";
 
 const Boutique = () => {
   return (
@@ -52,13 +53,14 @@ export default Boutique;
 
 const styles = StyleSheet.create({
   caption: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.black,
   },
   info: {
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
+    ...FONTS.textRegular,
   },
   productContainer: {
     gap: 5,

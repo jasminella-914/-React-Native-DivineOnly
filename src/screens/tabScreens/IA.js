@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { IA_DATA, IA_DATA2 } from "../../data/data";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 export default function IA({ navigation }) {
   const [selectedIndex, setIsSelectedIndex] = useState();
   const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
@@ -42,12 +43,13 @@ export default function IA({ navigation }) {
               key={index}
             >
               <Text
-                style={{
-                  color:
-                    selectedIndex === index ? Colors.primary : Colors.border,
-                  fontSize: 16,
-                  fontWeight: "500",
-                }}
+                style={[
+                  styles.item,
+                  {
+                    color:
+                      selectedIndex === index ? Colors.primary : Colors.border,
+                  },
+                ]}
               >
                 {item}
               </Text>
@@ -62,7 +64,7 @@ export default function IA({ navigation }) {
             return (
               <View style={styles.controltab}>
                 <Image source={item.image} style={{ width: 61, height: 65 }} />
-                <Text>{item.name}</Text>
+                <Text style={styles.name}>{item.name}</Text>
               </View>
             );
           }}
@@ -79,8 +81,7 @@ const styles = StyleSheet.create({
   },
   headertext: {
     textTransform: "uppercase",
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
@@ -107,5 +108,12 @@ const styles = StyleSheet.create({
   tabHeader: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  item: {
+    ...FONTS.textRegular,
+  },
+  name: {
+    ...FONTS.textSmallLight,
+    color: Colors.default,
   },
 });

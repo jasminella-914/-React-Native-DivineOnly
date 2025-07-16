@@ -13,6 +13,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { ScrollState } from "react-native-actions-sheet/dist/src/hooks/use-scroll-handlers";
 import VotrePager from "../VotrePager";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Votre({ navigation }) {
   return (
@@ -37,8 +38,7 @@ export default function Votre({ navigation }) {
 const styles = StyleSheet.create({
   viewContainer: { backgroundColor: Colors.white, flex: 1, paddingTop: 60 },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
     color: Colors.default,
     position: "absolute",
     top: 0,

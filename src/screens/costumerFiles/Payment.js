@@ -1,6 +1,7 @@
 import { StyleSheet, Text, SafeAreaView, Pressable, View } from "react-native";
 import React from "react";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Payment({ navigation }) {
   return (
@@ -16,12 +17,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   text: {
     color: Colors.black,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
 });

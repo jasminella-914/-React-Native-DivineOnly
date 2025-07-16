@@ -11,6 +11,7 @@ import {
 import { SHOP_DATA } from "../../data/data";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 const bgImg = require("../../assets/img/Bg.png");
 const twoperson = require("../../assets/img/twoperson.png");
@@ -73,8 +74,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.primary,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   button: {
     borderWidth: 1,
@@ -91,12 +91,12 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   name: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.grayBlack,
   },
   info: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
+    color: Colors.black,
   },
   dataContainer: {
     flexDirection: "row",

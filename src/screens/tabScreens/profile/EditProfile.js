@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../../styles/Colors";
+import { FONTS } from "../../../styles/Fonts";
 
 export default function EditProfile({ navigation }) {
   return (
@@ -35,10 +36,18 @@ export default function EditProfile({ navigation }) {
             <TextInput placeholder="Email" style={styles.input} />
             <View style={[styles.input, { gap: 30, paddingVertical: 10 }]}>
               <Text style={styles.inputText}>Adresse</Text>
-              <TextInput placeholder="Rue" />
-              <TextInput placeholder="Numero" keyboardType="numeric" />
-              <TextInput placeholder="Code postal" keyboardType="numeric" />
-              <TextInput placeholder="Ville" />
+              <TextInput placeholder="Rue" style={styles.inputText} />
+              <TextInput
+                placeholder="Numero"
+                style={styles.inputText}
+                keyboardType="numeric"
+              />
+              <TextInput
+                placeholder="Code postal"
+                style={styles.inputText}
+                keyboardType="numeric"
+              />
+              <TextInput placeholder="Ville" style={styles.inputText} />
             </View>
             <TextInput
               placeholder="Numéro de téléphone"
@@ -129,13 +138,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   headerText: {
-    fontWeight: "600",
-    fontSize: 16,
+    ...FONTS.h2,
+    color: Colors.default,
   },
   editText: {
-    fontSize: 12,
     color: Colors.primary,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
   },
   input: {
@@ -144,22 +152,21 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     borderColor: Colors.border,
+    ...FONTS.textRegMed,
   },
   button: {
-    backgroundColor: Colors.border,
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 15,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   inputText: {
     color: Colors.border,
-    fontSize: 13,
-    fontWeight: "500",
+    ...FONTS.textRegMed,
   },
   headerBack: {
     marginLeft: 20,

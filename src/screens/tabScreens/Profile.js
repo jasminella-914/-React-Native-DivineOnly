@@ -12,6 +12,7 @@ import Pager from "../Pager";
 import PagerView from "react-native-pager-view";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Profile({ navigation }) {
   return (
@@ -50,9 +51,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   headertext: {
-    fontSize: 16,
     color: Colors.raisinBlack,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   modal: {
     justifyContent: "flex-start",
@@ -64,16 +64,6 @@ const styles = StyleSheet.create({
   },
   pagerView: {
     flex: 1,
-  },
-  pageText: {
-    color: Colors.primary,
-    fontSize: 14,
-    lineHeight: 18,
-    fontWeight: "500",
-    textAlign: "center",
-    borderBottomWidth: 1,
-    borderColor: Colors.primary,
-    padding: 10,
   },
   profile: { flexDirection: "row", alignItems: "center", gap: 20 },
   image: { height: 58, width: 58 },

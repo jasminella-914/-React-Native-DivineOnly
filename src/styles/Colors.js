@@ -7,7 +7,7 @@ export const Colors = {
   whiteSmoke: "#F5F5F5",
 
   black: "#000000",
-  lightBlack: "#00000080",
+  lightBlack: "#00000008",
   grayBlack: "#00000099",
   black21: "#00000021",
   raisinBlack: "#2E2A2B",
@@ -16,6 +16,7 @@ export const Colors = {
   lightBorder: "#BBC6C873",
 
   grey: "#E5E3E4",
+  darkGrey: "#00000080",
   lightSilver: "#D7D7D7",
 
   gray: "#E9E9E9",

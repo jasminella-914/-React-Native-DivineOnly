@@ -14,6 +14,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Modal from "react-native-modal";
 import { useState } from "react";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Profile({ navigation }) {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -52,7 +53,12 @@ export default function Profile({ navigation }) {
           <Pressable onPress={toggleModal} style={styles.pressContainer}>
             <View style={styles.editPhoto}>
               <Ionicons name="image-outline" size={40} color={Colors.border} />
-              <Text style={[styles.ajouterText, { fontSize: 12 }]}>
+              <Text
+                style={[
+                  styles.ajouterText,
+                  { fontSize: 12, textAlign: "center" },
+                ]}
+              >
                 ajouter une photop
               </Text>
             </View>
@@ -87,10 +93,10 @@ export default function Profile({ navigation }) {
         >
           <View style={{ gap: 10 }}>
             <Pressable style={styles.buttonContainer}>
-              <Text>Gallery</Text>
+              <Text style={styles.modalText}>Gallery</Text>
             </Pressable>
             <Pressable style={styles.buttonContainer}>
-              <Text>Camera</Text>
+              <Text style={styles.modalText}>Camera</Text>
             </Pressable>
             <Button
               title="Cancel"
@@ -132,14 +138,12 @@ const styles = StyleSheet.create({
   },
   headertext: {
     color: Colors.default,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     marginBottom: 10,
   },
   text: {
     color: Colors.default,
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   inputContainer: {
     padding: 15,
@@ -156,19 +160,17 @@ const styles = StyleSheet.create({
   },
   footerButtonText: {
     color: Colors.white,
-    fontSize: 16,
+
     textAlign: "center",
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   ajouterText: {
     color: Colors.border,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
   },
   modal: {
-    
     justifyContent: "flex-start",
-    backgroundColor:Colors.white,
+    backgroundColor: Colors.white,
     flex: 0.25,
     marginTop: "auto",
     padding: 20,
@@ -183,5 +185,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     gap: 10,
+  },
+  modalText: {
+    ...FONTS.textRegular,
+    color: Colors.black,
   },
 });

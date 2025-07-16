@@ -12,6 +12,7 @@ import RadioButtonRN from "radio-buttons-react-native";
 import CheckBox from "react-native-check-box";
 import { useState } from "react";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 const data = [
   {
@@ -41,20 +42,13 @@ export default function Delivery({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Pressable style={styles.header}>
           <Text style={styles.monText}>Mon panier (3)</Text>
-          <View style={{ flexDirection: "row", gap: 5, alignItems: "center" }}>
+          <View style={styles.priceContainer}>
             <Text style={styles.price}>19,99€</Text>
             <Ionicons name="chevron-down" size={18} color={Colors.primary} />
           </View>
         </Pressable>
         <View style={{ paddingHorizontal: 20, paddingTop: 10 }}>
-          <Text
-            style={[
-              styles.footerButtonText,
-              { textAlign: "center", color: Colors.black},
-            ]}
-          >
-            Mode de livraison
-          </Text>
+          <Text style={styles.modeText}>Mode de livraison</Text>
 
           <View style={{ paddingBottom: 15 }}>
             <RadioButtonRN
@@ -63,7 +57,6 @@ export default function Delivery({ navigation }) {
               activeColor={Colors.black}
               borderColor={Colors.primary}
               boxActiveBgColor={Colors.blueGreen}
-              // icon={<Ionicons name="chevron-down-circle" size={20} />}
             />
           </View>
 
@@ -100,12 +93,12 @@ export default function Delivery({ navigation }) {
         </View>
         <View style={styles.total}>
           <View style={styles.footerContainer}>
-            <Text>Sous total</Text>
-            <Text>19,99€</Text>
+            <Text style={styles.monText}>Sous total</Text>
+            <Text style={styles.monText}>19,99€</Text>
           </View>
           <View style={styles.footerContainer}>
-            <Text>Livraison</Text>
-            <Text>5,50€</Text>
+            <Text style={styles.monText}>Livraison</Text>
+            <Text style={styles.monText}>5,50€</Text>
           </View>
           <View style={styles.border}></View>
           <View style={styles.footerContainer}>
@@ -136,21 +129,19 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   headertext: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
+    color: Colors.default,
   },
   footerButton: {
     backgroundColor: Colors.primary,
     paddingVertical: 15,
-    paddingHorizontal: 72,
     borderRadius: 10,
     marginHorizontal: 20,
     marginTop: "auto",
   },
   footerButtonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   header: {
@@ -162,12 +153,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   monText: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
   },
   price: {
-    fontWeight: "600",
-    fontSize: 14,
+    ...FONTS.textRegBold,
+    color: Colors.black,
   },
   info: {
     borderWidth: 1,
@@ -176,13 +166,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   infoText: {
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
+    color: Colors.grayBlack,
   },
   modifier: {
     color: Colors.primary,
-    fontSize: 14,
-    fontWeight: "500",
+    ...FONTS.textRegular,
     textDecorationLine: "underline",
   },
   checkBox: {
@@ -215,5 +204,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: 8,
+  },
+  priceContainer: {
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
+  },
+  modeText: {
+    ...FONTS.h2,
+    color: Colors.black,
+    textAlign: "center",
   },
 });

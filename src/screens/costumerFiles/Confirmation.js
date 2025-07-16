@@ -9,6 +9,7 @@ import {
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function Confirmation({ navigation }) {
   return (
@@ -17,27 +18,36 @@ export default function Confirmation({ navigation }) {
         <View style={styles.header}>
           <Text style={styles.headerText}>Merci pour ta commande Manon</Text>
           <Text style={styles.bodyText}>#569843</Text>
-          <Text style={[styles.text, { paddingBottom: 20 }]}>
+          <Text
+            style={[
+              styles.text,
+              {
+                textAlign: "center",
+                paddingHorizontal: 30,
+                color: Colors.grayBlack,
+              },
+            ]}
+          >
             Un récapitulatif de ta commande à été envoyé par mail
           </Text>
         </View>
         <Pressable style={styles.pressable}>
           <Text style={styles.text}>Détails de ma commande (3)</Text>
           <View style={styles.details}>
-            <Text style={[styles.bodyText, { fontSize: 14 }]}>25,49€</Text>
+            <Text style={styles.price}>25,49€</Text>
             <Ionicons name="chevron-down" size={15} color={Colors.primary} />
           </View>
         </Pressable>
         <View style={{ gap: 10, marginTop: 20 }}>
           <View style={{ gap: 5 }}>
-            <Text style={styles.text}>Livraison à domicile</Text>
+            <Text style={styles.grayText}>Livraison à domicile</Text>
             <Text style={styles.text}>
               8 rue de la chapelle, 33000 Bordeaux, France
             </Text>
             <View style={styles.border}></View>
           </View>
           <View style={{ gap: 5 }}>
-            <Text style={styles.text}>Mode de paiement</Text>
+            <Text style={styles.grayText}>Mode de paiement</Text>
             <View style={styles.modePayment}>
               <Image source={require("../../assets/icon/stripe.png")} />
               <Text>25,49€</Text>
@@ -46,9 +56,9 @@ export default function Confirmation({ navigation }) {
             <View style={styles.border}></View>
           </View>
           <View style={{ gap: 5 }}>
-            <Text style={styles.text}>Contact</Text>
+            <Text style={styles.grayText}>Contact</Text>
             <Text style={styles.text}>manon@mail.com</Text>
-            <Text>0646384398</Text>
+            <Text style={styles.text}>0646384398</Text>
           </View>
         </View>
       </View>
@@ -76,21 +86,18 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
   headerText: {
-    fontSize: 18,
-    fontWeight: "700",
+    ...FONTS.h1,
   },
   bodyText: {
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
   },
   text: {
-    fontSize: 12,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
+    color: Colors.black,
   },
   pressable: {
     flexDirection: "row",
@@ -108,7 +115,27 @@ const styles = StyleSheet.create({
     borderColor: Colors.dirtyYellow,
     marginTop: 5,
   },
-  modePayment: { flexDirection: "row", justifyContent: "space-between" },
-  details: { flexDirection: "row", gap: 5, alignItems: "center" },
-  header: { gap: 20, alignItems: "center", justifyContent: "center" },
+  modePayment: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  details: {
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
+  },
+  header: {
+    gap: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: 20,
+  },
+  price: {
+    ...FONTS.textRegBold,
+    color: Colors.black,
+  },
+  grayText: {
+    ...FONTS.textSmallLight,
+    color: Colors.grayBlack,
+  },
 });

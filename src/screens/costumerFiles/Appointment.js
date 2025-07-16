@@ -81,31 +81,14 @@ export default function Appointment({ navigation }) {
             <Text style={styles.name}>Soin nettoyant au charbon végétal</Text>
             <Text style={styles.text}>Convient à tout type de peau</Text>
           </View>
-          <View
-            style={{
-              borderColor: Colors.lightBorder,
-              flexDirection: "row",
-              gap: 10,
-            }}
-          >
+          <View style={styles.timeContainer}>
             <Image source={require("../../assets/icon/Clock.png")} />
             <Text style={styles.time}>30 min</Text>
             <Text style={[styles.time, { color: Colors.primary }]}>45€</Text>
           </View>
         </View>
         <View style={{ marginTop: 15 }}>
-          <Pressable
-            style={[
-              styles.button,
-              {
-                backgroundColor: Colors.white,
-                flexDirection: "row",
-                gap: 5,
-                alignItems: "center",
-                paddingVertical: 15,
-              },
-            ]}
-          >
+          <Pressable style={styles.secondButton}>
             <Image source={require("../../assets/icon/add.png")} />
             <Text style={styles.addText}>
               {" "}
@@ -261,10 +244,6 @@ const styles = StyleSheet.create({
     ...FONTS.textRegBold,
     color: Colors.default,
   },
-  text: {
-    color: Colors.lightBlack,
-    ...FONTS.textSmallLight,
-  },
   time: {
     color: Colors.default,
     ...FONTS.textRegBold,
@@ -280,13 +259,6 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     ...FONTS.h1,
   },
-  button: {
-    flexDirection: "row",
-    gap: 10,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 20,
-  },
   buttonPhoto: {
     backgroundColor: Colors.whiteSmoke,
     paddingVertical: 12,
@@ -296,11 +268,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     gap: 5,
   },
-  personName: {
-    paddingTop: 5,
-    fontSize: 14,
-    fontWeight: "500",
-  },
   calendar: {
     backgroundColor: Colors.whiteSmoke,
     calendarBackground: Colors.whiteSmoke,
@@ -308,8 +275,7 @@ const styles = StyleSheet.create({
     todayTextColor: Colors.primary,
     arrowColor: Colors.primary,
     textDayStyle: {
-      fontSize: 14,
-      fontWeight: "600",
+      ...FONTS.textRegBold,
     },
   },
   button: {
@@ -324,12 +290,25 @@ const styles = StyleSheet.create({
   },
   text: {
     ...FONTS.textSmallLight,
-    color: Colors.lightBlack,
+    color: Colors.darkGrey,
   },
   textBox: {
     ...FONTS.textRegular,
     color: Colors.black,
     textAlign: "center",
     backgroundColor: Colors.whiteSmoke,
+  },
+  secondButton: {
+    backgroundColor: Colors.white,
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
+    paddingVertical: 15,
+    justifyContent: "center",
+  },
+  timeContainer: {
+    borderColor: Colors.lightBorder,
+    flexDirection: "row",
+    gap: 10,
   },
 });

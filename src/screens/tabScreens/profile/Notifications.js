@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../../styles/Colors";
+import { FONTS } from "../../../styles/Fonts";
 
 export default function Notifications({ navigation }) {
   return (
@@ -117,13 +118,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   headerText: {
-    fontWeight: "600",
-    fontSize: 16,
+    ...FONTS.h2,
+    color: Colors.default,
   },
   editText: {
-    fontSize: 12,
     color: Colors.primary,
-    fontWeight: "400",
+    ...FONTS.textSmallLight,
     textAlign: "center",
   },
   input: {
@@ -131,6 +131,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     borderColor: Colors.border,
+
+    ...FONTS.textRegular,
   },
   button: {
     backgroundColor: Colors.primary,
@@ -139,8 +141,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: "600",
+    ...FONTS.h2,
     textAlign: "center",
   },
 });

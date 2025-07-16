@@ -10,6 +10,7 @@ import * as Progress from "react-native-progress";
 import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
+import { FONTS } from "../../styles/Fonts";
 
 export default function ContactDetails({ navigation }) {
   return (
@@ -29,7 +30,7 @@ export default function ContactDetails({ navigation }) {
           height={7}
           style={styles.Bar}
         />
-        <Ionicons name="close" size={24} onPress={() => navigation.goBack()}  />
+        <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
       <View style={[styles.secondContainer, { gap: 30 }]}>
         <Text style={styles.text}>Mes coordonnées</Text>
@@ -48,12 +49,13 @@ export default function ContactDetails({ navigation }) {
             style={styles.inputContainer}
           />
         </View>
-        <Pressable style={styles.footerButton} 
-        onPress={() => navigation.navigate("Profile")}
-        >
-          <Text style={styles.footerButtonText}>Suivant</Text>
-        </Pressable>
       </View>
+      <Pressable
+        style={styles.footerButton}
+        onPress={() => navigation.navigate("Profile")}
+      >
+        <Text style={styles.footerButtonText}>Suivant</Text>
+      </Pressable>
     </SafeAreaView>
   );
 }
@@ -64,8 +66,8 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   secondContainer: {
-    marginHorizontal: 20,
     justifyContent: "space-between",
+    paddingHorizontal: 20,
   },
   Bar: {
     marginVertical: 10,
@@ -73,25 +75,28 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.default,
-    fontSize: 16,
-    fontWeight: "600",
-    marginTop: 20
+    ...FONTS.h2,
+    marginTop: 20,
   },
   inputContainer: {
-    padding: 15,
+    padding: 10,
     borderColor: Colors.border,
     borderWidth: 1,
     borderRadius: 15,
+    ...FONTS.textRegMed,
+    paddingVertical: 21,
   },
   footerButton: {
-    backgroundColor:Colors.primary,
+    backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
+    marginTop: "auto",
+    marginHorizontal: 20
   },
   footerButtonText: {
     color: Colors.white,
-    fontSize: 16,
+
     textAlign: "center",
-    fontWeight: "600",
+    ...FONTS.h2,
   },
 });
