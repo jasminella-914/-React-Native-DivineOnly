@@ -31,6 +31,9 @@ export const FONTS = {
     fontSize: 12,
     fontFamily: "Montserrat_500Medium",
   },
+
+
+  
   urbanistMed: {
     fontSize: 12,
     fontFamily: "Urbanist_600SemiBold",
