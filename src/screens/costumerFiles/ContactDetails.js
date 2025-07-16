@@ -5,9 +5,11 @@ import {
   TextInput,
   Pressable,
   SafeAreaView,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import * as Progress from "react-native-progress";
-import { NavigationContainer } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
@@ -15,7 +17,7 @@ import { FONTS } from "../../styles/Fonts";
 export default function ContactDetails({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.secondContainer, { flexDirection: "row" }]}>
+      <View style={[styles.secondContainer, { flexDirection: "row", paddingVertical: 5 }]}>
         <Ionicons
           name="arrow-back"
           size={24}
@@ -32,30 +34,49 @@ export default function ContactDetails({ navigation }) {
         />
         <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
-      <View style={[styles.secondContainer, { gap: 30 }]}>
-        <Text style={styles.text}>Mes coordonnées</Text>
-        <View style={{ gap: 10 }}>
-          <TextInput placeholder="Prénom" style={styles.inputContainer} />
-          <TextInput placeholder="Nom" style={styles.inputContainer} />
-          <TextInput placeholder="Rue" style={styles.inputContainer} />
-          <TextInput
-            placeholder="Numéro de rue"
-            style={styles.inputContainer}
-          />
-          <TextInput placeholder="Code postal" style={styles.inputContainer} />
-          <TextInput placeholder="Ville" style={styles.inputContainer} />
-          <TextInput
-            placeholder="Numéro de téléphone"
-            style={styles.inputContainer}
-          />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ paddingBottom: 20 }}>
+          <KeyboardAvoidingView
+            behavior="padding"
+            style={[styles.secondContainer, { gap: 30 }]}
+          >
+            <Text style={styles.text}>Mes coordonnées</Text>
+            <View style={{ gap: 10 }}>
+              <TextInput placeholder="Prénom" style={styles.inputContainer} />
+              <TextInput placeholder="Nom" style={styles.inputContainer} />
+              <TextInput placeholder="Rue" style={styles.inputContainer} />
+              <TextInput
+                placeholder="Numéro de rue"
+                style={styles.inputContainer}
+                keyboardType="numeric"
+              />
+              <TextInput
+                placeholder="Code postal"
+                style={styles.inputContainer}
+                keyboardType="numeric"
+              />
+              <TextInput
+                placeholder="Ville"
+                style={styles.inputContainer}
+                keyboardType="numeric"
+              />
+              <TextInput
+                placeholder="Numéro de téléphone"
+                keyboardType="numeric"
+                style={styles.inputContainer}
+              />
+            </View>
+          </KeyboardAvoidingView>
+          <View style={{ paddingTop: 20 }}>
+            <Pressable
+              style={styles.footerButton}
+              onPress={() => navigation.navigate("Profile")}
+            >
+              <Text style={styles.footerButtonText}>Suivant</Text>
+            </Pressable>
+          </View>
         </View>
-      </View>
-      <Pressable
-        style={styles.footerButton}
-        onPress={() => navigation.navigate("Profile")}
-      >
-        <Text style={styles.footerButtonText}>Suivant</Text>
-      </Pressable>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -88,10 +109,9 @@ const styles = StyleSheet.create({
   },
   footerButton: {
     backgroundColor: Colors.primary,
-    padding: 18,
+    paddingVertical: 18,
     borderRadius: 10,
-    marginTop: "auto",
-    marginHorizontal: 20
+    marginHorizontal: 20,
   },
   footerButtonText: {
     color: Colors.white,

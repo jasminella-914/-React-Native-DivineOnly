@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Image,
   Button,
+  ScrollView,
 } from "react-native";
 import * as Progress from "react-native-progress";
 import { NavigationContainer } from "@react-navigation/native";
@@ -23,7 +24,7 @@ export default function Profile({ navigation }) {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.secondContainer, { flexDirection: "row" }]}>
+      <View style={[styles.secondContainer, { flexDirection: "row", paddingVertical: 5 }]}>
         <Ionicons
           name="arrow-back"
           size={24}
@@ -40,33 +41,39 @@ export default function Profile({ navigation }) {
         />
         <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
-      <View style={[styles.secondContainer, { gap: 30, marginTop: 20 }]}>
+      <ScrollView>
         <View>
-          <Text style={styles.headertext}>Photo de profil</Text>
-          <Text style={styles.text}>
-            Nous vous recommandons d’utiliser une photo type d’identité pour
-            pouvoir profiter de l’outil IA. Vous pourrez toujours la modifier
-            plus tard.
-          </Text>
-        </View>
-        <View style={styles.thirdContainer}>
-          <Pressable onPress={toggleModal} style={styles.pressContainer}>
-            <View style={styles.editPhoto}>
-              <Ionicons name="image-outline" size={40} color={Colors.border} />
-              <Text
-                style={[
-                  styles.ajouterText,
-                  { fontSize: 12, textAlign: "center" },
-                ]}
-              >
-                ajouter une photop
+          <View style={[styles.secondContainer, { gap: 30, marginTop: 20 }]}>
+            <View>
+              <Text style={styles.headertext}>Photo de profil</Text>
+              <Text style={styles.text}>
+                Nous vous recommandons d’utiliser une photo type d’identité pour
+                pouvoir profiter de l’outil IA. Vous pourrez toujours la
+                modifier plus tard.
               </Text>
             </View>
-          </Pressable>
-          <View style={{ marginTop: 10 }}>
-            <Text style={styles.ajouterText}>Ajouter une photo</Text>
-          </View>
-          {/* <Pressable onPress={toggleModal}>
+            <View style={styles.thirdContainer}>
+              <Pressable onPress={toggleModal} style={styles.pressContainer}>
+                <View style={styles.editPhoto}>
+                  <Ionicons
+                    name="image-outline"
+                    size={40}
+                    color={Colors.border}
+                  />
+                  <Text
+                    style={[
+                      styles.ajouterText,
+                      { fontSize: 12, textAlign: "center" },
+                    ]}
+                  >
+                    ajouter une photop
+                  </Text>
+                </View>
+              </Pressable>
+              <View style={{ marginTop: 10 }}>
+                <Text style={styles.ajouterText}>Ajouter une photo</Text>
+              </View>
+              {/* <Pressable onPress={toggleModal}>
             <View
               style={{
                 justifyContent: "center",
@@ -83,31 +90,36 @@ export default function Profile({ navigation }) {
               <Text style={styles.ajouterText}>Modifier la photo</Text>
             </View>
           </Pressable> */}
-        </View>
-      </View>
-      <View>
-        <Modal
-          isVisible={isModalVisible}
-          onBackdropPress={() => setModalVisible(false)}
-          style={styles.modal}
-        >
-          <View style={{ gap: 10 }}>
-            <Pressable style={styles.buttonContainer}>
-              <Text style={styles.modalText}>Gallery</Text>
-            </Pressable>
-            <Pressable style={styles.buttonContainer}>
-              <Text style={styles.modalText}>Camera</Text>
-            </Pressable>
-            <Button
-              title="Cancel"
-              onPress={() => setModalVisible(!isModalVisible)}
-            ></Button>
+            </View>
           </View>
-        </Modal>
+          <View>
+            <Modal
+              isVisible={isModalVisible}
+              onBackdropPress={() => setModalVisible(false)}
+              style={styles.modal}
+            >
+              <View style={{ gap: 10 }}>
+                <Pressable style={styles.buttonContainer}>
+                  <Text style={styles.modalText}>Gallery</Text>
+                </Pressable>
+                <Pressable style={styles.buttonContainer}>
+                  <Text style={styles.modalText}>Camera</Text>
+                </Pressable>
+                <Button
+                  title="Cancel"
+                  onPress={() => setModalVisible(!isModalVisible)}
+                ></Button>
+              </View>
+            </Modal>
+          </View>
+        </View>
+      </ScrollView>
+
+      <View style={{ paddingBottom: 20 }}>
+        <Pressable style={styles.footerButton}>
+          <Text style={styles.footerButtonText}>Suivant</Text>
+        </Pressable>
       </View>
-      <Pressable style={styles.footerButton}>
-        <Text style={styles.footerButtonText}>Suivant</Text>
-      </Pressable>
     </SafeAreaView>
   );
 }
@@ -153,9 +165,8 @@ const styles = StyleSheet.create({
   },
   footerButton: {
     backgroundColor: Colors.primary,
-    padding: 18,
+    paddingVertical: 18,
     borderRadius: 10,
-    marginTop: "auto",
     marginHorizontal: 20,
   },
   footerButtonText: {

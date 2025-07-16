@@ -17,75 +17,114 @@ import { FONTS } from "../styles/Fonts";
 const logoImg = require("../assets/icon/Logo.png");
 export default function CreateAccount2() {
   const navigation = useNavigation();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let errors = {};
+
+    if (!email) errors.email = "Email is required!";
+    if (!password) errors.password = "Password is required!";
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      console.log("Submitted", email, password);
+      setEmail("");
+      setPassword("");
+      setErrors({});
+    }
+  };
 
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <SafeAreaView style={styles.container}>
-      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={24} />
-      </Pressable>
-      <Image source={logoImg} style={{ alignSelf: "center" }} />
-      <View style={styles.secondContainer}>
-        <View>
-          <Text style={styles.text}>Créer mon compte</Text>
-        </View>
-        <View style={{ gap: 10 }}>
-          <TextInput style={styles.textInput} placeholder="Adresse mail" />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Mot de passe"
-            secureTextEntry
-          />
-        </View>
-        <View style={styles.toggleContainer}>
-          <CheckBox
-            style={{ flex: 1 }}
-            onClick={() => {
-              setIsChecked(!isChecked);
-            }}
-            isChecked={isChecked}
-            checkBoxColor={Colors.primary}
-          />
-          <View style={{ paddingRight: 20 }}>
-            <Text style={styles.toggleText}>
-              <Text
-                style={[
-                  styles.toggleText,
-                  {
-                    color: Colors.black,
-                  },
-                ]}
-              >
-                En vous inscrivant, vous acceptez nos
-              </Text>{" "}
-              Conditions Générales d’Utilisation et nos Conditions Générales de
-              Vente
-            </Text>
-          </View>
-        </View>
-        <Pressable>
-          <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Créer mon compte</Text>
-          </View>
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.container}>
+        <Pressable style={styles.headBack} onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back" size={24} />
         </Pressable>
-      </View>
+        <Image source={logoImg} style={{ alignSelf: "center" }} />
+        <View style={styles.secondContainer}>
+          <View>
+            <Text style={styles.text}>Créer mon compte</Text>
+          </View>
+          <View style={{ gap: 10 }}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Adresse mail"
+              onChangeText={setEmail}
+            />
+            {errors.email ? (
+              <Text style={styles.errorText}>{errors.email}</Text>
+            ) : null}
+            <TextInput
+              style={styles.textInput}
+              placeholder="Mot de passe"
+              onChangeText={setPassword}
+              secureTextEntry
+            />
+            {errors.password ? (
+              <Text style={styles.errorText}>{errors.password}</Text>
+            ) : null}
+          </View>
+          <View style={styles.toggleContainer}>
+            <CheckBox
+              style={{ flex: 1 }}
+              onClick={() => {
+                setIsChecked(!isChecked);
+              }}
+              isChecked={isChecked}
+              checkBoxColor={Colors.primary}
+            />
+            <View style={{ paddingRight: 20 }}>
+              <Text style={styles.toggleText}>
+                <Text
+                  style={[
+                    styles.toggleText,
+                    {
+                      color: Colors.black,
+                    },
+                  ]}
+                >
+                  En vous inscrivant, vous acceptez nos
+                </Text>{" "}
+                Conditions Générales d’Utilisation et nos Conditions Générales
+                de Vente
+              </Text>
+            </View>
+          </View>
+          <Pressable onPress={handleSubmit}>
+            <View style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>Créer mon compte</Text>
+            </View>
+          </Pressable>
+        </View>
 
-      <View style={styles.footer}>
-        <Text style={styles.footerButtonText}>Vous avez déjà un compte ? </Text>
-        <Pressable onPress={() => navigation.navigate("Connexion")}>
-          <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
-            Connexion
+        <View style={styles.footer}>
+          <Text style={styles.footerButtonText}>
+            Vous avez déjà un compte ?{" "}
           </Text>
-        </Pressable>
+          <Pressable onPress={() => navigation.navigate("Connexion")}>
+            <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
+              Connexion
+            </Text>
+          </Pressable>
+        </View>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: { flex: 1, paddingBottom: 20 },
+  safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingBottom: 20,
   },
   secondContainer: {
     gap: 20,
@@ -137,6 +176,11 @@ const styles = StyleSheet.create({
   footerButtonText: {
     textAlign: "center",
     color: Colors.black,
+    ...FONTS.textSmallLight,
+  },
+  headBack: { marginLeft: 20, paddingVertical: 5 },
+  errorText: {
+    color: Colors.red,
     ...FONTS.textSmallLight,
   },
 });
