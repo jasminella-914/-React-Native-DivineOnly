@@ -1,47 +1,35 @@
-import {
-  FlatList,
-  Image,
-  ImageBackground,
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
-import React, { useEffect, useState } from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
-
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import PagerView from "react-native-pager-view";
 import PyrenePager from "../PyrenePager";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
 
-export default function Pyrene({ navigation }) {
+export default function Pyrene() {
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <View>
-          <Image source={require("../../assets/img/bgPhoto.png")} />
-          <View style={styles.secondContainer}>
-            <Text style={styles.headerText}>Institut Pyrène</Text>
-            <View style={styles.info}>
-              <Image source={require("../../assets/icon//location.png")} />
-              <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
-            </View>
-            <View style={styles.rate}>
-              <Image source={require("../../assets/icon/star.png")} />
-              <Text style={[styles.Text, { textDecorationLine: "none" }]}>
-                4,9 17 avis
-              </Text>
-            </View>
+      <View>
+        <Image
+          style={{ width: "100%", height: 468 }}
+          source={require("../../assets/img/bgPhoto.png")}
+        />
+
+        <View style={styles.secondContainer}>
+          <Text style={styles.headerText}>Institut Pyrène</Text>
+          <View style={styles.info}>
+            <Image source={require("../../assets/icon//location.png")} />
+            <Text style={styles.Text}>500 Rte de Berre, 33300 Bordeaux</Text>
+          </View>
+          <View style={styles.rate}>
+            <Image source={require("../../assets/icon/star.png")} />
+            <Text style={[styles.Text, { textDecorationLine: "none" }]}>
+              4,9 17 avis
+            </Text>
           </View>
         </View>
       </View>
-      <PagerView style={styles.pagerView} initialPage={0}>
+      <View style={styles.pagerView} initialPage={0}>
         <PyrenePager />
-      </PagerView>
+      </View>
     </View>
   );
 }
@@ -56,14 +44,15 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   secondContainer: {
-    gap: 10,
     backgroundColor: Colors.white,
     position: "absolute",
-    bottom: 70,
-    left: 23,
+    alignSelf: "center",
     paddingVertical: 8,
     paddingHorizontal: 15,
     borderRadius: 13,
+    top: 200,
+    zIndex: 1,
+    gap: 6,
   },
   headerText: {
     ...FONTS.h2,
@@ -76,6 +65,14 @@ const styles = StyleSheet.create({
   },
   pagerView: {
     flex: 1,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0,
+    zIndex: 1,
+
+    top: 300,
+    // backgroundColor: "red",
   },
   info: {
     flexDirection: "row",

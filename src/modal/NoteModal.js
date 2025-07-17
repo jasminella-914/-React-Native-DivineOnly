@@ -23,7 +23,7 @@ export default function NoteModal() {
       <View>
         <Text style={styles.headerText}>Note</Text>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 20}} showsVerticalScrollIndicator={false}>
         <View style={{ gap: 10 }}>
           <Text style={styles.partirText}>À partir de </Text>
 

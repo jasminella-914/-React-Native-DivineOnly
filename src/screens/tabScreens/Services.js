@@ -10,7 +10,7 @@ import {
   Modal,
 } from "react-native";
 import RadioButtonRN from "radio-buttons-react-native";
-import ICON from "../../assets/icon/salon.png";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
 const data = [
@@ -38,14 +38,16 @@ export default function Services({ navigation }) {
             data={data}
             selectedBtn={(e) => console.log(e)}
             activeColor={Colors.primary}
-            boxStyle={{
-              borderColor: Colors.border,
-            }}
+            deactiveColor={Colors.primary}
+            box={false}
+            style={styles.radiobutton}
           />
-          <TextInput
-            placeholder="Nom du professionnel, prestations..."
-            style={styles.inputContainer}
-          />
+          <View>
+            <TextInput
+              placeholder="Nom du professionnel, prestations..."
+              style={styles.inputContainer}
+            />
+          </View>
           <TextInput
             placeholder="Adresse, ville..."
             style={styles.inputContainer}
@@ -69,10 +71,11 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignSelf: "center",
+    marginTop: 20,
   },
 
   secondContainer: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.whiteSmoke,
     marginHorizontal: 20,
     borderRadius: 20,
     marginTop: 20,
@@ -84,7 +87,8 @@ const styles = StyleSheet.create({
   inputContainer: {
     borderWidth: 1,
     borderColor: Colors.border,
-    padding: 20,
+    paddingVertical: 20,
+    padding: 10,
     borderRadius: 15,
     backgroundColor: Colors.white,
     ...FONTS.textRegular,
@@ -102,5 +106,12 @@ const styles = StyleSheet.create({
     color: Colors.white,
     ...FONTS.h2,
     textAlign: "center",
+  },
+  radiobutton: {
+    borderWidth: 1,
+    paddingBottom: 10,
+    borderColor: Colors.border,
+    borderRadius: 15,
+    backgroundColor: Colors.white,
   },
 });

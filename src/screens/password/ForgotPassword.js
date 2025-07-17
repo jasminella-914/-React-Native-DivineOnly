@@ -14,50 +14,60 @@ import { FONTS } from "../../styles/Fonts";
 const bgImg = require("../../assets/img/Bg.png");
 export default function ForgotPassword({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
-      <Image source={bgImg} />
-      <Image
-        source={require("../../assets/icon/Logo.png")}
-        style={styles.logo}
-      />
-      <Image
-        source={require("../../assets/img/twoperson.png")}
-        style={styles.twoPerson}
-      />
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.mainContainer}>
+        <Image source={bgImg} style={styles.bgImage} />
+        <Image
+          source={require("../../assets/icon/Logo.png")}
+          style={styles.logo}
+        />
+        <Image
+          source={require("../../assets/img/twoperson.png")}
+          style={styles.twoPerson}
+        />
 
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.headerText}>Mot de passe oublié</Text>
+        <View style={styles.container}>
+          <View>
+            <Text style={styles.headerText}>Mot de passe oublié</Text>
+          </View>
+          <View>
+            <Text style={styles.text}>
+              Renseignez votre adresse mail afin de recevoir un lien vous
+              permettant de changer votre mot de passe.
+            </Text>
+          </View>
+          <View style={{ gap: 10 }}>
+            <TextInput
+              placeholder="Adresse mail"
+              style={styles.inputContainer}
+            />
+          </View>
+          <Pressable
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate("LinkSent")}
+          >
+            <Text style={styles.buttonText}>
+              Réinitialiser mon mot de passe
+            </Text>
+          </Pressable>
         </View>
-        <View>
-          <Text style={styles.text}>
-            Renseignez votre adresse mail afin de recevoir un lien vous
-            permettant de changer votre mot de passe.
-          </Text>
+        <View style={{ flex: 1 }}></View>
+        <View style={styles.footer}>
+          <Text style={styles.footerButtonText}>Retour à la </Text>
+          <Pressable onPress={() => navigation.navigate("Connexion")}>
+            <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
+              connexion
+            </Text>
+          </Pressable>
         </View>
-        <View style={{ gap: 10 }}>
-          <TextInput placeholder="Adresse mail" style={styles.inputContainer} />
-        </View>
-        <Pressable
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate("LinkSent")}
-        >
-          <Text style={styles.buttonText}>Réinitialiser mon mot de passe</Text>
-        </Pressable>
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerButtonText}>Retour à la </Text>
-        <Pressable onPress={() => navigation.navigate("Connexion")}>
-          <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
-            connexion
-          </Text>
-        </Pressable>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeContainer: { flex: 1, backgroundColor: Colors.white },
+  mainContainer: { flex: 1, paddingBottom: 20 },
   container: {
     marginHorizontal: 20,
     gap: 20,
@@ -104,15 +114,18 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   footer: {
-    marginTop: "auto",
     flexDirection: "row",
     justifyContent: "center",
   },
 
-  logo: { alignSelf: "center", position: "absolute", top: 40 },
+  logo: { alignSelf: "center", position: "absolute", top: 0 },
   twoPerson: {
     position: "absolute",
     alignSelf: "center",
-    top: 130,
+    top: 70,
+  },
+  bgImage: {
+    width: 437,
+    height: 321,
   },
 });

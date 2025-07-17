@@ -9,6 +9,7 @@ import {
   StatusBar,
   TextInput,
   Image,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -25,60 +26,69 @@ export default function Resercher({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <Ionicons name="close-outline" size={24} />
-        </Pressable>
-        <Text style={styles.headertext}>Resercher</Text>
-      </View>
-      <View style={styles.secondcontainer}>
-        <TextInput
-          placeholder="Où ?"
-          style={styles.input}
-          clearButtonMode="always"
-          autoCorrect={false}
-          value={searchQuery}
-          onChangeText={(text) => handleSearch(text)}
-        />
-
-        {searchQuery ? (
-          <FlatList
-            data={SEARCHLIST_DATA}
-            renderItem={({ item }) => {
-              return (
-                <Pressable
-                  onPress={() => navigate("Booking")}
-                  style={styles.listContainer}
-                >
-                  <Image source={item.image} />
-                  <View style={styles.infoContainer}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <Text style={styles.info}>{item.info}</Text>
-                  </View>
-                </Pressable>
-              );
-            }}
-            ItemSeparatorComponent={() => {
-              return <View style={{ height: 10 }}></View>;
-            }}
-            showsVerticalScrollIndicator={false}
-          />
-        ) : (
-          <Pressable
-            onPress={() => navigate("Booking")}
-            style={styles.locContainer}
-          >
-            <Ionicons
-              name="location-outline"
-              size={24}
-              color={Colors.primary}
-            />
-            <Text style={styles.locText}>Autour de moi</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={{ flex: 1 }}>
+        <View style={styles.header}>
+          <Pressable onPress={() => navigation.goBack()}>
+            <Ionicons name="close-outline" size={24} />
           </Pressable>
-        )}
+          <Text style={styles.headertext}>Resercher</Text>
+        </View>
+        <View style={styles.secondcontainer}>
+          <TextInput
+            placeholder="Où ?"
+            style={styles.input}
+            clearButtonMode="always"
+            autoCorrect={false}
+            value={searchQuery}
+            onChangeText={(text) => handleSearch(text)}
+          />
+
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ flexGrow: 1 }}
+          >
+            {searchQuery ? (
+              <FlatList
+                scrollEnabled={false}
+                data={SEARCHLIST_DATA}
+                renderItem={({ item }) => {
+                  styles;
+                  return (
+                    <Pressable
+                      onPress={() => navigate("Booking")}
+                      style={styles.listContainer}
+                    >
+                      <Image source={item.image} />
+                      <View style={styles.infoContainer}>
+                        <Text style={styles.title}>{item.title}</Text>
+                        <Text style={styles.info}>{item.info}</Text>
+                      </View>
+                    </Pressable>
+                  );
+                }}
+                ItemSeparatorComponent={() => {
+                  return <View style={{ height: 10 }}></View>;
+                }}
+                showsVerticalScrollIndicator={false}
+              />
+            ) : (
+              <Pressable
+                onPress={() => navigate("Booking")}
+                style={styles.locContainer}
+              >
+                <Ionicons
+                  name="location-outline"
+                  size={24}
+                  color={Colors.primary}
+                />
+                <Text style={styles.locText}>Autour de moi</Text>
+              </Pressable>
+            )}
+          </ScrollView>
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -94,10 +104,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     position: "absolute",
     top: 0,
+    top: 13,
   },
   header: {
-    marginBottom: 10,
-    marginHorizontal: 20,
+    paddingLeft: 10,
+    paddingVertical: 13,
   },
   secondcontainer: {
     backgroundColor: Colors.blueGreen,

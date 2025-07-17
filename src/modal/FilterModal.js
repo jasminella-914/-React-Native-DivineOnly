@@ -36,11 +36,15 @@ export default function FilterModal() {
   const [selected, setSelected] = useState("");
   return (
     <ActionSheet containerStyle={styles.container} id="Filter">
-      <View>
-        <View style={{ marginBottom: 20 }}>
-          <View style={styles.border}></View>
-          <Text style={styles.headerText}>Prix</Text>
-        </View>
+      <View style={styles.border}></View>
+      <View style={{ marginBottom: 20 }}>
+        <Text style={styles.headerText}>Prix</Text>
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}
+      >
         <View style={styles.buttonContainer}>
           {data.map((list, index) => {
             return (
@@ -83,14 +87,14 @@ export default function FilterModal() {
             </Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </ActionSheet>
   );
 }
 
 const styles = StyleSheet.create({
   headerText: {
-   ...FONTS.h1,
+    ...FONTS.h1,
     textAlign: "center",
     marginTop: 10,
   },
@@ -103,14 +107,14 @@ const styles = StyleSheet.create({
   },
   buttontext: {
     color: Colors.default,
-   ...FONTS.textRegular,
+    ...FONTS.textRegular,
   },
   input: {
     borderWidth: 1,
     borderColor: Colors.border,
     padding: 20,
     borderRadius: 15,
-    ...FONTS.textRegular
+    ...FONTS.textRegular,
   },
   footerbutton: {
     backgroundColor: Colors.primary,
@@ -138,4 +142,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   container: { flex: 0.7, paddingHorizontal: 20 },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: 20,
+  },
 });

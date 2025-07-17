@@ -14,37 +14,41 @@ import { FONTS } from "../../styles/Fonts";
 const bgImg = require("../../assets/img/Bg.png");
 export default function LinkSent({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
-      <Image source={bgImg} />
-      <Image
-        source={require("../../assets/icon/Logo.png")}
-        style={styles.logo}
-      />
-      <Image
-        source={require("../../assets/img/twoperson.png")}
-        style={styles.twoperson}
-      />
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.mainContainer}>
+        <Image source={bgImg} style={styles.bgImage} />
+        <Image
+          source={require("../../assets/icon/Logo.png")}
+          style={styles.logo}
+        />
+        <Image
+          source={require("../../assets/img/twoperson.png")}
+          style={styles.twoPerson}
+        />
 
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.headerText}>Lien envoyé</Text>
+        <View style={styles.container}>
+          <View>
+            <Text style={styles.headerText}>Lien envoyé</Text>
+          </View>
+          <View>
+            <Text style={styles.text}>Le lien vous a été envoyé par mail.</Text>
+          </View>
         </View>
-        <View>
-          <Text style={styles.text}>Le lien vous a été envoyé par mail.</Text>
-        </View>
+
+        <Pressable
+          style={styles.buttonContainer}
+          onPress={() => navigation.navigate("Connexion")}
+        >
+          <Text style={styles.buttonText}>Revenir à l’écran de connexion</Text>
+        </Pressable>
       </View>
-
-      <Pressable
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate("Connexion")}
-      >
-        <Text style={styles.buttonText}>Revenir à l’écran de connexion</Text>
-      </Pressable>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  mainContainer: { flex: 1, paddingBottom: 20 },
+
   container: {
     marginHorizontal: 20,
     gap: 10,
@@ -70,14 +74,15 @@ const styles = StyleSheet.create({
     ...FONTS.h2,
     textAlign: "center",
   },
-  twoperson: {
+  logo: { alignSelf: "center", position: "absolute", top: 0 },
+  twoPerson: {
     position: "absolute",
     alignSelf: "center",
-    top: 130,
+    top: 70,
   },
-  logo: {
-    alignSelf: "center",
-    position: "absolute",
-    top: 40,
+  safeContainer: { flex: 1, backgroundColor: Colors.white },
+  bgImage: {
+    width: 437,
+    height: 321,
   },
 });

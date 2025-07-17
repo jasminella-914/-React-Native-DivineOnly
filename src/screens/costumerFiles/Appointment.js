@@ -74,7 +74,10 @@ export default function Appointment({ navigation }) {
         </Pressable>
         <Text style={styles.headertext}>Prendre rendez-vous</Text>
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={styles.title}>Lola Brazilia</Text>
         <View style={styles.container}>
           <View>
@@ -171,11 +174,11 @@ export default function Appointment({ navigation }) {
         <ScrollView
           showsHorizontalScrollIndicator={false}
           horizontal
-          style={{ paddingHorizontal: 20, marginTop: 20 }}
+          style={{ marginTop: 20 }}
         >
           <FlatList
             numColumns={Math.ceil(TIME_DATA.length / 2)}
-            contentContainerStyle={{ gap: 10 }}
+            contentContainerStyle={{ gap: 10, paddingHorizontal: 20 }}
             columnWrapperStyle={{ gap: 10 }}
             showsHorizontalScrollIndicator={false}
             data={TIME_DATA}
@@ -310,5 +313,9 @@ const styles = StyleSheet.create({
     borderColor: Colors.lightBorder,
     flexDirection: "row",
     gap: 10,
+  },
+  scrollView: {
+    paddingBottom: 20,
+    flex: 1,
   },
 });

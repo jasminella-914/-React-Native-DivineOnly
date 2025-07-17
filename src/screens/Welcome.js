@@ -17,50 +17,54 @@ import { FONTS } from "../styles/Fonts";
 export default function Welcome() {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.safeContainer}>
       <ImageBackground
         source={require("../assets/img/TabBg.png")}
         style={{ flex: 1 }}
       >
         <Image
           source={require("../assets/icon/Logo.png")}
-          style={{ alignSelf: "center", position: "absolute" }}
+          style={styles.logo}
           width={80}
           height={80}
         />
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          style={styles.list}
-          data={SERVICES_DATA}
-          renderItem={({ item }) => {
-            return (
-              <Pressable
-                onPress={() => navigation.navigate("Booking")}
-                style={styles.buttons}
-              >
-                <Image source={item.image} />
-                <Text style={styles.title}>{item.text}</Text>
-              </Pressable>
-            );
-          }}
-          ItemSeparatorComponent={() => {
-            return <View style={{ width: 21 }}></View>;
-          }}
-        />
-        <Pressable
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate("TabNav")}
-        >
-          <Text style={styles.buttonText}>Prendre rendez-vous</Text>
-        </Pressable>
+        <View style={styles.container}>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.list}
+            data={SERVICES_DATA}
+            renderItem={({ item }) => {
+              return (
+                <Pressable
+                  onPress={() => navigation.navigate("Booking")}
+                  style={styles.buttons}
+                >
+                  <Image source={item.image} style={styles.image} />
+                  <Text style={styles.title}>{item.text}</Text>
+                </Pressable>
+              );
+            }}
+            ItemSeparatorComponent={() => {
+              return <View style={{ width: 31 }}></View>;
+            }}
+          />
+          <View style={{ flex: 1 }}></View>
+          <Pressable
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate("TabNav")}
+          >
+            <Text style={styles.buttonText}>Prendre rendez-vous</Text>
+          </Pressable>
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: { flex: 1, marginHorizontal: 20 },
+  safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
   },
@@ -68,8 +72,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
-    marginHorizontal: 20,
-    marginTop: "auto",
     bottom: 15,
   },
   buttonText: {
@@ -86,9 +88,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     padding: 12,
   },
-  list: { paddingHorizontal: 20, position: "absolute", top: 80 },
+  list: { position: "absolute", top: 90, paddingLeft: 10 },
   title: {
     ...FONTS.textRegular,
     color: Colors.default,
   },
+  logo: { alignSelf: "center", position: "absolute", top: 0 },
 });

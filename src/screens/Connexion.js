@@ -42,12 +42,12 @@ export default function Connexion() {
     }
   };
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors.white }}>
+    <SafeAreaView style={styles.safeContainer}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={{flex: 1}}
+        contentContainerStyle={styles.scrollView}
       >
-        <View style={{flex: 1}}>
+        <View>
           <Image
             source={require("../assets/img/Bg.png")}
             style={{ width: 437, height: 321 }}
@@ -133,6 +133,10 @@ export default function Connexion() {
 }
 
 const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Colors.white,
+  },
   container: {
     marginHorizontal: 20,
     gap: 10,
@@ -182,7 +186,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   footer: {
-    marginTop: 20
+    marginTop: 20,
   },
   image: {
     alignSelf: "center",
@@ -198,4 +202,5 @@ const styles = StyleSheet.create({
     color: Colors.red,
     ...FONTS.textSmallLight,
   },
+  scrollView: { paddingBottom: 20, flexGrow: 1 },
 });

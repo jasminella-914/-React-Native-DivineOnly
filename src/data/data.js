@@ -498,12 +498,27 @@ export const ARTICLE_DATA = [
 export const ARTICLEPOST_DATA = [
   {
     image: post1,
-    image1: post2,
-    image2: post6,
-    image3: post3,
-    image4: post4,
-    image5: post5,
-    image6: post1,
+  },
+  {
+    image: post2,
+  },
+  {
+    image: post6,
+  },
+  {
+    image: post3,
+  },
+  {
+    image: post4,
+  },
+  {
+    image: post5,
+  },
+  {
+    image: post1,
+  },
+  {
+    image: post1,
   },
 ];
 
@@ -639,3 +654,21 @@ export const SEARCHLIST_DATA = [
 ];
 
 export const RATING_DATA = [5, 4, 3, 2, 1];
+
+export const FILTER_DATA = [
+  {
+    label: "Lieu",
+  },
+  {
+    label: "Prix",
+  },
+  {
+    label: "Note",
+  },
+  {
+    label: "Distance",
+  },
+  {
+    label: "Disponibilités",
+  },
+];

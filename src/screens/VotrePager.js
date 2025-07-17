@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     paddingHorizontal: 20,
     paddingTop: 20,
+    paddingBottom: 20,
   },
   headertext: {
     ...FONTS.h1,
@@ -89,7 +90,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     paddingVertical: 18,
     borderRadius: 10,
-    paddingHorizontal: 94,
     marginTop: 30,
   },
   input: {

@@ -17,10 +17,10 @@ import { FONTS } from "../../styles/Fonts";
 
 export default function Votre({ navigation }) {
   return (
-    <View style={styles.viewContainer}>
-      <View>
+    <SafeAreaView style={styles.viewContainer}>
+      <View style={styles.header}>
         <Pressable onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back" size={24} style={{ marginLeft: 20 }} />
+          <Ionicons name="arrow-back-outline" size={24} style={styles.icon} />
         </Pressable>
         <Text style={styles.headertext}>Votre rendez-vous</Text>
       </View>
@@ -28,21 +28,20 @@ export default function Votre({ navigation }) {
         source={require("../../assets/img/lashPhoto.png")}
         style={styles.image}
       />
+
       <View style={styles.tabContainer}>
         <VotrePager navigation={navigation} />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  viewContainer: { backgroundColor: Colors.white, flex: 1, paddingTop: 60 },
+  viewContainer: { backgroundColor: Colors.white, flex: 1 },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,
-    position: "absolute",
-    top: 0,
-    left: 120,
+    alignSelf: "center",
   },
 
   container: {
@@ -52,16 +51,19 @@ const styles = StyleSheet.create({
   },
   image: {
     marginTop: 15,
-    width: 393,
-    height: 360,
+    width: "100%",
+    height: 450,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
   tabContainer: {
     position: "absolute",
     bottom: 0,
-    top: 400,
     right: 0,
     left: 0,
   },
+  header: {
+    paddingVertical: 10,
+  },
+  icon: { marginLeft: 20, position: "absolute" },
 });
