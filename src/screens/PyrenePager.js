@@ -64,7 +64,7 @@ export default function PyrenePager() {
 
         <Pressable
           onPress={() => navigate("Appointment")}
-          style={[styles.footer, { marginBottom: 10, marginHorizontal: 20 }]}
+          style={[styles.footer]}
         >
           <Text style={styles.footertext}>Prendre rendez-vous</Text>
         </Pressable>
@@ -98,5 +98,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
+    position: 'absolute',
+    bottom: 10,
+    paddingHorizontal: 75,
+    alignSelf: "center"
+    
   },
 });

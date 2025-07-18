@@ -18,7 +18,10 @@ export default function EditProfile({ navigation }) {
       <Pressable style={styles.headerBack} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={24} />
       </Pressable>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={{ marginHorizontal: 20, gap: 20 }}>
           <Pressable style={{ gap: 7 }}>
             <Image
@@ -170,6 +173,10 @@ const styles = StyleSheet.create({
   },
   headerBack: {
     marginLeft: 20,
-    paddingBottom: 10,
+    paddingVertical: 10,
+  },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: 20,
   },
 });

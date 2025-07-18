@@ -32,14 +32,23 @@ export default function Delivery({ navigation }) {
     <SafeAreaView style={styles.container}>
       <View style={styles.secondContainer}>
         <Ionicons
+          style={styles.back}
           name="arrow-back"
           size={24}
           onPress={() => navigation.goBack()}
         />
         <Text style={styles.headertext}>Livraison</Text>
-        <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
+        <Ionicons
+          name="close"
+          size={24}
+          style={styles.close}
+          onPress={() => navigation.goBack()}
+        />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}
+        showsVerticalScrollIndicator={false}
+      >
         <Pressable style={styles.header}>
           <Text style={styles.monText}>Mon panier (3)</Text>
           <View style={styles.priceContainer}>
@@ -54,7 +63,11 @@ export default function Delivery({ navigation }) {
             <RadioButtonRN
               selectedBtn={(e) => console.log(e)}
               data={data}
+              box={false}
+              circleSize={16}
+              style={styles.radioButton}
               activeColor={Colors.black}
+              deactiveColor={Colors.black}
               borderColor={Colors.primary}
               boxActiveBgColor={Colors.blueGreen}
             />
@@ -106,13 +119,13 @@ export default function Delivery({ navigation }) {
             <Text style={styles.price}>25,49€</Text>
           </View>
         </View>
+        <Pressable
+          onPress={() => navigation.navigate("Payment")}
+          style={styles.footerButton}
+        >
+          <Text style={styles.footerButtonText}>Payer avec Mobile Money</Text>
+        </Pressable>
       </ScrollView>
-      <Pressable
-        onPress={() => navigation.navigate("Payment")}
-        style={styles.footerButton}
-      >
-        <Text style={styles.footerButtonText}>Payer avec Mobile Money</Text>
-      </Pressable>
     </SafeAreaView>
   );
 }
@@ -123,21 +136,19 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   secondContainer: {
-    marginHorizontal: 20,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingBottom: 20,
+    paddingVertical: 10,
   },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,
+    alignSelf: "center",
   },
   footerButton: {
     backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginTop: "auto",
+    marginTop: 30
   },
   footerButtonText: {
     color: Colors.white,
@@ -214,5 +225,22 @@ const styles = StyleSheet.create({
     ...FONTS.h2,
     color: Colors.black,
     textAlign: "center",
+  },
+  radioButton: {
+    borderWidth: 0.8,
+    paddingBottom: 15,
+    borderColor: Colors.border,
+    borderRadius: 15,
+    marginTop: 10,
+  },
+  back: {
+    position: "absolute",
+    left: 20,
+    top: 10,
+  },
+  close: {
+    position: "absolute",
+    right: 20,
+    top: 10,
   },
 });

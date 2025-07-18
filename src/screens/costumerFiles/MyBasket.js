@@ -17,10 +17,7 @@ export default function MyBasket({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Pressable
-          style={{ marginLeft: 20 }}
-          onPress={() => navigation.goBack()}
-        >
+        <Pressable style={styles.icon} onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} />
         </Pressable>
 
@@ -30,6 +27,7 @@ export default function MyBasket({ navigation }) {
         ItemSeparatorComponent={() => {
           return <View style={{ height: 20 }}></View>;
         }}
+        contentContainerStyle={styles.flatList}
         showsVerticalScrollIndicator={false}
         data={SHOP_DATA}
         renderItem={({ item }) => {
@@ -92,15 +90,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.white,
   },
+  icon: { marginLeft: 20, position: "absolute", top: 10 },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
   },
   header: {
-    flexDirection: "row",
-    gap: 100,
-    paddingBottom: 30,
+    paddingVertical: 10,
   },
   dataContainer: {
     paddingHorizontal: 20,
@@ -168,5 +165,10 @@ const styles = StyleSheet.create({
     gap: 20,
     paddingHorizontal: 20,
     paddingTop: 10,
+    paddingBottom: 20,
+  },
+  flatList: {
+    paddingTop: 20,
+    paddingBottom: 20,
   },
 });

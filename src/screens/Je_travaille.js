@@ -17,8 +17,12 @@ export default function Je_travaille() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <Pressable style={{ marginLeft: 20 }} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back" size={24} />
+      <Pressable onPress={() => navigation.goBack()}>
+        <Ionicons
+          name="arrow-back"
+          size={24}
+          style={{ marginLeft: 20, paddingVertical: 10 }}
+        />
       </Pressable>
 
       <Image source={logoImg} />
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     position: "absolute",
     top: 40,
+    marginTop: 10,
   },
   twoPerson: {
     position: "absolute",

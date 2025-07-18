@@ -19,7 +19,10 @@ export default function Pager() {
     <PagerView style={styles.pagerView} initialPage={0}>
       <View key="1">
         <Text style={styles.pageText}>Rendez-vous</Text>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+          contentContainerStyle={styles.scrollView}
+          showsVerticalScrollIndicator={false}
+        >
           <Text style={styles.headertext}>Rendez-vous à venir</Text>
           <FlatList
             scrollEnabled={false}
@@ -48,7 +51,7 @@ export default function Pager() {
 
       <View key="2">
         <Text style={styles.pageText}>Favoris</Text>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView contentContainerStyle={styles.scrollView} showsVerticalScrollIndicator={false}>
           <Text style={styles.headertext}>Salons favoris</Text>
           <FlatList
             scrollEnabled={false}
@@ -57,7 +60,7 @@ export default function Pager() {
             renderItem={({ item }) => {
               return (
                 <View style={{ marginTop: 20 }}>
-                  <Image source={item.image} />
+                  <Image source={item.image} style={styles.image} />
                   <View style={styles.flatlist}>
                     <Text style={styles.date}>{item.title}</Text>
                     <View style={{ flexDirection: "row", gap: 10 }}>
@@ -134,5 +137,14 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+  },
+  scrollView: {
+    paddingBottom: 20,
+  },
+  image: {
+    width: "100%",
+    height: 80,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
 });

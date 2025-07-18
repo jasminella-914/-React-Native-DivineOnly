@@ -1,4 +1,11 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SheetManager } from "react-native-actions-sheet";
@@ -8,7 +15,10 @@ import { FONTS } from "../styles/Fonts";
 const AfroPager = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.SVContainer}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.SVContainer}
+      >
         <View style={{ gap: 11 }}>
           <View style={styles.header}>
             <Image
@@ -67,7 +77,7 @@ const AfroPager = () => {
             <Text style={styles.footerText}>Ajouter au panier</Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
@@ -89,6 +99,8 @@ const styles = StyleSheet.create({
   SVContainer: {
     paddingHorizontal: 20,
     paddingTop: 24,
+    paddingBottom: 20,
+    flexGrow: 1
   },
   info: {
     flexDirection: "row",
@@ -146,7 +158,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     paddingVertical: 15,
     borderRadius: 10,
-    paddingHorizontal: 97,
     marginTop: 20,
   },
   footerText: {

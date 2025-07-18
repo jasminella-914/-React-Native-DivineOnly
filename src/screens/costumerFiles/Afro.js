@@ -48,19 +48,20 @@ const styles = StyleSheet.create({
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
-    top: 0,
+    top: 10,
   },
   image: {
-    width: 393,
+    width: "100%",
     height: 360,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    marginTop: 20,
   },
 
   pager: {
     position: "absolute",
     bottom: 0,
-    top: 400,
+  },
+  header: {
+    paddingVertical: 10,
   },
 });

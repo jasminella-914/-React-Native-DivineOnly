@@ -21,13 +21,16 @@ const ReschedModal = () => {
     setModalVisible(!isModalVisible);
   };
   return (
-    <ActionSheet containerStyle={{ flex: 0.75 }} id="Reschedule">
+    <ActionSheet containerStyle={styles.container} id="Reschedule">
       <Image
         source={require("../assets/img/groupPhoto.png")}
         style={styles.groupPhoto}
       />
 
-      <View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}
+      >
         <View style={styles.header}>
           <Text style={styles.headerText}>Institut Pyrène</Text>
           <Text style={styles.bodyText}>
@@ -66,7 +69,7 @@ const ReschedModal = () => {
         >
           <Text style={styles.footertext}>Replanifier</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     </ActionSheet>
   );
 };
@@ -74,6 +77,11 @@ const ReschedModal = () => {
 export default ReschedModal;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 0.7,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+  },
   headerText: {
     color: Colors.black,
     ...FONTS.h1,
@@ -130,7 +138,7 @@ const styles = StyleSheet.create({
   },
   groupPhoto: {
     height: 110,
-    width: 414,
+    width: "100%",
     alignSelf: "center",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -138,5 +146,9 @@ const styles = StyleSheet.create({
   locInfo: {
     ...FONTS.textSmallLight,
     textDecorationLine: "underline",
+  },
+  scrollView: {
+    paddingBottom: 20,
+    flexGrow: 1,
   },
 });

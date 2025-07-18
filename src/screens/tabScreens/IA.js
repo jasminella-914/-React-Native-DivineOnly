@@ -22,9 +22,9 @@ export default function IA({ navigation }) {
         <Text style={styles.headertext}>ia</Text>
       </View>
 
-      <ImageBackground
+      <Image
         source={require("../../assets/img/IAbg.png")}
-        style={{ width: 393, flex: 1, marginTop: 30 }}
+        style={styles.bgImage}
       />
       <View style={styles.tab}>
         <View style={styles.tabHeader}>
@@ -115,5 +115,12 @@ const styles = StyleSheet.create({
   name: {
     ...FONTS.textSmallLight,
     color: Colors.default,
+  },
+  bgImage: {
+    width: "100%",
+    marginTop: 30,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    height: 567,
   },
 });

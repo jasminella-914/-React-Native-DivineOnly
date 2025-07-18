@@ -5,13 +5,14 @@ import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
 
-
 export default function SettingsModal() {
   return (
-    <ActionSheet containerStyle={{ flex: 0.7 }} id="Settings">
-      <View>
-        <View style={styles.border}></View>
-
+    <ActionSheet containerStyle={styles.container} id="Settings">
+      <View style={styles.border}></View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}
+      >
         <Text style={styles.headerText}>Paramètres</Text>
         <View style={styles.buttons}>
           <Pressable
@@ -43,12 +44,13 @@ export default function SettingsModal() {
             <Text style={styles.buttonsText}>Déconnexion</Text>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </ActionSheet>
   );
 }
 
 const styles = StyleSheet.create({
+  container: { flex: 0.7, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
   headerText: {
     ...FONTS.h1,
     textAlign: "center",
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttonsText: {
-   ...FONTS.textRegular,
+    ...FONTS.textRegular,
   },
   border: {
     borderWidth: 3,
@@ -70,5 +72,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     alignSelf: "center",
     borderRadius: 5,
+  },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: 50,
   },
 });

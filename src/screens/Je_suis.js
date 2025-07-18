@@ -87,10 +87,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     position: "absolute",
     top: 40,
+    marginTop: 10,
   },
   twoPerson: {
     position: "absolute",
     alignSelf: "center",
-    top: 130,
+    top: 120,
   },
 });

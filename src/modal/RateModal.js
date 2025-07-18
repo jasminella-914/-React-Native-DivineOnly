@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import ActionSheet, { SheetManager } from "react-native-actions-sheet";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -12,7 +19,10 @@ export default function RateModal({ navigation }) {
 
   return (
     <ActionSheet id="Rate" containerStyle={styles.container}>
-      <View>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <Text style={[styles.header, { paddingBottom: 15 }]}>
           Institut Pyrène
         </Text>
@@ -59,12 +69,19 @@ export default function RateModal({ navigation }) {
         >
           <Text style={styles.buttonText}>Envoyer mon avis</Text>
         </Pressable>
-      </View>
+      </ScrollView>
     </ActionSheet>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: 20,
+    paddingHorizontal: 30,
+    flex: 0.7,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+  },
   header: {
     ...FONTS.h0,
     textAlign: "center",
@@ -81,11 +98,11 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
     textAlignVertical: "top",
     marginTop: 20,
-    ...FONTS.textRegular
+    ...FONTS.textRegular,
   },
   buttonText: {
     color: Colors.white,
-   ...FONTS.h2,
+    ...FONTS.h2,
     textAlign: "center",
   },
   button: {
@@ -94,10 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: "auto",
   },
-  container: {
-    paddingTop: 20,
-    paddingHorizontal: 30,
-  },
+
   photoButton: {
     borderWidth: 1,
     borderColor: Colors.border,
@@ -118,5 +132,9 @@ const styles = StyleSheet.create({
     paddingBottom: 22,
     textAlign: "center",
     color: Colors.default,
+  },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: 20,
   },
 });

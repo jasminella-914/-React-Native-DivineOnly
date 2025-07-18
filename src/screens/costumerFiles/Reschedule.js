@@ -126,13 +126,14 @@ export default function Reschedule({ navigation, index }) {
 const styles = StyleSheet.create({
   header: {
     paddingBottom: 10,
+    paddingVertical: 10,
   },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,
     alignSelf: "center",
     position: "absolute",
-    top: 0,
+    top: 10,
   },
   container: {
     flex: 1,

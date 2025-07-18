@@ -13,9 +13,12 @@ import { Colors } from "../styles/Colors";
 
 const ArticleContent = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
-        <Pressable onPress={() => navigation.goBack()}>
+        <Pressable
+          style={{ paddingVertical: 10 }}
+          onPress={() => navigation.goBack()}
+        >
           <Ionicons name="arrow-back" size={22} style={{ paddingLeft: 20 }} />
         </Pressable>
         <Image
@@ -26,7 +29,7 @@ const ArticleContent = ({ navigation }) => {
       <View style={styles.pager}>
         <ArticlePager />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -36,16 +39,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: 63,
   },
   image: {
-    marginTop: 15,
+    width: "100%",
+    height: 284,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
   pager: {
     position: "absolute",
     bottom: 0,
     top: 300,
     left: 0,
-    right: 0
+    right: 0,
   },
 });

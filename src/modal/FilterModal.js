@@ -141,7 +141,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
   },
-  container: { flex: 0.7, paddingHorizontal: 20 },
+  container: {
+    flex: 0.7,
+    paddingHorizontal: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
   scrollView: {
     flexGrow: 1,
     paddingBottom: 20,

@@ -39,7 +39,7 @@ export default function Shop({ navigation }) {
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={Math.ceil(SHOP_DATA.length / 4)}
-        contentContainerStyle={{ alignItems: "center", marginTop: 20, gap: 10 }}
+        contentContainerStyle={styles.flatContainer}
         columnWrapperStyle={{ gap: 10 }}
         data={SHOP_DATA}
         renderItem={({ item }) => {
@@ -118,4 +118,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   header: { flexDirection: "row", gap: 20, alignItems: "center" },
+  flatContainer: { alignItems: "center", marginTop: 20, gap: 10 },
 });

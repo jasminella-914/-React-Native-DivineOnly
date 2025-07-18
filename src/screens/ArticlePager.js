@@ -7,7 +7,7 @@ const ArticlePager = () => {
     <View style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
-        style={styles.SVContainer}
+        contentContainerStyle={styles.SVContainer}
       >
         <Text style={styles.headertext}>
           Tresses, tradition, Style et Praticité
@@ -58,6 +58,14 @@ const ArticlePager = () => {
 export default ArticlePager;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.white,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+    paddingHorizontal: 20,
+    paddingTop: 24,
+  },
   headertext: {
     ...FONTS.h1,
     paddingBottom: 8,
@@ -70,15 +78,10 @@ const styles = StyleSheet.create({
     ...FONTS.textSmallLight,
     color: Colors.border,
   },
-  container: {
-    flex: 1,
-    backgroundColor: Colors.white,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
-  },
   SVContainer: {
-    paddingHorizontal: 20,
-    paddingTop: 24,
+    flexGrow: 1,
+    backgroundColor: Colors.white,
+    paddingBottom: 20,
   },
   info: {
     flexDirection: "row",

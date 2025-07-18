@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginHorizontal: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
   headertext: {
     color: Colors.raisinBlack,

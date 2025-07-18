@@ -316,6 +316,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     paddingBottom: 20,
-    flex: 1,
+    flexGrow: 1,
   },
 });

@@ -61,13 +61,14 @@ export default function Confirmation({ navigation }) {
             <Text style={styles.text}>0646384398</Text>
           </View>
         </View>
+        <View style={{ flex: 0.5 }} />
+        <Pressable
+          onPress={() => navigation.navigate("Welcome")}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Fermer</Text>
+        </Pressable>
       </View>
-      <Pressable
-        onPress={() => navigation.navigate("Welcome")}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Fermer</Text>
-      </Pressable>
     </SafeAreaView>
   );
 }
@@ -81,8 +82,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     borderRadius: 15,
     paddingVertical: 15,
-    marginHorizontal: 20,
-    marginTop: "auto",
   },
   buttonText: {
     color: Colors.white,
@@ -109,6 +108,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 20,
     flex: 1,
+    paddingBottom: 20,
   },
   border: {
     borderBottomWidth: 1,
