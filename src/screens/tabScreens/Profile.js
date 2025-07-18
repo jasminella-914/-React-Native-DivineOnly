@@ -6,6 +6,7 @@ import {
   Pressable,
   Image,
   PanResponder,
+  Platform,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Pager from "../Pager";
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   header: {
     flexDirection: "row",

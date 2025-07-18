@@ -6,6 +6,7 @@ import {
   Pressable,
   FlatList,
   Image,
+  Platform,
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   icon: { marginLeft: 20, position: "absolute", top: 10 },
   headertext: {

@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../styles/Colors";
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   container: {
     marginHorizontal: 20,

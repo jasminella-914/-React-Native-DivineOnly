@@ -8,6 +8,7 @@ import {
   Button,
   Modal,
   ScrollView,
+  Platform,
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -81,6 +82,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
     flex: 1,
+        paddingTop: Platform.OS === "android" ? 30 : 0,
+    
   },
   button: {
     backgroundColor: Colors.primary,

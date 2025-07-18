@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Platform,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../../styles/Colors";
@@ -133,6 +134,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   header: {
     flexDirection: "row",
@@ -177,6 +179,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flexGrow: 1,
-    paddingBottom: 20,
+    paddingBottom: 50,
   },
 });

@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Switch,
   ScrollView,
+  Platform,
 } from "react-native";
 import { useState } from "react";
 import React from "react";
@@ -111,6 +112,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   headerContainer: {
     paddingVertical: 10,
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
   headertext: {
     ...FONTS.h1,
     color: Colors.default,
-    textAlign: "center",
+    alignSelf: "center",
   },
   header: {
     ...FONTS.h2,

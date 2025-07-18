@@ -61,7 +61,8 @@ export default function SizeModal() {
           containerStyle={{
             position: "absolute",
             right: 0,
-            top: 50,
+            // top: 55,
+            bottom: 0
           }}
         />
       </View>

@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   TextInput,
+  Platform,
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   headertext: {
     ...FONTS.h1,

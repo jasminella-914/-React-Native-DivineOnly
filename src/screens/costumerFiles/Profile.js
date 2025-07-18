@@ -8,6 +8,7 @@ import {
   Image,
   Button,
   ScrollView,
+  Platform,
 } from "react-native";
 import * as Progress from "react-native-progress";
 import { NavigationContainer } from "@react-navigation/native";
@@ -24,7 +25,12 @@ export default function Profile({ navigation }) {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.secondContainer, { flexDirection: "row", paddingVertical: 5 }]}>
+      <View
+        style={[
+          styles.secondContainer,
+          { flexDirection: "row", paddingVertical: 5 },
+        ]}
+      >
         <Ionicons
           name="arrow-back"
           size={24}
@@ -41,39 +47,41 @@ export default function Profile({ navigation }) {
         />
         <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
-      <ScrollView>
-        <View>
-          <View style={[styles.secondContainer, { gap: 30, marginTop: 20 }]}>
-            <View>
-              <Text style={styles.headertext}>Photo de profil</Text>
-              <Text style={styles.text}>
-                Nous vous recommandons d’utiliser une photo type d’identité pour
-                pouvoir profiter de l’outil IA. Vous pourrez toujours la
-                modifier plus tard.
-              </Text>
-            </View>
-            <View style={styles.thirdContainer}>
-              <Pressable onPress={toggleModal} style={styles.pressContainer}>
-                <View style={styles.editPhoto}>
-                  <Ionicons
-                    name="image-outline"
-                    size={40}
-                    color={Colors.border}
-                  />
-                  <Text
-                    style={[
-                      styles.ajouterText,
-                      { fontSize: 12, textAlign: "center" },
-                    ]}
-                  >
-                    ajouter une photop
-                  </Text>
-                </View>
-              </Pressable>
-              <View style={{ marginTop: 10 }}>
-                <Text style={styles.ajouterText}>Ajouter une photo</Text>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={[styles.secondContainer, { gap: 30, marginTop: 20 }]}>
+          <View>
+            <Text style={styles.headertext}>Photo de profil</Text>
+            <Text style={styles.text}>
+              Nous vous recommandons d’utiliser une photo type d’identité pour
+              pouvoir profiter de l’outil IA. Vous pourrez toujours la modifier
+              plus tard.
+            </Text>
+          </View>
+          <View style={styles.thirdContainer}>
+            <Pressable onPress={toggleModal} style={styles.pressContainer}>
+              <View style={styles.editPhoto}>
+                <Ionicons
+                  name="image-outline"
+                  size={40}
+                  color={Colors.border}
+                />
+                <Text
+                  style={[
+                    styles.ajouterText,
+                    { fontSize: 12, textAlign: "center" },
+                  ]}
+                >
+                  ajouter une photop
+                </Text>
               </View>
-              {/* <Pressable onPress={toggleModal}>
+            </Pressable>
+            <View style={{ marginTop: 10 }}>
+              <Text style={styles.ajouterText}>Ajouter une photo</Text>
+            </View>
+            {/* <Pressable onPress={toggleModal}>
             <View
               style={{
                 justifyContent: "center",
@@ -90,35 +98,32 @@ export default function Profile({ navigation }) {
               <Text style={styles.ajouterText}>Modifier la photo</Text>
             </View>
           </Pressable> */}
-            </View>
-          </View>
-          <View>
-            <Modal
-              isVisible={isModalVisible}
-              onBackdropPress={() => setModalVisible(false)}
-              style={styles.modal}
-            >
-              <View style={{ gap: 10 }}>
-                <Pressable style={styles.buttonContainer}>
-                  <Text style={styles.modalText}>Gallery</Text>
-                </Pressable>
-                <Pressable style={styles.buttonContainer}>
-                  <Text style={styles.modalText}>Camera</Text>
-                </Pressable>
-                <Button
-                  title="Cancel"
-                  onPress={() => setModalVisible(!isModalVisible)}
-                ></Button>
-              </View>
-            </Modal>
           </View>
         </View>
-      </ScrollView>
-
-      <View style={{ paddingBottom: 20 }}>
+        <View style={{ flex: 1 }} />
         <Pressable style={styles.footerButton}>
           <Text style={styles.footerButtonText}>Suivant</Text>
         </Pressable>
+      </ScrollView>
+      <View>
+        <Modal
+          isVisible={isModalVisible}
+          onBackdropPress={() => setModalVisible(false)}
+          style={styles.modal}
+        >
+          <View style={{ gap: 10 }}>
+            <Pressable style={styles.buttonContainer}>
+              <Text style={styles.modalText}>Gallery</Text>
+            </Pressable>
+            <Pressable style={styles.buttonContainer}>
+              <Text style={styles.modalText}>Camera</Text>
+            </Pressable>
+            <Button
+              title="Cancel"
+              onPress={() => setModalVisible(!isModalVisible)}
+            ></Button>
+          </View>
+        </Modal>
       </View>
     </SafeAreaView>
   );
@@ -128,6 +133,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secondContainer: {
     marginHorizontal: 20,
@@ -201,4 +207,7 @@ const styles = StyleSheet.create({
     ...FONTS.textRegular,
     color: Colors.black,
   },
+  scrollView: { flexGrow: 1,
+    paddingBottom: 20
+   }
 });

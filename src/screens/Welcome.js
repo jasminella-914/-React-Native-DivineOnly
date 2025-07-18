@@ -8,6 +8,7 @@ import {
   ImageBackground,
   Pressable,
   FlatList,
+  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SERVICES_DATA } from "../data/data";
@@ -67,12 +68,13 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
-    bottom: 15,
+    bottom: 50,
   },
   buttonText: {
     color: Colors.white,

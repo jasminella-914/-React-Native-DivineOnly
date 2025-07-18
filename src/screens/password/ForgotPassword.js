@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Platform,
 } from "react-native";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
@@ -66,7 +67,11 @@ export default function ForgotPassword({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  safeContainer: { flex: 1, backgroundColor: Colors.white },
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
+  },
   mainContainer: { flex: 1, paddingBottom: 20 },
   container: {
     marginHorizontal: 20,

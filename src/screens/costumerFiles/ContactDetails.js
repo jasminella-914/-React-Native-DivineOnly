@@ -34,7 +34,7 @@ export default function ContactDetails({ navigation }) {
         />
         <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={{ paddingBottom: 20 }}>
           <KeyboardAvoidingView
             behavior="padding"
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0
   },
   secondContainer: {
     justifyContent: "space-between",
@@ -119,4 +120,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     ...FONTS.h2,
   },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: Platform.OS === "android" ? 20 : 0,
+  }
 });

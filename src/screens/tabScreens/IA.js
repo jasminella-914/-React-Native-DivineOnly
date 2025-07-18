@@ -7,6 +7,7 @@ import {
   Image,
   ImageBackground,
   FlatList,
+  Platform,
 } from "react-native";
 
 import { useState } from "react";
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   headertext: {
     textTransform: "uppercase",
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: 567,
+    height: Platform.OS === "android" ? 600 : 567,
+    
   },
 });

@@ -8,6 +8,7 @@ import {
   FlatList,
   Pressable,
   Modal,
+  Platform,
 } from "react-native";
 import RadioButtonRN from "radio-buttons-react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -68,6 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   logo: {
     alignSelf: "center",

@@ -7,6 +7,7 @@ import {
   Image,
   SafeAreaView,
   ScrollView,
+  Platform,
 } from "react-native";
 import { useState } from "react";
 import CheckBox from "react-native-check-box";
@@ -44,93 +45,90 @@ export default function CreateAccount({ navigation }) {
       <Pressable style={styles.headBack} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={24} />
       </Pressable>
-      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
-        <View style={{ paddingBottom: 20 }}>
-          <Image source={logoImg} style={{ alignSelf: "center" }} />
-          <View style={styles.secondContainer}>
-            <View>
-              <Text style={styles.text}>Créer mon compte</Text>
-            </View>
-            <View style={{ gap: 10 }}>
-              <TextInput
-                style={styles.textInput}
-                placeholder="Adresse mail"
-                onChangeText={setEmail}
-              />
-              {errors.email ? (
-                <Text style={styles.errorText}>{errors.email}</Text>
-              ) : null}
-              <TextInput
-                style={styles.textInput}
-                placeholder="Mot de passe"
-                secureTextEntry
-                onChangeText={setPassword}
-              />
-              {errors.password ? (
-                <Text style={styles.errorText}>{errors.password}</Text>
-              ) : null}
-            </View>
-            <View style={styles.toggleContainer}>
-              <CheckBox
-                style={{ flex: 1 }}
-                onClick={() => {
-                  setIsChecked(!isChecked);
-                }}
-                checkBoxColor={Colors.primary}
-                isChecked={isChecked}
-              />
-              <View style={{ paddingRight: 20 }}>
-                <Text style={styles.toggleText}>
-                  <Text
-                    style={[
-                      styles.toggleText,
-                      {
-                        color: Colors.black,
-                      },
-                    ]}
-                  >
-                    En vous inscrivant, vous acceptez nos
-                  </Text>{" "}
-                  Conditions Générales d’Utilisation et nos Conditions Générales
-                  de Vente
-                </Text>
-              </View>
-            </View>
-            <Pressable
-              style={styles.buttonContainer}
-              onPress={() => navigation.navigate("MesCoordonnées")}
-              // onPress={handleSubmit}
-            >
-              <Text style={styles.buttonText}>Créer mon compte</Text>
-            </Pressable>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollView}
+      >
+        <Image source={logoImg} style={{ alignSelf: "center" }} />
+        <View style={styles.secondContainer}>
+          <View>
+            <Text style={styles.text}>Créer mon compte</Text>
           </View>
-          <Pressable>
-            <Text style={styles.footerButtonText}>Ou inscrivez-vous avec</Text>
+          <View style={{ gap: 10 }}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Adresse mail"
+              onChangeText={setEmail}
+            />
+            {errors.email ? (
+              <Text style={styles.errorText}>{errors.email}</Text>
+            ) : null}
+            <TextInput
+              style={styles.textInput}
+              placeholder="Mot de passe"
+              secureTextEntry
+              onChangeText={setPassword}
+            />
+            {errors.password ? (
+              <Text style={styles.errorText}>{errors.password}</Text>
+            ) : null}
+          </View>
+          <View style={styles.toggleContainer}>
+            <CheckBox
+              style={{ flex: 1 }}
+              onClick={() => {
+                setIsChecked(!isChecked);
+              }}
+              checkBoxColor={Colors.primary}
+              isChecked={isChecked}
+            />
+            <View style={{ paddingRight: 20 }}>
+              <Text style={styles.toggleText}>
+                <Text
+                  style={[
+                    styles.toggleText,
+                    {
+                      color: Colors.black,
+                    },
+                  ]}
+                >
+                  En vous inscrivant, vous acceptez nos
+                </Text>{" "}
+                Conditions Générales d’Utilisation et nos Conditions Générales
+                de Vente
+              </Text>
+            </View>
+          </View>
+          <Pressable
+            style={styles.buttonContainer}
+            onPress={() => navigation.navigate("MesCoordonnées")}
+            // onPress={handleSubmit}
+          >
+            <Text style={styles.buttonText}>Créer mon compte</Text>
           </Pressable>
-          <View style={{ gap: 10, margin: 20 }}>
-            <Pressable style={styles.footerButton}>
-              <Ionicons name="logo-google" size={24} color={Colors.primary} />
-              <Text style={styles.footerButtonText}>votre adresse Google</Text>
-            </Pressable>
-            <Pressable style={styles.footerButton}>
-              <Image source={require("../assets/icon/at.png")} />
-              <Text style={styles.footerButtonText}>
-                une autre adresse mail{" "}
-              </Text>
-            </Pressable>
-          </View>
-          <View style={styles.footerContainer}>
-            <Text style={styles.footerButtonText}>
-              Vous avez déjà un compte ?{" "}
+        </View>
+        <Pressable>
+          <Text style={styles.footerButtonText}>Ou inscrivez-vous avec</Text>
+        </Pressable>
+        <View style={{ gap: 10, margin: 20 }}>
+          <Pressable style={styles.footerButton}>
+            <Ionicons name="logo-google" size={24} color={Colors.primary} />
+            <Text style={styles.footerButtonText}>votre adresse Google</Text>
+          </Pressable>
+          <Pressable style={styles.footerButton}>
+            <Image source={require("../assets/icon/at.png")} />
+            <Text style={styles.footerButtonText}>une autre adresse mail </Text>
+          </Pressable>
+        </View>
+        <View style={styles.footerContainer}>
+          <Text style={styles.footerButtonText}>
+            Vous avez déjà un compte ?{" "}
+          </Text>
+          <Pressable onPress={() => navigation.navigate("Connexion")}>
+            <Text style={[styles.footerButtonText, { color: Colors.primary }]}>
+              Connexion
             </Text>
-            <Pressable onPress={() => navigation.navigate("Connexion")}>
-              <Text
-                style={[styles.footerButtonText, { color: Colors.primary }]}
-              >
-                Connexion
-              </Text>
-            </Pressable>
-          </View>
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -141,6 +139,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secondContainer: {
     gap: 20,
@@ -196,11 +195,15 @@ const styles = StyleSheet.create({
   footerContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    paddingTop: 20,
+    marginTop: 50,
   },
   headBack: { marginLeft: 20, paddingVertical: 5 },
   errorText: {
     color: Colors.red,
     ...FONTS.textSmallLight,
+  },
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: 20,
   },
 });

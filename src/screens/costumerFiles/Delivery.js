@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Pressable,
   ScrollView,
+  Platform,
 } from "react-native";
 
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -134,6 +135,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   secondContainer: {
     paddingVertical: 10,
@@ -148,7 +150,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginTop: 30
+    marginTop: 30,
   },
   footerButtonText: {
     color: Colors.white,

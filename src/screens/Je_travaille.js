@@ -6,6 +6,7 @@ import {
   Image,
   SafeAreaView,
   ImageBackground,
+  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+        paddingTop: Platform.OS === "android" ? 25 : 0,
+    
   },
   secondContainer: {
     marginHorizontal: 20,

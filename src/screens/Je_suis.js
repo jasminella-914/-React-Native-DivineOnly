@@ -6,6 +6,7 @@ import {
   Pressable,
   Image,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../styles/Colors";
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secondContainer: {
     margin: 20,

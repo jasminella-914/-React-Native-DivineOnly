@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
   FlatList,
+  Platform,
 } from "react-native";
 import { SHOP_DATA } from "../../data/data";
 import { SheetManager } from "react-native-actions-sheet";
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   text: {
     color: Colors.primary,
@@ -118,5 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   header: { flexDirection: "row", gap: 20, alignItems: "center" },
-  flatContainer: { alignItems: "center", marginTop: 20, gap: 10 },
+  flatContainer: { alignItems: "center", marginTop: 20, gap: 10,
+    paddingBottom: Platform.OS === "android" ? 50 : 20
+   },
 });

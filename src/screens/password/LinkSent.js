@@ -7,6 +7,7 @@ import {
   Pressable,
   Image,
   ScrollView,
+  Platform,
 } from "react-native";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
@@ -80,7 +81,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     top: 70,
   },
-  safeContainer: { flex: 1, backgroundColor: Colors.white },
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
+  },
   bgImage: {
     width: 437,
     height: 321,

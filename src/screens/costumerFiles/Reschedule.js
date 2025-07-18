@@ -9,6 +9,7 @@ import {
   Image,
   ScrollView,
   FlatList,
+  Platform,
 } from "react-native";
 import React, { useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -138,6 +139,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secContainer: {
     backgroundColor: Colors.lightBlack,

@@ -1,5 +1,6 @@
 import {
   Image,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -37,6 +38,7 @@ const Information = () => {
 
       <View style={styles.map}>
         <MapView
+          mapType={Platform.OS == "android" ? "none" : "standard"}
           style={styles.mapContainer}
           initialRegion={{
             latitude: 37.78825,
