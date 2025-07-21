@@ -2,8 +2,6 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
-  TextInput,
   Pressable,
   Image,
   FlatList,
@@ -13,9 +11,8 @@ import { SHOP_DATA } from "../../data/data";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const bgImg = require("../../assets/img/Bg.png");
-const twoperson = require("../../assets/img/twoperson.png");
 export default function Shop({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -72,7 +69,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   text: {
     color: Colors.primary,
@@ -120,7 +116,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   header: { flexDirection: "row", gap: 20, alignItems: "center" },
-  flatContainer: { alignItems: "center", marginTop: 20, gap: 10,
-    paddingBottom: Platform.OS === "android" ? 50 : 20
-   },
+  flatContainer: {
+    alignItems: "center",
+    marginTop: 20,
+    gap: 10,
+  },
 });

@@ -2,15 +2,11 @@ import {
   StyleSheet,
   Text,
   View,
-  Modal,
-  SafeAreaView,
   Pressable,
   FlatList,
-  StatusBar,
   TextInput,
   Image,
   ScrollView,
-  Platform,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -18,6 +14,8 @@ import { navigate } from "../../navigation/navigationService";
 import { SEARCHLIST_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 export default function Resercher({ navigation }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -97,7 +95,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   headertext: {
     ...FONTS.h1,

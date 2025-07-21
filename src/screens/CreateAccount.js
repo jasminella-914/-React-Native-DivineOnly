@@ -5,7 +5,6 @@ import {
   Pressable,
   TextInput,
   Image,
-  SafeAreaView,
   ScrollView,
   Platform,
 } from "react-native";
@@ -14,6 +13,8 @@ import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 const logoImg = require("../assets/icon/Logo.png");
 export default function CreateAccount({ navigation }) {
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
+  
   },
   secondContainer: {
     gap: 20,

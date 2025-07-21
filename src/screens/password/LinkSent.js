@@ -1,16 +1,7 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
-  Pressable,
-  Image,
-  ScrollView,
-  Platform,
-} from "react-native";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const bgImg = require("../../assets/img/Bg.png");
 export default function LinkSent({ navigation }) {
@@ -84,7 +75,6 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   bgImage: {
     width: 437,

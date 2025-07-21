@@ -1,15 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Pressable,
-  Image,
-} from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Confirmation({ navigation }) {
   return (
@@ -61,14 +55,13 @@ export default function Confirmation({ navigation }) {
             <Text style={styles.text}>0646384398</Text>
           </View>
         </View>
-        <View style={{ flex: 0.5 }} />
-        <Pressable
-          onPress={() => navigation.navigate("Welcome")}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Fermer</Text>
-        </Pressable>
       </View>
+      <Pressable
+        onPress={() => navigation.navigate("Welcome")}
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>Fermer</Text>
+      </Pressable>
     </SafeAreaView>
   );
 }
@@ -77,12 +70,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    
+    paddingBottom: 20,
   },
   button: {
     backgroundColor: Colors.primary,
     borderRadius: 15,
     paddingVertical: 15,
+    marginHorizontal: 20,
   },
   buttonText: {
     color: Colors.white,

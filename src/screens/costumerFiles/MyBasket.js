@@ -2,17 +2,16 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Pressable,
   FlatList,
   Image,
   Platform,
 } from "react-native";
-import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SHOP_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function MyBasket({ navigation }) {
   return (
@@ -90,7 +89,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   icon: { marginLeft: 20, position: "absolute", top: 10 },
   headertext: {

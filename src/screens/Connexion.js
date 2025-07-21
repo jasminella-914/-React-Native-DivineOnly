@@ -2,7 +2,6 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   TextInput,
   Pressable,
   Image,
@@ -14,6 +13,7 @@ import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
 import { navigate } from "../navigation/navigationService";
 import { useState } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const logoImg = require("../assets/icon/google.png");
 const atlogoImg = require("../assets/icon/at.png");
@@ -51,7 +51,7 @@ export default function Connexion() {
         <View>
           <Image
             source={require("../assets/img/Bg.png")}
-            style={{ width: 437, height: 321 }}
+            style={{ width: "100%", height: 321 }}
           />
           <Image
             source={require("../assets/icon/Logo.png")}
@@ -137,7 +137,6 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   container: {
     marginHorizontal: 20,

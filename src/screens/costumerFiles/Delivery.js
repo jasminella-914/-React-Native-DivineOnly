@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   Pressable,
   ScrollView,
   Platform,
@@ -14,6 +13,7 @@ import CheckBox from "react-native-check-box";
 import { useState } from "react";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const data = [
   {
@@ -120,6 +120,7 @@ export default function Delivery({ navigation }) {
             <Text style={styles.price}>25,49€</Text>
           </View>
         </View>
+        <View style={{ flex: 1 }} />
         <Pressable
           onPress={() => navigation.navigate("Payment")}
           style={styles.footerButton}
@@ -135,7 +136,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   secondContainer: {
     paddingVertical: 10,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     borderRadius: 10,
     marginHorizontal: 20,
-    marginTop: 30,
+    // marginTop: 30,
   },
   footerButtonText: {
     color: Colors.white,

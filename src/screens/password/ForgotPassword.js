@@ -2,7 +2,6 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   TextInput,
   Pressable,
   Image,
@@ -11,6 +10,7 @@ import {
 } from "react-native";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const bgImg = require("../../assets/img/Bg.png");
 export default function ForgotPassword({ navigation }) {
@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   mainContainer: { flex: 1, paddingBottom: 20 },
   container: {

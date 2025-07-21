@@ -5,19 +5,22 @@ import {
   StyleSheet,
   Pressable,
   Image,
-  SafeAreaView,
   Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const logoImg = require("../assets/img/Bg.png");
 export default function Je_suis() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require("../assets/img/Bg.png")} />
+      <Image
+        source={require("../assets/img/Bg.png")}
+        style={{ width: "100%" }}
+      />
       <Image source={require("../assets/icon/Logo.png")} style={styles.logo} />
 
       <Image
@@ -61,7 +64,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secondContainer: {
     margin: 20,

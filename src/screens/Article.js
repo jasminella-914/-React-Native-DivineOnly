@@ -1,20 +1,19 @@
 import {
   Pressable,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
   FlatList,
   Image,
   ScrollView,
-  Dimensions,
 } from "react-native";
-import React, { useState, useEffect } from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import { ARTICLEPOST_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 export default function Article({ navigation }) {
   return (

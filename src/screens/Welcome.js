@@ -2,18 +2,16 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   Image,
-  ScrollView,
   ImageBackground,
   Pressable,
   FlatList,
-  Platform,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SERVICES_DATA } from "../data/data";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -68,13 +66,12 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   buttonContainer: {
     backgroundColor: Colors.primary,
     padding: 18,
     borderRadius: 10,
-    bottom: 50,
+    bottom: 20,
   },
   buttonText: {
     color: Colors.white,

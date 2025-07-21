@@ -1,7 +1,7 @@
 import {
   Image,
+  Platform,
   Pressable,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
@@ -10,6 +10,8 @@ import {
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ArticlePager from "./ArticlePager";
 import { Colors } from "../styles/Colors";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 const ArticleContent = ({ navigation }) => {
   return (

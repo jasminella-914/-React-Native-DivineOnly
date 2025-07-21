@@ -1,10 +1,11 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const ArticlePager = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.SVContainer}
@@ -51,7 +52,7 @@ const ArticlePager = () => {
           naturels au quotidien. 4o
         </Text>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     paddingHorizontal: 20,
-    paddingTop: 24,
+   
   },
   headertext: {
     ...FONTS.h1,

@@ -6,15 +6,15 @@ import {
   Text,
   View,
 } from "react-native";
-import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const AfroPager = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.SVContainer}
@@ -78,7 +78,7 @@ const AfroPager = () => {
           </Pressable>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -95,12 +95,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    paddingHorizontal: 20,
   },
   SVContainer: {
-    paddingHorizontal: 20,
-    paddingTop: 24,
     paddingBottom: 20,
-    flexGrow: 1
+    flexGrow: 1,
   },
   info: {
     flexDirection: "row",

@@ -1,19 +1,17 @@
 import {
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
   Pressable,
   Image,
-  ScrollView,
-  Modal,
+  Platform,
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { ScrollState } from "react-native-actions-sheet/dist/src/hooks/use-scroll-handlers";
 import VotrePager from "../VotrePager";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Votre({ navigation }) {
   return (
@@ -37,7 +35,10 @@ export default function Votre({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  viewContainer: { backgroundColor: Colors.white, flex: 1 },
+  viewContainer: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,

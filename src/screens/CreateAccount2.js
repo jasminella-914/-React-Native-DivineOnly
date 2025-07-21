@@ -5,7 +5,6 @@ import {
   Pressable,
   TextInput,
   Image,
-  SafeAreaView,
   Platform,
 } from "react-native";
 import { useState } from "react";
@@ -14,6 +13,7 @@ import CheckBox from "react-native-check-box";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const logoImg = require("../assets/icon/Logo.png");
 export default function CreateAccount2() {
@@ -104,7 +104,7 @@ export default function CreateAccount2() {
             </View>
           </Pressable>
         </View>
-        <View style={{ flex: 1}} />
+        <View style={{ flex: 1 }} />
         <View style={styles.footer}>
           <Text style={styles.footerButtonText}>
             Vous avez déjà un compte ?{" "}
@@ -125,9 +125,6 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingBottom: Platform.OS === "android" ? 30 : 0,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
-    
   },
   secondContainer: {
     gap: 20,

@@ -2,10 +2,8 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   Pressable,
   Image,
-  PanResponder,
   Platform,
 } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -14,6 +12,7 @@ import PagerView from "react-native-pager-view";
 import { SheetManager } from "react-native-actions-sheet";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Profile({ navigation }) {
   return (
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   header: {
     flexDirection: "row",
@@ -56,14 +54,6 @@ const styles = StyleSheet.create({
   headertext: {
     color: Colors.raisinBlack,
     ...FONTS.h2,
-  },
-  modal: {
-    justifyContent: "flex-start",
-    backgroundColor: Colors.white,
-    flex: 0.5,
-    marginTop: "auto",
-    padding: 20,
-    borderRadius: 20,
   },
   pagerView: {
     flex: 1,

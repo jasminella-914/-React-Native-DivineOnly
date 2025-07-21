@@ -4,7 +4,6 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
-  SafeAreaView,
   Image,
   Button,
   ScrollView,
@@ -17,6 +16,7 @@ import Modal from "react-native-modal";
 import { useState } from "react";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Profile({ navigation }) {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -133,7 +133,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   secondContainer: {
     marginHorizontal: 20,
@@ -207,7 +206,5 @@ const styles = StyleSheet.create({
     ...FONTS.textRegular,
     color: Colors.black,
   },
-  scrollView: { flexGrow: 1,
-    paddingBottom: 20
-   }
+  scrollView: { flexGrow: 1, paddingBottom: 20 },
 });

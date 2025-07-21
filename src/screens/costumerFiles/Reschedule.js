@@ -2,10 +2,7 @@ import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
   Pressable,
-  SafeAreaView,
-  requireNativeComponent,
   Image,
   ScrollView,
   FlatList,
@@ -17,6 +14,7 @@ import { Calendar } from "react-native-calendars";
 import { TIME_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Reschedule({ navigation, index }) {
   const [selected, setSelected] = useState("");

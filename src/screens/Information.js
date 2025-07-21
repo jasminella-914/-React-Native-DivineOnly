@@ -53,6 +53,8 @@ const Information = () => {
             coordinate={{
               latitude: 37.78825,
               longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
             }}
           />
         </MapView>
@@ -129,6 +131,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginVertical: 20,
     paddingHorizontal: 20,
+    flex: 1,
   },
   mapContainer: {
     width: 340,

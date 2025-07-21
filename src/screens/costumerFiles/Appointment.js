@@ -1,7 +1,6 @@
 import {
   Image,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -14,6 +13,7 @@ import { FlatList } from "react-native-actions-sheet";
 import { AVAILABILTY_DATA, TIME_DATA } from "../../data/data";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 LocaleConfig.locales["fr"] = {
   monthNames: [
@@ -223,7 +223,10 @@ export default function Appointment({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  viewContainer: { backgroundColor: Colors.white, flex: 1 },
+  viewContainer: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
   headertext: {
     ...FONTS.h1,
     color: Colors.default,

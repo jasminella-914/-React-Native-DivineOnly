@@ -1,20 +1,9 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Pressable,
-  Image,
-  ScrollView,
-  TextInput,
-  Platform,
-} from "react-native";
-import React from "react";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useState } from "react";
 import AfroPager from "../AfroPager";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Afro({ navigation }) {
   return (
@@ -43,7 +32,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   headertext: {
     ...FONTS.h1,

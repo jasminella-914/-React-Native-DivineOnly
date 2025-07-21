@@ -2,7 +2,6 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   TextInput,
   Pressable,
   Image,
@@ -12,6 +11,7 @@ import {
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../../styles/Colors";
 import { FONTS } from "../../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function EditProfile({ navigation }) {
   return (
@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   header: {
     flexDirection: "row",

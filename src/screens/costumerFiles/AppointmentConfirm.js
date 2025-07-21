@@ -1,28 +1,16 @@
-import {
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Button,
-  Modal,
-  ScrollView,
-  Platform,
-} from "react-native";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { navigate } from "../../navigation/navigationService";
 import { SheetManager } from "react-native-actions-sheet";
-import { useState } from "react";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AppointmentConfirm() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ paddingHorizontal: 20, gap: 28 }}>
-        <View style={{ alignItems: "center", gap: 20 }}>
+        <View style={{ alignItems: "center", gap: 20, paddingTop: 10 }}>
           <Text style={styles.header}>Réservation validée</Text>
           <Text style={styles.bodytext}>#569843</Text>
           <Text
@@ -68,6 +56,7 @@ export default function AppointmentConfirm() {
           <Text style={styles.smallText}>0646384398</Text>
         </View>
       </View>
+      <View style={{ flex: 1 }} />
       <Pressable
         onPress={() => SheetManager.show("Rate")}
         style={styles.button}
@@ -82,8 +71,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
     flex: 1,
-        paddingTop: Platform.OS === "android" ? 30 : 0,
-    
+    paddingBottom: 20
   },
   button: {
     backgroundColor: Colors.primary,

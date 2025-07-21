@@ -3,16 +3,15 @@ import {
   Text,
   View,
   Pressable,
-  SafeAreaView,
   Switch,
   ScrollView,
-  Platform,
 } from "react-native";
 import { useState } from "react";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function NotificationSettings({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -112,7 +111,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0,
   },
   headerContainer: {
     paddingVertical: 10,

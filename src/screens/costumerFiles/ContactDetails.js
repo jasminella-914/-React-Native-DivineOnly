@@ -4,7 +4,6 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
-  SafeAreaView,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
@@ -13,11 +12,17 @@ import * as Progress from "react-native-progress";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ContactDetails({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={[styles.secondContainer, { flexDirection: "row", paddingVertical: 5 }]}>
+      <View
+        style={[
+          styles.secondContainer,
+          { flexDirection: "row", paddingVertical: 5 },
+        ]}
+      >
         <Ionicons
           name="arrow-back"
           size={24}
@@ -34,7 +39,10 @@ export default function ContactDetails({ navigation }) {
         />
         <Ionicons name="close" size={24} onPress={() => navigation.goBack()} />
       </View>
-      <ScrollView contentContainerStyle={styles.scrollView} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={{ paddingBottom: 20 }}>
           <KeyboardAvoidingView
             behavior="padding"
@@ -85,7 +93,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 25 : 0
   },
   secondContainer: {
     justifyContent: "space-between",
@@ -123,5 +130,5 @@ const styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
     paddingBottom: Platform.OS === "android" ? 20 : 0,
-  }
+  },
 });

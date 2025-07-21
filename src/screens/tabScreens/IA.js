@@ -2,10 +2,8 @@ import {
   View,
   Text,
   StyleSheet,
-  SafeAreaView,
   Pressable,
   Image,
-  ImageBackground,
   FlatList,
   Platform,
 } from "react-native";
@@ -14,9 +12,12 @@ import { useState } from "react";
 import { IA_DATA, IA_DATA2 } from "../../data/data";
 import { Colors } from "../../styles/Colors";
 import { FONTS } from "../../styles/Fonts";
-export default function IA({ navigation }) {
+import { SafeAreaView } from "react-native-safe-area-context";
+
+export default function IA() {
   const [selectedIndex, setIsSelectedIndex] = useState();
   const data = selectedIndex === 0 ? IA_DATA : IA_DATA2;
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -79,7 +80,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-    paddingTop: Platform.OS === "android" ? 30 : 0,
   },
   headertext: {
     textTransform: "uppercase",
@@ -124,6 +124,5 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     height: Platform.OS === "android" ? 600 : 567,
-    
   },
 });
