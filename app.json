@@ -14,7 +14,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.philip-purpl-me.myDivineOnly"
+      "bundleIdentifier": "com.philip-purpl-me.myDivineOnly",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBD_CLuEQ6zjyntNpAkp4OvgbKLvekwzaY"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -22,7 +25,12 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.philip_purpl_me.myDivineOnly"
+      "package": "com.philip_purpl_me.myDivineOnly",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBD_CLuEQ6zjyntNpAkp4OvgbKLvekwzaY"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
