@@ -40,21 +40,20 @@ const Information = () => {
       <View style={styles.map}>
         <MapView
           mapType={Platform.OS == "android" ? "none" : "standard"}
-          style={styles.mapContainer}
+          style={StyleSheet.absoluteFill}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-          provider={PROVIDER_GOOGLE}
+
+          // provider={PROVIDER_GOOGLE}
         >
           <Marker
             coordinate={{
               latitude: 37.78825,
               longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
             }}
           />
         </MapView>
@@ -128,17 +127,16 @@ const styles = StyleSheet.create({
   },
   map: {
     alignItems: "center",
-    justifyContent: "center",
     marginVertical: 20,
     paddingHorizontal: 20,
     flex: 1,
-  },
-  mapContainer: {
     width: 340,
     height: 300,
     borderWidth: 1,
     borderColor: Colors.border,
+    alignSelf: "center"
   },
+
   button: {
     borderBottomWidth: 1,
     paddingVertical: 20,
