@@ -35,6 +35,14 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["react-native-maps"]
+    "plugins": [
+      [
+        "react-native-maps",
+        {
+          "iosGoogleMapsApiKey": "AIzaSyBD_CLuEQ6zjyntNpAkp4OvgbKLvekwzaY",
+          "androidGoogleMapsApiKey": "AIzaSyBD_CLuEQ6zjyntNpAkp4OvgbKLvekwzaY"
+        }
+      ]
+    ]
   }
 }

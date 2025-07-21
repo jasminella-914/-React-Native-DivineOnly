@@ -13,6 +13,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { navigate } from "../navigation/navigationService";
 import { Colors } from "../styles/Colors";
 import { FONTS } from "../styles/Fonts";
+import { PROVIDER_GOOGLE } from "react-native-maps";
 
 const Information = () => {
   return (
@@ -46,6 +47,7 @@ const Information = () => {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
+          provider={PROVIDER_GOOGLE}
         >
           <Marker
             coordinate={{

@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		346BE1F317F16FEAC0CEDAF1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CAA4DEB76F0307FDBE110C /* ExpoModulesProvider.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		4C84F76DF927BFE245DCDEE5 /* libPods-myDivineOnly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E93BA5F36752BB7A0A0CA82 /* libPods-myDivineOnly.a */; };
+		76E80789D4A11541FC429879 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0D2E8D7E5411DA62364B1171 /* PrivacyInfo.xcprivacy */; };
+		77368CE55D2F0E3AC6EE0C8D /* libPods-myDivineOnly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1300645B4D339AAC8DB700E4 /* libPods-myDivineOnly.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		DC8D696FF1F1D6265E6FE53B /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8E3F583AA72BAD76B382D /* ExpoModulesProvider.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
-		F174B04BA131E81CAB90E8D7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 802EB420923F5836C268A7F6 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D2E8D7E5411DA62364B1171 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = myDivineOnly/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1300645B4D339AAC8DB700E4 /* libPods-myDivineOnly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myDivineOnly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* myDivineOnly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myDivineOnly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = myDivineOnly/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = myDivineOnly/Info.plist; sourceTree = "<group>"; };
-		1FB8E3F583AA72BAD76B382D /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-myDivineOnly/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		3E93BA5F36752BB7A0A0CA82 /* libPods-myDivineOnly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myDivineOnly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		718EA2C19E65923150C55EAF /* Pods-myDivineOnly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDivineOnly.debug.xcconfig"; path = "Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly.debug.xcconfig"; sourceTree = "<group>"; };
-		802EB420923F5836C268A7F6 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = myDivineOnly/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		83BD1BB1ADF0446B00D6F742 /* Pods-myDivineOnly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDivineOnly.release.xcconfig"; path = "Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly.release.xcconfig"; sourceTree = "<group>"; };
+		3C75A37A114A0E6266F925FD /* Pods-myDivineOnly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDivineOnly.debug.xcconfig"; path = "Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly.debug.xcconfig"; sourceTree = "<group>"; };
+		82BFB3E5210B85A6E94180A3 /* Pods-myDivineOnly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myDivineOnly.release.xcconfig"; path = "Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly.release.xcconfig"; sourceTree = "<group>"; };
+		86CAA4DEB76F0307FDBE110C /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-myDivineOnly/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = myDivineOnly/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -37,21 +37,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C84F76DF927BFE245DCDEE5 /* libPods-myDivineOnly.a in Frameworks */,
+				77368CE55D2F0E3AC6EE0C8D /* libPods-myDivineOnly.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DFC6E95047A2DA0F97FD9CA /* Pods */ = {
+		0557EB4C1F21B744FF94A6EC /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				718EA2C19E65923150C55EAF /* Pods-myDivineOnly.debug.xcconfig */,
-				83BD1BB1ADF0446B00D6F742 /* Pods-myDivineOnly.release.xcconfig */,
+				4561AFFC5B68D6A20699E039 /* myDivineOnly */,
 			);
-			name = Pods;
-			path = Pods;
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		13B07FAE1A68108700A75B9A /* myDivineOnly */ = {
@@ -63,7 +61,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				802EB420923F5836C268A7F6 /* PrivacyInfo.xcprivacy */,
+				0D2E8D7E5411DA62364B1171 /* PrivacyInfo.xcprivacy */,
 			);
 			name = myDivineOnly;
 			sourceTree = "<group>";
@@ -72,17 +70,27 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				3E93BA5F36752BB7A0A0CA82 /* libPods-myDivineOnly.a */,
+				1300645B4D339AAC8DB700E4 /* libPods-myDivineOnly.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5DF3109B0FC48ECB5928F65B /* myDivineOnly */ = {
+		4561AFFC5B68D6A20699E039 /* myDivineOnly */ = {
 			isa = PBXGroup;
 			children = (
-				1FB8E3F583AA72BAD76B382D /* ExpoModulesProvider.swift */,
+				86CAA4DEB76F0307FDBE110C /* ExpoModulesProvider.swift */,
 			);
 			name = myDivineOnly;
+			sourceTree = "<group>";
+		};
+		77FD57F59632011E2C022407 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C75A37A114A0E6266F925FD /* Pods-myDivineOnly.debug.xcconfig */,
+				82BFB3E5210B85A6E94180A3 /* Pods-myDivineOnly.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -99,8 +107,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				0DFC6E95047A2DA0F97FD9CA /* Pods */,
-				BF88EE8CA5005452AF54BD3F /* ExpoModulesProviders */,
+				77FD57F59632011E2C022407 /* Pods */,
+				0557EB4C1F21B744FF94A6EC /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -124,14 +132,6 @@
 			path = myDivineOnly/Supporting;
 			sourceTree = "<group>";
 		};
-		BF88EE8CA5005452AF54BD3F /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				5DF3109B0FC48ECB5928F65B /* myDivineOnly */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,13 +140,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "myDivineOnly" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				D0454FBF53779DE010EE8830 /* [Expo] Configure project */,
+				82F517C29C7A40F5613C7123 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				89A086CDCA0FE7645919312D /* [CP] Embed Pods Frameworks */,
+				7DE7F7125EC0D98851F9ED5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				F174B04BA131E81CAB90E8D7 /* PrivacyInfo.xcprivacy in Resources */,
+				76E80789D4A11541FC429879 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +240,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7DE7F7125EC0D98851F9ED5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,25 +297,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89A086CDCA0FE7645919312D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myDivineOnly/Pods-myDivineOnly-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0454FBF53779DE010EE8830 /* [Expo] Configure project */ = {
+		82F517C29C7A40F5613C7123 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -324,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				DC8D696FF1F1D6265E6FE53B /* ExpoModulesProvider.swift in Sources */,
+				346BE1F317F16FEAC0CEDAF1 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +333,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 718EA2C19E65923150C55EAF /* Pods-myDivineOnly.debug.xcconfig */;
+			baseConfigurationReference = 3C75A37A114A0E6266F925FD /* Pods-myDivineOnly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -358,7 +358,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philip-purpl-me.myDivineOnly";
-				PRODUCT_NAME = myDivineOnly;
+				PRODUCT_NAME = "myDivineOnly";
 				SWIFT_OBJC_BRIDGING_HEADER = "myDivineOnly/myDivineOnly-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -369,7 +369,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83BD1BB1ADF0446B00D6F742 /* Pods-myDivineOnly.release.xcconfig */;
+			baseConfigurationReference = 82BFB3E5210B85A6E94180A3 /* Pods-myDivineOnly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -389,7 +389,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.philip-purpl-me.myDivineOnly";
-				PRODUCT_NAME = myDivineOnly;
+				PRODUCT_NAME = "myDivineOnly";
 				SWIFT_OBJC_BRIDGING_HEADER = "myDivineOnly/myDivineOnly-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
